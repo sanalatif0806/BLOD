@@ -1,0 +1,363 @@
+_id,title,URLs,Working Link,Old Links
+bioportal-cogpo,Cognitive Paradigm Ontology,https://lod-cloud.net/dataset/bioportal-cogpo,https://bioportal.bioontology.org/ontologies/COGPO,http://bioportal.bioontology.org/ontologies/1560
+bioportal-acgt,Cancer Research and Management ACGT Master Ontology,https://lod-cloud.net/dataset/bioportal-acgt,https://bioportal.bioontology.org/ontologies/ACGT,http://bioportal.bioontology.org/ontologies/1130
+bioportal-aero,Adverse Event Reporting ontology,https://lod-cloud.net/dataset/bioportal-aero,https://bioportal.bioontology.org/ontologies/AERO,
+bioportal-bao,BioAssay Ontology,https://lod-cloud.net/dataset/bioportal-bao,https://bioportal.bioontology.org/ontologies/BAO,http://bioportal.bioontology.org/ontologies/1533
+bioportal-bdo,Bone Dysplasia Ontology,https://lod-cloud.net/dataset/bioportal-bdo,https://bioportal.bioontology.org/ontologies/BDO,http://bioportal.bioontology.org/ontologies/1613
+bioportal-bfo,Basic Formal Ontology,https://lod-cloud.net/dataset/bioportal-bfo,https://bioportal.bioontology.org/ontologies/BFO,http://bioportal.bioontology.org/ontologies/1332
+bioportal-birnlex,BIRNLex,https://lod-cloud.net/dataset/bioportal-birnlex,https://bioportal.bioontology.org/ontologies/BIRNLEX,
+bioportal-canco,Cancer Chemoprevention Ontology,https://lod-cloud.net/dataset/bioportal-canco,https://bioportal.bioontology.org/ontologies/CANCO,http://bioportal.bioontology.org/ontologies/3030
+bioportal-cao,CAO,https://lod-cloud.net/dataset/bioportal-cao,https://bioportal.bioontology.org/ontologies/CAO,http://bioportal.bioontology.org/ontologies/1582
+bioportal-cheminf,Chemical Information Ontology,https://lod-cloud.net/dataset/bioportal-cheminf,https://bioportal.bioontology.org/ontologies/CHEMINF,
+bioportal-clo,Cell Line ontology,https://lod-cloud.net/dataset/bioportal-cl,https://bioportal.bioontology.org/ontologies/CL,
+bioportal-csp,"CRISP Thesaurus, 2006",https://lod-cloud.net/dataset/bioportal-csp,https://bioportal.bioontology.org/ontologies/CRISP,http://bioportal.bioontology.org/ontologies/1526
+bioportal-ddi,Ontology for Drug Discovery Investigations,https://lod-cloud.net/dataset/bioportal-ddi,https://bioportal.bioontology.org/ontologies/DDI,http://bioportal.bioontology.org/ontologies/1540
+bioportal-ecg,Electrocardiography Ontology,https://lod-cloud.net/dataset/bioportal-ecg,https://bioportal.bioontology.org/ontologies/ECG,http://bioportal.bioontology.org/ontologies/1146
+bioportal-efo,Experimental Factor Ontology,https://lod-cloud.net/dataset/bioportal-efo,https://bioportal.bioontology.org/ontologies/EFO,http://bioportal.bioontology.org/ontologies/1136
+bioportal-ep,Cardiac Electrophysiology Ontology,https://lod-cloud.net/dataset/bioportal-ep,https://bioportal.bioontology.org/ontologies/EP,http://bioportal.bioontology.org/ontologies/1142
+bioportal-ero,eagle-i research resource ontology,https://lod-cloud.net/dataset/bioportal-ero,https://bioportal.bioontology.org/ontologies/ERO,
+bioportal-flu,Influenza Ontology,https://lod-cloud.net/dataset/bioportal-flu,https://bioportal.bioontology.org/ontologies/FLU,http://bioportal.bioontology.org/ontologies/1417
+bioportal-gfo,General Formal Ontology:Biology,https://lod-cloud.net/dataset/bioportal-gfo,https://bioportal.bioontology.org/ontologies/GFO,
+bioportal-hl7,Health Level Seven,https://lod-cloud.net/dataset/bioportal-hl7,https://bioportal.bioontology.org/ontologies/HL7,http://bioportal.bioontology.org/ontologies/1343
+bioportal-hpio,Host Pathogen Interactions Ontology,https://lod-cloud.net/dataset/bioportal-hpio,https://bioportal.bioontology.org/ontologies/HPIO,http://bioportal.bioontology.org/ontologies/1569
+bioportal-iao,Information Artifact Ontology,https://lod-cloud.net/dataset/bioportal-iao,https://bioportal.bioontology.org/ontologies/IAO,http://bioportal.bioontology.org/ontologies/1393
+bioportal-ido,Infectious Disease Ontology,https://lod-cloud.net/dataset/bioportal-ido,https://bioportal.bioontology.org/ontologies/IDO,http://bioportal.bioontology.org/ontologies/1092
+bioportal-idobru,Brucellosis Ontology,https://lod-cloud.net/dataset/bioportal-idobru,https://bioportal.bioontology.org/ontologies/IDOBRU,http://bioportal.bioontology.org/ontologies/1537
+bioportal-idomal,Malaria Ontology,https://lod-cloud.net/dataset/bioportal-idomal,https://bioportal.bioontology.org/ontologies/IDOMAL,
+bioportal-ino,Interaction Network Ontology,https://lod-cloud.net/dataset/bioportal-ino,https://bioportal.bioontology.org/ontologies/INO,http://bioportal.bioontology.org/ontologies/1515
+bioportal-lnc,Logical Observation Identifier Names and Codes,https://lod-cloud.net/dataset/bioportal-lnc,https://bioportal.bioontology.org/ontologies/INC,http://bioportal.bioontology.org/ontologies/1350
+bioportal-mesh-owl,MESH Thesaurus (OWL version),https://lod-cloud.net/dataset/bioportal-mesh-owl,,http://bioportal.bioontology.org/ontologies/3019
+bioportal-mf,Mental Functioning Ontology,https://lod-cloud.net/dataset/bioportal-mf,https://bioportal.bioontology.org/ontologies/MF,http://bioportal.bioontology.org/ontologies/3002
+bioportal-mfoem,Emotion Ontology,https://lod-cloud.net/dataset/bioportal-mfoem,https://bioportal.bioontology.org/ontologies/MFOEM,http://bioportal.bioontology.org/ontologies/1666
+bioportal-miro,Mosquito insecticide resistance,https://lod-cloud.net/dataset/bioportal-miro,https://bioportal.bioontology.org/ontologies/MIRO,http://bioportal.bioontology.org/ontologies/1077
+bioportal-msh,Medical Subject Headings,https://lod-cloud.net/dataset/bioportal-msh,https://bioportal.bioontology.org/ontologies/MESH,http://bioportal.bioontology.org/ontologies/1351
+bioportal-ncit,NCI Thesaurus,https://lod-cloud.net/dataset/bioportal-ncit,not found,http://bioportal.bioontology.org/ontologies/1032
+bioportal-nemo_x1,Neural ElectroMagnetic Ontologies,https://lod-cloud.net/dataset/bioportal-nemo_x1,not found,http://bioportal.bioontology.org/ontologies/1321
+bioportal-neomark,Neomark Oral Cancer Ontology,https://lod-cloud.net/dataset/bioportal-neomark,https://bioportal.bioontology.org/ontologies/NEOMARK3  https://bioportal.bioontology.org/ontologies/NEOMARK4,http://bioportal.bioontology.org/ontologies/1686
+bioportal-nif,NIFSTD,https://lod-cloud.net/dataset/bioportal-nif,https://bioportal.bioontology.org/ontologies/NIFSTD,http://bioportal.bioontology.org/ontologies/1084
+bioportal-nif_cell,NIF Cell,https://lod-cloud.net/dataset/bioportal-nif_cell,https://bioportal.bioontology.org/ontologies/NIFCELL,http://bioportal.bioontology.org/ontologies/1402
+bioportal-nif_dysfunction,NIF Dysfunction,https://lod-cloud.net/dataset/bioportal-nif_dysfunction,https://bioportal.bioontology.org/ontologies/NIFDYS,http://bioportal.bioontology.org/ontologies/1381
+bioportal-nmr,NMR-instrument specific component of metabolomics investigations,https://lod-cloud.net/dataset/bioportal-nmr,https://old.datahub.io/zh_TW/dataset/bioportal-nmr,http://bioportal.bioontology.org/ontologies/1033
+bioportal-npo,NanoParticle Ontology,https://lod-cloud.net/dataset/bioportal-npo,https://bioportal.bioontology.org/ontologies/NPO,http://bioportal.bioontology.org/ontologies/1083
+bioportal-oae,Ontology of Adverse Events (OAE),https://lod-cloud.net/dataset/bioportal-oae,https://bioportal.bioontology.org/ontologies/OAE,http://bioportal.bioontology.org/ontologies/1489
+bioportal-obi,Ontology for Biomedical Investigations,https://lod-cloud.net/dataset/bioportal-obi,https://bioportal.bioontology.org/ontologies/OBI,http://bioportal.bioontology.org/ontologies/1123
+bioportal-ocre,Ontology of Clinical Research (OCRe),https://lod-cloud.net/dataset/bioportal-ocre,not found,http://bioportal.bioontology.org/ontologies/1076
+bioportal-odgi,Ontology for disease genetic investigation,https://lod-cloud.net/dataset/bioportal-odgi,https://bioportal.bioontology.org/ontologies/OGDI,http://bioportal.bioontology.org/ontologies/1086
+bioportal-ogi,Ontology for Genetic Interval,https://lod-cloud.net/dataset/bioportal-ogi,https://bioportal.bioontology.org/ontologies/OGI,http://bioportal.bioontology.org/ontologies/1100
+bioportal-ogms,Ontology for General Medical Science,https://lod-cloud.net/dataset/bioportal-ogms,https://bioportal.bioontology.org/ontologies/OGMS,http://bioportal.bioontology.org/ontologies/1414
+bioportal-omrse,Ontology of Medically Related Social Entities,https://lod-cloud.net/dataset/bioportal-omrse,,http://bioportal.bioontology.org/ontologies/1565
+bioportal-ontodm,Ontology of Data Mining,https://lod-cloud.net/dataset/bioportal-ontodm,,http://bioportal.bioontology.org/ontologies/1638
+bioportal-ontodt,Ontology of General Purpose Datatypes,https://lod-cloud.net/dataset/bioportal-ontodt,https://bioportal.bioontology.org/ontologies/ONTODT,http://bioportal.bioontology.org/ontologies/1588
+bioportal-opl,Ontology for Parasite LifeCycle,https://lod-cloud.net/dataset/bioportal-opl,https://bioportal.bioontology.org/ontologies/OPL,http://bioportal.bioontology.org/ontologies/1190
+bioportal-pato,Phenotypic quality,https://lod-cloud.net/dataset/bioportal-pato,https://bioportal.bioontology.org/ontologies/PATO,http://bioportal.bioontology.org/ontologies/1107
+bioportal-rcd,"Read Codes, Clinical Terms Version 3 (CTV3)",https://lod-cloud.net/dataset/bioportal-rcd,https://bioportal.bioontology.org/ontologies/RCD,http://bioportal.bioontology.org/ontologies/1427
+bioportal-rid,RadLex,https://lod-cloud.net/dataset/bioportal-rid,https://bioportal.bioontology.org/ontologies/RADLEX,http://bioportal.bioontology.org/ontologies/1057
+bioportal-rnao,RNA ontology,https://lod-cloud.net/dataset/bioportal-rnao,https://bioportal.bioontology.org/ontologies/RNAO,http://bioportal.bioontology.org/ontologies/1500
+bioportal-sao,Subcellular Anatomy Ontology (SAO),https://lod-cloud.net/dataset/bioportal-sao,https://bioportal.bioontology.org/ontologies/SAO,http://bioportal.bioontology.org/ontologies/1068
+bioportal-sdo,Sleep Domain Ontology,https://lod-cloud.net/dataset/bioportal-sdo,https://bioportal.bioontology.org/ontologies/SDO,http://bioportal.bioontology.org/ontologies/1651
+bioportal-sio,SemanticScience Integrated Ontology,https://lod-cloud.net/dataset/bioportal-sio,https://bioportal.bioontology.org/ontologies/SIO,http://bioportal.bioontology.org/ontologies/1532
+bioportal-snomedct,SNOMED Clinical Terms,https://lod-cloud.net/dataset/bioportal-snomedct,,http://bioportal.bioontology.org/ontologies/1353
+bioportal-sopharm,Suggested Ontology for Pharmacogenomics,https://lod-cloud.net/dataset/bioportal-sopharm,https://bioportal.bioontology.org/ontologies/SOPHARM,http://bioportal.bioontology.org/ontologies/1061
+bioportal-swo,Software Ontology,https://lod-cloud.net/dataset/bioportal-swo,Software Ontology,http://bioportal.bioontology.org/ontologies/1413
+bioportal-teo,Time Event Ontology,https://lod-cloud.net/dataset/bioportal-teo,https://bioportal.bioontology.org/ontologies/TEO,http://bioportal.bioontology.org/ontologies/3042
+bioportal-tmo,Translational Medicine Ontology,https://lod-cloud.net/dataset/bioportal-tmo,Translational Medicine Ontology,http://bioportal.bioontology.org/ontologies/1461
+bioportal-vo,Vaccine Ontology,https://lod-cloud.net/dataset/bioportal-vo,https://bioportal.bioontology.org/ontologies/VO,http://bioportal.bioontology.org/ontologies/1172
+bioportal-so_x1,Sequence types and features,https://lod-cloud.net/dataset/bioportal-so_x1,https://bioportal.bioontology.org/ontologies/SO,http://bioportal.bioontology.org/ontologies/1109
+bioportal-amino-acid,Amino Acid,https://lod-cloud.net/dataset/bioportal-amino-acid,https://bioportal.bioontology.org/ontologies/AMINO-ACID,https://bioportal.bioontology.org/ontologies/AMINO-ACID
+bioportal-bootstrep,Gene Regulation Ontology,https://lod-cloud.net/dataset/bioportal-bootstrep,https://bioportal.bioontology.org/ontologies/GRO,http://bioportal.bioontology.org/ontologies/1106
+bioportal-cco,Cell Cycle Ontology,https://lod-cloud.net/dataset/bioportal-cco,https://bioportal.bioontology.org/ontologies/CCO,http://bioportal.bioontology.org/ontologies/1507
+bioportal-cdao,Comparative Data Analysis Ontology,https://lod-cloud.net/dataset/bioportal-cdao,https://bioportal.bioontology.org/ontologies/CDAO,http://bioportal.bioontology.org/ontologies/1128
+bioportal-chebi,Chemical entities of biological interest,https://lod-cloud.net/dataset/bioportal-chebi,https://bioportal.bioontology.org/ontologies/CHEBI,http://bioportal.bioontology.org/ontologies/1007
+bioportal-go_x1,Gene Ontology Extension,https://lod-cloud.net/dataset/bioportal-go_x1,https://bioportal.bioontology.org/ontologies/GO-EXT,http://bioportal.bioontology.org/ontologies/1506
+bioportal-go_x2,Gene Ontology,https://lod-cloud.net/dataset/bioportal-go_x2,https://bioportal.bioontology.org/ontologies/GO,http://bioportal.bioontology.org/ontologies/1070
+bioportal-gro_x2,Gene Regulation Ontology,https://lod-cloud.net/dataset/bioportal-gro_x2,https://bioportal.bioontology.org/ontologies/GRO,http://bioportal.bioontology.org/ontologies/1082
+bioportal-imgt,IMGT-ONTOLOGY,https://lod-cloud.net/dataset/bioportal-imgt,https://bioportal.bioontology.org/ontologies/IMGT-ONTOLOGY,http://bioportal.bioontology.org/ontologies/1491
+bioportal-mao,Multiple alignment,https://lod-cloud.net/dataset/bioportal-mao,,http://bioportal.bioontology.org/ontologies/1026
+bioportal-mccl_x1,Cell line ontology,https://lod-cloud.net/dataset/bioportal-mccl_x1,https://bioportal.bioontology.org/ontologies/CLO,http://bioportal.bioontology.org/ontologies/1245
+bioportal-mego,MeGO,https://lod-cloud.net/dataset/bioportal-mego,https://bioportal.bioontology.org/ontologies/MEGO,http://bioportal.bioontology.org/ontologies/1257
+bioportal-mi,Protein-protein interaction,https://lod-cloud.net/dataset/bioportal-mi,,http://bioportal.bioontology.org/ontologies/1040
+bioportal-mo,MGED Ontology,https://lod-cloud.net/dataset/bioportal-mo,https://bioportal.bioontology.org/ontologies/MO,http://bioportal.bioontology.org/ontologies/1131
+bioportal-mod,Protein modification,https://lod-cloud.net/dataset/bioportal-mod,https://bioportal.bioontology.org/ontologies/PSIMOD,http://bioportal.bioontology.org/ontologies/1041
+bioportal-nddf,National Drug Data File,https://lod-cloud.net/dataset/bioportal-nddf,https://bioportal.bioontology.org/ontologies/NDDF,http://bioportal.bioontology.org/ontologies/1424
+bioportal-ndfrt,National Drug File,https://lod-cloud.net/dataset/bioportal-ndfrt,https://bioportal.bioontology.org/ontologies/NDFRT,http://bioportal.bioontology.org/ontologies/1352
+bioportal-peo,Parasite Experiment Ontology,https://lod-cloud.net/dataset/bioportal-peo,https://bioportal.bioontology.org/ontologies/PEO,http://bioportal.bioontology.org/ontologies/1335
+bioportal-phare,PHARE,https://lod-cloud.net/dataset/bioportal-phare,https://bioportal.bioontology.org/ontologies/PHARE,http://bioportal.bioontology.org/ontologies/1550
+bioportal-rxnorm,RxNORM,https://lod-cloud.net/dataset/bioportal-rxnorm,https://bioportal.bioontology.org/ontologies/RXNORM,http://bioportal.bioontology.org/ontologies/1423
+bioportal-sbo,Systems Biology,https://lod-cloud.net/dataset/bioportal-sbo,https://bioportal.bioontology.org/ontologies/SBO,http://bioportal.bioontology.org/ontologies/1046
+bioportal-snpo,SNP-Ontology,https://lod-cloud.net/dataset/bioportal-snpo,https://bioportal.bioontology.org/ontologies/SNPO,http://bioportal.bioontology.org/ontologies/1058
+bioportal-vandf,VANDF,https://lod-cloud.net/dataset/bioportal-vandf,https://bioportal.bioontology.org/ontologies/VANDF,http://bioportal.bioontology.org/ontologies/1527
+bioportal-atmo,African Traditional Medicine,https://lod-cloud.net/dataset/bioportal-atmo,,http://bioportal.bioontology.org/ontologies/1099
+bioportal-doid,Human disease ontology,https://lod-cloud.net/dataset/bioportal-doid,https://bioportal.bioontology.org/ontologies/DOID,http://bioportal.bioontology.org/ontologies/1009
+bioportal-ehda,"Human developmental anatomy, timed version",https://lod-cloud.net/dataset/bioportal-ehda,https://bioportal.bioontology.org/ontologies/EHDA,https://bioportal.bioontology.org/ontologies/EHDA
+bioportal-mcv,MIxS Controlled Vocabularies,https://lod-cloud.net/dataset/bioportal-mcv,https://bioportal.bioontology.org/ontologies/MIXSCV,http://bioportal.bioontology.org/ontologies/3000
+bioportal-natpro,Natural Products Ontology,https://lod-cloud.net/dataset/bioportal-natpro,https://bioportal.bioontology.org/ontologies/NATPRO,http://bioportal.bioontology.org/ontologies/3004
+bioportal-pma,PMA 2010,https://lod-cloud.net/dataset/bioportal-pma,,http://bioportal.bioontology.org/ontologies/1497
+bioportal-rs,Rat Strain Ontology,https://lod-cloud.net/dataset/bioportal-rs,https://bioportal.bioontology.org/ontologies/RS,http://bioportal.bioontology.org/ontologies/1150
+tcga-roadmap,TCGA Roadmap,https://lod-cloud.net/dataset/tcga-roadmap,,http://tcga.github.com/Roadmap/
+dbpedia,DBpedia,https://lod-cloud.net/dataset/dbpedia,,http://dbpedia.org/
+linkedct,LinkedCT,https://lod-cloud.net/dataset/linkedct,,http://linkedct.org/
+bioportal-bp,BioPAX,https://lod-cloud.net/dataset/bioportal-bp,https://bioportal.bioontology.org/ontologies/BP,https://lod-cloud.net/dataset/bioportal-bp
+bioportal-chem2bio2owl,Systems Chemical Biology/Chemogenomics,https://lod-cloud.net/dataset/bioportal-chem2bio2owl,https://bioportal.bioontology.org/ontologies/CHEMBIO,http://bioportal.bioontology.org/ontologies/1615
+bioportal-dikb-evidence,DIKB-Evidence-Ontology,https://lod-cloud.net/dataset/bioportal-dikb-evidence,DIKB-Evidence-Ontology,http://bioportal.bioontology.org/ontologies/1672
+bioportal-iev,Event (INOH pathway ontology),https://lod-cloud.net/dataset/bioportal-iev,https://old.datahub.io/dataset/bioportal-iev,http://bioportal.bioontology.org/ontologies/1011
+bioportal-imr,Molecule role (INOH Protein name/family name ontology),https://lod-cloud.net/dataset/bioportal-imr,http://linkeddatacatalog.dws.informatik.uni-mannheim.de/id/dataset/bioportal-imr,http://bioportal.bioontology.org/ontologies/1029
+bioportal-jerm,SysMO-JERM,https://lod-cloud.net/dataset/bioportal-jerm,https://old.datahub.io/dataset/bioportal-jerm,http://bioportal.bioontology.org/ontologies/1488
+bioportal-mdr,MedDRA,https://lod-cloud.net/dataset/bioportal-mdr,https://bioportal.bioontology.org/ontologies/MEDDRA,http://bioportal.bioontology.org/ontologies/1422
+bioportal-ms,Mass spectrometry,https://lod-cloud.net/dataset/bioportal-ms,https://bioportal.bioontology.org/ontologies/MS,http://bioportal.bioontology.org/ontologies/1105
+bioportal-pdq,Physician Data Query,https://lod-cloud.net/dataset/bioportal-pdq,https://bioportal.bioontology.org/ontologies/PDQ,http://bioportal.bioontology.org/ontologies/1349
+bioportal-pr,PRotein Ontology (PRO),https://lod-cloud.net/dataset/bioportal-pr,https://bioportal.bioontology.org/ontologies/PR,http://bioportal.bioontology.org/ontologies/1062
+bioportal-rex,Physico-chemical process,https://lod-cloud.net/dataset/bioportal-rex,https://bioportal.bioontology.org/ontologies/REX,http://bioportal.bioontology.org/ontologies/1043
+micro-coronavirus,Coronavirus dataset,https://lod-cloud.net/dataset/micro-coronavirus,,http://semweb.csdb.cn/micro
+bioportal-ncbitaxon,NCBI organismal classification,https://lod-cloud.net/dataset/bioportal-ncbitaxon,https://bioportal.bioontology.org/ontologies/NCBITAXON,http://bioportal.bioontology.org/ontologies/1132
+bioportal-adw,Animal natural history and life history,https://lod-cloud.net/dataset/bioportal-adw,https://bioportal.bioontology.org/ontologies/ADW,https://bioportal.bioontology.org/ontologies/ADW
+bioportal-bt,BioTop,https://lod-cloud.net/dataset/bioportal-bt,https://bioportal.bioontology.org/ontologies/BT,http://bioportal.bioontology.org/ontologies/1134
+bioportal-cpt,Current Procedural Terminology,https://lod-cloud.net/dataset/bioportal-cpt,https://bioportal.bioontology.org/ontologies/CPT,http://bioportal.bioontology.org/ontologies/1504
+bioportal-fbbi,Biological imaging methods,https://lod-cloud.net/dataset/bioportal-fbbi,https://bioportal.bioontology.org/ontologies/FBbi,http://bioportal.bioontology.org/ontologies/1023
+bioportal-icnp,International Classification for Nursing Practice,https://lod-cloud.net/dataset/bioportal-icnp,https://bioportal.bioontology.org/ontologies/ICNP,http://bioportal.bioontology.org/ontologies/1401
+bioportal-lipro,Lipid Ontology,https://lod-cloud.net/dataset/bioportal-lipro,https://bioportal.bioontology.org/ontologies/LIPRO,http://bioportal.bioontology.org/ontologies/1183
+bioportal-medlineplus,MedlinePlus Health Topics,https://lod-cloud.net/dataset/bioportal-medlineplus,https://bioportal.bioontology.org/ontologies/MEDLINEPLUS,http://bioportal.bioontology.org/ontologies/1347
+bioportal-nigo,Neural-Immune Gene Ontology,https://lod-cloud.net/dataset/bioportal-nigo,https://bioportal.bioontology.org/ontologies/NIGO,http://bioportal.bioontology.org/ontologies/1539
+bioportal-oboe-sbc,OBOE SBC,https://lod-cloud.net/dataset/bioportal-oboe-sbc,https://bioportal.bioontology.org/ontologies/OBOE-SBC,http://bioportal.bioontology.org/ontologies/1523
+bioportal-pedterm,Pediatric Terminology,https://lod-cloud.net/dataset/bioportal-pedterm,https://bioportal.bioontology.org/ontologies/PEDTERM,http://bioportal.bioontology.org/ontologies/1640
+bioportal-propreo,Proteomics data and process provenance,https://lod-cloud.net/dataset/bioportal-propreo,https://bioportal.bioontology.org/ontologies/PROPREO,http://bioportal.bioontology.org/ontologies/1039
+bioportal-sep,Sample processing and separation techniques,https://lod-cloud.net/dataset/bioportal-sep,https://bioportal.bioontology.org/ontologies/SEP,http://bioportal.bioontology.org/ontologies/1044
+bioportal-unitsontology,Units Ontology,https://lod-cloud.net/dataset/bioportal-unitsontology,https://bioportal.bioontology.org/ontologies/UNITSONT,http://bioportal.bioontology.org/ontologies/1650
+bioportal-omim,Online Mendelian Inheritance in Man,https://lod-cloud.net/dataset/bioportal-omim,https://bioportal.bioontology.org/ontologies/OMIM,http://bioportal.bioontology.org/ontologies/1348
+bioportal-aao,Amphibian gross anatomy,https://lod-cloud.net/dataset/bioportal-aao,,http://bioportal.bioontology.org/ontologies/1090
+bioportal-air,AI/RHEUM,https://lod-cloud.net/dataset/bioportal-air,https://bioportal.bioontology.org/ontologies/AI-RHEUM,http://bioportal.bioontology.org/ontologies/1430
+bioportal-bho,Bleeding History Phenotype,https://lod-cloud.net/dataset/bioportal-bho,https://bioportal.bioontology.org/ontologies/BHO,http://bioportal.bioontology.org/ontologies/1116
+bioportal-bto,BRENDA tissue / enzyme source,https://lod-cloud.net/dataset/bioportal-bto,https://bioportal.bioontology.org/ontologies/BTO,http://bioportal.bioontology.org/ontologies/1005
+bioportal-cst,COSTART,https://lod-cloud.net/dataset/bioportal-cst,https://bioportal.bioontology.org/ontologies/COSTART,http://bioportal.bioontology.org/ontologies/1341
+bioportal-ctcae,Common Terminology Criteria for Adverse Events,https://lod-cloud.net/dataset/bioportal-ctcae,https://bioportal.bioontology.org/ontologies/CTCAE,http://bioportal.bioontology.org/ontologies/1415
+bioportal-ctx,Cerebrotendinous xanthomatosis,https://lod-cloud.net/dataset/bioportal-ctx,https://bioportal.bioontology.org/ontologies/CTX,http://bioportal.bioontology.org/ontologies/3025
+bioportal-dc_cl,Dendritic cell,https://lod-cloud.net/dataset/bioportal-dc_cl,,http://bioportal.bioontology.org/ontologies/1144
+bioportal-ehdaa,"Human developmental anatomy, abstract version",https://lod-cloud.net/dataset/bioportal-ehdaa,https://bioportal.bioontology.org/ontologies/EHDAA,http://bioportal.bioontology.org/ontologies/1021
+bioportal-ehdaa2,"Human developmental anatomy, abstract version, v2",https://lod-cloud.net/dataset/bioportal-ehdaa2,https://bioportal.bioontology.org/ontologies/EHDAA2,http://bioportal.bioontology.org/ontologies/1517
+bioportal-ev,eVOC (Expressed Sequence Annotation for Humans),https://lod-cloud.net/dataset/bioportal-ev,https://old.datahub.io/bg/dataset/bioportal-ev,http://bioportal.bioontology.org/ontologies/1013
+bioportal-fbbt,Drosophila gross anatomy,https://lod-cloud.net/dataset/bioportal-fbbt,https://bioportal.bioontology.org/ontologies/FB-BT,http://bioportal.bioontology.org/ontologies/1015
+bioportal-fhho,Family Health History Ontology,https://lod-cloud.net/dataset/bioportal-fhho,https://bioportal.bioontology.org/ontologies/FHHO,http://bioportal.bioontology.org/ontologies/1126
+bioportal-hao,Hymenoptera Anatomy Ontology,https://lod-cloud.net/dataset/bioportal-hao,https://bioportal.bioontology.org/ontologies/HAO,http://bioportal.bioontology.org/ontologies/1362
+bioportal-hlth_indics,HEALTH_INDICATORS,https://lod-cloud.net/dataset/bioportal-hlth_indics,https://old.datahub.io/nl/dataset/f6e3c9e6-e3f1-4b8c-b218-bd5f0c700488,http://bioportal.bioontology.org/ontologies/1581
+bioportal-hp_x1,Human Phenotype Ontology,https://lod-cloud.net/dataset/bioportal-hp_x1,https://bioportal.bioontology.org/ontologies/HP,http://bioportal.bioontology.org/ontologies/1125
+bioportal-icd10,ICD10,https://lod-cloud.net/dataset/bioportal-icd10,https://bioportal.bioontology.org/ontologies/ICD10,http://bioportal.bioontology.org/ontologies/1516
+bioportal-icd10cm,ICD10CM,https://lod-cloud.net/dataset/bioportal-icd10cm,https://bioportal.bioontology.org/ontologies/ICD10CM,http://bioportal.bioontology.org/ontologies/1553
+bioportal-icd9cm,International Classification of Diseases,https://lod-cloud.net/dataset/bioportal-icd9cm,https://bioportal.bioontology.org/ontologies/ICD9CM,http://bioportal.bioontology.org/ontologies/1101
+bioportal-icpc,International Classification of Primary Care,https://lod-cloud.net/dataset/bioportal-icpc,https://bioportal.bioontology.org/ontologies/ICPC2P,http://bioportal.bioontology.org/ontologies/1344
+bioportal-icpc2p,ICPC-2 PLUS,https://lod-cloud.net/dataset/bioportal-icpc2p,https://bioportal.bioontology.org/ontologies/ICPC2P,http://bioportal.bioontology.org/ontologies/1429
+bioportal-ma,Mouse adult gross anatomy,https://lod-cloud.net/dataset/bioportal-ma,https://bioportal.bioontology.org/ontologies/MA,http://bioportal.bioontology.org/ontologies/1000
+bioportal-mat,Minimal anatomical terminology,https://lod-cloud.net/dataset/bioportal-mat,https://bioportal.bioontology.org/ontologies/MAT,http://bioportal.bioontology.org/ontologies/1152
+bioportal-mcbcc,Breast tissue cell lines,https://lod-cloud.net/dataset/bioportal-mcbcc,https://bioportal.bioontology.org/ontologies/MCBCC,http://bioportal.bioontology.org/ontologies/1438
+bioportal-mccl,Cell line ontology,https://lod-cloud.net/dataset/bioportal-mccl,https://bioportal.bioontology.org/ontologies/CLO,http://bioportal.bioontology.org/ontologies/1541
+bioportal-mfo,Medaka fish anatomy and development,https://lod-cloud.net/dataset/bioportal-mfo,https://bioportal.bioontology.org/ontologies/MFO,http://bioportal.bioontology.org/ontologies/1027
+bioportal-mp,Mammalian phenotype,https://lod-cloud.net/dataset/bioportal-mp,https://bioportal.bioontology.org/ontologies/MP,http://bioportal.bioontology.org/ontologies/1025
+bioportal-mpath,Mouse pathology,https://lod-cloud.net/dataset/bioportal-mpath,https://bioportal.bioontology.org/ontologies/MPATH,http://bioportal.bioontology.org/ontologies/1031
+bioportal-ogmd,Ontology of Glucose Metabolism Disorder,https://lod-cloud.net/dataset/bioportal-ogmd,https://bioportal.bioontology.org/ontologies/OGMD,http://bioportal.bioontology.org/ontologies/1085
+bioportal-omit,Ontology for MicroRNA Target Prediction,https://lod-cloud.net/dataset/bioportal-omit,,http://bioportal.bioontology.org/ontologies/1505
+bioportal-ontoorpha,Orphanet Ontology of Rare Diseases,https://lod-cloud.net/dataset/bioportal-ontoorpha,https://bioportal.bioontology.org/ontologies/ORDO,http://bioportal.bioontology.org/ontologies/1586
+bioportal-pko,PKO_Re,https://lod-cloud.net/dataset/bioportal-pko,https://old.datahub.io/it/dataset/bioportal-pko,http://bioportal.bioontology.org/ontologies/1409
+bioportal-shr,Student Health Record,https://lod-cloud.net/dataset/bioportal-shr,https://bioportal.bioontology.org/ontologies/SHR,http://bioportal.bioontology.org/ontologies/1665
+bioportal-sso,Syndromic Surveillance Ontology,https://lod-cloud.net/dataset/bioportal-sso,https://bioportal.bioontology.org/ontologies/SSO,http://bioportal.bioontology.org/ontologies/1394
+bioportal-tao,Teleost Anatomy Ontology,https://lod-cloud.net/dataset/bioportal-tao,https://bioportal.bioontology.org/ontologies/TAO,http://bioportal.bioontology.org/ontologies/1110
+bioportal-tm-signs-and-sympts,Traditional Medicine Signs and Symptoms Value Set,https://lod-cloud.net/dataset/bioportal-tm-signs-and-sympts,https://bioportal.bioontology.org/ontologies/TM-SIGNS-AND-SYMPTS,http://bioportal.bioontology.org/ontologies/1572
+bioportal-uberon,Uber anatomy ontology,https://lod-cloud.net/dataset/bioportal-uberon,https://bioportal.bioontology.org/ontologies/UBERON,http://bioportal.bioontology.org/ontologies/1404
+bioportal-vhog,vertebrate Homologous Organ Groups,https://lod-cloud.net/dataset/bioportal-vhog,https://bioportal.bioontology.org/ontologies/VHOG,http://bioportal.bioontology.org/ontologies/1574
+bioportal-wbbt,C. elegans gross anatomy,https://lod-cloud.net/dataset/bioportal-wbbt,https://bioportal.bioontology.org/ontologies/WB-BT,https://bioportal.bioontology.org/ontologies/WB-BT
+bioportal-who,WHO Adverse Reaction Terminology,https://lod-cloud.net/dataset/bioportal-who,https://bioportal.bioontology.org/ontologies/WHO-ART,http://bioportal.bioontology.org/ontologies/1354
+bioportal-xao,Xenopus anatomy and development,https://lod-cloud.net/dataset/bioportal-xao,https://bioportal.bioontology.org/ontologies/XAO,http://bioportal.bioontology.org/ontologies/1095
+bioportal-zfa,Zebrafish anatomy and development,https://lod-cloud.net/dataset/bioportal-zfa,https://bioportal.bioontology.org/ontologies/ZFA,http://bioportal.bioontology.org/ontologies/1051
+bioportal-aba,ABA Adult Mouse Brain,https://lod-cloud.net/dataset/bioportal-aba,https://bioportal.bioontology.org/ontologies/ABA-AMB,
+bioportal-aeo,Anatomical Entity Ontology,https://lod-cloud.net/dataset/bioportal-aeo,https://bioportal.bioontology.org/ontologies/AEO,http://bioportal.bioontology.org/ontologies/1568
+bioportal-apo,Ascomycete phenotype ontology,https://lod-cloud.net/dataset/bioportal-apo,https://bioportal.bioontology.org/ontologies/APO,https://bioportal.bioontology.org/ontologies/APO
+bioportal-basic-vertebrate-gross-anatomy,Basic Vertebrate Anatomy ,https://lod-cloud.net/dataset/bioportal-basic-vertebrate-gross-anatomy,https://old.datahub.io/sl/dataset/bioportal-basic-vertebrate-gross-anatomy,https://old.datahub.io/sl/dataset/bioportal-basic-vertebrate-gross-anatomy
+bioportal-bcgo,Breast Cancer Grading Ontology,https://lod-cloud.net/dataset/bioportal-bcgo,https://bioportal.bioontology.org/ontologies/BCGO,http://bioportal.bioontology.org/ontologies/1304
+bioportal-bila,Bilateria anatomy,https://lod-cloud.net/dataset/bioportal-bila,https://old.datahub.io/it/dataset/bioportal-bila,http://bioportal.bioontology.org/ontologies/1114
+bioportal-bro_x1,Biomedical Resource Ontology,https://lod-cloud.net/dataset/bioportal-bro_x1,https://bioportal.bioontology.org/ontologies/BRO,http://bioportal.bioontology.org/ontologies/1104
+bioportal-cl,Cell type,https://lod-cloud.net/dataset/bioportal-cl,https://bioportal.bioontology.org/ontologies/CL,http://bioportal.bioontology.org/ontologies/1006
+bioportal-cmo,Clinical Measurement Ontology,https://lod-cloud.net/dataset/bioportal-cmo,https://bioportal.bioontology.org/ontologies/CMO,http://bioportal.bioontology.org/ontologies/1583
+bioportal-cogat,Cognitive Atlas,https://lod-cloud.net/dataset/bioportal-cogat,https://bioportal.bioontology.org/ontologies/COGAT,http://bioportal.bioontology.org/ontologies/1633
+bioportal-envo,Environment Ontology,https://lod-cloud.net/dataset/bioportal-envo,https://bioportal.bioontology.org/ontologies/ENVO,https://bioportal.bioontology.org/ontologies/ENVO
+bioportal-eo,Plant environmental conditions,https://lod-cloud.net/dataset/bioportal-eo,https://old.datahub.io/it/dataset/bioportal-eo,http://bioportal.bioontology.org/ontologies/1036
+bioportal-epileponto,Epilepsy,https://lod-cloud.net/dataset/bioportal-epileponto,https://bioportal.bioontology.org/ontologies/EPILONT,https://bioportal.bioontology.org/ontologies/EPILONT
+bioportal-exo,ExO,https://lod-cloud.net/dataset/bioportal-exo,https://bioportal.bioontology.org/ontologies/EXO,https://bioportal.bioontology.org/ontologies/EXO
+bioportal-fbcv,FlyBase Controlled Vocabulary,https://lod-cloud.net/dataset/bioportal-fbcv,https://bioportal.bioontology.org/ontologies/FB-CV,http://bioportal.bioontology.org/ontologies/1017
+bioportal-fbsp,Fly taxonomy,https://lod-cloud.net/dataset/bioportal-fbsp,https://bioportal.bioontology.org/ontologies/FB-SP,https://bioportal.bioontology.org/ontologies/FB-SP
+bioportal-fda-meddevice,FDA Medical Devices (2010),https://lod-cloud.net/dataset/bioportal-fda-meddevice,https://old.datahub.io/dataset/bioportal-fda-meddevice,http://bioportal.bioontology.org/ontologies/1576
+bioportal-gro_x1,Cereal plant gross anatomy,https://lod-cloud.net/dataset/bioportal-gro_x1,https://bioportal.bioontology.org/ontologies/GRO-CPGA,http://bioportal.bioontology.org/ontologies/1001
+bioportal-hcpcs,HCPCS,https://lod-cloud.net/dataset/bioportal-hcpcs,https://bioportal.bioontology.org/ontologies/HCPCS,http://bioportal.bioontology.org/ontologies/1529
+bioportal-hugo,HUGO,https://lod-cloud.net/dataset/bioportal-hugo,https://bioportal.bioontology.org/ontologies/HGNC,http://bioportal.bioontology.org/ontologies/1528
+bioportal-icd10pcs,ICD-10-PCS,https://lod-cloud.net/dataset/bioportal-icd10pcs,https://bioportal.bioontology.org/ontologies/ICD10PCS,https://bioportal.bioontology.org/ontologies/ICD10PCS
+bioportal-icf_x1,"International Classification of Functioning, Disability and Health (ICF)",https://lod-cloud.net/dataset/bioportal-icf_x1,https://bioportal.bioontology.org/ontologies/ICF,
+bioportal-icps,ICPS Network,https://lod-cloud.net/datasets?search=ICPS%20Network,https://bioportal.bioontology.org/ontologies/ICPS,https://bioportal.bioontology.org/ontologies/ICPS
+bioportal-ixno,IxnO,https://lod-cloud.net/dataset/bioportal-ixno,https://bioportal.bioontology.org/ontologies/IXNO,http://bioportal.bioontology.org/ontologies/1614
+bioportal-mddb,Master Drug Data Base,https://lod-cloud.net/dataset/bioportal-mddb,https://bioportal.bioontology.org/ontologies/MDDB,http://bioportal.bioontology.org/ontologies/1426
+bioportal-mmo,Measurement Method Ontology,https://lod-cloud.net/dataset/bioportal-mmo,https://bioportal.bioontology.org/ontologies/MMO,http://bioportal.bioontology.org/ontologies/1584
+bioportal-mthch,Metathesaurus CPT Hierarchical Terms,https://lod-cloud.net/dataset/bioportal-mthch,https://old.datahub.io/dataset/bioportal-mthch,http://bioportal.bioontology.org/ontologies/1510
+bioportal-neomarkontology,Neomark Oral Cancer-Centred Ontology,https://lod-cloud.net/dataset/bioportal-neomarkontology,https://bioportal.bioontology.org/ontologies/NEOMARK3,http://bioportal.bioontology.org/ontologies/1501
+bioportal-pmr,Physical Medicine and Rehabilitation,https://lod-cloud.net/dataset/bioportal-pmr,https://bioportal.bioontology.org/ontologies/PMR,http://bioportal.bioontology.org/ontologies/3015
+bioportal-po,Plant Anatomy,https://lod-cloud.net/dataset/bioportal-po,https://bioportal.bioontology.org/ontologies/PAE,http://bioportal.bioontology.org/ontologies/1108
+bioportal-po_x2,Plant Ontology,https://lod-cloud.net/dataset/bioportal-po_x2,https://bioportal.bioontology.org/ontologies/PO,http://bioportal.bioontology.org/ontologies/1587
+bioportal-pw,Pathway ontology,https://lod-cloud.net/dataset/bioportal-pw,https://bioportal.bioontology.org/ontologies/PW,http://bioportal.bioontology.org/ontologies/1035
+bioportal-repo,Reproductive trait and phenotype ontology,https://lod-cloud.net/dataset/bioportal-repo,https://bioportal.bioontology.org/ontologies/REPO,http://bioportal.bioontology.org/ontologies/1552
+bioportal-roleo,Role Ontology,https://lod-cloud.net/dataset/bioportal-roleo,https://bioportal.bioontology.org/ontologies/ROLEO,http://bioportal.bioontology.org/ontologies/1538
+bioportal-sitbac,Situation-Based Access Control,https://lod-cloud.net/dataset/bioportal-sitbac,https://bioportal.bioontology.org/ontologies/SITBAC,http://bioportal.bioontology.org/ontologies/1237
+bioportal-soy,SoyOntology,https://lod-cloud.net/dataset/bioportal-soy,https://bioportal.bioontology.org/ontologies/SOY,http://bioportal.bioontology.org/ontologies/3028
+bioportal-spd,Spider Ontology,https://lod-cloud.net/dataset/bioportal-spd,https://bioportal.bioontology.org/ontologies/SPD,http://bioportal.bioontology.org/ontologies/1091
+bioportal-spto,Solanaceae Phenotype Ontology,https://lod-cloud.net/dataset/bioportal-spto,https://bioportal.bioontology.org/ontologies/SPTO,http://bioportal.bioontology.org/ontologies/3029
+bioportal-tgma,Mosquito gross anatomy,https://lod-cloud.net/dataset/bioportal-tgma,https://bioportal.bioontology.org/ontologies/TGMA,http://bioportal.bioontology.org/ontologies/1030
+bioportal-to,Plant Trait Ontology,https://lod-cloud.net/dataset/bioportal-to,https://bioportal.bioontology.org/ontologies/PTO,http://bioportal.bioontology.org/ontologies/1037
+bioportal-tok,TOK_Ontology,https://lod-cloud.net/dataset/bioportal-tok,https://bioportal.bioontology.org/ontologies/TOK,http://bioportal.bioontology.org/ontologies/1418
+bioportal-tto,Teleost taxonomy,https://lod-cloud.net/dataset/bioportal-tto,https://bioportal.bioontology.org/ontologies/TTO,http://bioportal.bioontology.org/ontologies/1081
+bioportal-vao,Vertebrate Anatomy Ontology,https://lod-cloud.net/dataset/bioportal-vao,https://bioportal.bioontology.org/ontologies/VSAO,http://bioportal.bioontology.org/ontologies/1555
+bioportal-vivo,VIVO,https://lod-cloud.net/dataset/bioportal-vivo,https://bioportal.bioontology.org/ontologies/VIVO,http://bioportal.bioontology.org/ontologies/1699
+bioportal-vt,Vertebrate Trait Ontology,https://lod-cloud.net/dataset/bioportal-vt,https://bioportal.bioontology.org/ontologies/VT,http://bioportal.bioontology.org/ontologies/1659
+bioportal-xco,Experimental Conditions Ontology,https://lod-cloud.net/dataset/bioportal-xco,https://bioportal.bioontology.org/ontologies/XCO,http://bioportal.bioontology.org/ontologies/1585
+bioportal-ypo,Yeast phenotypes,https://lod-cloud.net/dataset/bioportal-ypo,https://old.datahub.io/dataset/bioportal-ypo,http://bioportal.bioontology.org/ontologies/1115
+bioportal-mhc,MaHCO - An MHC Ontology,https://lod-cloud.net/dataset/bioportal-mhc,https://bioportal.bioontology.org/ontologies/MHC,http://bioportal.bioontology.org/ontologies/1088
+bioportal-tads,Tick gross anatomy,https://lod-cloud.net/dataset/bioportal-tads,https://bioportal.bioontology.org/ontologies/TADS,http://bioportal.bioontology.org/ontologies/1065
+bioportal-cno,Computational Neuroscience Ontology,https://lod-cloud.net/dataset/bioportal-cno,https://bioportal.bioontology.org/ontologies/CNO,http://bioportal.bioontology.org/ontologies/3003
+bioportal-gfo,General Formal Ontology,https://lod-cloud.net/dataset/bioportal-gfo,https://bioportal.bioontology.org/ontologies/GFO,http://bioportal.bioontology.org/ontologies/1439
+bioportal-lhn,Loggerhead nesting,https://lod-cloud.net/dataset/bioportal-lhn,https://bioportal.bioontology.org/ontologies/LHN,http://bioportal.bioontology.org/ontologies/1024
+bioportal-uo,Units of measurement,https://lod-cloud.net/dataset/bioportal-uo,https://bioportal.bioontology.org/ontologies/UO,http://bioportal.bioontology.org/ontologies/1112
+bioportal-fypo,Fission Yeast Phenotype Ontology,https://lod-cloud.net/dataset/bioportal-fypo,https://bioportal.bioontology.org/ontologies/FYPO,http://bioportal.bioontology.org/ontologies/1689
+chemdb-estimatedProperties,chemdb estimated properties dataset,https://lod-cloud.net/dataset/chemdb-estimatedProperties,,http://chemdc.casdc.cn/
+bio2rdf-irefindex,Bio2RDF::Irefindex,https://lod-cloud.net/dataset/bio2rdf-irefindex,,http://irefindex.bio2rdf.org/
+bio2rdf-ncbigene,Bio2RDF::Ncbigene,https://lod-cloud.net/dataset/bio2rdf-ncbigene,,http://ncbigene.bio2rdf.org/
+bio2rdf-pubmed,Bio2RDF::Pubmed,https://lod-cloud.net/dataset/bio2rdf-pubmed,,http://pubmed.bio2rdf.org/
+bio2rdf-sgd,Bio2RDF::Sgd,https://lod-cloud.net/dataset/bio2rdf-sgd,,http://sgd.bio2rdf.org/
+bio2rdf-taxonomy,Bio2RDF::Taxonomy,https://lod-cloud.net/dataset/bio2rdf-taxonomy,,http://taxonomy.bio2rdf.org/
+bio2rdf-clinicaltrials,Bio2RDF::Clinicaltrials,https://lod-cloud.net/dataset/bio2rdf-clinicaltrials,,http://clinicaltrials.bio2rdf.org/
+cz-sidc-drugs,Medicinal products marketed in Czech Republic,https://lod-cloud.net/dataset/cz-sidc-drugs,,http://linked.opendata.cz/resource/dataset/sukl/drugs
+cz-eh-1-atc,ATC groups,https://lod-cloud.net/dataset/cz-eh-1-atc,https://bioportal.bioontology.org/ontologies/ATC,http://linked.opendata.cz/resource/dataset/atc
+bioportal-bspo,Spatial Ontology,https://lod-cloud.net/dataset/bioportal-bspo,https://bioportal.bioontology.org/ontologies/BSPO,http://bioportal.bioontology.org/ontologies/1078
+bioportal-nonrctontology,Non Randomized Controlled Trials Ontology,https://lod-cloud.net/dataset/bioportal-nonrctontology,https://bioportal.bioontology.org/ontologies/NONRCTO,http://bioportal.bioontology.org/ontologies/3012
+bioportal-oboe,OBOE,https://lod-cloud.net/dataset/bioportal-oboe,https://bioportal.bioontology.org/ontologies/OBOE,http://bioportal.bioontology.org/ontologies/1524
+bioportal-po_x1,Plant Growth and Development Stage,https://lod-cloud.net/dataset/bioportal-po_x1,https://bioportal.bioontology.org/ontologies/PSDS,http://bioportal.bioontology.org/ontologies/1038
+bioportal-rctontology,Randomized Controlled Trials (RCT) Ontology,https://lod-cloud.net/dataset/bioportal-rctontology,https://bioportal.bioontology.org/ontologies/RCTONT,http://bioportal.bioontology.org/ontologies/1676
+uniprot,UniProt,https://lod-cloud.net/dataset/uniprot,,http://www.uniprot.org/
+bioportal-fao,Fungal gross anatomy,https://lod-cloud.net/dataset/bioportal-fao,https://bioportal.bioontology.org/ontologies/FAO,https://bioportal.bioontology.org/ontologies/FAO
+biosamples-rdf,BioSamples RDF,https://lod-cloud.net/dataset/biosamples-rdf,,None
+gene-expression-atlas-rdf,Gene Expression Atlas RDF,https://lod-cloud.net/dataset/gene-expression-atlas-rdf,,None
+bioportal-ddanat,Dictyostelium discoideum anatomy,https://lod-cloud.net/dataset/bioportal-ddanat,https://bioportal.bioontology.org/ontologies/DDANAT,http://bioportal.bioontology.org/ontologies/1008
+bioportal-diagnosticont,Diagnostic Ontology,https://lod-cloud.net/dataset/bioportal-diagnosticont,https://bioportal.bioontology.org/ontologies/DIAGONT,http://bioportal.bioontology.org/ontologies/3013
+bioportal-fma,Foundational Model of Anatomy,https://lod-cloud.net/dataset/bioportal-fma,https://bioportal.bioontology.org/ontologies/FMA,http://bioportal.bioontology.org/ontologies/1053
+hito0000018da2a543a7,HITO,https://lod-cloud.net/dataset/hito,,https://hitontology.eu/
+snik,SNIK,https://lod-cloud.net/dataset/snik,,https://www.snik.eu
+PGxLOD,PGxLOD,https://lod-cloud.net/dataset/PGxLOD,,https://pgxlod.loria.fr/
+bio2rdf-pharmgkb,Bio2RDF::Pharmgkb,https://lod-cloud.net/dataset/bio2rdf-pharmgkb,,http://pharmgkb.bio2rdf.org/
+bio2rdf-mesh,Bio2RDF::Mesh,https://lod-cloud.net/dataset/bio2rdf-mesh,,http://mesh.bio2rdf.org/
+eagle-i-hunter-cuny,eagle-i @ Hunter College,https://lod-cloud.net/dataset/eagle-i-hunter-cuny,,http://hunter-cuny.eagle-i.net
+issa-agritrop,ISSA Agritrop Dataset,https://lod-cloud.net/dataset/issa-agritrop,,https://github.com/issa-project/issa-pipeline
+agrovoc,AGROVOC,https://lod-cloud.net/dataset/agrovoc,,http://www.fao.org/agrovoc/
+bio2rdf-drugbank,Bio2RDF::Drugbank,https://lod-cloud.net/dataset/bio2rdf-drugbank,,http://drugbank.bio2rdf.org/
+bio2rdf-hgnc,Bio2RDF::Hgnc,https://lod-cloud.net/dataset/bio2rdf-hgnc,,http://hgnc.bio2rdf.org/
+bio2rdf-ndc,Bio2RDF::Ndc,https://lod-cloud.net/dataset/bio2rdf-ndc,,http://ndc.bio2rdf.org/
+bioportal-geospecies,GeoSpecies Ontology,https://lod-cloud.net/dataset/bioportal-geospecies,https://bioportal.bioontology.org/ontologies/GEOSPECIES,http://bioportal.bioontology.org/ontologies/1247
+bioportal-co_wheat,Wheat trait,https://lod-cloud.net/dataset/bioportal-co_wheat,https://bioportal.bioontology.org/ontologies/CO-WHEAT,http://bioportal.bioontology.org/ontologies/1545
+bioportal-sbro,Smoking Behavior Risk Ontology,https://lod-cloud.net/dataset/bioportal-sbro,,http://bioportal.bioontology.org/ontologies/1249
+bioportal-teddy,Terminology for the Description of Dynamics,https://lod-cloud.net/dataset/bioportal-teddy,https://bioportal.bioontology.org/ontologies/TEDDY,http://bioportal.bioontology.org/ontologies/1407
+bioportal-wbphenotype,C. elegans phenotype,https://lod-cloud.net/dataset/bioportal-wbphenotype,https://bioportal.bioontology.org/ontologies/WB-PHENOTYPE,http://bioportal.bioontology.org/ontologies/1067
+ogolod,Orthology and Diseases Information - OGO,https://lod-cloud.net/dataset/ogolod,,http://miuras.inf.um.es/~ogo/ogolod.html
+bio2rdf-omim,Bio2RDF::Omim,https://lod-cloud.net/dataset/bio2rdf-omim,,http://omim.bio2rdf.org/
+chembl-rdf,ChEMBL RDF,https://lod-cloud.net/dataset/chembl-rdf,,None
+uniprotkb,UniProtKB,https://lod-cloud.net/dataset/uniprotkb,,https://www.uniprot.org/uniprot/
+linked-open-data-of-ecology,Linked Open Data of Ecology,https://lod-cloud.net/dataset/linked-open-data-of-ecology,,http://ecowlim.tfri.gov.tw/lode
+geospecies,GeoSpecies Knowledge Base,https://lod-cloud.net/dataset/geospecies,,http://lod.geospecies.org/
+bio2rdf-omim-resources,bio2rdf-omim-resources,https://lod-cloud.net/dataset/bio2rdf-omim-resources,,None
+fu-berlin-dailymed,DailyMed,https://lod-cloud.net/dataset/fu-berlin-dailymed,,http://www4.wiwiss.fu-berlin.de/dailymed/
+fu-berlin-diseasome,Diseasome,https://lod-cloud.net/dataset/fu-berlin-diseasome,,http://www4.wiwiss.fu-berlin.de/diseasome/
+fu-berlin-drugbank,DrugBank,https://lod-cloud.net/dataset/fu-berlin-drugbank,,http://www4.wiwiss.fu-berlin.de/drugbank/
+tcmgenedit_dataset,TCMGeneDIT Dataset,https://lod-cloud.net/dataset/tcmgenedit_dataset,,http://code.google.com/p/junsbriefcase/wiki/TGDdataset
+bioportal-ato,Amphibian taxonomy,https://lod-cloud.net/dataset/bioportal-ato,https://bioportal.bioontology.org/ontologies/ATO,https://bioportal.bioontology.org/ontologies/ATO
+bioportal-taxrank,Taxonomic rank vocabulary,https://lod-cloud.net/dataset/bioportal-taxrank,https://bioportal.bioontology.org/ontologies/TAXRANK,http://bioportal.bioontology.org/ontologies/1419
+bio2rdf-sider,Bio2RDF::Sider,https://lod-cloud.net/dataset/bio2rdf-sider,,http://sider.bio2rdf.org/
+eagle-i-dartmouth,eagle-i @ Dartmouth College,https://lod-cloud.net/dataset/eagle-i-dartmouth,,http://dartmouth.eagle-i.net
+bio2rdf-chembl,Bio2RDF::Chembl,https://lod-cloud.net/dataset/bio2rdf-chembl,,http://chembl.bio2rdf.org/
+http:sensormeasurement.appspot.comdatasetnaturopathy-dataset,Naturopathy knowledge Graph (Ontology and Dataset) - RDF distribution of the naturopathy dataset.,https://lod-cloud.net/dataset/http:sensormeasurement.appspot.comdatasetnaturopathy-dataset,,http://sensormeasurement.appspot.com/dataset/naturopathy-dataset
+eagle-i-upr,eagle-i@ University of Puerto Rico - Medical Sciences Campus,https://lod-cloud.net/dataset/eagle-i-upr,,http://upr.eagle-i.net
+eagle-i-montana,eagle-i @ Montana State University,https://lod-cloud.net/dataset/eagle-i-montana,,http://montana.eagle-i.net
+eagle-i-hawaii,eagle-i @ University of Hawai’i at M?noa,https://lod-cloud.net/dataset/eagle-i-hawaii,,http://hawaii.eagle-i.net
+nextprot,neXtProt,https://lod-cloud.net/dataset/nextprot,,https://www.nextprot.org/
+UniProt,UniProt,https://lod-cloud.net/dataset/UniProt,,https://www.uniprot.org/
+bio2rdf-orphanet,Bio2RDF::Orphanet,https://lod-cloud.net/dataset/bio2rdf-orphanet,,http://orphanet.bio2rdf.org/
+eagle-i-jsu,eagle-i @ Jackson State University,https://lod-cloud.net/dataset/eagle-i-jsu,,http://jsu.eagle-i.net
+bio2rdf-biomodels,Bio2RDF::Biomodels,https://lod-cloud.net/dataset/bio2rdf-biomodels,,http://biomodels.bio2rdf.org/
+bio2rdf-interpro,Bio2RDF::Interpro,https://lod-cloud.net/dataset/bio2rdf-interpro,,http://interpro.bio2rdf.org/
+bioportal-fbdv,Drosophila development,https://lod-cloud.net/dataset/bioportal-fbdv,https://bioportal.bioontology.org/ontologies/FB-DV,http://bioportal.bioontology.org/ontologies/1016
+bioportal-wbls,C. elegans development,https://lod-cloud.net/dataset/bioportal-wbls,https://bioportal.bioontology.org/ontologies/WB-LS,http://bioportal.bioontology.org/ontologies/1049
+ASCDC-AS-TFD-Fish-Species,Taiwan Fauna Database Research: Taiwan Digital Fish Species Database (AS-TFD-Fish-Species),https://lod-cloud.net/dataset/ASCDC-AS-TFD-Fish-Species,,https://data.ascdc.tw/en/data.php
+eagle-i-tuskegee,eagle-i @ Tuskegee University,https://lod-cloud.net/dataset/eagle-i-tuskegee,,http://tuskegee.eagle-i.net
+eagle-i-famu,eagle-i @ Florida Agricultural and Mechanical University,https://lod-cloud.net/dataset/eagle-i-famu,,http://famu.eagle-i.net
+eunis,European Nature Information System,https://lod-cloud.net/dataset/eunis,,http://eunis.eea.europa.eu
+bio2rdf-dbsnp,Bio2RDF::Dbsnp,https://lod-cloud.net/dataset/bio2rdf-dbsnp,,http://dbsnp.bio2rdf.org/
+bio2rdf-mgi,Bio2RDF::Mgi,https://lod-cloud.net/dataset/bio2rdf-mgi,,http://mgi.bio2rdf.org/
+Covid-on-the-Web,Covid-on-the-Web Dataset,https://lod-cloud.net/dataset/Covid-on-the-Web,,https://github.com/Wimmics/CovidOnTheWeb
+chem2bio2rdf,Chem2Bio2RDF,https://lod-cloud.net/dataset/chem2bio2rdf,,http://chem2bio2rdf.org
+bio2rdf-taxon,bio2rdf-taxon,https://lod-cloud.net/dataset/bio2rdf-taxon,,None
+university-plymouth-reading-lists,University of Plymouth Reading Lists,https://lod-cloud.net/dataset/university-plymouth-reading-lists,,http://lists.lib.plymouth.ac.uk/
+fu-berlin-sider,SIDER: Side Effect Resource,https://lod-cloud.net/dataset/fu-berlin-sider,,http://www4.wiwiss.fu-berlin.de/sider/
+chemdb-phaseTransition,chemdb phase transition dataset,https://lod-cloud.net/dataset/chemdb-phaseTransition,,http://chemdc.casdc.cn/
+arrayexpress_e-mtab-104,Transcription profiling of rat bladder after inoculation with bladder cancer cells,https://lod-cloud.net/dataset/arrayexpress_e-mtab-104,,
+bioportal-thesaurus,thesaurus,https://lod-cloud.net/dataset/bioportal-thesaurus,,http://bioportal.bioontology.org/ontologies/3034
+CoLChina_sp20000000019348ff2263,Catalogue of Life in China 2003 Edition,https://lod-cloud.net/dataset/CoLChina_sp2000,,http://semweb.csdb.cn/ioz
+sandre,Taxons,https://lod-cloud.net/dataset/sandre,,http://sandre.eaufrance.fr/
+linked-life-data,Linked Life Data,https://lod-cloud.net/dataset/linked-life-data,,http://linkedlifedata.com/
+eagle-i-cau,eagle-i @ Clark Atlanta University,https://lod-cloud.net/dataset/eagle-i-cau,,http://cau.eagle-i.net/
+disgenet,DisGeNET,https://lod-cloud.net/dataset/disgenet,,https://maayanlab.cloud/Harmonizome/dataset/DisGeNET+Gene-Disease+Associations
+eagle-i-cdrewu,eagle-i @ Charles R. Drew University,https://lod-cloud.net/dataset/eagle-i-cdrewu,,http://cdrewu.eagle-i.net
+Naturopathy,Naturopathy Knowledge Graph (Ontology and Dataset) - RDF distribution of the naturopathy dataset.,https://lod-cloud.net/dataset/Naturopathy,,http://sensormeasurement.appspot.com/dataset/naturopathy-dataset
+eagle-i-ccny-cuny,eagle-i @ The City College of New York,https://lod-cloud.net/dataset/eagle-i-ccny-cuny,,http://ccny-cuny.eagle-i.net
+eagle-i-ohsu,eagle-i @ Oregon Health and Science University,https://lod-cloud.net/dataset/eagle-i-ohsu,,http://ohsu.eagle-i.net
+ckan,Comprehensive Knowledge Archive Network,https://lod-cloud.net/dataset/ckan,,http://www.ckan.net/
+taxonconcept,TaxonConcept Knowledge Base,https://lod-cloud.net/dataset/taxonconcept,,http://lod.taxonconcept.org/
+entrez_gene,Entrez Gene,https://lod-cloud.net/dataset/entrez_gene,,http://www.ncbi.nlm.nih.gov/gene
+bio2rdf-lsr,Bio2RDF::Lsr,https://lod-cloud.net/dataset/bio2rdf-lsr,,http://lsr.bio2rdf.org/
+eagle-i-vanderbilt,eagle-i @ Vanderbilt University,https://lod-cloud.net/dataset/eagle-i-vanderbilt,,http://eagle-i.ea.vanderbilt.edu
+epa-srs,EPA-SRS,https://lod-cloud.net/dataset/epa-srs,,https://opendata.epa.gov
+plant-specimen,digitized plant specimen,https://lod-cloud.net/dataset/plant-specimen,,http://semweb.csdb.cn/plant
+fu-berlin-stitch,STITCH: Chemical-Protein Interactions,https://lod-cloud.net/dataset/fu-berlin-stitch,,http://www4.wiwiss.fu-berlin.de/stitch/
+biomodels-rdf,BioModels RDF,https://lod-cloud.net/dataset/biomodels-rdf,,None
+bio2rdf-genage,Bio2RDF::Genage,https://lod-cloud.net/dataset/bio2rdf-genage,,http://genage.bio2rdf.org/
+eagle-i-msm,eagle-i @ Morehouse School of Medicine,https://lod-cloud.net/dataset/eagle-i-msm,,http://msm.eagle-i.net
+bio2rdf-affymetrix0000018ec34a360f,Bio2RDF::Affymetrix,https://lod-cloud.net/dataset/bio2rdf-affymetrix,,http://affymetrix.bio2rdf.org/
+bio2rdf-wormbase,Bio2RDF::Wormbase,https://lod-cloud.net/dataset/bio2rdf-wormbase,,http://wormbase.bio2rdf.org/
+traditional-korean-medicine,Traditional Korean Medicine Ontology,https://lod-cloud.net/dataset/traditional-korean-medicine,,http://tkm.kiom.re.kr
+taxref-ld,TAXREF-LD: Knowledge Graph of the French taxonomic registery,https://lod-cloud.net/dataset/taxref-ld,,https://github.com/frmichel/taxref-ld/
+epa-cdr,EPA-CDR,https://lod-cloud.net/dataset/epa-cdr,,https://opendata.epa.gov
+entice-graph,ENTICE Educational Episodes Knowledge Graph,https://lod-cloud.net/dataset/entice-graph,,https://data.entice.eu/
+eagle-i-utsa,eagle-i @ University of Texas at San Antonio,https://lod-cloud.net/dataset/eagle-i-utsa,,http://utsa.eagle-i.net
+eagle-i-howard,eagle-i @ Howard University,https://lod-cloud.net/dataset/eagle-i-howard,,http://howard.eagle-i.net
+fu-berlin-medicare,MediCare,https://lod-cloud.net/dataset/fu-berlin-medicare,,http://www4.wiwiss.fu-berlin.de/medicare/
+eagle-i-utep,eagle-i @ University of Texas at El Paso,https://lod-cloud.net/dataset/eagle-i-utep,,http://utep.eagle-i.net
+eagle-i-psm,eagle-i @ Ponce School of Medicine,https://lod-cloud.net/dataset/eagle-i-psm,,http://psm.eagle-i.net/
+heartfailure,Meriterm Heart Failure Multilingual Terminology,https://lod-cloud.net/dataset/heartfailure,,
+bio2rdf-sabiork,Bio2RDF::Sabiork,https://lod-cloud.net/dataset/bio2rdf-sabiork,,http://sabiork.bio2rdf.org/
+bio2rdf-gendr,Bio2RDF::Gendr,https://lod-cloud.net/dataset/bio2rdf-gendr,,http://gendr.bio2rdf.org/
+bioportal-carelex,CareLex,https://lod-cloud.net/dataset/bioportal-carelex,https://bioportal.bioontology.org/ontologies/CARELEX,http://bioportal.bioontology.org/ontologies/3008
+SCBG-Data0000018bcbdc28f5,SCBG Data,https://lod-cloud.net/dataset/SCBG-Data,,http://semweb.csdb.cn/scbg
+bio2rdf-ctd,Bio2RDF::Ctd,https://lod-cloud.net/dataset/bio2rdf-ctd,,http://ctd.bio2rdf.org/
+cz-sidc-drug-ingredients,Active ingredients of medicinal products available in Czech Republic,https://lod-cloud.net/dataset/cz-sidc-drug-ingredients,,http://linked.opendata.cz/resource/dataset/sukl/drug-ingredients
+bio2rdf-goa,Bio2RDF::Goa,https://lod-cloud.net/dataset/bio2rdf-goa,,http://goa.bio2rdf.org/
+bio2rdf-iproclass,Bio2RDF::Iproclass,https://lod-cloud.net/dataset/bio2rdf-iproclass,,http://iproclass.bio2rdf.org/
+lodac-bdls,LODAC BDLS,https://lod-cloud.net/dataset/lodac-bdls,,http://lod.ac/wiki/LODAC_BDLS
+chemdb-basicInfo,chemdb dataset,https://lod-cloud.net/dataset/chemdb-basicInfo,https://github.com/victorgarric/ChemDB/tree/master/data; https://chemdb.soft32.com/,http://semweb.csdb.cn/chemdb(not%20working)
+taxonconcept-assets,taxonconcept-assets,https://lod-cloud.net/dataset/taxonconcept-assets,,
+eagle-i-harvard,eagle-i @ Harvard University,https://lod-cloud.net/dataset/eagle-i-harvard,,http://harvard.eagle-i.net
+organic-edunet,Organic Edunet Linked Open Data,https://lod-cloud.net/dataset/organic-edunet,,http://data.organic-edunet.eu/
+nvs,NERC Vocabulary Server 2.0,https://lod-cloud.net/dataset/nvs,,http://vocab.nerc.ac.uk/
+farmbio-chembl,ChEMBL-RDF (@ Uppsala University),https://lod-cloud.net/dataset/farmbio-chembl,,https://github.com/egonw/chembl.rdf
+eagle-i-tsu,eagle-i @ Texas Southern University,https://lod-cloud.net/dataset/eagle-i-tsu,,http://alaska.eagle-i.net/
+eagle-i-meharry,eagle-i @ Meharry Medical College,https://lod-cloud.net/dataset/eagle-i-meharry,,http://meharry.eagle-i.net
+allie-abbreviation-and-long-form-database-in-life-science,Allie Abbreviation And Long Form Database in Life Science,https://lod-cloud.net/dataset/allie-abbreviation-and-long-form-database-in-life-science,,http://allie.dbcls.jp/
+eagle-i-xula,eagle-i @ Xavier University of Louisiana,https://lod-cloud.net/dataset/eagle-i-xula,,http://xula.eagle-i.net
+kupkb,Kidney and Urinary Pathway Knowledge Base,https://lod-cloud.net/dataset/kupkb,,None
+sparql-endpoint-status,SPARQL Endpoint Status,https://lod-cloud.net/dataset/sparql-endpoint-status,,http://labs.mondeca.com/sparqlEndpointsStatus/endpoint/endpoint.html
+bio2rdf-bioportal,Bio2RDF::Bioportal,https://lod-cloud.net/dataset/bio2rdf-bioportal,,http://bioportal.bio2rdf.org/
+linked-tcga,Linked TCGA,https://lod-cloud.net/dataset/linked-tcga,,None
+bio2rdf-homologene,Bio2RDF::Homologene,https://lod-cloud.net/dataset/bio2rdf-homologene,,http://homologene.bio2rdf.org/
+eagle-i-alaska,eagle-i @ University of Alaska Fairbanks,https://lod-cloud.net/dataset/eagle-i-alaska,,http://alaska.eagle-i.net
+eagle-i-uccaribe,eagle-i @ Universidad Central del Caribe,https://lod-cloud.net/dataset/eagle-i-uccaribe,,http://uccaribe.eagle-i.net
+taxonconcept-occurences,taxonconcept-occurences,https://lod-cloud.net/dataset/taxonconcept-occurences,,None
+reactome-rdf,Reactome RDF,https://lod-cloud.net/dataset/reactome-rdf,,None
+PubChem_RDF,PubChem RDF,https://lod-cloud.net/dataset/PubChem_RDF,,https://pubchem.ncbi.nlm.nih.gov/
+Chemdb,chemdb thermochemistry dataset,https://lod-cloud.net/dataset/chemdb-thermochemistry,,http://chemdc.casdc.cn/
+,,,,http://chemdc.casdc.cn/
