@@ -1,0 +1,64 @@
+services:
+  backend:
+    build: ./backend
+    container_name: BLOD-backend
+    restart: unless-stopped
+    ports:
+      - "5005:5005"
+    environment:
+      - MONGO_URI=mongodb://admin:password@mongodb:27017/healthcloud?authSource=admin
+      - DB_NAME=healthcloud
+      - PORT=5005
+    depends_on:
+      - mongodb
+    networks:
+      - app-network
+
+  frontend:
+    build: ./frontend/blod
+    container_name: BLOD-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    environment:
+      - REACT_APP_API_URL=http://backend:5005
+      - REACT_APP_DASHBOARD_BACKEND=http://python-service:5001
+
+  mongodb:
+    image: mongo:4.4.6
+    container_name: mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - mongo_data:/data/db
+      - ./backend/init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh
+      - ./backend/BLOD.json:/docker-entrypoint-initdb.d/BLOD.json
+    networks:
+      - app-network
+
+  python-service:
+    build: ../python_service/
+    container_name: BLOD-python-service
+    restart: unless-stopped
+    ports:
+      - "5001:5001"
+    volumes:
+      - python_service_data:/data
+    networks:
+      - app-network
+
+volumes:
+  mongo_data:
+  python_service_data:
+
+networks:
+  app-network:
+    driver: bridge

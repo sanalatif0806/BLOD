@@ -1,0 +1,17 @@
+{
+    "legend": [
+        {
+            "title": "Cultural Heritage",
+            "keywords": ["cultural heritage"],
+            "colour": "#3182BD"
+        }
+    ],
+    "fixed_points": {},
+    "selection": "domain",
+    "selected": "cultural heritage",
+    "datasets": ["dbpedia"],
+    "rights_text": "The Cultural Heritage Linked Open Data Cloud from lod-cloud.net"
+
+}
+        
+       

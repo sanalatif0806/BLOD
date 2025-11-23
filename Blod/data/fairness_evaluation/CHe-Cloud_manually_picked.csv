@@ -1,0 +1,45 @@
+KG id,KG name,KG SPARQL endpoint,RDF dump link,Ontology,F1-M Unique and persistent ID,F1-D URIs dereferenceability,F2a-M - Metadata availability via standard primary sources,F2b-M Metadata availability for all the attributes covered in the FAIR score computation,F3-M Data referrable via a DOI,F4-M Metadata registered in a searchable engine,F score,A1-D Working access point(s),A1-M Metadata availability via working primary sources,A1.2 Authentication & HTTPS support,A2-M Registered in search engines,A score,I1-D Standard & open representation format,I1-M Metadata are described with VoID/DCAT predicates,I2 Use of FAIR vocabularies,I3-D Degree of connection,I score,R1.1 Machine- or human-readable license retrievable via any primary source,"R1.2 Publisher information, such as authors, contributors, publishers, and sources",R1.3-D Data organized in a standardized way,R1.3-M Metadata are described with VoID/DCAT predicates,R score,FAIR score
+performing-arts.ch,performing-arts.ch,https://www.performing-arts.ch/sparql,[],False,0,0.8,1,0.44,0,0,0.37,1.0,0,1.0,0,0.5,1,1,0.0,1,0.75,1,1,1,1,1.0,2.62
+MiMoTextBase,MiMoTextBase,https://query.mimotext.uni-trier.de/,[],False,1,0.0,1,0.33,1,1,0.72,0.5,0,0.0,1,0.38,1,0,0.0,0,0.25,0,1,1,0,0.5,1.85
+NLS,National Library of Sweden,https://libris.kb.se/sparql,[],False,0,0.2,1,0.22,0,1,0.4,1.0,0,1.0,1,0.75,1,0,0.0,0,0.25,0,1,1,0,0.5,1.9
+Japan-Search,Japan Search,https://jpsearch.go.jp/rdf/sparql/,[],False,0,0.2,1,0.44,0,0,0.27,1.0,0,1.0,0,0.5,1,1,0.0,1,0.75,1,1,1,1,1.0,2.52
+Rijksmuseum,Rijksmuseum Collection,https://data.netwerkdigitaalerfgoed.nl/Rijksmuseum/collection/sparql,[],False,0,0.0,1,0.33,0,0,0.22,0.5,0,0.0,0,0.12,1,0,0.0,0,0.25,1,1,1,0,0.75,1.34
+FI-Library,Finnish Public Libraries,https://data.nationallibrary.fi/bib/sparql,[],False,0,1.0,1,0.33,0,0,0.39,1.0,0,1.0,0,0.5,1,0,0.0,1,0.5,0,1,1,0,0.5,1.89
+Shanghai-Library-Open-Data-Platform,Shanghai Library Open Data Platform,https://data.library.sh.cn/sparql/,[],False,0,0.0,1,0.44,0,0,0.24,1.0,0,1.0,0,0.5,1,1,0.0,1,0.75,1,1,1,1,1.0,2.49
+National-Library-Netherlands,National Library Netherlands,https://data.bibliotheken.nl/KB/Production/sparql,[],False,0,0.0,1,0.44,0,1,0.41,1.0,1,1.0,1,1.0,1,1,0.0,1,0.75,1,1,1,1,1.0,3.16
+Antique-Renaissance,Database of the Census of Antique Works of Art and Architecture Known in the Renaissance,https://censussparql.culture.hu-berlin.de/#/dataset/CENSUS/query,[],False,0,0.0,1,0.22,0,0,0.2,0.5,0,0.0,0,0.12,1,0,0.0,0,0.25,0,1,1,0,0.5,1.07
+ARTSDATA-CA,ARTSDATA.CA,https://artsdata-trifid-production.herokuapp.com/sparql/,[],False,0,0.0,1,0.33,0,1,0.39,0.5,0,0.0,1,0.38,1,0,0.0,0,0.25,1,1,1,0,0.75,1.77
+ArCo,Architecture of Knowledge,http://wit.istc.cnr.it/arco/virtuoso/sparql,[],False,1,0.0,1,0.44,1,1,0.74,0.0,0,0.0,1,0.25,1,0,0.0,0,0.25,1,1,1,0,0.75,1.99
+ConfermentSampo,ConfermentSampo,http://ldf.fi/promootiosampo/sparql,[],True,0,1.0,1,0.44,0,0,0.41,1.0,1,1.0,0,0.75,1,1,0.0,1,0.75,1,1,1,1,1.0,2.91
+FI-Museum,Museum Finland,http://ldf.fi/mufi/sparql,[],False,0,0.0,1,0.33,0,0,0.22,1.0,0,1.0,0,0.5,1,0,0.0,0,0.25,1,1,1,0,0.75,1.72
+MMM,Mapping Manuscript Migrations,http://ldf.fi/mmm/sparql,[],False,1,0.9938,1,0.56,1,1,0.93,1.0,1,1.0,1,1.0,1,1,0.0,1,0.75,1,1,1,1,1.0,3.68
+Semantic-Kalevala,Semantic Kalevala,http://ldf.fi/folklore/sparql,[],False,0,0.8944,1,0.44,0,0,0.39,1.0,0,1.0,0,0.5,1,0,0.0,1,0.5,1,1,1,0,0.75,2.14
+Smithsonian,Smithsonian American Art Museum,http://edan.si.edu/saam/sparql,[],False,0,1.0,1,0.33,0,1,0.56,1.0,0,1.0,1,0.75,1,0,0.0,0,0.25,1,1,1,0,0.75,2.31
+Zeri-Photo-Archive,Zeri Photo Archive,http://data.fondazionezeri.unibo.it/sparql,[],False,0,0.0,1,0.33,0,1,0.39,0.0,0,0.0,1,0.25,1,0,0.0,0,0.25,1,1,1,0,0.75,1.64
+Archives-Hub,Archives Hub,http://data.archiveshub.ac.uk/sparql,[],False,1,0.0,1,0.33,1,1,0.72,0.0,0,0.0,1,0.25,1,0,0.0,0,0.25,0,1,1,0,0.5,1.72
+Yale,Yale centre of British Art,http://collection.britishart.yale.edu/sparql/,[],False,0,0.0,1,0.33,0,0,0.22,0.0,0,0.0,0,0.0,1,0,0.0,0,0.25,1,1,1,0,0.75,1.22
+ADL,Alexandria Digital Library Gazetteer,http://adl-gazetteer.geog.ucsb.edu:8080/sparql/select,[],False,0,0.0,1,0.22,0,0,0.2,0.0,0,0.0,0,0.0,1,0,0.0,0,0.25,0,1,1,0,0.5,0.95
+MusicKG,MusicKG,,[],False,0,0.0,0,0.11,0,1,0.19,0.0,0,0.0,1,0.25,1,0,0.0,0,0.25,0,1,1,0,0.5,1.19
+CIDOC-CRM,CIDOC-CRM,,[],True,1,0.0,0,0.22,1,1,0.54,0.0,0,0.0,1,0.25,1,0,0.0,0,0.25,0,1,1,0,0.5,1.54
+Mondis,Mondis,,[],False,0,0.0,0,0.11,0,0,0.02,0.0,0,0.0,0,0.0,1,0,0.0,0,0.25,0,1,1,0,0.5,0.77
+DigitalNZ,DigitalNZ,,[],False,0,0.0,0,0.22,0,0,0.04,0.0,0,0.0,0,0.0,1,0,0.0,0,0.25,1,1,1,0,0.75,1.04
+Fondazione-Zeri,Fondazione Zeri,,[],False,0,0.0,0,0.22,0,0,0.04,0.0,0,0.0,0,0.0,1,0,0.0,0,0.25,1,1,1,0,0.75,1.04
+Library-of-America,Digital Public Library of America,,[],False,0,0.0,0,0.22,0,1,0.2,0.0,0,0.0,1,0.25,1,0,0.0,0,0.25,1,1,1,0,0.75,1.45
+Auckland-Museum,Auckland Museum,,[],False,0,0.0,0,0.11,0,1,0.19,0.0,0,0.0,1,0.25,1,0,0.0,0,0.25,0,1,1,0,0.5,1.19
+BNE,National Library of Spain,,[],False,0,0.0,0,0.22,0,0,0.04,0.0,0,0.0,0,0.0,1,0,0.0,0,0.25,1,1,1,0,0.75,1.04
+Korea-Library,National Library of Korea,,[],False,0,0.0,0,0.11,0,0,0.02,0.0,0,0.0,0,0.0,1,0,0.0,0,0.25,0,1,1,0,0.5,0.77
+Russian-Museum,The State Russian Museum,,[],False,0,0.0,0,0.11,0,0,0.02,0.0,0,0.0,0,0.0,1,0,0.0,0,0.25,0,1,1,0,0.5,0.77
+National-Library-of-Scotland,National Library of Scotland,,[],False,0,0.0,0,0.22,0,1,0.2,0.0,0,0.0,1,0.25,1,0,0.0,0,0.25,1,1,1,0,0.75,1.45
+Epigraphic-Database-Heidelberg,Epigraphic Database Heidelberg,,[],False,1,0.0,0,0.33,1,1,0.56,0.0,0,0.0,1,0.25,1,0,0.0,0,0.25,1,1,1,0,0.75,1.81
+OntoComedySources,OntoComedySources,,[],True,0,0.0,0,0.11,0,1,0.19,0.0,0,0.0,1,0.25,1,0,0.0,0,0.25,0,1,1,0,0.5,1.19
+OntoCeramic-2.0,OntoCeramic 2.0,,[],True,0,0.0,0,0.11,0,1,0.19,0.0,0,0.0,1,0.25,1,0,0.0,0,0.25,0,1,1,0,0.5,1.19
+SaintGall-Ontology,SaintGall Ontology,,[],True,0,0.0,0,0.11,0,0,0.02,0.0,0,0.0,0,0.0,1,0,0.0,0,0.25,0,1,1,0,0.5,0.77
+Linguistic-Phenomena-Ontology,Linguistic Phenomena Ontology,,[],True,0,0.0,0,0.11,0,1,0.19,0.0,0,0.0,1,0.25,1,0,0.0,0,0.25,0,1,1,0,0.5,1.19
+ICON,ICON,,[],True,1,0.0,0,0.33,1,1,0.56,0.0,0,0.0,1,0.25,1,0,0.0,0,0.25,1,1,1,0,0.75,1.81
+Polifonia,Polifonia,,[],True,0,0.0,0,0.22,0,1,0.2,0.0,0,0.0,1,0.25,1,0,0.0,0,0.25,1,1,1,0,0.75,1.45
+Atlas-of-Paths,Atlas of Paths Ontology - Italian Application Profile,,[],True,1,0.0,0,0.22,1,1,0.54,0.0,0,0.0,1,0.25,1,0,0.0,0,0.25,0,1,1,0,0.5,1.54
+Music-Note-Ontology,Music Note Ontology,,[],True,0,0.0,0,0.22,0,1,0.2,0.0,0,0.0,1,0.25,1,0,0.0,0,0.25,1,1,1,0,0.75,1.45
+HaMSE,HaMSE,,[],True,0,0.0,0,0.22,0,1,0.2,0.0,0,0.0,1,0.25,1,0,0.0,0,0.25,1,1,1,0,0.75,1.45
+FOod,FOOD: FOod in Open Data,,[],True,0,0.0,0,0.22,0,0,0.04,0.0,0,0.0,0,0.0,1,0,0.0,0,0.25,1,1,1,0,0.75,1.04
+ATLAS-Italian-Digital-CH,The ATLAS of Italian Digital Cultural Heritage,,[],True,1,0.0,0,0.33,1,1,0.56,0.0,0,0.0,1,0.25,1,0,0.0,0,0.25,1,1,1,0,0.75,1.81
+ARIADNE,ARIADNEplus Knowledge Base,https://ariadne.d4science.org/group/ariadneplus_lab/graphdb,[],False,0,0.0,1,0.33,0,1,0.39,0.5,0,0.0,1,0.38,1,0,0.0,0,0.25,1,1,1,0,0.75,1.77

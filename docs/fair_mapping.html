@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapping FAIR principles</title>
+  <script type="text/javascript" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f9f9f9;
+      margin: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #6fa990;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      font-size: 0.95em;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      background-color: white;
+    }
+
+    thead tr {
+      background-color: #6fa990;
+      color: #ffffff;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      vertical-align: top;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f3f3f3;
+    }
+
+    tbody tr:hover {
+      background-color: #f1f9ff;
+    }
+
+    td {
+      white-space: pre-wrap;
+    }
+
+    td > mjx-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    td.latex-center {
+      text-align: center;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Mapping FAIR principles and Data Quality Dimensions</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>FAIR Principle</th>
+      <th>Input</th>
+      <th>Quality Dimension</th>
+      <th>Monitored Aspect</th>
+      <th>Scoring Function</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td><b>F1-M</b></td>
+      <td>F1</td>
+      <td>Metadata</td>
+      <td></td>
+      <td>Unique and persistent ID</td>
+      <td class="latex-center">
+\[
+\begin{cases}
+1, & \text{dataset registered in a search engine} \\
+& \text{that provides a persistent DOI} \\
+0, & \text{otherwise}
+\end{cases}
+\]</td>
+    </tr>
+    
+    <tr>
+      <td><b>F1-D</b></td>
+      <td>F1</td>
+      <td>Data</td>
+      <td>Availability</td>
+      <td>URIs dereferenceability</td>
+      <td class="latex-center">\( \frac{|\text{Dereferencable}(U_g)|}{|U_g|} \), with \( |U_g| = 5000 \)</td>
+    </tr>
+    
+    <tr>
+      <td><b>F2a-M</b></td>
+      <td>F2</td>
+      <td>Metadata</td>
+      <td></td>
+      <td>Metadata availability via standard primary sources</td>
+      <td class="latex-center">
+\[
+\begin{cases}
+1, & \text{SPARQL endpoint, searchable engine, or VoID/DCAT} \\
+0, & \text{otherwise}
+\end{cases}
+\]</td>
+    </tr>
+    
+    <tr>
+      <td><b>F2b-M</b></td>
+      <td>F2</td>
+      <td>Metadata</td>
+      <td></td>
+      <td class="latex-center">Coverage of required attributes</td>
+      <td>\( \frac{|\text{Covered metadata attributes}|}{|\text{Required metadata attributes}|} \)</td>
+    </tr>
+    
+    <tr>
+      <td><b>F3-M</b></td>
+      <td>F3</td>
+      <td>Metadata</td>
+      <td></td>
+      <td>Data referable via DOI</td>
+      <td class="latex-center">
+\[
+\begin{cases}
+1, & \text{metadata attach DOI(s) to data} \\
+0, & \text{otherwise}
+\end{cases}
+\]</td>
+    </tr>
+    
+    <tr>
+      <td><b>F4-M</b></td>
+      <td>F4</td>
+      <td>Metadata</td>
+      <td></td>
+      <td>Registered in a searchable engine</td>
+      <td class="latex-center">
+\[
+\begin{cases}
+1, & \text{dataset registered in any search engine} \\
+0, & \text{otherwise}
+\end{cases}
+\]</td>
+    </tr>
+    
+    <tr>
+      <td><b>A1.1-D</b></td>
+      <td>A1.1</td>
+      <td>Data</td>
+      <td>Availability</td>
+      <td>Working access point(s)</td>
+      <td class="latex-center">
+\[
+\begin{cases}
+1, & \text{operational SPARQL or accessible data dump} \\
+0.5, & \text{accessible SPARQL or data dump} \\
+0, & \text{otherwise}
+\end{cases}
+\]</td>
+    </tr>
+    
+    <tr>
+      <td><b>A1.1-M</b></td>
+      <td>A1.1</td>
+      <td>Metadata</td>
+      <td></td>
+      <td>Working primary sources with metadata</td>
+      <td>
+\[
+\begin{cases}
+1, & \text{sources discovered in F2a-M work and contain metadata} \\
+0, & \text{otherwise}
+\end{cases}
+\]</td>
+    </tr>
+    
+    <tr>
+      <td><b>A1.2</b></td>
+      <td>A1.2</td>
+      <td>(Meta)data</td>
+      <td>Security</td>
+      <td>Authentication & HTTPS support</td>
+      <td class="latex-center">
+\[
+\begin{cases}
+1, & \text{security requirements can be discovered via SPARQL} \\
+0, & \text{otherwise}
+\end{cases}
+\]</td>
+    </tr>
+    
+    <tr>
+      <td><b>A2-M</b></td>
+      <td>A2</td>
+      <td>Metadata</td>
+      <td></td>
+      <td>Registered in search engines</td>
+      <td class="latex-center">
+\[
+\begin{cases}
+1, & \text{dataset registered in any search engine} \\
+0, & \text{otherwise}
+\end{cases}
+\]</td>
+    </tr>
+    
+    <tr>
+      <td><b>I1-D</b></td>
+      <td>I1</td>
+      <td>Data</td>
+      <td></td>
+      <td>Standard & open representation format</td>
+      <td class="latex-center">
+\[
+\begin{cases}
+1, & \text{valid mediatypes or OWL/RDF(S)} \\
+0, & \text{otherwise}
+\end{cases}
+\]</td>
+    </tr>
+    
+    <tr>
+      <td><b>I1-M</b></td>
+      <td>I1</td>
+      <td>Metadata</td>
+      <td></td>
+      <td>VoID/DCAT description</td>
+      <td class="latex-center">
+\[
+\begin{cases}
+1, & \text{published according to VoID/DCAT specs} \\
+0, & \text{otherwise}
+\end{cases}
+\]</td>
+    </tr>
+    
+    <tr>
+      <td><b>I2</b></td>
+      <td>I2</td>
+      <td>(Meta)data</td>
+      <td>Verifiability</td>
+      <td class="latex-center">Use of FAIR vocabularies</td>
+      <td>\( \frac{\# \text{FAIR vocabularies}}{\# \text{total vocabularies}} \)</td>
+    </tr>
+    
+    <tr>
+      <td><b>I3-D</b></td>
+      <td>I3</td>
+      <td>Data</td>
+      <td>Interlinking</td>
+      <td>Degree of connection</td>
+      <td class="latex-center">
+\[
+\begin{cases}
+1, & \text{contains link to another dataset} \\
+0, & \text{otherwise}
+\end{cases}
+\]</td>
+    </tr>
+    
+    <tr>
+      <td><b>R1.1</b></td>
+      <td>R1.1</td>
+      <td>(Meta)data</td>
+      <td>Licensing</td>
+      <td>Any license retrievable</td>
+      <td class="latex-center">
+\[
+\begin{cases}
+1, & \text{license explicitly reported} \\
+0, & \text{otherwise}
+\end{cases}
+\]</td>
+    </tr>
+    
+    <tr>
+      <td><b>R1.2</b></td>
+      <td>R1.2</td>
+      <td>(Meta)data</td>
+      <td>Verifiability</td>
+      <td>Publisher details</td>
+      <td class="latex-center">
+\[
+\begin{cases}
+1, & \text{publisher info explicitly reported} \\
+0, & \text{otherwise}
+\end{cases}
+\]</td>
+    </tr>
+    
+    <tr>
+      <td><b>R1.3-D</b></td>
+      <td>R1.3</td>
+      <td>Data</td>
+      <td></td>
+      <td>Data organized in standard ways</td>
+      <td class="latex-center">
+\[
+\begin{cases}
+1, & \text{SPARQL endpoint or valid data dump or OWL/RDFS} \\
+0, & \text{otherwise}
+\end{cases}
+\]</td>
+    </tr>
+    
+    <tr>
+      <td><b>R1.3-M</b></td>
+      <td>R1.3</td>
+      <td>Metadata</td>
+      <td></td>
+      <td>VoID/DCAT description</td>
+      <td>Same as I1-M</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</body>
+</html>

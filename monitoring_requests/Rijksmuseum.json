@@ -1,0 +1,43 @@
+{
+  "Rijksmuseum": {
+    "_id": "Rijksmuseum",
+    "identifier": "Rijksmuseum",
+    "title": "Rijksmuseum Collection",
+    "doi": "",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "description": {
+      "en": "The Rijksmuseum Collection dataset is an open-access digital repository of artworks and historical artifacts housed in the Rijksmuseum, the national museum of the Netherlands. The dataset provides structured metadata and high-resolution images of thousands of artworks, including paintings, sculptures, prints, ceramics, and historical objects."
+    },
+    "sparql": [
+      {
+        "access_url": "https://api.data.netwerkdigitaalerfgoed.nl/datasets/Rijksmuseum/exhibitions/sparql",
+        "title": "",
+        "description": "SPARQL endpoint"
+      }
+    ],
+    "full_download": [],
+    "website": "https://www.rijksmuseum.nl/nl",
+    "domain": "cultural-heritage",
+    "contact_point": {
+      "name": "Contact center",
+      "email": "customercare@rijksmuseum.nl"
+    },
+    "owner": {
+      "name": "",
+      "email": ""
+    },
+    "keywords": [
+      "cultural-heritage",
+      "ch-tangible"
+    ],
+    "newKeyword": "",
+    "Image": "",
+    "example": [],
+    "other_download": [],
+    "namespace": "",
+    "links": [],
+    "time": "",
+    "triples": 0,
+    "category": "ch-tangible"
+  }
+}

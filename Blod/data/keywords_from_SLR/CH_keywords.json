@@ -1,0 +1,81 @@
+{
+    "tangible_cultural_heritage": {
+        "movable_heritage" : [
+            "movable",
+            "exhibition",
+            "artwork",
+            "tangible",
+            "painting",
+            "prints",
+            "drawing",
+            "paper",
+            "cartography",
+            "document",
+            "archaeological ceramic",
+            "ancient ceramic",
+            "porcelain",
+            "manuscript",
+            "book",
+            "ceramic",
+            "digital collection"
+    ],
+        "immovable_heritage" : [
+            "architectural", 
+            "archaeological",
+            "immovable",
+            "building",
+            "architecture",
+            "archaeology",
+            "tangible",
+            "castle",
+            "palace",
+            "church",
+            "GLAM",
+            "Underwater"
+        ]
+    },
+    "intangible_cultural_heritage" : [
+        "intangible",
+        "oral expression",
+        "traditions",
+        "festive events",
+        "social rituals",
+        "cultural event",
+        "food",
+        "gastronomy",
+        "drink",
+        "culinary",
+        "cuisine",
+        "wine",
+        "music", 
+        "story",
+        "stories",
+        "poem",
+        "tradition",
+        "folklore"
+    ],
+    "natural" : [
+        "coast",
+        "coastal",
+        "marine conservation",
+        "National Marine Park",
+        "Marine Culture",
+        "lake",
+        "natural", 
+        "sea",
+        "landscape",
+        "park",
+        "biological",
+        "geological"
+    ],
+    "generic":[
+        "heritage",
+        "cultural",
+        "art",
+        "historic",
+        "history",
+        "historical",
+        "catalog",
+        "catalogues"
+    ]
+}

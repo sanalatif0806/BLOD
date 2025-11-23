@@ -1,0 +1,27 @@
+footer[role="contentinfo"], footer.site-footer {
+  display: none !important;
+  height: 0 !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  word-wrap: break-word;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+@media (max-width: 768px) {
+  table {
+    font-size: 14px;
+  }
+}

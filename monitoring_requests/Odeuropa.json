@@ -1,0 +1,49 @@
+{
+  "Odeuropa": {
+    "_id": "",
+    "identifier": "Odeuropa",
+    "title": "Odeuropa Ontology",
+    "doi": "10.1007/978-3-031-06981-9_23",
+    "license": "CC-BY-4.0 license",
+    "description": {
+      "en": "The Odeuropa data model is an extension of CIDOC-CRM and CRMsci for representing odours and their experiences from a Cultural Heritage perspective. This ontology defines 13 classes and 10 properties."
+    },
+    "sparql": [
+      {}
+    ],
+    "full_download": [
+      {
+        "title": "Odeuropa Ontology",
+        "download_url": "https://github.com/Odeuropa/ontology/blob/master/odeuropa-ontology.owl",
+        "description": ""
+      }
+    ],
+    "website": "https://data.odeuropa.eu/ontology/",
+    "domain": "cultural-heritage",
+    "contact_point": {
+      "name": "",
+      "email": ""
+    },
+    "owner": {
+      "name": "",
+      "email": ""
+    },
+    "keywords": [
+      "ontology"
+    ],
+    "newKeyword": "",
+    "Image": "",
+    "example": [],
+    "other_download": [
+      {
+        "title": "Odeuropa GitHub",
+        "access_url": "https://github.com/Odeuropa",
+        "description": ""
+      }
+    ],
+    "namespace": "",
+    "links": [],
+    "time": "",
+    "triples": 0
+  }
+}

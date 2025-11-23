@@ -1,0 +1,70 @@
+{
+    "tangible_cultural_heritage": {
+        "immovable_heritage": {
+            "optimal_subset": "archaeological, building, architecture, archaeology, GLAM",
+            "KGs retrieved": 18,
+            "KGs by keywords": {
+                "archaeological": 4,
+                "archaeology": 6,
+                "architecture": 3,
+                "building": 5,
+                "GLAM": 4
+            }
+        },
+        "movable_heritage": {
+            "optimal_subset": "exhibition, artwork, tangible, painting, prints, paper, document, manuscript, book, digital collection",
+            "KGs retrieved": 137,
+            "KGs by keywords": {
+                "document": 60,
+                "paper": 31,
+                "book": 40,
+                "digital collection": 2,
+                "prints": 6,
+                "tangible": 1,
+                "manuscript": 8,
+                "artwork": 3,
+                "painting": 5,
+                "exhibition": 1
+            }
+        }
+    },
+    "natural": {
+        "optimal_subset": "coastal, natural, sea, landscape, biological, geological",
+        "KGs retrieved": 64,
+        "KGs by keywords": {
+            "biological": 29,
+            "natural": 22,
+            "sea": 4,
+            "landscape": 3,
+            "coastal": 3,
+            "geological": 5
+        }
+    },
+    "generic": {
+        "optimal_subset": "heritage, cultural, art, historic, history, historical, catalog, catalogues",
+        "KGs retrieved": 103,
+        "KGs by keywords": {
+            "catalog": 23,
+            "heritage": 18,
+            "cultural": 28,
+            "historical": 22,
+            "history": 33,
+            "historic": 5,
+            "catalogues": 5,
+            "art": 14
+        }
+    },
+    "intangible_cultural_heritage": {
+        "optimal_subset": "intangible, food, wine, music, stories, poem, tradition",
+        "KGs retrieved": 48,
+        "KGs by keywords": {
+            "wine": 2,
+            "food": 16,
+            "music": 26,
+            "intangible": 1,
+            "tradition": 1,
+            "poem": 1,
+            "stories": 1
+        }
+    }
+}
