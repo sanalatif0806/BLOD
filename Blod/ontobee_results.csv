@@ -1,0 +1,268 @@
+title,id,keywords,description,url,Sub classification,,owl link,License
+Alzheimer's Disease Ontology (ADO),ADO,,"Alzheimer's Disease Ontology is a knowledge-based ontology that encompasses varieties of concepts related to Alzheimer'S Disease, foundamentally structured by upper level Basic Formal Ontology(BFO). This Ontology is enriched by the interrelational entities that demonstrate the nextwork of the understanding on Alzheimer's disease and can be readily applied for text mining.",https://github.com/Fraunhofer-SCAI-Applied-Semantics/ADO,,,http://purl.obolibrary.org/obo/ado.owl,https://creativecommons.org/licenses/by/4.0/
+N/A,AEO,,N/A,https://github.com/obophenotype/human-developmental-anatomy-ontology/,,,http://purl.obolibrary.org/obo/aeo.owl,N/A
+Allotrope Foundation Ontology Merged Without QUDT And Inferred (REC/2024/12),AFO,,N/A,https://www.allotrope.org/ontologies,,,http://purl.allotrope.org/voc/afo/latest.xml,http://purl.allotrope.org/voc/creative-commons-attribution-license
+African Population Ontology,AfPO,,N/A,https://github.com/h3abionet/afpo,,,http://purl.obolibrary.org/obo/afpo.owl,https://creativecommons.org/licenses/by/4.0/
+Agronomy Ontology,AGRO,,N/A,https://github.com/AgriculturalSemantics/agro,,,http://purl.obolibrary.org/obo/agro.owl,http://creativecommons.org/licenses/by/4.0/
+Ontology for the Anatomy of the Insect SkeletoMuscular system,AISM,,N/A,https://github.com/insect-morphology/aism,,,http://purl.obolibrary.org/obo/aism.owl,https://creativecommons.org/licenses/by/4.0/
+Amphioxus Development and Anatomy Ontology (AMPHX),AMPHX,,N/A,https://github.com/EBISPOT/amphx_ontology,,,http://purl.obolibrary.org/obo/amphx.owl,https://creativecommons.org/licenses/by/3.0/
+Ascomycete Phenotype Ontology (APO),APO,,N/A,http://www.yeastgenome.org/,,,http://purl.obolibrary.org/obo/apo.owl,http://creativecommons.org/licenses/by/4.0/
+Apollo Structured Vocabulary (Apollo-SV),APOLLO_SV,,N/A,https://github.com/ApolloDev/apollo-sv,,,http://purl.obolibrary.org/obo/apollo_sv.owl,https://creativecommons.org/licenses/by/4.0/
+N/A,ARO,,N/A,https://github.com/arpcard/aro,,,http://purl.obolibrary.org/obo/aro.owl,N/A
+N/A,BAO,,N/A,https://github.com/BioAssayOntology/BAO,,,https://raw.githubusercontent.com/BioAssayOntology/BAO/master/bao_complete_merged.owl,https://creativecommons.org/licenses/by-sa/4.0/
+N/A,BCGO,,N/A,https://github.com/obi-bcgo/bcgo,,,http://purl.obolibrary.org/obo/bcgo.owl,http://creativecommons.org/licenses/by/3.0/
+The Biological Collections Ontology,BCO,,N/A,https://github.com/BiodiversityOntologies/bco,,,http://purl.obolibrary.org/obo/bco.owl,http://creativecommons.org/publicdomain/zero/1.0/
+N/A,BFO,,N/A,http://ifomis.org/bfo/,,,http://purl.obolibrary.org/obo/bfo.owl,http://creativecommons.org/licenses/by/4.0/
+Basic Formal Ontology (BFO),BFO11,,N/A,BFO Home,,,http://svn.code.sf.net/p/ino/code/trunk/src/ontology/external/bfo-1.1.owl,N/A
+Biological Spatial Ontology,BSPO,,N/A,https://github.com/obophenotype/biological-spatial-ontology,,,http://purl.obolibrary.org/obo/bspo.owl,https://creativecommons.org/licenses/by/3.0/
+The BRENDA Tissue Ontology (BTO),BTO,,N/A,http://www.brenda-enzymes.org,,,http://purl.obolibrary.org/obo/bto.owl,https://creativecommons.org/licenses/by/4.0/
+Common Anatomy Reference Ontology,CARO,,N/A,https://github.com/obophenotype/caro/,,,http://purl.obolibrary.org/obo/caro.owl,https://creativecommons.org/licenses/by/4.0/
+Human Reference Atlas Common Coordinate Framework Ontology,CCFO,,N/A,https://github.com/hubmapconsortium/ccf-ontology,,,https://purl.org/ccf/ccf.owl,https://creativecommons.org/licenses/by/4.0/
+N/A,CDAO,,N/A,https://github.com/evoinfo/cdao,,,http://purl.obolibrary.org/obo/cdao.owl,N/A
+Compositional Dietary Nutrition Ontology,CDNO,,N/A,https://cdno.info/,,,http://purl.obolibrary.org/obo/cdno.owl,https://creativecommons.org/licenses/by/3.0/
+N/A,CEPH,,N/A,https://github.com/obophenotype/cephalopod-ontology,,,http://purl.obolibrary.org/obo/ceph.owl,N/A
+N/A,CHEBI,,N/A,http://www.ebi.ac.uk/chebi,,,http://purl.obolibrary.org/obo/chebi.owl,N/A
+N/A,CHEMINF,,N/A,https://github.com/semanticchemistry/semanticchemistry,,,http://purl.obolibrary.org/obo/cheminf.owl,N/A
+N/A,CHIRO,,N/A,https://github.com/obophenotype/chiro,,,http://purl.obolibrary.org/obo/chiro.owl,N/A
+Chemical Methods Ontology,CHMO,,N/A,https://github.com/rsc-ontologies/rsc-cmo,,,http://purl.obolibrary.org/obo/chmo.owl,http://creativecommons.org/licenses/by/4.0/
+CIDO: Ontology of Coronavirus Infectious Disease,CIDO,,"The Ontology of Coronavirus Infectious Disease (CIDO) is a community-driven open-source biomedical ontology in the area of coronavirus infectious disease. The CIDO is developed to provide standardized human- and computer-interpretable annotation and representation of various coronavirus infectious diseases, including their etiology, transmission, pathogenesis, diagnosis, prevention, and treatment.",https://github.com/cido-ontology/cido,,,http://purl.obolibrary.org/obo/cido.owl,http://creativecommons.org/licenses/by/4.0/
+N/A,CIO,,N/A,https://github.com/BgeeDB/confidence-information-ontology,,,http://purl.obolibrary.org/obo/cio.owl,N/A
+Cell Ontology,CL,,N/A,https://obophenotype.github.io/cell-ontology/,,,http://purl.obolibrary.org/obo/cl.owl,http://creativecommons.org/licenses/by/4.0/
+Collembola Anatomy Ontology,CLAO,,N/A,https://github.com/luis-gonzalez-m/Collembola,,,http://purl.obolibrary.org/obo/clao.owl,https://creativecommons.org/licenses/by/4.0/
+N/A,CLO,,The Cell Line Ontology (CLO) is a community-based ontology of cell lines. The CLO is developed to unify publicly available cell line entry data from multiple sources to a standardized logically defined format based on consensus design patterns.,https://github.com/CLO-Ontology/CLO,,,http://purl.obolibrary.org/obo/clo.owl,N/A
+N/A,CLO-hPSCreg,,hPSCreg-CLO,https://github.com/CLO-ontology/hPSCreg-CLO,,,https://raw.githubusercontent.com/CLO-ontology/hPSCreg-CLO/master/src/hPSCreg_CLO-merged.owl,N/A
+N/A,CLO-NICR,,"A Chinese-English bilinggual subset for CLO, designed for cells in Chinese National Infrastructure of Cell Line Resource (NICR).",https://github.com/CLO-ontology/CLO,,,N/A,N/A
+Clytia hemisphaerica Development and Anatomy Ontology (CLYH),CLYH,,N/A,https://github.com/EBISPOT/clyh_ontology,,,http://purl.obolibrary.org/obo/clyh.owl,https://creativecommons.org/licenses/by/3.0/
+N/A,CMF,,N/A,https://code.google.com/p/craniomaxillofacial-ontology/,,,N/A,N/A
+N/A,CMO,,N/A,http://rgd.mcw.edu/rgdweb/ontology/search.html,,,http://purl.obolibrary.org/obo/cmo.owl,N/A
+Core Ontology for Biology and Biomedicine,COB,,N/A,https://obofoundry.org/COB/,,,http://purl.obolibrary.org/obo/cob.owl,https://creativecommons.org/publicdomain/zero/1.0/
+Coleoptera Anatomy Ontology,COLAO,,N/A,https://github.com/insect-morphology/colao,,,http://purl.obolibrary.org/obo/colao.owl,https://creativecommons.org/licenses/by/4.0
+N/A,CRO,,N/A,https://github.com/data2health/contributor-role-ontology,,,http://purl.obolibrary.org/obo/cro.owl,N/A
+N/A,CTCAE-OAEview,,N/A,N/A,,,N/A,http://creativecommons.org/licenses/by/3.0/
+N/A,CTENO,,N/A,https://github.com/obophenotype/ctenophore-ontology,,,http://purl.obolibrary.org/obo/cteno.owl,N/A
+CTO: Core Ontology of Clinical Trials,CTO,,The core Ontology of Clinical Trials (CTO) will serve as a structured resource integrating basic terms and concepts in the context of clinical trials. Thereby covering clinicaltrails.gov. CoreCTO will serve as a basic ontology to generate extended versions for specific applications such as annotation of variables in study documents from clinical trials.,https://github.com/ClinicalTrialOntology/CTO/,,,http://purl.obolibrary.org/obo/cto.owl,http://creativecommons.org/licenses/by/4.0/; http://creativecommons.org/licenses/by/4.0
+Cardio Vascular Disease Ontology,CVDO,,N/A,https://github.com/OpenLHS/CVDO,,,http://purl.obolibrary.org/obo/cvdo.owl,http://creativecommons.org/licenses/by/4.0/
+N/A,d-acts,,N/A,https://github.com/d-acts/d-acts,,,http://purl.obolibrary.org/obo/iao/d-acts.owl,N/A
+Dicty Anatomy Ontology (DDANAT),DDANAT,,N/A,http://dictybase.org/,,,http://purl.obolibrary.org/obo/ddanat.owl,http://creativecommons.org/publicdomain/zero/1.0/
+Dicty Phenotype Ontology (DDPHENO),DDPHENO,,N/A,http://dictybase.org/,,,http://purl.obolibrary.org/obo/ddpheno.owl,http://creativecommons.org/publicdomain/zero/1.0/
+N/A,DIDEO,,N/A,https://github.com/DIDEO/DIDEO,,,http://purl.obolibrary.org/obo/dideo.owl,N/A
+N/A,DINTO,,N/A,http://labda.inf.uc3m.es/doku.php?id=es:labda_dinto,,,http://purl.obolibrary.org/obo/dinto.owl,N/A
+Disease Drivers,DISDRIV,,N/A,http://www.disease-ontology.org,,,http://purl.obolibrary.org/obo/disdriv.owl,https://creativecommons.org/publicdomain/zero/1.0/
+N/A,DOID,,N/A,http://www.disease-ontology.org,,,http://purl.obolibrary.org/obo/doid.owl,N/A
+The Drug Ontology,DRON,,N/A,https://github.com/ufbmi/dron,,,http://purl.obolibrary.org/obo/dron.owl,https://creativecommons.org/licenses/by/3.0/
+N/A,DUO,,N/A,https://github.com/EBISPOT/DUO,,,http://purl.obolibrary.org/obo/duo.owl,http://creativecommons.org/licenses/by/4.0/
+Echinoderm Anatomy and Development Ontology,ECAO,,N/A,https://github.com/echinoderm-ontology/ecao_ontology,,,http://purl.obolibrary.org/obo/ecao.owl,https://creativecommons.org/licenses/by/3.0/
+Evidence & Conclusion Ontology (ECO),ECO,,N/A,https://www.evidenceontology.org,,,http://purl.obolibrary.org/obo/eco.owl,https://creativecommons.org/publicdomain/zero/1.0/
+N/A,ECOCORE,,N/A,https://github.com/EcologicalSemantics/ecocore,,,http://purl.obolibrary.org/obo/ecocore.owl,https://creativecommons.org/licenses/by/3.0/
+Environment Exposure Ontology,ECTO,,N/A,https://github.com/EnvironmentOntology/environmental-exposure-ontology,,,http://purl.obolibrary.org/obo/ecto.owl,https://creativecommons.org/publicdomain/zero/1.0/
+EDAM - The ontology of data analysis and management,EDAM,,N/A,http://edamontology.org/page,,,http://edamontology.org/EDAM.owl,https://creativecommons.org/licenses/by-sa/4.0
+N/A,EFO,,N/A,http://www.ebi.ac.uk/efo/,,,http://www.ebi.ac.uk/efo/efo.owl,www.apache.org/licenses/LICENSE-2.0
+N/A,EHDAA2,,N/A,https://github.com/obophenotype/human-developmental-anatomy-ontology,,,http://purl.obolibrary.org/obo/ehdaa2.owl,N/A
+N/A,EMAPA,,N/A,http://www.informatics.jax.org/expression.shtml,,,http://purl.obolibrary.org/obo/emapa.owl,N/A
+The Environment Ontology,ENVO,,N/A,http://environmentontology.org/,,,http://purl.obolibrary.org/obo/envo.owl,https://creativecommons.org/publicdomain/zero/1.0/
+Epilepsy Ontology (EPIO),EPIO,,N/A,https://github.com/SCAI-BIO/EpilepsyOntology,,,http://purl.obolibrary.org/obo/epio.owl,https://creativecommons.org/licenses/by/4.0/
+N/A,EPO,,N/A,https://code.google.com/p/epidemiology-ontology/,,,http://purl.obolibrary.org/obo/epo.owl,N/A
+N/A,ERO,,N/A,https://open.med.harvard.edu/wiki/display/eaglei/Ontology,,,http://purl.obolibrary.org/obo/ero.owl,N/A
+VEuPathDB Ontology,EUPATH,,N/A,https://github.com/VEuPathDB-ontology/VEuPathDB-ontology,,,http://purl.obolibrary.org/obo/eupath.owl,http://creativecommons.org/licenses/by/4.0/
+N/A,ExO,,N/A,https://github.com/CTDbase/exposure-ontology,,,http://purl.obolibrary.org/obo/exo.owl,N/A
+N/A,FAO,,N/A,https://github.com/obophenotype/fungal-anatomy-ontology/,,,http://purl.obolibrary.org/obo/fao.owl,N/A
+N/A,FBbi,,N/A,http://cellimagelibrary.org/,,,http://purl.obolibrary.org/obo/fbbi.owl,N/A
+Drosophila Anatomy Ontology (DAO),FBbt,,N/A,http://purl.obolibrary.org/obo/fbbt,,,http://purl.obolibrary.org/obo/fbbt.owl,https://creativecommons.org/licenses/by/4.0/
+FlyBase Controlled Vocabulary (FBcv),FBcv,,N/A,http://purl.obolibrary.org/obo/fbcv,,,http://purl.obolibrary.org/obo/fbcv.owl,https://creativecommons.org/licenses/by/4.0/
+Drosophila Developmental Ontology,FBdv,,N/A,http://purl.obolibrary.org/obo/fbdv,,,http://purl.obolibrary.org/obo/fbdv.owl,https://creativecommons.org/licenses/by/4.0/
+Food Interactions with Drugs Evidence Ontology,FIDEO,,N/A,https://gitub.u-bordeaux.fr/erias/fideo,,,http://purl.obolibrary.org/obo/fideo.owl,http://creativecommons.org/publicdomain/zero/1.0/
+N/A,FIX,,N/A,http://www.ebi.ac.uk/chebi,,,http://purl.obolibrary.org/obo/fix.owl,N/A
+N/A,FLOPO,,N/A,https://github.com/flora-phenotype-ontology/flopoontology,,,http://purl.obolibrary.org/obo/flopo.owl,N/A
+N/A,FMA,,N/A,http://si.washington.edu/projects/fma,,,http://purl.obolibrary.org/obo/fma.owl,N/A
+N/A,FOBI,,"FOBI (Food-Biomarker Ontology) is composed of two interconnected sub-ontologies. One is a ”Food Ontology” consisting of raw foods and multiple-ingredient foods while the second is a ”Biomarker Ontology” containing food intake biomarkers classified by their chemical classes. These two sub-ontologies are conceptually independent but interconnected by different properties. This allows data and information regarding foods and food biomarkers to be visualized in a bidirectional way, going from metabolomics to nutritional data or vice versa. Potential applications of this ontology include the annotation of foods and biomarkers using a well-defined and consistent nomenclature, the standardized reporting of metabolomics workflows (e.g. metabolite identification, experimental design), or the application of different enrichment analysis approaches to analyze nutrimetabolomic data.",https://github.com/pcastellanoescuder/FoodBiomarkerOntology,,,http://purl.obolibrary.org/obo/fobi.owl,http://creativecommons.org/licenses/by/4.0/
+FoodOn Food Ontology,FOODON,,N/A,https://foodon.org/,,,http://purl.obolibrary.org/obo/foodon.owl,https://creativecommons.org/licenses/by/4.0/
+FuTRES Ontology of Vertebrate Traits,FOVT,,N/A,https://github.com/futres/fovt,,,http://purl.obolibrary.org/obo/fovt.owl,http://creativecommons.org/publicdomain/zero/1.0/
+Fission Yeast Phenotype Ontology (FYPO),FYPO,,N/A,https://github.com/pombase/fypo,,,http://purl.obolibrary.org/obo/fypo.owl,https://creativecommons.org/licenses/by/4.0/
+Plant Gall Ontology,GALLONT,,N/A,https://adeans.github.io/gallont/,,,http://purl.obolibrary.org/obo/gallont.owl,https://creativecommons.org/publicdomain/zero/1.0/
+N/A,GAZ,,N/A,http://environmentontology.github.io/gaz/,,,http://purl.obolibrary.org/obo/gaz.owl,N/A
+Genomics Cohorts Knowledge Ontology,GECKO,,N/A,https://github.com/IHCC-cohorts/GECKO,,,http://purl.obolibrary.org/obo/gecko.owl,https://creativecommons.org/licenses/by/4.0/
+Genomic Epidemiology Ontology,GENEPIO,,N/A,http://genepio.org/,,,http://purl.obolibrary.org/obo/genepio.owl,http://creativecommons.org/licenses/by/3.0/
+GENO ontology,GENO,,N/A,https://github.com/monarch-initiative/GENO-ontology/,,,http://purl.obolibrary.org/obo/geno.owl,https://creativecommons.org/licenses/by/4.0/
+N/A,GEO,,N/A,https://github.com/ufbmi/geographical-entity-ontology/wiki,,,http://purl.obolibrary.org/obo/geo.owl,N/A
+Glycan Naming Ontology,GNO,,N/A,https://gnome.glyomics.org/,,,http://purl.obolibrary.org/obo/gno.owl,http://creativecommons.org/licenses/by/4.0/
+Gene Ontology,GO,,N/A,http://geneontology.org/,,,http://purl.obolibrary.org/obo/go.owl,http://creativecommons.org/licenses/by/4.0/
+"GSSO - the Gender, Sex, and Sexual Orientation ontology",GSSO,,N/A,https://gsso.research.cchmc.org/,,,http://purl.obolibrary.org/obo/gsso.owl,https://creativecommons.org/licenses/by-nc-nd/4.0/
+Human Ancestry Ontology,HANCESTRO,,N/A,https://ebispot.github.io/hancestro/,,,http://purl.obolibrary.org/obo/hancestro.owl,http://creativecommons.org/licenses/by/4.0/
+N/A,HAO,,N/A,http://hymao.org,,,http://purl.obolibrary.org/obo/hao.owl,N/A
+HINO: Human Interaction Network Ontology,HINO,,N/A,http://www.ino-ontology.org/hino.php,,,http://svn.code.sf.net/p/ino/code/trunk/src/ontology/hino-merged.owl,N/A
+N/A,HOM,,N/A,https://github.com/BgeeDB/homology-ontology,,,http://purl.obolibrary.org/obo/hom.owl,N/A
+Human Phenotype Ontology,HP,,N/A,http://www.human-phenotype-ontology.org/,,,http://purl.obolibrary.org/obo/hp.owl,https://hpo.jax.org/app/license
+N/A,HsapDv,,N/A,https://github.com/obophenotype/developmental-stage-ontologies/wiki/HsapDv,,,http://purl.obolibrary.org/obo/hsapdv.owl,N/A
+Health Surveillance Ontology (HSO),HSO,,N/A,https://w3id.org/hso,,,http://purl.obolibrary.org/obo/hso.owl,http://creativecommons.org/licenses/by/3.0/
+N/A,HTN,,N/A,https://github.com/aellenhicks/htn_owl,,,http://purl.obolibrary.org/obo/htn.owl,N/A
+Information Artifact Ontology (IAO),IAO,,N/A,https://github.com/information-artifact-ontology/IAO/,,,http://purl.obolibrary.org/obo/iao.owl,http://creativecommons.org/licenses/by/4.0/
+N/A,IAO-Onto-Meta,,N/A,https://code.google.com/p/information-artifact-ontology/wiki/OntologyMetadata,,,N/A,http://creativecommons.org/licenses/by/4.0/
+N/A,ICDO,,N/A,https://github.com/icdo/ICDO,,,https://raw.githubusercontent.com/icdo/ICDO/master/src/ontology/icdo.owl,N/A
+N/A,ICEO,,A biological ontology to standardize and integrate Integrative and Conjugative Element (ICE) information and to support computer-assisted reasoning.,https://github.com/ontoice/ICEO,,,http://purl.obolibrary.org/obo/iceo.owl,http://creativecommons.org/licenses/by/4.0/
+Informed Consent Ontology (ICO),ICO,,The Informed Consent Ontology (ICO) is an ontology for the informed consent and informed consent process in the medical field.,https://github.com/ICO-ontology/ICO,,,http://purl.obolibrary.org/obo/ico.owl,http://creativecommons.org/licenses/by/4.0/
+N/A,IDO,,N/A,http://www.bioontology.org/wiki/index.php/Infectious_Disease_Ontology,,,http://purl.obolibrary.org/obo/ido.owl,http://creativecommons.org/licenses/by/3.0/
+N/A,IDOBRU,,"Brucellosis Ontology is a biomedical ontology in the domain of zoonotic disease brucellosis that is caused by Brucella, a facultative intracellular baterium.",IDOBRU: Brucellosis Ontology,,,http://svn.code.sf.net/p/idobru/code/trunk/src/ontology/brucellosis_merged.owl,http://creativecommons.org/licenses/by/3.0/
+N/A,IDOMAL,,N/A,https://www.vectorbase.org/ontology-browser,,,http://purl.obolibrary.org/obo/idomal.owl,N/A
+N/A,INO,,"he Interaction Network Ontology (INO) is an ontology in the domain of interactions and interaction networks. INO represents general and species-neutral types of interactions and interaction networks, and their related elements and relations. INO is a community-driven ontology, aligns with BFO, and is developed by following the OBO Foundry principles.",https://github.com/INO-ontology/ino,,,http://purl.obolibrary.org/obo/ino.owl,N/A
+N/A,KISAO,,N/A,https://github.com/SED-ML/KiSAO,,,http://purl.obolibrary.org/obo/kisao.owl,N/A
+KTAO: Kidney Tissue Atlas Ontology,KTAO,,KTAO (Kidney Tissue Atlas Ontology) is a community-based biomedical ontology. Its development is supported by the NIH-NIDDK supported Kidney Precision Medicine Project (KPMP).,https://github.com/KPMP/KTAO,,,https://raw.githubusercontent.com/KPMP/KTAO/master/src/ontology/ktao-merged.owl,N/A
+N/A,LABO,,N/A,https://github.com/OpenLHS/LABO,,,http://purl.obolibrary.org/obo/labo.owl,N/A
+Lepidoptera Anatomy Ontology,LEPAO,,N/A,https://github.com/insect-morphology/lepao,,,http://purl.obolibrary.org/obo/lepao.owl,https://creativecommons.org/licenses/by/4.0/
+N/A,LINCS-CLOview,,LINCS-CLOview: A subset of the Cell Line Ontology (CLO) that represents all known cell lines using in the NIH Library of Integrated Network-based Cellular Signatures (LINCS)  project.,N/A,,,https://raw.githubusercontent.com/CLO-ontology/CLO/master/src/ontology/LINCS-CLOview.owl,N/A
+N/A,LTHIDO,,N/A,N/A,,,file:///data/var/www/html/ontobee/ontology/LTHIDO.merged.owl,N/A
+N/A,MA,,N/A,https://github.com/obophenotype/mouse-anatomy-ontology,,,http://purl.obolibrary.org/obo/ma.owl,N/A
+N/A,MAMO,,N/A,http://sourceforge.net/p/mamo-ontology/wiki/Home/,,,http://purl.obolibrary.org/obo/mamo.owl,N/A
+Medical Action Ontology,MAXO,,N/A,https://github.com/monarch-initiative/MAxO,,,http://purl.obolibrary.org/obo/maxo.owl,https://creativecommons.org/licenses/by/4.0/
+N/A,MCO,,N/A,https://github.com/microbial-conditions-ontology/microbial-conditions-ontology,,,http://purl.obolibrary.org/obo/mco.owl,N/A
+Model Card Ontology,MCRO,,N/A,https://github.com/UTHealth-Ontology/MCRO,,,http://purl.obolibrary.org/obo/mcro.owl,https://creativecommons.org/licenses/by/3.0/
+Mental Functioning Ontology,MF,,N/A,https://github.com/jannahastings/mental-functioning-ontology,,,http://purl.obolibrary.org/obo/mf.owl,https://creativecommons.org/licenses/by/3.0/
+N/A,MFMO,,N/A,https://github.com/rdruzinsky/feedontology,,,http://purl.obolibrary.org/obo/mfmo.owl,N/A
+Emotion Ontology,MFOEM,,N/A,https://github.com/jannahastings/emotion-ontology,,,http://purl.obolibrary.org/obo/mfoem.owl,https://creativecommons.org/licenses/by/3.0/
+Mental Disease Ontology,MFOMD,,N/A,https://github.com/jannahastings/mental-functioning-ontology,,,http://purl.obolibrary.org/obo/mfomd.owl,N/A
+N/A,MI,,N/A,https://github.com/HUPO-PSI/psi-mi-CV,,,http://purl.obolibrary.org/obo/mi.owl,N/A
+Minimum Information for A Phylogenetic Analysis (MIAPA) Ontology,MIAPA,,N/A,http://www.evoio.org/wiki/MIAPA,,,http://purl.obolibrary.org/obo/miapa.owl,N/A
+N/A,MICRO,,N/A,https://github.com/carrineblank/MicrO,,,http://purl.obolibrary.org/obo/micro.owl,N/A
+N/A,miRNAO,,N/A,http://code.google.com/p/mirna-ontology/,,,http://purl.obolibrary.org/obo/mirnao.owl,N/A
+N/A,MIRO,,N/A,http://anobase.vectorbase.org,,,http://purl.obolibrary.org/obo/miro.owl,N/A
+N/A,MMO,,N/A,https://rgd.mcw.edu/rgdweb/ontology/view.html?acc_id=MMO:0000000,,,http://purl.obolibrary.org/obo/mmo.owl,N/A
+N/A,MmusDv,,N/A,https://github.com/obophenotype/developmental-stage-ontologies/wiki/MmusDv,,,http://purl.obolibrary.org/obo/mmusdv.owl,N/A
+N/A,MOD,,N/A,http://www.psidev.info/MOD,,,http://purl.obolibrary.org/obo/mod.owl,N/A
+Mondo Disease Ontology,MONDO,,N/A,https://monarch-initiative.github.io/mondo,,,http://purl.obolibrary.org/obo/mondo.owl,http://creativecommons.org/licenses/by/4.0/
+MOP,MOP,,N/A,https://github.com/rsc-ontologies/rxno,,,http://purl.obolibrary.org/obo/mop.owl,http://creativecommons.org/licenses/by/4.0/
+The Mammalian Phenotype Ontology,MP,,N/A,https://www.informatics.jax.org/vocab/mp_ontology/,,,http://purl.obolibrary.org/obo/mp.owl,https://creativecommons.org/licenses/by/4.0/
+N/A,MPATH,,N/A,http://www.pathbase.net,,,http://purl.obolibrary.org/obo/mpath.owl,N/A
+N/A,MPIO,,N/A,https://github.com/MPIO-Developers/MPIO,,,http://purl.obolibrary.org/obo/mpio.owl,N/A
+MHC Restriction Ontology,MRO,,N/A,https://github.com/IEDB/MRO,,,http://purl.obolibrary.org/obo/mro.owl,http://creativecommons.org/licenses/by/3.0/
+N/A,MS,,N/A,http://www.psidev.info/groups/controlled-vocabularies,,,http://purl.obolibrary.org/obo/ms.owl,N/A
+Neuro Behaviour Ontology,NBO,,N/A,https://github.com/obo-behavior/behavior-ontology/,,,http://purl.obolibrary.org/obo/nbo.owl,https://creativecommons.org/licenses/by/3.0/
+NCBI organismal classification,NCBITaxon,,N/A,https://github.com/obophenotype/ncbitaxon,,,http://purl.obolibrary.org/obo/ncbitaxon.owl,https://creativecommons.org/publicdomain/zero/1.0/
+NCI Thesaurus OBO Edition,NCIT,,N/A,https://github.com/NCI-Thesaurus/thesaurus-obo-edition,,,http://purl.obolibrary.org/obo/ncit.owl,N/A
+N/A,NCRO,,N/A,http://omnisearch.soc.southalabama.edu/w/index.php/Ontology,,,http://purl.obolibrary.org/obo/ncro.owl,N/A
+N/A,NDF-RT,,N/A,N/A,,,http://evs.nci.nih.gov/ftp1/NDF-RT/NDF-RT_OWL_Inferred.zip,N/A
+N/A,NFO,,N/A,http://www.nano-ontology.org/,,,http://www.ontobee.org/ontologies/npo-inferred.owl,N/A
+N/A,NGBO,,"Next Generation Biobanking Ontology (NGBO) is an open application ontology representing contextual data about omics digital assets in biobank. The ontology focuses on capturing the information about three main activities: wet bench analysis used to generate omics data, bioinformatics analysis used to analyze and interpret data, and data management.",https://github.com/Dalalghamdi/NGBO,,,http://purl.obolibrary.org/obo/ngbo.owl,http://creativecommons.org/licenses/by/4.0/
+N/A,NOMEN,,N/A,https://github.com/SpeciesFileGroup/nomen,,,http://purl.obolibrary.org/obo/nomen.owl,N/A
+OAE: Ontology of Adverse Events,OAE,,"The Ontology of Adverse Eventsy (OAE) is a biomedical ontology in the domain of adverse events. OAE aims to standardize adverse event annotation, integrate various adverse event data, and support computer-assisted reasoning.  OAE is a community-based ontology. Its development follows the OBO Foundry principles. Vaccine adverse events have been used as an initial testing use case. OAE also studies adverse events associated with the administration of drug and nutritional products, the operation of surgeries, and the usage of medical devices, etc.",https://github.com/OAE-ontology/OAE/,,,http://purl.obolibrary.org/obo/oae.owl,http://creativecommons.org/licenses/by/3.0/
+N/A,OARCS,,N/A,https://github.com/aszool/oarcs,,,http://purl.obolibrary.org/obo/oarcs.owl,N/A
+Ontology of Biological Attributes (OBA),OBA,,N/A,https://github.com/obophenotype/bio-attribute-ontology,,,http://purl.obolibrary.org/obo/oba.owl,http://creativecommons.org/publicdomain/zero/1.0/
+OBCS: Ontology of Biological and Clinical Statistics,OBCS,,N/A,https://github.com/obcs/obcs,,,http://purl.obolibrary.org/obo/obcs.owl,http://creativecommons.org/licenses/by/4.0/
+Ontology for Biomedical Investigations,OBI,,"An ontology for representing biomedical investigations, including study designs, the collection and preparation of the targets of investigation, assays, instrumentation and reagents used, as well as the data generated and the types of analysis performed on the data to reach conclusions, and their documentation.",http://obi-ontology.org,,,http://purl.obolibrary.org/obo/obi.owl,http://creativecommons.org/licenses/by/4.0/
+Ontology for Biomedical Investigations,OBI-NIAID-GSC-BRC-view,,N/A,N/A,,,http://purl.obolibrary.org/obo/obi/NIAID-GSC-BRC.owl,http://creativecommons.org/licenses/by/4.0/
+Ontology for BIoBanking (OBIB),OBIB,,N/A,https://github.com/biobanking/biobanking,,,http://purl.obolibrary.org/obo/obib.owl,http://creativecommons.org/licenses/by/4.0/
+N/A,OBIws,,An ontology that extends the Ontology for Biomedical Investigations (OBI) to build an Ontology that supports consistent annotation of Bioinformatics Web services.,http://code.google.com/p/obi-webservice/,,,https://obi-webservice.googlecode.com/svn/trunk/ontology/webService.owl,N/A
+Occupation Ontology (OccO),OCCO,,N/A,https://github.com/Occupation-Ontology/OccO,,,http://purl.obolibrary.org/obo/occo.owl,http://creativecommons.org/licenses/by/4.0/
+OCE: Ontology of Chemical Elements,OCE,,N/A,https://github.com/ontologyofchemicalelements,,,https://raw.githubusercontent.com/ontologyofchemicalelements/OCE/master/src/oce-merged.owl,http://creativecommons.org/licenses/by/4.0/
+OCMR: Ontology of Chinese Medicine for Rheumatism,OCMR,,N/A,https://github.com/biomedontology/ocmr,,,N/A,N/A
+N/A,OCRe,,N/A,N/A,,,http://ontology-of-clinical-research.googlecode.com/svn/trunk/ontology/OCRe.owl,N/A
+OCVDAE: Ontology of Cardiovascular Disease Drug Adverse Events,OCVDAE,,N/A,https://github.com/OCVDAE,,,https://raw.githubusercontent.com/OCVDAE/OCVDAE/master/ocvdae-merged.owl,http://creativecommons.org/licenses/by/3.0/
+ODAE: Ontology of Drug Adverse Events,ODAE,,N/A,N/A,,,https://raw.githubusercontent.com/ODAE-ontology/ODAE/master/src/ontology/odae_merged.owl,N/A
+ODNAE: Ontology of Drug Neuropathy Adverse Events,ODNAE,,N/A,https://github.com/odnae,,,https://raw.githubusercontent.com/odnae/odnae/master/src/ontology/odnae_merged.owl,N/A
+OGG: Ontology of Genes and Genomes,OGG,,N/A,https://bitbucket.org/hegroup/ogg,,,http://purl.obolibrary.org/obo/ogg.owl,http://creativecommons.org/licenses/by/3.0/
+OGG-At: Ontology of Genes and Genomes - Arabidopsis thaliana,OGG-At,,N/A,https://bitbucket.org/hegroup/ogg-at,,,http://purl.obolibrary.org/obo/ogg/ogg-at.owl,http://creativecommons.org/licenses/by/3.0/
+OGG-Bru: Ontology of Genes and Genomes for Brucella,OGG-Bru,,N/A,https://bitbucket.org/hegroup/ogg-bru,,,http://purl.obolibrary.org/obo/ogg/ogg-bru.owl,http://creativecommons.org/licenses/by/3.0/
+OGG: Ontology of Genes and Genomes,OGG-Ce,,N/A,https://bitbucket.org/hegroup/ogg-ce,,,http://purl.obolibrary.org/obo/ogg/ogg-ce.owl,http://creativecommons.org/licenses/by/3.0/
+OGG-Dm: Ontology of Genes and Genomes of Drosophila melanogaster (Fruit Fly),OGG-Dm,,N/A,https://bitbucket.org/hegroup/ogg-dm,,,http://purl.obolibrary.org/obo/ogg/ogg-dm.owl,http://creativecommons.org/licenses/by/3.0/
+OGG-Dr: Ontology of Genes and Genomes - Zebrafish,OGG-Dr,,N/A,https://bitbucket.org/hegroup/ogg-dr,,,http://purl.obolibrary.org/obo/ogg/ogg-dr.owl,http://creativecommons.org/licenses/by/3.0/
+OGG-Mm: Ontology of Genes and Genomes - Mouse,OGG-Mm,,N/A,https://bitbucket.org/hegroup/ogg-mm,,,http://purl.obolibrary.org/obo/ogg/ogg-mm.owl,http://creativecommons.org/licenses/by/3.0/
+OGG: Ontology of Genes and Genomes,OGG-Pf,,N/A,https://bitbucket.org/hegroup/ogg-pf,,,http://purl.obolibrary.org/obo/ogg/ogg-pf.owl,http://creativecommons.org/licenses/by/3.0/
+OGG-Sc: Ontology of Genes and Genomes - Yeast,OGG-Sc,,N/A,https://bitbucket.org/hegroup/ogg-sc,,,http://purl.obolibrary.org/obo/ogg/ogg-sc.owl,http://creativecommons.org/licenses/by/3.0/
+N/A,OGI,,N/A,https://code.google.com/p/ontology-for-genetic-interval/,,,http://purl.obolibrary.org/obo/ogi.owl,N/A
+Ontology for General Medical Science,OGMS,,N/A,https://github.com/OGMS/ogms,,,http://purl.obolibrary.org/obo/ogms.owl,http://creativecommons.org/licenses/by/4.0/
+N/A,OGSF,,N/A,https://github.com/linikujp/OGSF,,,http://purl.obolibrary.org/obo/ogsf.owl,New BSD license
+Oral Health and Disease Ontology,OHD,,N/A,https://purl.obolibrary.org/obo/ohd/home,,,http://purl.obolibrary.org/obo/ohd.owl,http://creativecommons.org/licenses/by/4.0/
+OHMI: Ontology of Host-Microbiome Interactions,OHMI,,OHMI is a biomedical ontology that represents the entities and relations in the domain of host-microbiome interactions.,https://github.com/ohmi-ontology/ohmi,,,http://purl.obolibrary.org/obo/ohmi.owl,http://creativecommons.org/licenses/by/4.0/
+N/A,OHPI,,"OHPI is a biomedical ontology in the area of host-pathogen interactions. OHPI is developed by following the OBO Foundry Principles (e.g., openness and collaboration).",https://github.com/OHPI/ohpi,,,http://purl.obolibrary.org/obo/ohpi.owl,http://creativecommons.org/licenses/by/4.0/
+N/A,OlatDv,,N/A,https://github.com/obophenotype/developmental-stage-ontologies/wiki/OlatDv,,,http://purl.obolibrary.org/obo/olatdv.owl,N/A
+OLOBO: Ontology for Linking and Integrating Open Biological and Biomedical Ontologies,OLOBO,,N/A,N/A,,,https://raw.githubusercontent.com/biomedontology/olobo/master/src/ontology/olobo_merged.owl,N/A
+測定単位のオントロジー (OM),OM,,N/A,https://github.com/HajoRijgersberg/OM/,,,https://raw.githubusercontent.com/HajoRijgersberg/OM/refs/heads/master/om-2.0.rdf,https://creativecommons.org/licenses/by/4.0/
+Ontologized MIABIS,OMIABIS,,N/A,https://github.com/OMIABIS/omiabis-dev,,,http://purl.obolibrary.org/obo/omiabis.owl,N/A
+N/A,OMIT,,N/A,http://omit.cis.usouthal.edu/,,,http://purl.obolibrary.org/obo/omit.owl,N/A
+OBO Metadata Ontology,OMO,,N/A,https://github.com/information-artifact-ontology/ontology-metadata,,,http://purl.obolibrary.org/obo/omo.owl,https://creativecommons.org/publicdomain/zero/1.0/
+N/A,OMP,,N/A,http://microbialphenotypes.org,,,http://purl.obolibrary.org/obo/omp.owl,N/A
+Ontology for Modeling and Representation of Social Entities,OMRSE,,N/A,https://github.com/mcwdsi/OMRSE/wiki/OMRSE-Overview,,,http://purl.obolibrary.org/obo/omrse.owl,https://creativecommons.org/licenses/by/4.0/
+N/A,ONE,,N/A,https://github.com/cyang0128/Nutritional-epidemiologic-ontologies,,,http://purl.obolibrary.org/obo/one.owl,N/A
+N/A,ONS,,N/A,https://github.com/enpadasi/Ontology-for-Nutritional-Studies,,,http://purl.obolibrary.org/obo/ons.owl,N/A
+OntoAvida: ontology for Avida digital evolution platform.,ONTOAVIDA,,N/A,https://gitlab.com/fortunalab/ontoavida,,,http://purl.obolibrary.org/obo/ontoavida.owl,https://creativecommons.org/licenses/by/4.0/
+N/A,ONTONEO,,N/A,ontoneo.com,,,http://purl.obolibrary.org/obo/ontoneo.owl,http://creativecommons.org/licenses/by/4.0/
+N/A,OOSTT,,N/A,https://github.com/OOSTT/OOSTT,,,http://purl.obolibrary.org/obo/oostt.owl,N/A
+Ontology for Parasite Lifecycle,OPL,,N/A,https://github.com/OPL-ontology/OPL,,,http://purl.obolibrary.org/obo/opl.owl,http://creativecommons.org/licenses/by/4.0/
+OPMI: Ontology of Precision Medicine and Investigation,OPMI,,OPMI is a biomedical ontology in the area of precision medicine and its related investigations. It is community-driven and developed by following the OBO Foundry ontology development principles.,https://github.com/OPMI/opmi,,,http://purl.obolibrary.org/obo/opmi.owl,http://creativecommons.org/licenses/by/4.0/
+Ontology for RNA sequencing (ORNASEQ),ORNASEQ,,N/A,http://kim.bio.upenn.edu/software/ornaseq.shtml,,,http://purl.obolibrary.org/obo/ornaseq.owl,http://creativecommons.org/licenses/by/4.0/
+N/A,OSCI,,"OSCI is a biomedical ontology in the area of stem cell investigation. OSCI imports existing ontologies such as CL, CLO, and OBI, and aims to support standardized stem cell representation, integration, and analysis.",https://github.com/stemcellontologyresource/OSCI,,,https://raw.githubusercontent.com/stemcellontologyresource/OSCI/master/src/ontology/osci.owl,N/A
+OVAE: Ontology of Vaccine Adverse Events,OVAE,,N/A,http://www.violinet.org/ovae/,,,http://purl.obolibrary.org/obo/ovae.owl,N/A
+PATO - the Phenotype And Trait Ontology,PATO,,N/A,https://github.com/pato-ontology/pato/,,,http://purl.obolibrary.org/obo/pato.owl,https://creativecommons.org/licenses/by/3.0/
+Provisional Cell Ontology,PCL,,N/A,https://github.com/obophenotype/provisional_cell_ontology,,,http://purl.obolibrary.org/obo/pcl.owl,http://creativecommons.org/licenses/by/4.0/
+Population and Community Ontology,PCO,,N/A,https://github.com/PopulationAndCommunityOntology/pco,,,http://purl.obolibrary.org/obo/pco.owl,http://creativecommons.org/publicdomain/zero/1.0/
+Prescription DRugs Ontology,PDRO,,N/A,https://github.com/OpenLHS/PDRO,,,http://purl.obolibrary.org/obo/pdro.owl,http://creativecommons.org/licenses/by/4.0/
+N/A,PdumDv,,N/A,https://github.com/obophenotype/developmental-stage-ontologies/wiki/PdumDv,,,http://purl.obolibrary.org/obo/pdumdv.owl,N/A
+N/A,PECO,,N/A,http://planteome.org/,,,http://purl.obolibrary.org/obo/peco.owl,N/A
+Pathogen Host Interactions Phenotype Ontology,PHIPO,,N/A,https://github.com/PHI-base/phipo,,,http://purl.obolibrary.org/obo/phipo.owl,https://creativecommons.org/licenses/by/3.0/
+Planarian Anatomy Ontology (PLANA),PLANA,,N/A,https://github.com/obophenotype/planaria-ontology,,,http://purl.obolibrary.org/obo/plana.owl,https://creativecommons.org/licenses/by/3.0/
+Planarian Phenotype Ontology (PLANP),PLANP,,N/A,https://github.com/obophenotype/planarian-phenotype-ontology,,,http://purl.obolibrary.org/obo/planp.owl,https://creativecommons.org/licenses/by/3.0/
+proper name ontology,PNO,,N/A,https://github.com/ProperNameOntology/proper-name-ontology,,,http://purl.obolibrary.org/obo/iao/pno.owl,http://creativecommons.org/licenses/by/4.0/
+Plant Ontology,PO,,N/A,http://browser.planteome.org/amigo,,,http://purl.obolibrary.org/obo/po.owl,http://creativecommons.org/licenses/by/4.0/
+Porifera (sponge) ontology,PORO,,N/A,https://github.com/obophenotype/porifera-ontology,,,http://purl.obolibrary.org/obo/poro.owl,N/A
+Plant Phenology Ontology,PPO,,N/A,https://github.com/PlantPhenoOntology/PPO,,,http://purl.obolibrary.org/obo/ppo.owl,http://purl.obolibrary.org/obo/ppo.owl#Unspecified
+PRotein Ontology,PR,,N/A,http://proconsortium.org,,,http://purl.obolibrary.org/obo/pr.owl,http://creativecommons.org/licenses/by/4.0/
+PROCO: PROcess Chemistry Ontology,PROCO,,PROCO (PROcess Chemistry Ontology) is a formal ontology that aims to standardly represent entities and relations among entities in the domain of process chemistry.,https://github.com/proco-ontology/PROCO,,,http://purl.obolibrary.org/obo/proco.owl,http://creativecommons.org/licenses/by/4.0/
+N/A,PSDO,,N/A,https://github.com/Display-Lab/psdo,,,http://purl.obolibrary.org/obo/psdo.owl,N/A
+Plant Stress Ontology,PSO,,N/A,https://github.com/Planteome/plant-stress-ontology,,,http://purl.obolibrary.org/obo/pso.owl,https://creativecommons.org/licenses/by/4.0/
+N/A,PW,,N/A,http://rgd.mcw.edu/rgdweb/ontology/search.html,,,http://purl.obolibrary.org/obo/pw.owl,N/A
+N/A,RBO,,RBO is an ontology for the effects of radiation on biota in terrestrial and space environments.,https://github.com/Radiobiology-Informatics-Consortium/RBO,,,http://purl.obolibrary.org/obo/rbo.owl,http://creativecommons.org/licenses/by/3.0/
+N/A,REO,,N/A,N/A,,,http://reagent-ontology.googlecode.com/svn/trunk/src/ontology/reo.owl,N/A
+N/A,REX,,N/A,REX directory,,,http://purl.obolibrary.org/obo/rex.owl,N/A
+The RNA Ontology (RNAO): An Ontology for Integrating RNA Sequence and Structure Data,RNAO,,N/A,https://github.com/bgsu-rna/rnao,,,http://purl.obolibrary.org/obo/rnao.owl,N/A
+OBO Relations Ontology,RO,,N/A,https://oborel.github.io/,,,http://purl.obolibrary.org/obo/ro.owl,https://creativecommons.org/publicdomain/zero/1.0/
+N/A,RS,,N/A,http://rgd.mcw.edu/rgdweb/search/strains.html,,,http://purl.obolibrary.org/obo/rs.owl,N/A
+RXNO,RXNO,,N/A,https://github.com/rsc-ontologies/rxno,,,http://purl.obolibrary.org/obo/rxno.owl,http://creativecommons.org/licenses/by/4.0/
+N/A,SBO,,N/A,http://www.ebi.ac.uk/sbo/,,,http://purl.obolibrary.org/obo/sbo.owl,N/A
+N/A,SCDO,,N/A,https://scdontology.h3abionet.org/,,,http://purl.obolibrary.org/obo/scdo.owl,N/A
+N/A,SCO,,N/A,https://github.com/gioUbbiali/Sustainability-Core-Ontology,,,https://raw.githubusercontent.com/gioUbbiali/Sustainability-Core-Ontology/refs/heads/main/SCO/SCO%20V1.0.0.%20-%20BFO%20merged/SCO%20-%20BFO%20merged.owl,N/A
+N/A,SDGIO,,N/A,https://github.com/SDG-InterfaceOntology/sdgio,,,http://purl.unep.org/sdg/sdgio.owl,N/A
+N/A,SEP,,N/A,http://psidev.info/index.php?q=node/312,,,http://purl.obolibrary.org/obo/sep.owl,N/A
+Ontology for Scientific Evidence and Provenance Information,SEPIO,,N/A,https://github.com/monarch-initiative/SEPIO-ontology,,,http://purl.obolibrary.org/obo/sepio.owl,https://creativecommons.org/licenses/by/3.0/
+N/A,SIBO,,N/A,https://github.com/obophenotype/sibo,,,http://purl.obolibrary.org/obo/sibo.owl,N/A
+Semanticscience Integrated Ontology (SIO),SIO,,N/A,http://sio.semanticscience.org/,,,http://semanticscience.org/ontology/sio.owl,http://creativecommons.org/licenses/by/4.0/
+Space Life Sciences Ontology,SLSO,,N/A,https://github.com/nasa/LSDAO,,,http://purl.obolibrary.org/obo/slso.owl,http://creativecommons.org/licenses/by/3.0/
+N/A,SO,,N/A,http://www.sequenceontology.org/,,,http://purl.obolibrary.org/obo/so.owl,N/A
+N/A,SPD,,N/A,http://research.amnh.org/atol/files/,,,http://purl.obolibrary.org/obo/spd.owl,N/A
+STATO: the statistical methods ontology,STATO,,"STATO is the statistical methods ontology. It contains concepts and properties related to statistical methods, probability distributions and other concepts related to statistical analysis, including relationships to study designs and plots.",http://stato-ontology.org/,,,http://purl.obolibrary.org/obo/stato.owl,http://creativecommons.org/licenses/by/3.0/
+Software Ontology,SWO,,N/A,https://github.com/allysonlister/swo,,,http://purl.obolibrary.org/obo/swo.owl,https://creativecommons.org/licenses/by/4.0/
+Symptom Ontology,SYMP,,N/A,http://symptomontologywiki.igs.umaryland.edu/mediawiki/index.php/Main_Page,,,http://purl.obolibrary.org/obo/symp.owl,https://creativecommons.org/publicdomain/zero/1.0/
+terms4FAIRskills (T4FS),T4FS,,N/A,https://github.com/terms4fairskills/FAIRterminology,,,http://purl.obolibrary.org/obo/t4fs.owl,http://creativecommons.org/licenses/by/4.0/
+N/A,TADS,,N/A,https://www.vectorbase.org/ontology-browser,,,http://purl.obolibrary.org/obo/tads.owl,N/A
+N/A,TAXRANK,,N/A,https://github.com/phenoscape/taxrank,,,http://purl.obolibrary.org/obo/taxrank.owl,https://creativecommons.org/publicdomain/zero/1.0/
+N/A,TGMA,,N/A,https://www.vectorbase.org/ontology-browser,,,http://purl.obolibrary.org/obo/tgma.owl,N/A
+Plant Trait Ontology,TO,,N/A,http://browser.planteome.org/amigo,,,http://purl.obolibrary.org/obo/to.owl,http://creativecommons.org/licenses/by/4.0/
+Pathogen Transmission Ontology,TRANS,,N/A,https://github.com/DiseaseOntology/PathogenTransmissionOntology,,,http://purl.obolibrary.org/obo/trans.owl,https://creativecommons.org/publicdomain/zero/1.0/
+TSO: Transportation System Ontology,TSO,,"The Transportation System Ontology (TSO) is a community-based ontology developed to support open transportation and transportation-related knowledge and data representation, standardization and integration.",https://github.com/TSO-ontology/TSO,,,https://raw.githubusercontent.com/TSO-ontology/TSO/master/src/ontology/tso-merged.owl,N/A
+N/A,TTO,,N/A,https://github.com/phenoscape/teleost-taxonomy-ontology,,,http://purl.obolibrary.org/obo/tto.owl,N/A
+TOXic Process Ontology (TXPO),TXPO,,N/A,https://toxpilot.nibiohn.go.jp/,,,http://purl.obolibrary.org/obo/txpo.owl,http://creativecommons.org/licenses/by/4.0/
+Uber-anatomy ontology,UBERON,,N/A,http://uberon.org,,,http://purl.obolibrary.org/obo/uberon.owl,http://creativecommons.org/licenses/by/3.0/
+N/A,uberon-basic,,N/A,http://uberon.org,,,http://purl.obolibrary.org/obo/uberon/basic.obo,N/A
+N/A,uberon_collected_metazoa,,N/A,N/A,,,http://obo.svn.sourceforge.net/viewvc/obo/uberon/trunk/bridge/collected-metazoa.owl,N/A
+N/A,uberon_depictions,,N/A,N/A,,,http://ontofox.hegroup.org/dev/owl/uberon_depictions.owl,N/A
+N/A,UO,,N/A,https://github.com/bio-ontology-research-group/unit-ontology,,,http://purl.obolibrary.org/obo/uo.owl,N/A
+N/A,UPA,,N/A,https://github.com/geneontology/unipathway,,,http://purl.obolibrary.org/obo/upa.owl,N/A
+Unified Phenotype Ontology (uPheno),UPHENO,,N/A,https://github.com/obophenotype/upheno,,,http://purl.obolibrary.org/obo/upheno.owl,https://creativecommons.org/publicdomain/zero/1.0/
+N/A,VariO,,N/A,http://variationontology.org,,,http://purl.obolibrary.org/obo/vario.owl,N/A
+Vertebrate Breed Ontology,VBO,,N/A,https://github.com/monarch-initiative/vertebrate-breed-ontology,,,http://purl.obolibrary.org/obo/vbo.owl,https://creativecommons.org/licenses/by/4.0/
+N/A,VICO,,N/A,https://github.com/VICO-ontology,,,https://raw.githubusercontent.com/VICO-ontology/VICO/master/src/ontology/release_merged_file/vico_merged.owl,http://creativecommons.org/licenses/by/3.0/
+N/A,VIDO,,N/A,https://github.com/infectious-disease-ontology-extensions/ido-virus,,,https://raw.githubusercontent.com/infectious-disease-ontology-extensions/ido-virus/master/ontology/vido.owl,N/A
+VIO: Vaccine Investigation Ontology,VIO,,VIO is an VO-extended ontology with the aim to standardize the metadata types in various vaccine investigation studies.,https://github.com/vaccineontology/VIO,,,https://raw.githubusercontent.com/vaccineontology/VIO/master/src/ontology/vio_merged.owl,N/A
+N/A,VIVO-ISF,,N/A,VIVO-ISF https://code.google.com/p/connect-isf,,,http://www.ontobee.org/ontologies/ISF_merged_unreasoned_6.9.14.owl,N/A
+Vaccine Ontology,VO,,N/A,https://violinet.org/vaccineontology,,,http://purl.obolibrary.org/obo/vo.owl,http://creativecommons.org/licenses/by/4.0/
+The Vertebrate Trait Ontology,VT,,N/A,https://github.com/AnimalGenome/vertebrate-trait-ontology,,,http://purl.obolibrary.org/obo/vt.owl,https://creativecommons.org/licenses/by/4.0/
+Vertebrate Taxonomy Ontology,VTO,,N/A,https://github.com/phenoscape/vertebrate-taxonomy-ontology,,,http://purl.obolibrary.org/obo/vto.owl,http://creativecommons.org/publicdomain/zero/1.0/
+C. elegans Gross Anatomy Ontology,WBbt,,N/A,https://github.com/obophenotype/c-elegans-gross-anatomy-ontology,,,http://purl.obolibrary.org/obo/wbbt.owl,http://creativecommons.org/licenses/by/4.0/
+C. elegans Development Ontology,WBls,,N/A,https://github.com/obophenotype/c-elegans-development-ontology,,,http://purl.obolibrary.org/obo/wbls.owl,http://creativecommons.org/licenses/by/4.0/
+C elegans Phenotype Ontology,WBPhenotype,,N/A,https://github.com/obophenotype/c-elegans-phenotype-ontology,,,http://purl.obolibrary.org/obo/wbphenotype.owl,http://creativecommons.org/licenses/by/4.0/
+Xenopus Anatomy Ontology,XAO,,N/A,http://www.xenbase.org/anatomy/xao.do?method=display,,,http://purl.obolibrary.org/obo/xao.owl,https://creativecommons.org/licenses/by/3.0/
+N/A,XCO,,N/A,https://rgd.mcw.edu/rgdweb/ontology/view.html?acc_id=XCO:0000000,,,http://purl.obolibrary.org/obo/xco.owl,N/A
+N/A,XL,,N/A,http://www.psidev.info/groups/controlled-vocabularies,,,http://purl.obolibrary.org/obo/xl.owl,N/A
+N/A,XLMOD,,N/A,http://www.psidev.info/groups/controlled-vocabularies,,,http://purl.obolibrary.org/obo/xlmod.owl,N/A
+Xenopus Phenotype Ontology,XPO,,N/A,https://github.com/obophenotype/xenopus-phenotype-ontology,,,http://purl.obolibrary.org/obo/xpo.owl,https://creativecommons.org/licenses/by/3.0/
+Zebrafish Experimental Conditions Ontology,ZECO,,N/A,https://github.com/ybradford/zebrafish-experimental-conditions-ontology,,,http://purl.obolibrary.org/obo/zeco.owl,https://creativecommons.org/licenses/by/3.0/
+Zebrafish Anatomy Ontology (ZFA),ZFA,,N/A,https://wiki.zfin.org/display/general/Anatomy+Atlases+and+Resources,,,http://purl.obolibrary.org/obo/zfa.owl,https://creativecommons.org/licenses/by/3.0/
+N/A,ZFS,,N/A,https://wiki.zfin.org/display/general/Anatomy+Atlases+and+Resources,,,http://purl.obolibrary.org/obo/zfs.owl,N/A
+Zebrafish Phenotype Ontology (ZP),ZP,,N/A,https://github.com/obophenotype/zebrafish-phenotype-ontology,,,http://purl.obolibrary.org/obo/zp.owl,https://creativecommons.org/licenses/by/3.0/
