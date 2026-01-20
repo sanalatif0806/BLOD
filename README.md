@@ -9,14 +9,14 @@
     BLOD is an open-source project aimed at creating the Cloud for visualizing Biomedical Linked Open Data. For each resource indexed within the cloud it is possible to view its FAIRness and the main information contained in the resource metadata such as: description, license, SPARQL endpoint and Data Dump.
     The project comprises two main components: the first (BLODCLOUDGEN) is responsible for generating the Cloud by processing resources from the Linked Open Data (LOD) Cloud, supplemented with manually curated entries; the second component, the WebApp, provides a web-based interface for visualizing the resulting Cloud.
     <br />
-    <a href="https://blodcloud.di.unisa.it"><strong>Explore the BLOD Cloud »</strong></a>
+    <a href="http://isislab.it:12280/blod"><strong>Explore the BLOD Cloud »</strong></a>
     <br />
     <br />
     <a href="https://github.com/sanalatif0806/BLOD">See the additional material for the Article</a>
     <!-- &middot;
-    <a href="https://github.com/github_username/repo_name/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/sanalatif0806/BLOD/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     &middot;
-    <a href="https://github.com/github_username/repo_name/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a> !-->
+    <a href="https://github.com/sanalatif0806/BLOD/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a> !-->
   </p>
 </div>
 
