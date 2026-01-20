@@ -23,10 +23,9 @@
 ## Repository structure
 The [blod/src](Blod/src/) folder contains:
 - The Python code used to generate the BLOD CLOUD based on the annotations provided by the two researchers, as well as the code for the experiment using the keywords extracted from the SLR and that for the LLMs.
-- The [evaluate_fairness.py](./CHe_cloud_generator/src/evaluate_fairness.py) script, which enables the computation of dataset fairness based on the results from KGHeartBeat.
+- The [evaluate_fairness.py](https://github.com/sanalatif0806/BLOD/blob/master/Blod/src/evaluate_fairness.py) script, which enables the computation of dataset fairness based on the results from KGHeartBeat.
 
 The [blod/data](Blod/data/) folder contains:
-- The [keyword_from_SLR](Blod/data/keywords_from_SLR/) folder, which includes the keywords extracted from the papers identified using an SLR approach. These keywords were used to automatically categorize the datasets in the LOD cloud.
 - The [WebApp](./WebApp/) folder, which contains the code required to serve the BLOD CLOUD.
 
 ### Built With
