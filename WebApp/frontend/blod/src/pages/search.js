@@ -30,7 +30,7 @@ function Search() {
       queryFields = selectedFieldArray.join(',');
     }
     try {
-      const res = await axios.get(`${base_url}/BLOD/search`, {
+    const res = await axios.get(`${base_url}/BLOD/search`, {
         params: {
           q: nameQuery,
           fields: queryFields,
@@ -79,9 +79,7 @@ function Search() {
       </div>
 
       <div className="container mt-3 pb-1 min-vh-100">
-        <h3 className="mb-4 mt-4">Search into the BLOD CLOUD</h3>
-
-        <form className="mb-4" onSubmit={handleSearch}>
+        <form className="mb-4" onSubmit={handleSearch} >
           <div className="d-flex mb-2">
             <input
               type="text"
