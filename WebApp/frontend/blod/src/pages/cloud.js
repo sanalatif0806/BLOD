@@ -221,7 +221,7 @@ const fetchGraphData = async () => {
                     GitHub
                 </button>
                 <button
-                    onClick={() => window.open('https://github.com/sanalatif0806/blod/fair_mapping.html', '_blank')}
+                    onClick={() => window.open('https://gabrielet0.github.io/CHe-CLOUD/fair_mapping.html', '_blank')}
                     style={{
                         padding: '0.4rem 1rem',
                         fontSize: '0.9rem',
@@ -262,7 +262,7 @@ const fetchGraphData = async () => {
                 textAlign: 'center',
                 fontSize: '3rem',
                 margin: '1rem 0',
-                color: '#8da89f',
+                color: '#141414',
                 fontFamily: 'Segoe UI, sans-serif',
                 letterSpacing: '1px',
                 textShadow: '1px 1px 2px rgba(0,0,0,0.1)',
@@ -270,7 +270,7 @@ const fetchGraphData = async () => {
             }}>
             BLOD
             <img
-                    src="/favicon.png"
+                    src="/blod/favicon.png"
                     alt="Cloud Logo"
                     style={{ height: "50px", width: "50px", marginLeft: "20px", marginBottom: "2px" }}
             />
@@ -279,7 +279,7 @@ const fetchGraphData = async () => {
                 textAlign: 'center',
                 fontSize: '2.3rem',
                 margin: '1rem 0',
-                color: '#8da89f',
+                color: '#141414',
                 fontFamily: 'Segoe UI, sans-serif',
                 letterSpacing: '1px',
                 textShadow: '1px 1px 2px rgba(0,0,0,0.1)',
@@ -297,7 +297,7 @@ const fetchGraphData = async () => {
                         marginRight: '1rem',
                         fontSize: '1rem',
                         backgroundColor: '#8da89f',
-                        color: '#fff',
+                        color: '#141414',
                         border: 'none',
                         borderRadius: '5px',
                         cursor: 'pointer',
@@ -309,27 +309,6 @@ const fetchGraphData = async () => {
                 >
                     Search
                 </button>
-
-                <button
-                    onClick={handleDash}
-                    style={{
-                        padding: '0.5rem 1.3rem',
-                        marginRight: '1rem',
-                        fontSize: '1rem',
-                        backgroundColor: '#8da89f',
-                        color: '#fff',
-                        border: 'none',
-                        borderRadius: '5px',
-                        cursor: 'pointer',
-                        boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
-                        transition: 'background-color 0.3s ease'
-                    }}
-                    onMouseOver={(e) => e.target.style.backgroundColor = '#7b978c'}
-                    onMouseOut={(e) => e.target.style.backgroundColor = '#8da89f'}
-                >
-                    Dashboard
-                </button>
-
                 <button
                     onClick={handleInsertResource}
                     style={{
@@ -337,7 +316,7 @@ const fetchGraphData = async () => {
                         fontSize: '1rem',
                         backgroundColor: '#8da89f',
                         marginRight: '1rem',
-                        color: '#fff',
+                        color: '#141414',
                         border: 'none',
                         borderRadius: '5px',
                         cursor: 'pointer',
@@ -357,7 +336,7 @@ const fetchGraphData = async () => {
                         marginRight: '1rem',
                         fontSize: '1rem',
                         backgroundColor: '#8da89f',
-                        color: '#fff',
+                        color: '#141414',
                         border: 'none',
                         borderRadius: '5px',
                         cursor: 'pointer',

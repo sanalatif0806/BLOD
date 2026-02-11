@@ -67,6 +67,7 @@ function Dashboard() {
                 delete fairRes.data['FAIR score'];
                 setOnlyFairStats(fairOnly);
                 setFairStatsData(fairRes.data);
+                setFairStatsData(fairRes.data);
 
                 setLicenseData(licenseRes.data);
                 setMediaTypeData(mediaRes.data);

@@ -42,7 +42,7 @@ const keyMapping = {
 // routes/CHe_cloud_data.js - Update the /all_ch_links route
 router.get('/all_ch_links', async (req, res) => {
     try {
-        console.log('📊 Fetching all CH links data from healthcloud database');
+        console.log('📊 Fetching all Health links data from healthcloud database');
 
         let items = [];
         try {
@@ -82,7 +82,7 @@ router.get('/all_ch_links', async (req, res) => {
        // "Clinical & Patient Data", "Omics & Molecular Data" ,"Medical Imaging & Signals", "Public Health & Surveillance", "Biobank & Research Data","Behavioral & Social Data","Terminologies & Metadata"
         const allowedKeywords = [ "Clinical & Patient Data", "Omics & Molecular Data" ,"Medical Imaging & Signals", "Public Health & Surveillance", "Biobank & Research Data","Behavioral & Social Data","Terminologies & Metadata"];
         const nodes = items.map(item => {
-            let matchedKeyword = item.keywords?.find(kw => allowedKeywords.includes(kw)) || 'Generic';
+            let matchedKeyword = item.keywords?.find(kw => allowedKeywords.includes(kw));
 
             const categoryMap = {
                 'Clinical & Patient Data': 'Clinical & Patient Data',
@@ -97,7 +97,7 @@ router.get('/all_ch_links', async (req, res) => {
             return {
                 "id": item.identifier,
                 "title": item.title,
-                "url": `${frontendUrl}${fairness_page}?dataset_id=${item.identifier}`,
+                "url": `${frontendUrl}/${fairness_page}?dataset_id=${item.identifier}`,
                 "category": categoryMap[matchedKeyword] || 'Generic'
             };
         });
@@ -119,7 +119,8 @@ router.get('/all_ch_links', async (req, res) => {
         const response = {
             "nodes": nodes,
             "links": links,
-            "source": "healthcloud-database",
+            "source": "healthcloud",
+           // "source": "healthcloud-database",
             "timestamp": new Date().toISOString()
         };
 
@@ -138,14 +139,14 @@ router.get('/all_ch_links', async (req, res) => {
 router.get('/fairness_data/:id', async (req, res) => {
     try{
         const targetId = req.params.id;
-        const response = await fetch(`http://isislab.it:12280/kgheartbeat/api/fairness/${targetId}`);
+        const response = await fetch(`https://kgheartbeat.di.unisa.it/kgheartbeat-api/fairness/${targetId}`);
         const data = await response.json();
         const mappedData = Object.fromEntries(
         Object.entries(data).map(([key, value]) => [
             keyMapping[key] || key, // fallback to original key if no mapping
             value
             ])
-        ); 
+        );
 
         if (mappedData) {
             return res.json(mappedData);

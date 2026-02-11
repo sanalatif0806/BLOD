@@ -7,8 +7,8 @@ function NavBar() {
   return (
     <Navbar bg="light" expand="md" className="mb-4 shadow-sm">
       <Container fluid>
-        <Navbar.Brand as={Link} to="/" className="fw-bold fs-4" style={{color:"#3380af"}}>
-          CHeCLOUD
+        <Navbar.Brand as={Link} to="/" className="fw-bold fs-4" style={{color:"#18191a"}}>
+          BLOD Cloud
         </Navbar.Brand>
         <Link to="/">
           <img
@@ -37,7 +37,7 @@ function NavBar() {
               <Nav.Link as={Link} to="/about">About</Nav.Link>
             </Nav>
                             <button
-                    onClick={() => window.open('https://github.com/GabrieleT0/CHe-CLOUD', '_blank')}
+                    onClick={() => window.open('https://github.com/sanalatif0806/BLOD', '_blank')}
                     style={{
                         display: 'flex',
                         alignItems: 'center',
@@ -45,7 +45,7 @@ function NavBar() {
                         padding: '0.4rem 1rem',
                         fontSize: '0.9rem',
                         backgroundColor: '#333',
-                        color: '#fff',
+                        color: '#141414',
                         border: 'none',
                         marginBottom: '10px',
                         borderRadius: '5px',
@@ -61,12 +61,12 @@ function NavBar() {
                     GitHub
                 </button>
                 <button
-                    onClick={() => window.open('https://gabrielet0.github.io/CHe-CLOUD/fair_mapping.html', '_blank')}
+                    onClick={() => window.open('https://github.com/sanalatif0806/BLOD/fair_mapping.html', '_blank')}
                     style={{
                         padding: '0.4rem 1rem',
                         fontSize: '0.9rem',
                         backgroundColor: '#4a90e2',
-                        color: '#fff',
+                        color: '#141414',
                         border: 'none',
                         borderRadius: '5px',
                         cursor: 'pointer',
