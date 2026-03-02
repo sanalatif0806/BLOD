@@ -1,0 +1,45 @@
+BLOD/
+│
+├── WebApp/
+│   ├── backend/
+│   │   ├── CHe_cloud_data.json
+│   │   ├── data/
+│   │   │   ├── BLOD.json
+│   │   │   ├── fairness-data1.csv
+│   │   │   ├── latest_quality_snapshot.csv
+│   │   │   └── llms_prompts.json
+│   │   ├── mongo_data/
+│   │   │   └── BLOD.json
+│   │   ├── src/
+│   │   │   ├── llm/
+│   │   │   │   └── client.js
+│   │   │   ├── models/
+│   │   │   │   └── BLOD.js
+│   │   │   ├── routes/
+│   │   │       ├── BLOD.js      ← **fairness_data route is here**
+│   │   │       ├── llm.js
+│   │   │       └── monitoring_requests.js
+│   │   ├── db.js
+│   │   ├── package.json
+│   │   ├── .env-example
+│   │   └── server.js
+│   │
+│   ├── frontend/
+│   │   └── blod/
+│   │       ├── public/
+│   │       ├── src/
+│   │       │   ├── components/
+│   │       │   │   ├── gauge_chart.js
+│   │       │   │   ├── radar_chart.js
+│   │       │   │   ├── radial_bar.js
+│   │       │   │   └── line_chart.js
+│   │       │   ├── pages/
+│   │       │   │   ├── cloud.js
+│   │       │   │   ├── fairness_info.js ← **the charts page**
+│   │       │   │   ├── search.js
+│   │       │   │   └── dashboard.js
+│   │       │   └── utils.js
+│   │       ├── package.json
+│   │       └── README.md
+│
+└── .git (hundreds of objects…)
