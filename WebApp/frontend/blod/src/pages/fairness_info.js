@@ -216,6 +216,14 @@ function FairnessInfo(){
                                 </a>
                             </Col>
                         )}
+                        {dataset_metadata.wikidataurl && (
+                            <Col md={6} className="mb-3">
+                                <strong>WIKIDATA Link: </strong>
+                                <a href={dataset_metadata.wikidataurl} target="_blank" rel="noopener noreferrer">
+                                    {dataset_metadata.wikidataurl}
+                                </a>
+                            </Col>
+                        )}
                         {dataset_metadata.license ? (
                             <Col md={6} className="mb-3">
                                 <strong>License: </strong>{dataset_metadata.license}
@@ -225,6 +233,7 @@ function FairnessInfo(){
                                 <strong>License: </strong>Not specified
                             </Col>
                         )}
+
                         {dataset_metadata.contact_point.email || dataset_metadata.contact_point.name ? (
                             <Col md={6} className="mb-3">
                                 <strong>Contact point</strong> <br />

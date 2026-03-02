@@ -470,7 +470,7 @@ const FormComponent = () => {
                   <span className="visually-hidden">Loading...</span>
                 </div>
                 <h5 className="mb-2">Processing your submission...</h5>
-                <p className="text-muted mb-0">Please wait while we analyze your dataset metadata with LLM to check if is a CH dataset.</p>
+                <p className="text-muted mb-0">Please wait while we analyze your dataset metadata with LLM to check if is a Health dataset.</p>
               </div>
             </div>
           </div>
@@ -815,11 +815,19 @@ const FormComponent = () => {
         value={formData.category}
         required
       >
+
+   ,
+   ,
+    ,
+
         <option value="">-- Select a sub-category --</option>
-        <option value="ch-tangible">Tangible</option>
-        <option value="ch-intangible">Intangible</option>
-        <option value="ch-natural">Natural</option>
-        <option value="ch-generic">Generic</option>
+        <option value= "Clinical & Patient Data"> Clinical & Patient Data</option>
+        <option value="Omics & Molecular Data">Omics & Molecular Data</option>
+        <option value="Medical Imaging & Signal">Medical Imaging & Signal</option>
+        <option value= "Public Health & Surveillance"> Public Health & Surveillance</option>
+      <option value= "Biobank & Research Data"> Biobank & Research Data  </option>
+       <option value="Behavioral & Social Data"> Behavioral & Social Data </option>
+        <option value="Terminologies & Metadata">Terminologies & Metadata  </option>
       </select>
       <div className="invalid-feedback">Please enter one sub-category.</div>
     </div>

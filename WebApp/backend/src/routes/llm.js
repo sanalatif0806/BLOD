@@ -3,14 +3,15 @@ const {ChatPromptTemplate} = require("@langchain/core/prompts");
 const router = require('express').Router();
 const prompts = require('../../data/llms_prompts.json');
 
-const PROMPT = `I give you the title description and id about a dataset, I have to categorize it as Cultural Heritage or Not.  \
-            For datasets that are Cultural Heritage, you also need to further specify whether it is Tangible, Intangible, Natural Heritage and finally those that define thesaurus and data models, classify them as Generic.  \
+const PROMPT = `I give you the title description and id about a dataset, I have to categorize it as Health or Not.  \
+            For datasets that are Health, you also need to further specify whether it is Clinical & Patient Data,
+    Omics & Molecular Data, Medical Imaging & Signals, Public Health & Surveillance, Biobank & Research Data, Behavioral & Social Data, Terminologies & Metadata and finally those that define thesaurus and data models, classify them as Generic.  \
             You will be provided with a dataset description, title and the id, and you will output a json object. Here is an example of how you should respond: \
             {{ \
-                "category": "Cultural Heritage", \
-                "sub_category": "Tangible" \
+                "category": "Health", \
+                "sub_category": "Public Health & Surveillance" \
             }} \
-            If the dataset is not part of the Cultural Heritage category, leave the value of the keys empty. If the dataset is of type Cultural Heritage, but you cannot define the sub category, do not enter the value in the key “sub_category”.`
+            If the dataset is not part of the Health category, leave the value of the keys empty. If the dataset is of type Health, but you cannot define the sub category, do not enter the value in the key “sub_category”.`
 
 const keyMapping = {
   f1M: 'F1-M Unique and persistent ID',

@@ -13,21 +13,21 @@ import About from './pages/about';
 //const GA_ID = process.env.REACT_APP_GA_ID
 
 function App() {
- // ReactGA.initialize(GA_ID);
-  
- // useEffect(() => {
- //   ReactGA.send({ hitType: "pageview", page: window.location.pathname });
- // }, []);
-  
   return (
       <Router basename='/'>
         <Routes>
-          <Route basename={'/'} path='*' element={<Cloud />} /> 
-          <Route basename={'/'} path='/fairness-info' element={<FairnessInfo />} />
-          <Route basename={'/'} path='/add-dataset' element={<AddDataset />} />
-          <Route basename={'/'} path='/search' element={<Search />} />
-          <Route basename={'/'} path='/dashboard' element={<Dashboard />} />
-          <Route basename={'/'} path='/about' element={<About />} />
+          {/* Put all specific routes FIRST */}
+          <Route path='/fairness-info' element={<FairnessInfo />} />
+          <Route path='/add-dataset' element={<AddDataset />} />
+          <Route path='/search' element={<Search />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/about' element={<About />} />
+
+          {/* Put the root path SECOND */}
+          <Route path='/' element={<Cloud />} />
+
+          {/* Put catch-all LAST (this will only match if no other routes match) */}
+          <Route path='*' element={<Cloud />} />
         </Routes>
       </Router>
   );

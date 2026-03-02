@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { dahboard_backend_url } from '../api';
 import { Row, Col } from 'react-bootstrap';
 import PieChart from '../components/pie_chart';
-import axios, { all } from 'axios';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import BoxPlot from '../components/boxplot';
 import DonutChart from '../components/donut_chart';
@@ -20,20 +20,23 @@ function Dashboard() {
     const [only_fair_stats, setOnlyFairStats] = useState({});
     const [datasets_stats, setDatasetsStats] = useState({});
     const [datasets_ontologies, setDatasetsOntologies] = useState({});
-    const [license_table, setLicenseTable] = useState(false);
-    const [sparql_table, setSparqlTable] = useState(false);
-    const [rdf_table, setRdfTable] = useState(false);
-    const [media_table, setMediaTable] = useState(false);
-    const [vocab_data, setVocabData] = useState(false);
-    const [vocab_table, setVocabTable] = useState(false);
-    const [all_fair_score, setAllFairScore] = useState(false);
-    const [all_single_fair_score, setAllSingleFairScore] = useState(false);
-    const [single_fair_tab, setSingleFairTab] = useState(false);
-
+    const [license_table, setLicenseTable] = useState(null);
+    const [sparql_table, setSparqlTable] = useState(null);
+    const [rdf_table, setRdfTable] = useState(null);
+    const [media_table, setMediaTable] = useState(null);
+    const [vocab_data, setVocabData] = useState(null);
+    const [vocab_table, setVocabTable] = useState(null);
+    const [all_single_fair_score, setAllSingleFairScore] = useState(null);
+    const [single_fair_tab, setSingleFairTab] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
             try {
+                setLoading(true);
+                setError(null);
+
                 const [
                     sparqlRes,
                     rdfRes,
@@ -54,26 +57,40 @@ function Dashboard() {
                     axios.get(`${dahboard_backend_url}/all_single_fair_score`)
                 ]);
 
-                setSparqlData(sparqlRes.data);
-                setRdfDumpData(rdfRes.data);
-                setDatasetsOntologies({
-                    datasets: statsRes.data.datasets,
-                    ontologies: statsRes.data.ontologies,
-                });
-                delete statsRes.data.datasets
-                delete statsRes.data.ontologies
-                setDatasetsStats(statsRes.data);
-                const fairOnly = { 'FAIR score': fairRes.data['FAIR score'] };
-                delete fairRes.data['FAIR score'];
-                setOnlyFairStats(fairOnly);
-                setFairStatsData(fairRes.data);
+                setSparqlData(sparqlRes.data || {});
+                setRdfDumpData(rdfRes.data || {});
 
-                setLicenseData(licenseRes.data);
-                setMediaTypeData(mediaRes.data);
-                setVocabData(vocabRes.data);
-                setAllSingleFairScore(allSingleFairScoreRes.data);
+                // Handle datasets stats
+                if (statsRes.data) {
+                    setDatasetsOntologies({
+                        datasets: statsRes.data.datasets || 0,
+                        ontologies: statsRes.data.ontologies || 0,
+                    });
+
+                    const statsCopy = { ...statsRes.data };
+                    delete statsCopy.datasets;
+                    delete statsCopy.ontologies;
+                    setDatasetsStats(statsCopy || {});
+                }
+
+                // Handle fair stats
+                if (fairRes.data) {
+                    const fairOnly = { 'FAIR score': fairRes.data['FAIR score'] || {} };
+                    delete fairRes.data['FAIR score'];
+                    setOnlyFairStats(fairOnly);
+                    setFairStatsData(fairRes.data || {});
+                }
+
+                setLicenseData(licenseRes.data || {});
+                setMediaTypeData(mediaRes.data || {});
+                setVocabData(vocabRes.data || {});
+                setAllSingleFairScore(allSingleFairScoreRes.data || []);
+
             } catch (error) {
                 console.error("Data fetch error:", error);
+                setError(error.message || "Failed to fetch dashboard data");
+            } finally {
+                setLoading(false);
             }
         }
 
@@ -81,110 +98,243 @@ function Dashboard() {
     }, []);
 
     useEffect(() => {
-        if (license_data) {
-            const data = Object.entries(license_data).filter(([k]) => k !== 'False').map(([key, value]) => ({
-                license: renderValueAsLink(key),
-                count: value
-            }));
-            setLicenseTable(<MaterialTable columns_value={[
-                { accessorKey: 'license', header: 'Machine-Readable License', size: 50 },
-                { accessorKey: 'count', header: 'Count', size: 5 }
-            ]} data_table={data} />);
+        // License Table
+        if (license_data && Object.keys(license_data).length > 0) {
+            const data = Object.entries(license_data)
+                .filter(([k]) => k !== 'False')
+                .map(([key, value]) => ({
+                    license: renderValueAsLink(key),
+                    count: value
+                }));
+
+            if (data.length > 0) {
+                setLicenseTable(
+                    <MaterialTable
+                        columns_value={[
+                            { accessorKey: 'license', header: 'Machine-Readable License', size: 50 },
+                            { accessorKey: 'count', header: 'Count', size: 5 }
+                        ]}
+                        data_table={data}
+                    />
+                );
+            } else {
+                setLicenseTable(<p className="text-center text-muted">No license data available</p>);
+            }
         }
 
-        if (sparql_data) {
-            const data = Object.entries(sparql_data).filter(([k]) => k !== 'False').map(([key, value]) => {
-                let label = key;
-                if (key === '-') label = 'Not indicated';
-                else if (key === 'offline') label = 'Offline';
-                else if (key === 'Available') label = 'Online';
-                else if (key === 'Restricted access to the endpoint') label = 'Access protected';
-                return { sparql: label, count: value };
-            });
+        // SPARQL Table
+        if (sparql_data && Object.keys(sparql_data).length > 0) {
+            const data = Object.entries(sparql_data)
+                .filter(([k]) => k !== 'False')
+                .map(([key, value]) => {
+                    let label = key;
+                    if (key === '-') label = 'Not indicated';
+                    else if (key === 'offline') label = 'Offline';
+                    else if (key === 'Available') label = 'Online';
+                    else if (key === 'Restricted access to the endpoint') label = 'Access protected';
+                    return { sparql: label, count: value };
+                });
 
-            setSparqlTable(<MinimalTable columns_value={[
-                { accessorKey: 'sparql', header: 'SPARQL Endpoint Status', size: 50 },
-                { accessorKey: 'count', header: 'Count', size: 5 }
-            ]} data_table={data} />);
+            if (data.length > 0) {
+                setSparqlTable(
+                    <MinimalTable
+                        columns_value={[
+                            { accessorKey: 'sparql', header: 'SPARQL Endpoint Status', size: 50 },
+                            { accessorKey: 'count', header: 'Count', size: 5 }
+                        ]}
+                        data_table={data}
+                    />
+                );
+            } else {
+                setSparqlTable(<p className="text-center text-muted">No SPARQL data available</p>);
+            }
         }
 
-        if (rdf_dump_data) {
-            const data = Object.entries(rdf_dump_data).filter(([k]) => k !== 'False').map(([key, value]) => {
-                let label = key;
-                if (key === '1') label = 'Online';
-                else if (key === '0') label = 'Offline';
-                else if (key === '-1') label = 'Not indicated';
-                return { rdf: label, count: value };
-            });
+        // RDF Dump Table
+        if (rdf_dump_data && Object.keys(rdf_dump_data).length > 0) {
+            const data = Object.entries(rdf_dump_data)
+                .filter(([k]) => k !== 'False')
+                .map(([key, value]) => {
+                    let label = key;
+                    if (key === '1') label = 'Online';
+                    else if (key === '0') label = 'Offline';
+                    else if (key === '-1') label = 'Not indicated';
+                    return { rdf: label, count: value };
+                });
 
-            setRdfTable(<MinimalTable columns_value={[
-                { accessorKey: 'rdf', header: 'RDF Dump Status', size: 50 },
-                { accessorKey: 'count', header: 'Count', size: 5 }
-            ]} data_table={data} />);
+            if (data.length > 0) {
+                setRdfTable(
+                    <MinimalTable
+                        columns_value={[
+                            { accessorKey: 'rdf', header: 'RDF Dump Status', size: 50 },
+                            { accessorKey: 'count', header: 'Count', size: 5 }
+                        ]}
+                        data_table={data}
+                    />
+                );
+            } else {
+                setRdfTable(<p className="text-center text-muted">No RDF dump data available</p>);
+            }
         }
 
-        if(all_single_fair_score){
-            const data = all_single_fair_score.map(item => ({
-                count: (
-                <a
-                href={`./fairness-info?dataset_id=${item['KG id']}`}
-                target="_blank"   
-                rel="noopener noreferrer"
-                style={{ color: '#1976d2', textDecoration: 'none' }}
-                >
-                {item['KG name']}
-                </a>
-            ),
-                fair: parseFloat(item['FAIR score']),
-                f: parseFloat(item['F score']),
-                a: parseFloat(item['A score']),
-                i: parseFloat(item['I score']),
-                r: parseFloat(item['R score']),
+        // Single Fair Score Table
+        if (all_single_fair_score && all_single_fair_score.length > 0) {
+            const data = all_single_fair_score
+                .filter(item => item && item['KG id'] && item['KG name'])
+                .map(item => ({
+                    count: (
+                        <a
+                            href={`./fairness-info?dataset_id=${item['KG id']}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: '#1976d2', textDecoration: 'none' }}
+                        >
+                            {item['KG name']}
+                        </a>
+                    ),
+                    fair: parseFloat(item['FAIR score']) || 0,
+                    f: parseFloat(item['F score']) || 0,
+                    a: parseFloat(item['A score']) || 0,
+                    i: parseFloat(item['I score']) || 0,
+                    r: parseFloat(item['R score']) || 0,
+                }));
 
-            }));
-            setSingleFairTab(<MaterialTable columns_value={[
-                { accessorKey: 'count', header: 'Dataset Name', size: 50 },
-                { accessorKey: 'fair', header: 'FAIR score', size: 5 },
-                { accessorKey: 'f', header: 'F score', size: 5 },
-                { accessorKey: 'a', header: 'A score', size: 5 },
-                { accessorKey: 'i', header: 'I score', size: 5 },
-                { accessorKey: 'r', header: 'R score', size: 5 }
-            ]} data_table={data} />);
-        }
-        if (mediatype_data) {
-            const data = Object.entries(mediatype_data).filter(([k]) => k !== 'False').map(([key, value]) => ({
-                media: key,
-                count: value
-            }));
-
-            setMediaTable(<MaterialTable columns_value={[
-                { accessorKey: 'media', header: 'Media Type', size: 50 },
-                { accessorKey: 'count', header: 'Count', size: 5 }
-            ]} data_table={data} />);
+            if (data.length > 0) {
+                setSingleFairTab(
+                    <MaterialTable
+                        columns_value={[
+                            { accessorKey: 'count', header: 'Dataset Name', size: 50 },
+                            { accessorKey: 'fair', header: 'FAIR score', size: 5 },
+                            { accessorKey: 'f', header: 'F score', size: 5 },
+                            { accessorKey: 'a', header: 'A score', size: 5 },
+                            { accessorKey: 'i', header: 'I score', size: 5 },
+                            { accessorKey: 'r', header: 'R score', size: 5 }
+                        ]}
+                        data_table={data}
+                    />
+                );
+            } else {
+                setSingleFairTab(<p className="text-center text-muted">No fairness score data available</p>);
+            }
         }
 
-        if(vocab_data){
-            const data = Object.entries(vocab_data).filter(([k]) => k !== 'False').map(([key, value]) => ({
-                ontology: renderValueAsLink(key),
-                count: value
-            }));
-            setVocabTable(<MaterialTable columns_value={[
-                { accessorKey: 'ontology', header: 'Ontology', size: 50 },
-                { accessorKey: 'count', header: 'Count', size: 5 }
-            ]} data_table={data} />);
+        // Media Type Table
+        if (mediatype_data && Object.keys(mediatype_data).length > 0) {
+            const data = Object.entries(mediatype_data)
+                .filter(([k]) => k !== 'False')
+                .map(([key, value]) => ({
+                    media: key,
+                    count: value
+                }));
+
+            if (data.length > 0) {
+                setMediaTable(
+                    <MaterialTable
+                        columns_value={[
+                            { accessorKey: 'media', header: 'Media Type', size: 50 },
+                            { accessorKey: 'count', header: 'Count', size: 5 }
+                        ]}
+                        data_table={data}
+                    />
+                );
+            } else {
+                setMediaTable(<p className="text-center text-muted">No media type data available</p>);
+            }
         }
-    }, [license_data, sparql_data, rdf_dump_data, mediatype_data, vocab_data]);
+
+        // Vocabulary Table
+        if (vocab_data && Object.keys(vocab_data).length > 0) {
+            const data = Object.entries(vocab_data)
+                .filter(([k]) => k !== 'False')
+                .map(([key, value]) => ({
+                    ontology: renderValueAsLink(key),
+                    count: value
+                }));
+
+            if (data.length > 0) {
+                setVocabTable(
+                    <MaterialTable
+                        columns_value={[
+                            { accessorKey: 'ontology', header: 'Ontology', size: 50 },
+                            { accessorKey: 'count', header: 'Count', size: 5 }
+                        ]}
+                        data_table={data}
+                    />
+                );
+            } else {
+                setVocabTable(<p className="text-center text-muted">No vocabulary data available</p>);
+            }
+        }
+    }, [license_data, sparql_data, rdf_dump_data, mediatype_data, vocab_data, all_single_fair_score]);
+
+    // Loading State
+    if (loading) {
+        return (
+            <div className="container-fluid mt-3 px-4">
+                <div className="d-flex justify-content-start gap-2 mb-4">
+                    <Link to="/" className="fw-bold fs-4 text-decoration-none" style={{color: '#8da89f'}}>BLOD</Link>
+                    <Link to="/" className="d-flex align-items-center">
+                        <img
+                            src="/favicon.png"
+                            alt="Cloud Logo"
+                            style={{ height: "40px", width: "40px", marginRight: "7px" }}
+                        />
+                    </Link>
+                </div>
+                <div className="d-flex justify-content-center align-items-center" style={{ height: '70vh' }}>
+                    <div className="text-center">
+                        <div className="spinner-border text-success" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                        <p className="mt-3 text-muted">Loading dashboard data...</p>
+                    </div>
+                </div>
+                <Footer />
+            </div>
+        );
+    }
+
+    // Error State
+    if (error) {
+        return (
+            <div className="container-fluid mt-3 px-4">
+                <div className="d-flex justify-content-start gap-2 mb-4">
+                    <Link to="/" className="fw-bold fs-4 text-decoration-none" style={{color: '#8da89f'}}>BLOD</Link>
+                    <Link to="/" className="d-flex align-items-center">
+                        <img
+                            src="/favicon.png"
+                            alt="Cloud Logo"
+                            style={{ height: "40px", width: "40px", marginRight: "7px" }}
+                        />
+                    </Link>
+                </div>
+                <div className="d-flex justify-content-center align-items-center" style={{ height: '70vh' }}>
+                    <div className="text-center text-danger">
+                        <h4>Error Loading Dashboard</h4>
+                        <p>{error}</p>
+                        <button
+                            className="btn btn-outline-success mt-3"
+                            onClick={() => window.location.reload()}
+                        >
+                            Retry
+                        </button>
+                    </div>
+                </div>
+                <Footer />
+            </div>
+        );
+    }
 
     return (
         <div className="container-fluid mt-3 px-4">
             <div className="d-flex justify-content-start gap-2 mb-4">
                 <Link to="/" className="fw-bold fs-4 text-decoration-none" style={{color: '#8da89f'}}>BLOD</Link>
                 <Link to="/" className="d-flex align-items-center">
-                <img 
-                    src="/favicon.png" 
-                    alt="Cloud Logo" 
-                    style={{ height: "40px", width: "40px", marginRight: "7px" }} 
-                />
+                    <img
+                        src="/favicon.png"
+                        alt="Cloud Logo"
+                        style={{ height: "40px", width: "40px", marginRight: "7px" }}
+                    />
                 </Link>
                 <Link to="/search" className="btn btn-outline-success">Search</Link>
                 <Link to="/add-dataset" className="btn btn-outline-success">Add a Dataset</Link>
@@ -197,19 +347,37 @@ function Dashboard() {
                     <Col md={4}>
                         <div className="card h-100 shadow-sm border-0 p-3 bg-white">
                             <h6 className="text-center fw-bold">Resources in the BLOD</h6>
-                            <DonutChart categories={Object.keys(datasets_ontologies)} seriesData={Object.values(datasets_ontologies)} height={200} />
+                            {datasets_ontologies && Object.keys(datasets_ontologies).length > 0 ? (
+                                <DonutChart
+                                    categories={Object.keys(datasets_ontologies)}
+                                    seriesData={Object.values(datasets_ontologies)}
+                                    height={200}
+                                />
+                            ) : (
+                                <p className="text-center text-muted">No data available</p>
+                            )}
                         </div>
                     </Col>
+
                     <Col md={5}>
                         <div className="card h-100 shadow-sm border-0 p-3 bg-white">
                             <h6 className="text-center fw-bold">Datasets by Health Subcategory</h6>
-                            <PieChart categories={Object.keys(datasets_stats)} seriesData={Object.values(datasets_stats)} height={200} />
+                            {datasets_stats && Object.keys(datasets_stats).length > 0 ? (
+                                <PieChart
+                                    categories={Object.keys(datasets_stats)}
+                                    seriesData={Object.values(datasets_stats)}
+                                    height={200}
+                                />
+                            ) : (
+                                <p className="text-center text-muted">No data available</p>
+                            )}
                         </div>
                     </Col>
+
                     <Col md={3}>
                         <div className="card shadow-sm border-0 p-3 bg-white">
                             <h6 className="text-center fw-bold">SPARQL Endpoints</h6>
-                            {sparql_table}
+                            {sparql_table || <p className="text-center text-muted">No data available</p>}
                         </div>
                     </Col>
                 </Row>
@@ -220,19 +388,36 @@ function Dashboard() {
                     <Col md={4}>
                         <div className="card shadow-sm border-0 p-3 bg-white">
                             <h6 className="text-center fw-bold">FAIR Score Distribution</h6>
-                            <BoxPlot categories={Object.keys(only_fair_stats)} seriesData={only_fair_stats} height={250}/>
+                            {only_fair_stats && Object.keys(only_fair_stats).length > 0 ? (
+                                <BoxPlot
+                                    categories={Object.keys(only_fair_stats)}
+                                    seriesData={only_fair_stats}
+                                    height={250}
+                                />
+                            ) : (
+                                <p className="text-center text-muted">No data available</p>
+                            )}
                         </div>
                     </Col>
+
                     <Col md={5}>
                         <div className="card shadow-sm border-0 p-3 bg-white">
                             <h6 className="text-center fw-bold">F-A-I-R Score Distribution</h6>
-                            <BoxPlot seriesData={fair_stats_data} height={250}/>
+                            {fair_stats_data && Object.keys(fair_stats_data).length > 0 ? (
+                                <BoxPlot
+                                    seriesData={fair_stats_data}
+                                    height={250}
+                                />
+                            ) : (
+                                <p className="text-center text-muted">No data available</p>
+                            )}
                         </div>
                     </Col>
+
                     <Col md={3}>
                         <div className="card shadow-sm border-0 p-3 bg-white">
                             <h6 className="text-center fw-bold">RDF Dumps</h6>
-                            {rdf_table}
+                            {rdf_table || <p className="text-center text-muted">No data available</p>}
                         </div>
                     </Col>
                 </Row>
@@ -243,32 +428,36 @@ function Dashboard() {
                     <Col md={6}>
                         <div className="card shadow-sm border-0 p-3 bg-white">
                             <h6 className="text-center fw-bold">Licensing Overview</h6>
-                            {license_table}
+                            {license_table || <p className="text-center text-muted">No data available</p>}
                         </div>
                     </Col>
+
                     <Col md={6}>
                         <div className="card shadow-sm border-0 p-3 bg-white">
                             <h6 className="text-center fw-bold">Media Types</h6>
-                            {media_table}
+                            {media_table || <p className="text-center text-muted">No data available</p>}
                         </div>
                     </Col>
                 </Row>
 
                 <hr className="my-5" />
-                    <Row className="gy-4">
-                        <Col md={8}>
+
+                <Row className="gy-4">
+                    <Col md={8}>
                         <div className="card shadow-sm border-0 p-3 bg-white">
                             <h6 className="text-center fw-bold">(F-A-I-R) score per Dataset</h6>
-                            {single_fair_tab}
+                            {single_fair_tab || <p className="text-center text-muted">No data available</p>}
                         </div>
-                        </Col>
-                        <Col md={4}>
-                            <div className="card shadow-sm border-0 p-3 bg-white">
-                                <h6 className="text-center fw-bold">Ontologies used</h6>
-                                {vocab_table}
-                            </div>
-                        </Col>
-                    </Row>
+                    </Col>
+
+                    <Col md={4}>
+                        <div className="card shadow-sm border-0 p-3 bg-white">
+                            <h6 className="text-center fw-bold">Ontologies used</h6>
+                            {vocab_table || <p className="text-center text-muted">No data available</p>}
+                        </div>
+                    </Col>
+                </Row>
+
                 <hr className="my-5" />
             </div>
             <Footer />

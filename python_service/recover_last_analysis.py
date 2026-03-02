@@ -16,11 +16,13 @@ EXTRACT_DIR = os.path.join(BASE_DIR, "extracted_tar")
 SAVED_CSV_PATH = os.path.join(BASE_DIR, "latest_quality_snapshot.csv")
 MAX_AGE_DAYS = 14
 
+
 def is_csv_fresh(csv_path):
     if not os.path.exists(csv_path):
         return False
     mod_time = datetime.fromtimestamp(os.path.getmtime(csv_path))
     return datetime.now() - mod_time < timedelta(days=MAX_AGE_DAYS)
+
 
 def get_latest_tar_url(index_from_last=3):
     response = requests.get(BASE_URL)
@@ -32,15 +34,18 @@ def get_latest_tar_url(index_from_last=3):
     tar_links.sort(reverse=True)
     return BASE_URL + tar_links[index_from_last - 1]
 
+
 def download_tar(url, save_path):
     response = requests.get(url)
     response.raise_for_status()
     with open(save_path, 'wb') as f:
         f.write(response.content)
 
+
 def extract_tar(tar_path, extract_to):
     with tarfile.open(tar_path, 'r:gz') as tar:
         tar.extractall(path=extract_to)
+
 
 def find_csv_file(directory):
     for root, dirs, files in os.walk(directory):
@@ -49,10 +54,11 @@ def find_csv_file(directory):
                 return os.path.join(root, file)
     raise Exception("No CSV file found in extracted archive.")
 
+
 def load_latest_df(index_from_last=3):
     if is_csv_fresh(SAVED_CSV_PATH):
         return pd.read_csv(SAVED_CSV_PATH)
-    
+
     try:
         latest_tar_url = get_latest_tar_url(index_from_last=index_from_last)
         download_tar(latest_tar_url, TAR_SAVE_PATH)
