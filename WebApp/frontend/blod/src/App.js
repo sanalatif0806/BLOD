@@ -20,18 +20,18 @@ function App() {
  // }, []);
   
   return (
-      <Router basename='/'>
+      <Router basename='/blod'>
         <Routes>
-          <Route basename={'/'} path='*' element={<Cloud />} /> 
-          <Route basename={'/'} path='/fairness-info' element={<FairnessInfo />} />
-          <Route basename={'/'} path='/add-dataset' element={<AddDataset />} />
-          <Route basename={'/'} path='/search' element={<Search />} />
-          <Route basename={'/'} path='/dashboard' element={<Dashboard />} />
-          <Route basename={'/'} path='/about' element={<About />} />
+          <Route path='/' element={<Cloud />} /> 
+          <Route path='/fairness-info' element={<FairnessInfo />} />
+          <Route path='/add-dataset' element={<AddDataset />} />
+          <Route path='/search' element={<Search />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/about' element={<About />} />
+          <Route path='*' element={<Cloud />} /> {/* Catch-all route for 404s */}
         </Routes>
       </Router>
   );
 }
-
 
 export default App;

@@ -66,7 +66,7 @@ function Search() {
     navigate('/');
   };
 
-  const generateDatasetLink = (id) => `/fairness-info?dataset_id=${id}`;
+  const generateDatasetLink = (id) => `fairness-info?dataset_id=${id}`;
 
   return (
     <>
@@ -75,7 +75,7 @@ function Search() {
                 <Link to="/" className="fw-bold fs-4 text-decoration-none" style={{color: '#8da89f'}}>BLOD</Link>
                 <Link to="/" className="d-flex align-items-center">
                 <img 
-                    src="/favicon.png" 
+                    src="favicon.png" 
                     alt="Cloud Logo" 
                     style={{ height: "40px", width: "40px", marginRight: "7px" }} 
                 />

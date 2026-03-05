@@ -1,7 +1,7 @@
 {
   "name": "blod",
+  "homepage": "/blod",
   "version": "0.1.0",
-  "proxy": "http://localhost:5005",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",

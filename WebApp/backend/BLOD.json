@@ -1,4 +1,3 @@
-
 [
     {
         "_id": "bio2rdf-chembl",
@@ -1650,7 +1649,7 @@
             "en": "A structured controlled vocabulary for the phenotypes of Ascomycete fungi"
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1222",
+        "website": "https://bioportal.bioontology.org/ontologies/APO",
         "triples": "4213",
         "domain": "life_sciences",
         "namespace": "",
@@ -1914,7 +1913,7 @@
             "en": "Descriptors relevant to the experimental conditions of the Nuclear Magnetic Resonance (NMR) component in a metabolomics investigation."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1033",
+        "website": "https://old.datahub.io/zh_TW/dataset/bioportal-nmr",
         "triples": "1883",
         "domain": "life_sciences",
         "namespace": "",
@@ -2425,7 +2424,7 @@
             "en": "The semanticscience integrated ontology (SIO) provides a simple, integrated upper level ontology (types, relations) for consistent knowledge representation across physical, processual and informational entities. It provides vocabulary for the Bio2RDF (http://bio2rdf.org) and SADI (http://sadiframework.org) projects."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1532",
+        "website": "http://bioportal.bioontology.org/ontologies/SIO",
         "triples": "8123",
         "domain": "life_sciences",
         "namespace": "http://semanticscience.org/resource/",
@@ -2517,7 +2516,7 @@
             "en": "FYPO is a formal ontology of phenotypes observed in fission yeast. FYPO is being developed to support the comprehensive and detailed representation of phenotypes in PomBase, the new online fission yeast resource (www.pombaes.org). Its scope is similar to that of the Ascomycete Phenotype Ontology (APO), but FYPO includes more detailed pre-composed terms as well as computable definitions."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1689",
+        "website": "https://bioportal.bioontology.org/ontologies/FYPO",
         "triples": "33885",
         "domain": "life_sciences",
         "namespace": "",
@@ -2641,7 +2640,7 @@
             "en": "PSI-MOD is an ontology consisting of terms that describe protein chemical modifications, logically linked by an is_a relationship in such a way as to form a direct acyclic graph (DAG). The PSI-MOD ontology has more than 45 top-level nodes, and provides alternative hierarchical paths for classifying protein modifications either by the molecular structure of the modification, or by the amino acid residue that is modified."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1041",
+        "website": "https://bioportal.bioontology.org/ontologies/PSIMOD",
         "triples": "49779",
         "domain": "life_sciences",
         "namespace": "",
@@ -2881,7 +2880,7 @@
             "en": "A structured controlled vocabulary of concrete protein names and generic (abstract) protein names. This ontology is a INOH pathway annotation ontology, one of a set of ontologies intended to be used in pathway data annotation to ease data integration. This ontology is used to annotate protein names, protein family names, generic/concrete protein names in the INOH pathway data.<br>INOH is part of the BioPAX working group."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1029",
+        "website": "http://linkeddatacatalog.dws.informatik.uni-mannheim.de/id/dataset/bioportal-imr",
         "triples": "123081",
         "domain": "life_sciences",
         "namespace": "",
@@ -3429,7 +3428,7 @@
             "en": "Cell types from NIFSTD"
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1402",
+        "website": "https://bioportal.bioontology.org/ontologies/NIFCELL",
         "triples": "35057",
         "domain": "life_sciences",
         "namespace": "",
@@ -3585,7 +3584,7 @@
             "en": "Representation of types of dendritic cell. Note that the domain of this ontology is wholly subsumed by the domain of the Cell ontology (CL)."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1144",
+        "website": "https://bioportal.bioontology.org/ontologies/CL",
         "triples": "3004",
         "domain": "life_sciences",
         "namespace": "",
@@ -3653,7 +3652,7 @@
             "en": "A structured controlled vocabulary of <i>Caenorhabditis elegans</i> phenotypes"
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1067",
+        "website": "https://bioportal.bioontology.org/ontologies/WB-PHENOTYPE",
         "triples": "25609",
         "domain": "life_sciences",
         "namespace": "",
@@ -4473,7 +4472,7 @@
             "en": "The Experimental Factor Ontology (EFO) is an application focused ontology modelling the experimental variables in the Gene Expression Atlas, EBI. The ontology has been developed to increase the richness of the annotations that are currently made in the ArrayExpress repository, to promote consistent annotation, to facilitate automatic annotation and to integrate external data. The ontology describes cross-product classes from reference ontologies in area such as disease, cell line, cell type and anatomy. Contact James Malone for info: malone@ebi.ac.uk"
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1136",
+        "website": "https://bioportal.bioontology.org/ontologies/EFO",
         "triples": "81324",
         "domain": "life_sciences",
         "namespace": "",
@@ -4701,7 +4700,7 @@
             "en": "AEO is an ontology of anatomical structures that expands CARO, the Common Anatomy Reference Ontology, to about 200 classes using the is_a relationship; it thus provides a detailed type classification for tissues. The new classes were chosen for their use in categorizing the major vertebrate and invertebrate anatomy ontologies at a granularity adequate for tissues of a single cell type. The ontology should be useful in increasing the amount of knowledge in anatomy ontologies, facilitating annotation and enabling interoperability across anatomy ontologies"
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1568",
+        "website": "https://bioportal.bioontology.org/ontologies/AEO",
         "triples": "3167",
         "domain": "life_sciences",
         "namespace": "",
@@ -4813,7 +4812,7 @@
             "en": "REX is an ontology of physico-chemical processes, i.e. physico-chemical changes occurring in course of time. REX includes both microscopic processes (involving molecular entities or subatomic particles) and macroscopic processes. Some biochemical processes from Gene Ontology (GO Biological process) can be described as instances of REX."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1043",
+        "website": "http://bioportal.bioontology.org/ontologies/REX",
         "triples": "5046",
         "domain": "life_sciences",
         "namespace": "",
@@ -4881,7 +4880,7 @@
             "en": "This ontology was designed to help integrate species concepts with species occurrences, gene sequences, images, references and geographical information. See also Taxonconcept.org"
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1247",
+        "website": "http://bioportal.bioontology.org/ontologies/GEOSPECIES",
         "triples": "9616",
         "domain": "life_sciences",
         "namespace": "",
@@ -5229,7 +5228,7 @@
             "en": "A structured classification of chemical compounds of biological relevance."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1007",
+        "website": "http://bioportal.bioontology.org/ontologies/CHEBI",
         "triples": "1573682",
         "domain": "life_sciences",
         "namespace": "",
@@ -5497,7 +5496,7 @@
             "en": "The central aim of the RNA Ontology Consortium (ROC) is to develop an ontology to capture all aspects of RNA - from primary sequence to alignments, secondary and tertiary structure from base pairing and base stacking to sophisticated motifs."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1500",
+        "website": "http://bioportal.bioontology.org/ontologies/RNAO",
         "triples": "2973",
         "domain": "life_sciences",
         "namespace": "",
@@ -5609,7 +5608,7 @@
             "en": "Lipid research is increasingly integrated within systems level biology such as lipidomics where lipid classification is required before appropriate annotation of chemical functions can be applied. The ontology describes the LIPIDMAPS nomenclature classification explicitly using description logics (OWL-DL). Lipid classes are organized hierarchically with the super-classes restricted by generic necessary conditions. More specific necessary conditions are used to define membership requirements for sub classes of lipid according to appropriate functional groups."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1183",
+        "website": "http://bioportal.bioontology.org/ontologies/LIPRO",
         "triples": "15406",
         "domain": "life_sciences",
         "namespace": "",
@@ -5725,7 +5724,7 @@
             "en": "An ontology for data retrieval and exchange in the fields of multiple DNA/RNA  alignment, protein sequence and protein structure alignment."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1026",
+        "website": "http://bioportal.bioontology.org/ontologies/EDAM",
         "triples": "1754",
         "domain": "life_sciences",
         "namespace": "",
@@ -5993,7 +5992,7 @@
             "en": "A structured controlled vocabulary of the anatomy of the Hymenoptera (bees, wasps, sawflies and ants)"
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1362",
+        "website": "http://bioportal.bioontology.org/ontologies/HAO",
         "triples": "53821",
         "domain": "life_sciences",
         "namespace": "",
@@ -6049,7 +6048,7 @@
             "en": "A structured controlled vocabulary of the development of <i>Drosophila melanogaster</i>."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1016",
+        "website": "http://bioportal.bioontology.org/ontologies/FB-DV",
         "triples": "2776",
         "domain": "life_sciences",
         "namespace": "",
@@ -6345,7 +6344,7 @@
             "en": "A structured controlled vocabulary of the anatomy of <i>Drosophila melanogaster</i>."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1015",
+        "website": "http://bioportal.bioontology.org/ontologies/FB-BT",
         "triples": "135761",
         "domain": "life_sciences",
         "namespace": "",
@@ -6725,7 +6724,7 @@
             "en": "A structured controlled vocabulary for the source of an enzyme. It comprises terms for tissues, cell lines, cell types and cell cultures from uni- and multicellular organisms."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1005",
+        "website": "http://bioportal.bioontology.org/ontologies/BTO",
         "triples": "65751",
         "domain": "life_sciences",
         "namespace": "",
@@ -7061,7 +7060,7 @@
             "en": "A taxonomic classification of living organisms and associated artifacts for their controlled description within the context of databases."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1132",
+        "website": "http://bioportal.bioontology.org/ontologies/NCBITAXON",
         "triples": "4154130",
         "domain": "life_sciences",
         "namespace": "",
@@ -7149,7 +7148,7 @@
             "en": "The goal of the Pathway Ontology is to capture the various kinds of biological networks, the relationships between them and the alterations or malfunctioning of such networks within a hierarchical structure. The five nodes are: classic metabolic pathways, regulatory pathways, signaling pathways, drug pathways and disease pathways for complex human conditions. KEGG and Reactome databases, as well as extensive literature searches have been used to choose terms and their position within the tree. A complex human disease pathway is viewed in the context of genetic and environmental attributes that can affect or impair the functioning of various molecular and cellular pathways; their combined, accumulated effect is manifested in the diseased phenotype. In many cases the identity of the malfunctioning dynamic entity is speculated rather than known. Metabolic, regulatory or signaling pathway terms have associated terms for the altered version of the pathway and the level at which the alteration(s) may occur. Proteins with mutations known to affect a particular pathway can be annotated to the normal and altered version(s) of the pathway and to a disease pathway, if known. The ontology provides a unified way to annotate gene products to any type of pathway as well as to deviant pathways. Its hierarchical structure offers the researcher a 'view' of the connections, if not the dependencies between individual pathways, of the possible link between alterations within these complex biological circuitries and diseases."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1035",
+        "website": "https://bioportal.bioontology.org/ontologies/PW",
         "triples": "16830",
         "domain": "life_sciences",
         "namespace": "",
@@ -7517,7 +7516,7 @@
             "en": "An ontology to describe the genetic interval, and the relations between genetic intervals."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1100",
+        "website": "http://bioportal.bioontology.org/ontologies/OGI",
         "triples": "2024",
         "domain": "life_sciences",
         "namespace": "",
@@ -7985,7 +7984,7 @@
             "en": "Provides structured controlled vocabularies for the annotation of expressed sequences with respect to anatomical system, cell type, developmental stage, experimental technique, microarray platform, pathology, pooling, tissue preparation and treatment."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1013",
+        "website": "https://old.datahub.io/bg/dataset/bioportal-ev",
         "triples": "16187",
         "domain": "life_sciences",
         "namespace": "",
@@ -8305,7 +8304,7 @@
             "en": "A structured controlled vocabulary of stage-specific anatomical structures of the human. It has been designed to mesh with the mouse anatomy and incorporates each Carnegie stage of development (CS1-20). The abstract version of the human developmental anatomy ontology compresses all the tissues present over Carnegie stages 1-20 into a single hierarchy. The heart, for example, is present from Carnegie Stage 9 onwards and is thus represented by 12 EHDA IDs (one for each stage). In the abstract mouse, it has a single ID so that the abstract term given as just <i>heart</i> really means <i>heart (CS 9-20)</i>. Timing details will be added to the abstract version of the ontology in a future release."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1021",
+        "website": "http://bioportal.bioontology.org/ontologies/EHDAA",
         "triples": "16345",
         "domain": "life_sciences",
         "namespace": "",
@@ -8389,7 +8388,7 @@
             "en": "The Measurement Method Ontology is designed to represent the variety of methods used to make qualitative and quantitative clincial and phenotype measurements both in the clinic and with model organisms."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1584",
+        "website": "http://bioportal.bioontology.org/ontologies/MMO",
         "triples": "2018",
         "domain": "life_sciences",
         "namespace": "",
@@ -8745,7 +8744,7 @@
             "en": "The IDO ontologies are designed as a set of interoperable ontologies that will together provide coverage of the infectious disease domain. At the core of the set is a general Infectious Disease Ontology (IDO-Core) of entities relevant to both biomedical and clinical aspects of most infectious diseases. Sub-domain specific extensions of IDO-Core complete the set providing ontology coverage of entities relevant to specific pathogens or diseases. \n\n<br><br>\nTo import,<br>\nLatest version: <a href=\"http://purl.obolibrary.org/obo/ido.owl\">http://purl.obolibrary.org/obo/ido.owl</a><br>\nThis version (2010-12-02): <a href=\"http://purl.obolibrary.org/obo/ido/2010-12-02/ido.owl\">http://purl.obolibrary.org/obo/ido/2010-12-02/ido.owl</a><br>\nPrevious  versions:<br>\n2010-05-26 <a href=\"http://purl.obolibrary.org/obo/ido/2010-05-26/ido.owl\">http://purl.obolibrary.org/obo/ido/2010-05-26/ido.owl</a><br>\n2009-08-14 <a href=\"http://purl.obolibrary.org/obo/ido/2009-08-14/ido.owl\">http://purl.obolibrary.org/obo/ido/2009-08-14/ido.owl</a><br>\n<br>\n<br>\nLatest release notes at <a href=\"http://infectiousdiseaseontology.org/page/Download\">http://infectiousdiseaseontology.org/page/Download</a><br>\n\n\nPlease note: The ontology metrics displayed by BioPortal are incorrect as of 8/11/2011. If you need accurate number you will need to compute them on your own, until further notice. In particular these metrics do not distinguish OBI-developed terms versus terms imported from other ontologies, and do not count existing author or definition annotations\n"
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1092",
+        "website": "http://bioportal.bioontology.org/ontologies/IDO",
         "triples": "7370",
         "domain": "life_sciences",
         "namespace": "",
@@ -9078,7 +9077,7 @@
             "en": "Includes terms for the descriptors commonly used in cheminformatics software applications and the algorithms which generate them."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1444",
+        "website": "http://bioportal.bioontology.org/ontologies/CHEMINF",
         "triples": "5931",
         "domain": "life_sciences",
         "namespace": "",
@@ -9566,7 +9565,7 @@
             "en": "An ontology that represents the basic knowledge of physical, chemical and functional characteristics of nanotechnology as used in cancer diagnosis and therapy."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1083",
+        "website": "http://bioportal.bioontology.org/ontologies/NPO",
         "triples": "37796",
         "domain": "life_sciences",
         "namespace": "",
@@ -9734,7 +9733,7 @@
             "en": "bacteriophage and plasmid reproduction and maintenance processes"
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1257",
+        "website": "http://bioportal.bioontology.org/ontologies/MEGO",
         "triples": "4696",
         "domain": "life_sciences",
         "namespace": "",
@@ -9892,7 +9891,7 @@
             "en": "Exposure Ontology. A draft ontology for exposure science."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1575",
+        "website": "https://bioportal.bioontology.org/ontologies/EXO",
         "triples": "1241",
         "domain": "life_sciences",
         "namespace": "",
@@ -10036,7 +10035,7 @@
             "en": "Metrical units for use in conjunction with PATO"
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1112",
+        "website": "http://bioportal.bioontology.org/ontologies/UO",
         "triples": "5038",
         "domain": "life_sciences",
         "namespace": "",
@@ -10404,7 +10403,7 @@
             "en": "Phenotypic qualities (properties). This ontology can be used in conjunction with other ontologies such as GO or anatomical ontologies to refer to phenotypes. Examples of qualities are red, ectopic, high temperature, fused, small, edematous and arrested."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1107",
+        "website": "http://bioportal.bioontology.org/ontologies/PATO",
         "triples": "24953",
         "domain": "life_sciences",
         "namespace": "",
@@ -10718,7 +10717,7 @@
             "en": "Contains a comprehensive list of cell lines derived from breast tissue, both normal and pathological. The ontology in built in OWL with cross relation to classes- genetic variation, pathological condition, genes, chemicals and drugs. The relations built enable semantic query across different classes"
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1438",
+        "website": "http://bioportal.bioontology.org/ontologies/MCBCC",
         "triples": "15681",
         "domain": "life_sciences",
         "namespace": "",
@@ -10794,7 +10793,7 @@
             "en": "Observational Modeling"
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1524",
+        "website": "http://bioportal.bioontology.org/ontologies/OBOE",
         "triples": "872",
         "domain": "life_sciences",
         "namespace": "",
@@ -11094,7 +11093,7 @@
             "en": "SNP-Ontology is a domain ontology that provides a formal representation (OWL-DL) of genomic variations. Despite its name, SNP-Ontology, is not limited to the representation of SNPs but it encompasses genomic variations in a broader meaning. SNP-Ontology is general enough to enable the representation of variations observed in genome of various species. Latest versions of SNP-Ontology include the representation of haplotype and of CNV. The unambiguous representation of genomic variations provided by SNP-Ontology enables to integrate heterogeneous data related to genomic variations. To achieve this goal SNP-Ontology enables (1) to represent one variation in accordance with various ways that exist for describing it, (2) to represent the equivalence between two distinct descriptions of one variation, and (3) to represent correspondence between a genomic variation and its outcome at the transcriptome and proteome levels."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1058",
+        "website": "http://bioportal.bioontology.org/ontologies/SNPO",
         "triples": "42131",
         "domain": "life_sciences",
         "namespace": "",
@@ -11506,7 +11505,7 @@
             "en": "SAO describes structures from the dimensional range encompassing cellular and subcellular structure, supracellular domains, and macromolecules."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1068",
+        "website": "http://bioportal.bioontology.org/ontologies/SAO",
         "triples": "11036",
         "domain": "life_sciences",
         "namespace": "",
@@ -11750,7 +11749,7 @@
             "en": "The Cell Ontology is designed as a structured controlled vocabulary for cell types. This ontology was constructed for use by the model organism and other bioinformatics databases, where there is a need for a controlled vocabulary of cell types. This ontology is not organism specific; indeed it includes cell types from prokaryotes to mammals, including plants and fungi. A full description of the Cell Ontology can be found in <a href=\"http://genomebiology.com/2005/6/2/R21\">Bard, Rhee and Ashburner. 2005. An Ontology for Cell Types</a>."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1006",
+        "website": "http://bioportal.bioontology.org/ontologies/CL",
         "triples": "29166",
         "domain": "life_sciences",
         "namespace": "",
@@ -11831,7 +11830,7 @@
             "en": "The BioPAX ontology (www.biopax.org) is a standard language for formally representing biological pathways. BioPAX Level 3 supports the representation of metabolic pathways, signal transduction pathways, protein-protein interaction networks, gene regulatory networks and genetic interactions."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1522",
+        "website": "https://bioportal.bioontology.org/ontologies/BP",
         "triples": "1230",
         "domain": "life_sciences",
         "namespace": "",
@@ -12411,7 +12410,7 @@
             "en": "The Bone Dysplasia ontology provides a comprehensive and formal representation of the different domain concepts involved in documenting the full complexity of the skeletal dysplasia domain. It captures and combines the genetic features that discriminate the bone dysplasias with the multitude of phenotypic characteristics manifested by patients and required to be taken into account in order to support the diagnosis process."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1613",
+        "website": "https://bioportal.bioontology.org/ontologies/CANCO",
         "triples": "198018",
         "domain": "life_sciences",
         "namespace": "",
@@ -12941,7 +12940,7 @@
             "en": "The Electrocardiography (ECG) Ontology is a Driving Biological Project of the NCBO. The ECG Ontology will contain terms for describing electrocardiograms, their capture method(s) and their waveforms."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1146",
+        "website": "https://bioportal.bioontology.org/ontologies/ECG",
         "triples": "8543",
         "domain": "life_sciences",
         "namespace": "",
@@ -13546,7 +13545,7 @@
             "en": "The purpose of the OMIT ontology is to facilitate the identification and characterization of important roles microRNAs (miRNAs) played in human cancer. To be more specific, it aims to assist cancer biologists in unraveling important roles of miRNAs in human cancer."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1505",
+        "website": "https://bioportal.bioontology.org/ontologies/OMIT",
         "triples": "1610",
         "domain": "life_sciences",
         "namespace": "",
@@ -13758,7 +13757,7 @@
             "en": "The International Classification of Functioning, Disability and Health, known more commonly as ICF, is a classification of health and health-related domains. These domains are classified from body, individual and societal perspectives by means of two lists: a list of body functions and structure, and a list of domains of activity and participation. Since an individual's functioning and disability occurs in a context, the ICF also includes a list of environmental factors.\n<br><br>\nSource: <a href=\"http://www.who.int/classifications/icf/en/\">http://www.who.int/classifications/icf/en/</a>"
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1411",
+        "website": "https://bioportal.bioontology.org/ontologies/ICF",
         "triples": "28475",
         "domain": "life_sciences",
         "namespace": "",
@@ -14507,7 +14506,7 @@
             "en": "Medical Dictionary for Regulatory Activities Terminology (MedDRA)"
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1422",
+        "website": "https://bioportal.bioontology.org/ontologies/MEDDRA",
         "triples": "1774258",
         "domain": "life_sciences",
         "namespace": "",
@@ -14659,7 +14658,7 @@
             "en": "Solanaceae crop phenotypes and traits, developed in collaboration with the research community, especially for breeder traits of agronomic importance."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/3029",
+        "website": "https://bioportal.bioontology.org/ontologies/SPTO",
         "triples": "4089",
         "domain": "life_sciences",
         "namespace": "",
@@ -15055,7 +15054,7 @@
             "en": "The goal of DDI project is to develop an ontology for the description of drug discovery investigations. DDI aims to follow to the OBO (Open Biomedical Ontologies) Foundry principles, uses relations laid down in the OBO Relation Ontology, and be compliant with Ontology for biomedical investigations (OBI)."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1540",
+        "website": "https://bioportal.bioontology.org/ontologies/DDI",
         "triples": "5819",
         "domain": "life_sciences",
         "namespace": "",
@@ -15322,7 +15321,7 @@
             "en": "A structured controlled vocabulary of mutant and transgenic mouse pathology phenotypes"
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1031",
+        "website": "https://bioportal.bioontology.org/ontologies/MPATH",
         "triples": "9413",
         "domain": "life_sciences",
         "namespace": "",
@@ -15502,7 +15501,7 @@
             "en": "an ontology to describe the entities and relationships in SysMO-DB, a Systems Biology environment for the sharing and exchange of data and models."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1488",
+        "website": "https://bioportal.bioontology.org/ontologies/MHC",
         "triples": "1533",
         "domain": "life_sciences",
         "namespace": "",
@@ -15779,7 +15778,7 @@
             "en": "The PHArmacogenomic RElationships Ontology (or PHARE) proposes concepts and roles to represent relationships of pharmacogenomics interest."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1550",
+        "website": "https://bioportal.bioontology.org/ontologies/PHARE",
         "triples": "2801",
         "domain": "life_sciences",
         "namespace": "",
@@ -16359,7 +16358,7 @@
             "en": "The Neural-Immune Gene Ontology (NIGO) is a subset of GO directed for neurological and immunological systems. NIGO was created by clipping those GO terms that are not associated to any gene in human, rat and mouse, and by clipping terms not found to be relevant to the neural and/or immune domains."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1539",
+        "website": "https://bioportal.bioontology.org/ontologies/NIGO",
         "triples": "81702",
         "domain": "life_sciences",
         "namespace": "",
@@ -16773,7 +16772,7 @@
             "en": "This project focuses on the development of a high level patient-centric ontology for the pharmaceutical industry. The ontology should enable silos in discovery research, hypothesis management, experimental studies, compounds, formulation, drug development, market size, competitive data, population data, etc. to be brought together. This would enable scientists to answer new questions, and to answer existing scientific questions more quickly. This will help pharmaceutical companies to model patient-centric information, which is essential for the tailoring of drugs, and for early detection of compounds that may have sub-optimal safety profiles. The ontology should link to existing publicly available domain ontologies."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1461",
+        "website": "https://bioportal.bioontology.org/ontologies/TMO",
         "triples": "2742",
         "domain": "life_sciences",
         "namespace": "",
@@ -16824,7 +16823,7 @@
             "en": "A structured controlled vocabulary for describing cereal plant development and growth stages. Please note that this ontology has now been superseded by the Plant Ontology.\r\n"
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1047",
+        "website": "https://bioportal.bioontology.org/ontologies/PAE",
         "triples": "2417",
         "domain": "",
         "namespace": "",
@@ -16940,7 +16939,7 @@
             "en": "A small ontology for the units of measurement developed during the development of the Sleep Domain Ontology (SDO). It supports the use of SDO within the PhysioMIMI application."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1650",
+        "website": "https://bioportal.bioontology.org/ontologies/UNITSONT",
         "triples": "407",
         "domain": "life_sciences",
         "namespace": "",
@@ -17088,7 +17087,7 @@
             "en": "Including the disease names. phenotypes and their classifications involved in Glucose Metabolism Disorder, Diabetes. (OBO and OWL format are available in sourceforge.)"
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1085",
+        "website": "https://bioportal.bioontology.org/ontologies/OGMD",
         "triples": "530",
         "domain": "life_sciences",
         "namespace": "",
@@ -17376,7 +17375,7 @@
             "en": "National Drug Data File Plus Source Vocabulary"
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1424",
+        "website": "https://bioportal.bioontology.org/ontologies/NDDF",
         "triples": "490514",
         "domain": "life_sciences",
         "namespace": "",
@@ -17552,7 +17551,7 @@
             "en": "Concepts, definitions, terms, and resources for standardized description of a microarray experiment in support of MAGE v.1."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1131",
+        "website": "https://bioportal.bioontology.org/ontologies/MO",
         "triples": "5492",
         "domain": "life_sciences",
         "namespace": "",
@@ -17720,7 +17719,7 @@
             "en": "A structured controlled vocabulary for the annotation of mass spectrometry experiments. Developed by the HUPO Proteomics Standards Initiative."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1105",
+        "website": "https://bioportal.bioontology.org/ontologies/MS",
         "triples": "20027",
         "domain": "life_sciences",
         "namespace": "",
@@ -18369,7 +18368,7 @@
             "en": "National Drug File - Reference Terminology Public Inferred Edition, 2008_03_11"
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1352",
+        "website": "https://bioportal.bioontology.org/ontologies/NDFRT",
         "triples": "1166537",
         "domain": "life_sciences",
         "namespace": "",
@@ -18646,7 +18645,7 @@
             "en": "OntoOrpha is an ontology of Rare Diseases that includes clinical signs (phenotypes) and genes. The full Orphanet nomenclature (labels, synonyms) is provided in six languages with external references annotations (ICD, OMIM, HGNC, Genatlas, Swissprot). This version now includes epidemiology data related to rare diseases in Europe (class of prevalence, average age of onset, average age at death) extracted from the literature.\r\n<br />\r\nPart of an ongoing research project, this ontology is developed to support editorial procedures of <a href=\"http://www.orpha.net\">Orphanet knowledge bases and services</a>. Current alpha version is under active development. The version provided on bioportal contains only the main english labels. A version on the ontology with the full nomenclature of rare diseases (labels and synonyms in 6 languages based on skos annotations) is available on demand.\r\n<br /><br />\r\n<img src=\"http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png\" alt=\"Creative Commons : Attribution - Non Commercial - No Derivs \" />\r\n<br />\r\n<a href=\"http://creativecommons.org/licenses/by-nc-nd/3.0/\">OntoOrpha is available under Creative Commons license ''Attribution-Non-Commercial-No Derivative Works 3.0''</a>"
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1586",
+        "website": "https://bioportal.bioontology.org/ontologies/ORDO",
         "triples": "367109",
         "domain": "life_sciences",
         "namespace": "",
@@ -18842,7 +18841,7 @@
             "en": "AI/RHEUM is used for the diagnosis of rheumatologic diseases. AI/RHEUM contains findings, such as clinical signs, symptoms, laboratory test results, radiologic observations, tissue biopsy results, and intermediate diagnosis hypotheses. Findings and hypotheses, which include definitions, are used to reach diagnostic conclusions with definite, probable, or possible certainty. AI/RHEUM is used by clinicians and informatics researchers."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1430",
+        "website": "https://bioportal.bioontology.org/ontologies/AI-RHEUM",
         "triples": "5528",
         "domain": "life_sciences",
         "namespace": "",
@@ -18994,7 +18993,7 @@
             "en": "assigns a grade to a tumor starting from the 3 criteria of the NGS"
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1304",
+        "website": "https://bioportal.bioontology.org/ontologies/BCGO",
         "triples": "3780",
         "domain": "life_sciences",
         "namespace": "",
@@ -19124,7 +19123,7 @@
             "en": "Human Genome Organisation (HUGO) Gene Nomenclature Committee at the European Bioinformatics Institute approves a gene name and symbol (short-form abbreviation) for each known human gene. All approved symbols are stored in the HGNC database."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1528",
+        "website": "https://bioportal.bioontology.org/ontologies/HGNC",
         "triples": "898855",
         "domain": "life_sciences",
         "namespace": "",
@@ -19420,7 +19419,7 @@
             "en": "Ontology that describes the medical information necessary for early detection of the oral cancer reoccurrence extracted from the NeoMark Project."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1686",
+        "website": "https://bioportal.bioontology.org/ontologies/NEOMARK3",
         "triples": "3223",
         "domain": "life_sciences",
         "namespace": "",
@@ -19776,7 +19775,7 @@
             "en": "Physician Data Query (PDQ) Terminology is part of NCI's comprehensive cancer information database, which contains expert summaries on a wide range of cancer topics, a listing of some 30,000 cancer clinical trials from around the world, a directory of genetics services professionals, the NCI Dictionary of Cancer Terms, and the NCI Drug Dictionary."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1349",
+        "website": "https://bioportal.bioontology.org/ontologies/PDQ",
         "triples": "124212",
         "domain": "life_sciences",
         "namespace": "",
@@ -19936,7 +19935,7 @@
             "en": "The Cognitive Atlas is a collaborative knowledge building project that aims to develop an ontology that characterizes the state of current thought in cognitive science.  It defines a set of mental concepts along with a set of mental tasks, and the measurement relations between those classes."
         },
         "owner": "",
-        "website": "http://bioportal.bioontology.org/ontologies/1633",
+        "website": "https://bioportal.bioontology.org/ontologies/COGAT",
         "triples": "25779",
         "domain": "life_sciences",
         "namespace": "",
