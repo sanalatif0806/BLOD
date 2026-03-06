@@ -17,7 +17,7 @@ const BoxPlot = ({ title, categories = ["F score", "A score", "I score", "R scor
         });
     };
     const boxPlotData = buildBoxPlotData(seriesData, desiredOrder);
-    
+
     const series = [
         {
             name: 'box',

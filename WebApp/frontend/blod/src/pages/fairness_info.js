@@ -1,8 +1,8 @@
-import React, { use, useEffect, useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { base_url, kghb_url } from '../api';
 import axios from 'axios';
-import RadarChart from '../components/radar_chart'; 
+import RadarChart from '../components/radar_chart';
 import RadialBarChart from '../components/radial_bar';
 import GaugeChart from '../components/gauge_chart';
 import { Row, Col } from 'react-bootstrap';
@@ -40,7 +40,7 @@ function FairnessInfo(){
         async function getFairnessData(){
             try {
                 //Same trasformation done by KGHeartBeat
-                
+
                 let sanitizedId = dataset_id.replace(/[\\/*?:"<>|]/g, "");
                 sanitizedId = dataset_id.replace(/[\\/*?:"<>|]/g, "");
                 sanitizedId = sanitizedId.replace(/[!"#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~]/g, "");
@@ -50,18 +50,18 @@ function FairnessInfo(){
                 setFairnessData(response.data)
                 setFairnessOt(responseOT.data);
             } catch (error) {
-            console.error("Error:",error)
+                    console.error("Error:",error)
             }
-        } 
+        }
         getFairnessData();
         async function getJsonData(){
             try {
                 const response = await axios.get(`${base_url}/BLOD/dataset_metadata/${dataset_id}`);
                 setDatasetMetadata(response.data)
             } catch (error) {
-            console.error("Error:",error)
+                     console.error("Error:",error)
             }
-        } 
+        }
         getJsonData();
     }, [])
 
@@ -159,10 +159,10 @@ function FairnessInfo(){
             <div className="d-flex justify-content-start gap-2 mb-4">
                 <Link to="/" className="fw-bold fs-4 text-decoration-none" style={{color: '#8da89f'}}>BLOD</Link>
                 <Link to="/" className="d-flex align-items-center">
-                <img 
-                    src="/favicon.png" 
-                    alt="Cloud Logo" 
-                    style={{ height: "40px", width: "40px", marginRight: "7px" }} 
+                <img
+                    src="/favicon.png"
+                    alt="Cloud Logo"
+                    style={{ height: "40px", width: "40px", marginRight: "7px" }}
                 />
                 </Link>
                 <Link to="/search" className="btn btn-outline-success">Search</Link>
@@ -324,7 +324,7 @@ function FairnessInfo(){
                         <GaugeChart label={'FAIR Score'} value={parseFloat(fairness_data['FAIR score'])} />
                         </div>
                     </Col>
-                    
+
                     <Col md={4} sm={12}>
                         <div className="card shadow-sm p-3">
                         <h5 className="card-title text-center"></h5>
