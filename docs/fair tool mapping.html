@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAIR Mapping Table — BLOD Cloud</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --bg:        #f9f9f7;
+      --surface:   #ffffff;
+      --border:    rgba(0,0,0,0.10);
+      --border2:   rgba(0,0,0,0.06);
+      --text:      #1a1a18;
+      --muted:     #73726c;
+      --blue-bg:   #E6F1FB; --blue-tx: #0C447C;
+      --green-bg:  #EAF3DE; --green-tx: #27500A;
+      --amber-bg:  #FAEEDA; --amber-tx: #633806;
+      --red-bg:    #FAECE7; --red-tx:   #4A1B0C;
+      --teal-bg:   #E1F5EE; --teal-tx:  #085041;
+      --gray-bg:   #F1EFE8; --gray-tx:  #444441;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:      #1a1a18; --surface: #222220;
+        --border:  rgba(255,255,255,0.10); --border2: rgba(255,255,255,0.06);
+        --text:    #e8e6df; --muted:   #aaa8a0;
+        --blue-bg: #0c2a44; --blue-tx: #93c5f4;
+        --green-bg:#152808; --green-tx:#a3d977;
+        --amber-bg:#2a1a00; --amber-tx:#f5c060;
+        --red-bg:  #2a0e08; --red-tx:  #f4a58a;
+        --teal-bg: #042820; --teal-tx: #5ecfaa;
+        --gray-bg: #2c2c2a; --gray-tx: #c8c6be;
+      }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* ── Header ── */
+    .page-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .back-link {
+      font-size: 12px;
+      color: #3266ad;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .back-link:hover { text-decoration: underline; }
+    .header-text h1 {
+      font-size: 17px;
+      font-weight: 500;
+      margin: 0 0 2px;
+    }
+    .header-text p {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* ── Body ── */
+    .page-body {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 28px 32px 64px;
+    }
+
+    /* ── Legend pills ── */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .pill-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+    /* ── Table card ── */
+    .table-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .table-caption {
+      padding: 14px 18px 10px;
+      font-size: 13px;
+      font-weight: 500;
+      border-bottom: 1px solid var(--border2);
+    }
+    .table-caption span {
+      font-weight: 400;
+      color: var(--muted);
+      margin-left: 6px;
+      font-size: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+    }
+    thead tr {
+      background: var(--bg);
+    }
+    th {
+      text-align: left;
+      padding: 9px 12px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border2);
+      vertical-align: middle;
+    }
+    tr:last-child td { border-bottom: none; }
+    tbody tr:hover td { background: var(--bg); }
+
+    /* principle group shading */
+    .group-F  td:first-child { border-left: 3px solid #3266ad; }
+    .group-A  td:first-child { border-left: 3px solid #639922; }
+    .group-I  td:first-child { border-left: 3px solid #EF9F27; }
+    .group-R  td:first-child { border-left: 3px solid #E24B4A; }
+
+    /* badges */
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .b-F    { background: var(--blue-bg);  color: var(--blue-tx); }
+    .b-A    { background: var(--green-bg); color: var(--green-tx); }
+    .b-I    { background: var(--amber-bg); color: var(--amber-tx); }
+    .b-R    { background: var(--red-bg);   color: var(--red-tx); }
+    .b-dir  { background: var(--teal-bg);  color: var(--teal-tx); }
+    .b-part { background: var(--amber-bg); color: var(--amber-tx); }
+    .b-none { background: var(--gray-bg);  color: var(--gray-tx); }
+
+    .mono {
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+      font-size: 11px;
+      background: var(--bg);
+      padding: 1px 5px;
+      border-radius: 4px;
+      border: 1px solid var(--border2);
+    }
+
+    .dim-tag {
+      display: inline-block;
+      font-size: 11px;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* ── Summary boxes ── */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .summary-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+    }
+    .summary-box .num {
+      font-size: 26px;
+      font-weight: 500;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .summary-box .lbl {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .summary-box .sub {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    /* ── Notes ── */
+    .notes {
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid var(--border2);
+      padding-top: 12px;
+      margin-top: 4px;
+      line-height: 1.7;
+    }
+    .notes b { color: var(--text); font-weight: 500; }
+  </style>
+</head>
+<body>
+
+<div class="page-header">
+  <a class="back-link" href="./index.html">← Back</a>
+  <div class="header-text">
+    <h1>Table 6: Mapping between FAIR Principles, FAIR-Checker, F-UJI, and KGHeartBeat Metrics</h1>
+    <p>Exact criterion correspondence across three FAIR assessment tools with KG quality dimension assignments</p>
+  </div>
+</div>
+
+<div class="page-body">
+
+  <!-- Summary boxes -->
+  <div class="summary-grid">
+    <div class="summary-box">
+      <div class="num">14</div>
+      <div class="lbl">Total criteria</div>
+      <div class="sub">mapped across all 3 tools</div>
+    </div>
+    <div class="summary-box">
+      <div class="num">9</div>
+      <div class="lbl">Direct matches</div>
+      <div class="sub">same property assessed</div>
+    </div>
+    <div class="summary-box">
+      <div class="num">4</div>
+      <div class="lbl">Partial matches</div>
+      <div class="sub">different operationalisation</div>
+    </div>
+    <div class="summary-box">
+      <div class="num">1</div>
+      <div class="lbl">F-UJI only</div>
+      <div class="sub">no FAIR-Checker counterpart</div>
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend">
+    <span class="pill" style="background:var(--blue-bg);color:var(--blue-tx);">
+      <span class="pill-dot" style="background:#3266ad;"></span> Findable (F)
+    </span>
+    <span class="pill" style="background:var(--green-bg);color:var(--green-tx);">
+      <span class="pill-dot" style="background:#639922;"></span> Accessible (A)
+    </span>
+    <span class="pill" style="background:var(--amber-bg);color:var(--amber-tx);">
+      <span class="pill-dot" style="background:#EF9F27;"></span> Interoperable (I)
+    </span>
+    <span class="pill" style="background:var(--red-bg);color:var(--red-tx);">
+      <span class="pill-dot" style="background:#E24B4A;"></span> Reusable (R)
+    </span>
+    <span class="pill" style="background:var(--teal-bg);color:var(--teal-tx);">Direct match</span>
+    <span class="pill" style="background:var(--amber-bg);color:var(--amber-tx);">Partial match</span>
+    <span class="pill" style="background:var(--gray-bg);color:var(--gray-tx);">F-UJI only</span>
+  </div>
+
+  <!-- Main table -->
+  <div class="table-card">
+    <div class="table-caption">
+      Criterion mapping
+      <span>F = Findable · A = Accessible · I = Interoperable · R = Reusable</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>FAIR Principle</th>
+          <th>FAIR-Checker</th>
+          <th>F-UJI Metric</th>
+          <th>KGHeartBeat ID</th>
+          <th>Description</th>
+          <th>KG Quality Dimension</th>
+          <th>Match</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- F1 group -->
+        <tr class="group-F">
+          <td rowspan="4"><span class="badge b-F">F1</span></td>
+          <td><span class="mono">F1A</span></td>
+          <td><span class="mono">FsF-F1-01MD</span></td>
+          <td><span class="mono">F1-M, F1-D</span></td>
+          <td>Globally unique identifier for metadata &amp; data (IRI, URL, UUID, HASH, PID)</td>
+          <td><span class="dim-tag">Availability</span></td>
+          <td><span class="badge b-dir">Direct</span></td>
+        </tr>
+        <tr class="group-F">
+          <td><span class="mono">F1B</span></td>
+          <td><span class="mono">FsF-F1-02MD</span></td>
+          <td><span class="mono">F1-M, F1-D</span></td>
+          <td>Persistent identifier for metadata &amp; data, registered with a PID authority</td>
+          <td><span class="dim-tag">Availability</span></td>
+          <td><span class="badge b-dir">Direct</span></td>
+        </tr>
+        <tr class="group-F">
+          <td><span class="mono">F2A, F2B</span></td>
+          <td><span class="mono">FsF-F2-01M</span></td>
+          <td><span class="mono">F2a-M, F2b-M</span></td>
+          <td>Core descriptive metadata: creator, title, date, publisher, keywords, summary</td>
+          <td><span class="dim-tag">—</span></td>
+          <td><span class="badge b-part">Partial</span></td>
+        </tr>
+        <tr class="group-F">
+          <td><span class="mono">—</span></td>
+          <td><span class="mono">FsF-F3-01M</span></td>
+          <td><span class="mono">F3-M</span></td>
+          <td>Metadata contains a PID or URL pointing to the downloadable data content</td>
+          <td><span class="dim-tag">—</span></td>
+          <td><span class="badge b-none">F-UJI only</span></td>
+        </tr>
+
+        <!-- A1 group -->
+        <tr class="group-A">
+          <td rowspan="3"><span class="badge b-A">A1</span></td>
+          <td><span class="mono">A1.1</span></td>
+          <td><span class="mono">FsF-A1-02MD</span></td>
+          <td><span class="mono">A1.1-M, A1.1-D</span></td>
+          <td>Metadata and data are retrievable via their identifiers</td>
+          <td><span class="dim-tag">Availability</span></td>
+          <td><span class="badge b-dir">Direct</span></td>
+        </tr>
+        <tr class="group-A">
+          <td><span class="mono">A1.1</span></td>
+          <td><span class="mono">FsF-A1.1-01MD</span></td>
+          <td><span class="mono">A1.1-M, A1.1-D</span></td>
+          <td>Identifier scheme indicates standardized web communication protocol for metadata &amp; data</td>
+          <td><span class="dim-tag">Availability</span></td>
+          <td><span class="badge b-dir">Direct</span></td>
+        </tr>
+        <tr class="group-A">
+          <td><span class="mono">A1.2</span></td>
+          <td><span class="mono">FsF-A1.2-01MD</span></td>
+          <td><span class="mono">A1.2</span></td>
+          <td>Communication protocol (IRI) supports authentication for both metadata and data</td>
+          <td><span class="dim-tag">Security</span></td>
+          <td><span class="badge b-dir">Direct</span></td>
+        </tr>
+
+        <!-- I group -->
+        <tr class="group-I">
+          <td rowspan="3"><span class="badge b-I">I</span></td>
+          <td><span class="mono">I1</span></td>
+          <td><span class="mono">FsF-I1-01M</span></td>
+          <td><span class="mono">I1-M, I1-D</span></td>
+          <td>Structured metadata as JSON-LD/RDFa in HTML or via content negotiation / SPARQL endpoint</td>
+          <td><span class="dim-tag">—</span></td>
+          <td><span class="badge b-part">Partial</span></td>
+        </tr>
+        <tr class="group-I">
+          <td><span class="mono">I2</span></td>
+          <td><span class="mono">FsF-I2-01M</span></td>
+          <td><span class="mono">I2</span></td>
+          <td>Metadata uses terms from registered vocabularies identified by their namespaces</td>
+          <td><span class="dim-tag">Verifiability</span></td>
+          <td><span class="badge b-dir">Direct</span></td>
+        </tr>
+        <tr class="group-I">
+          <td><span class="mono">I3</span></td>
+          <td><span class="mono">FsF-I3-01M</span></td>
+          <td><span class="mono">I3-D</span></td>
+          <td>Related resources referenced in plain text and by machine-readable links with relation type</td>
+          <td><span class="dim-tag">Interlinking</span></td>
+          <td><span class="badge b-part">Partial</span></td>
+        </tr>
+
+        <!-- R group -->
+        <tr class="group-R">
+          <td rowspan="4"><span class="badge b-R">R</span></td>
+          <td><span class="mono">R1.1</span></td>
+          <td><span class="mono">FsF-R1.1-01M</span></td>
+          <td><span class="mono">R1.1</span></td>
+          <td>License information given in an appropriate metadata element</td>
+          <td><span class="dim-tag">Licensing</span></td>
+          <td><span class="badge b-dir">Direct</span></td>
+        </tr>
+        <tr class="group-R">
+          <td><span class="mono">R1.2</span></td>
+          <td><span class="mono">FsF-R1.2-01M</span></td>
+          <td><span class="mono">R1.2</span></td>
+          <td>Provenance information mappable to PROV-DC or formal provenance ontology (PROV, PAV)</td>
+          <td><span class="dim-tag">Verifiability</span></td>
+          <td><span class="badge b-dir">Direct</span></td>
+        </tr>
+        <tr class="group-R">
+          <td><span class="mono">R1.3</span></td>
+          <td><span class="mono">FsF-R1.3-01M</span></td>
+          <td><span class="mono">R1.3-M</span></td>
+          <td>Community or multidisciplinary metadata standard detected via namespace (RDA, FAIRsharing)</td>
+          <td><span class="dim-tag">—</span></td>
+          <td><span class="badge b-dir">Direct</span></td>
+        </tr>
+        <tr class="group-R">
+          <td><span class="mono">—</span></td>
+          <td><span class="mono">FsF-R1.3-02D</span></td>
+          <td><span class="mono">R1.3-D</span></td>
+          <td>Data available in community-recommended file format (open, long-term, or scientific)</td>
+          <td><span class="dim-tag">—</span></td>
+          <td><span class="badge b-part">Partial</span></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <div class="notes" style="padding:12px 18px;">
+      <b>Direct</b> — all three tools assess the same underlying property using equivalent criteria. &nbsp;
+      <b>Partial</b> — criteria overlap but differ in operationalisation or granularity (e.g. different sub-scores or definitions). &nbsp;
+      <b>F-UJI only</b> — criterion present in F-UJI but has no corresponding check in FAIR-Checker or KGHeartBeat.
+    </div>
+  </div>
+
+  <p style="font-size:12px;color:var(--muted);">
+    See also: <a href="./fair-dashboard.html" style="color:#3266ad;">FAIR Tool Agreement Dashboard</a> — correlation and agreement analysis across 1,246 overlapping datasets.
+  </p>
+
+</div>
+</body>
+</html>
