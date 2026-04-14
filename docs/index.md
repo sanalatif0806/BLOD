@@ -5,4 +5,4 @@ title: BLOD Cloud!
 
 [Explore the BLOD now!](http://isislab.it:12280/blod/) <br>
 [Mapping quality dimensions to FAIR principles](./fair_mapping.md) <br>
-[FAIR Tool Agreement Dashboard](./fair-dashboard.html)
+[FAIR Dashboard](./fair-dashboard.html)
