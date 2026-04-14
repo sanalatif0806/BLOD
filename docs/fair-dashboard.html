@@ -5,208 +5,310 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAIR Tool Agreement — Research Dashboard</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    :root {
-      --bg:#f9f9f7; --surface:#ffffff; --surface2:#f1efe8;
-      --border:rgba(0,0,0,0.10); --border2:rgba(0,0,0,0.06);
-      --text:#1a1a18; --muted:#73726c;
-      --blue:#3266ad; --green:#639922; --amber:#EF9F27; --red:#E24B4A;
-      --font-mono:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;
+    *,*::before,*::after{box-sizing:border-box;}
+    :root{
+      --bg:#f9f9f7;--surface:#ffffff;--surface2:#f1efe8;
+      --border:rgba(0,0,0,0.10);--border2:rgba(0,0,0,0.06);
+      --text:#1a1a18;--muted:#73726c;
+      --blue:#3266ad;--green:#639922;--amber:#EF9F27;--red:#E24B4A;
+      --teal:#0e8c6a;--purple:#7c3aed;
       --radius:10px;
     }
     @media(prefers-color-scheme:dark){
-      :root{ --bg:#1a1a18; --surface:#222220; --surface2:#2c2c2a;
-             --border:rgba(255,255,255,0.10); --border2:rgba(255,255,255,0.06);
-             --text:#e8e6df; --muted:#aaa8a0; }
+      :root{--bg:#1a1a18;--surface:#222220;--surface2:#2c2c2a;
+            --border:rgba(255,255,255,0.10);--border2:rgba(255,255,255,0.06);
+            --text:#e8e6df;--muted:#aaa8a0;}
     }
-    body{ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-          background:var(--bg);color:var(--text);margin:0;padding:0;font-size:14px;line-height:1.6; }
-    .ph{ background:var(--surface);border-bottom:1px solid var(--border);padding:16px 32px;display:flex;align-items:center;gap:14px; }
-    .ph a{ font-size:12px;color:var(--blue);text-decoration:none;white-space:nowrap; }
-    .ph a:hover{ text-decoration:underline; }
-    .ph-text h1{ font-size:17px;font-weight:500;margin:0 0 2px; }
-    .ph-text p{ font-size:12px;color:var(--muted);margin:0; }
-    .pb{ max-width:1100px;margin:0 auto;padding:28px 32px 64px; }
-    .tabs{ display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:24px;flex-wrap:wrap; }
-    .tab{ padding:8px 18px;font-size:13px;border:none;background:none;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap; }
-    .tab.on{ color:var(--text);border-bottom-color:var(--blue);font-weight:500; }
-    .tab:hover:not(.on){ color:var(--text);background:var(--surface2); }
-    .panel{ display:none; }.panel.on{ display:block; }
-    .mg{ display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:24px; }
-    .mc{ background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px; }
-    .mc-l{ font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px; }
-    .mc-v{ font-size:24px;font-weight:500; }
-    .mc-s{ font-size:11px;color:var(--muted);margin-top:3px; }
-    .card{ background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:16px; }
-    .card-hd{ display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px; }
-    .card-title{ font-size:13px;font-weight:500;color:var(--text); }
-    .card-sub{ font-size:11px;color:var(--muted);margin-bottom:10px; }
-    .g2{ display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px; }
-    .g3{ display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px; }
-    .leg{ display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;font-size:11px;color:var(--muted); }
-    .ld{ width:9px;height:9px;border-radius:2px;display:inline-block;vertical-align:middle;margin-right:3px; }
-    .dl{ display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border:0.5px solid var(--border);border-radius:6px;font-size:11px;cursor:pointer;background:var(--surface2);color:var(--muted);flex-shrink:0; }
-    .dl:hover{ background:var(--surface);color:var(--text); }
-    .il{ list-style:none;margin:0;padding:0; }
-    .il li{ padding:11px 14px;border-left:3px solid var(--border2);margin-bottom:8px;font-size:13px;color:var(--text);line-height:1.65;border-radius:0 6px 6px 0;background:var(--surface); }
-    .il li.hi{ border-left-color:var(--blue); }
-    .il li.wa{ border-left-color:var(--amber); }
-    .il li.ok{ border-left-color:var(--green); }
-    .il li.er{ border-left-color:var(--red); }
-    .il li b{ font-weight:500; }
-    .itag{ display:inline-block;padding:1px 7px;border-radius:4px;font-size:11px;font-weight:500;margin-right:5px; }
-    select{ font-size:12px;padding:4px 8px;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text); }
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+         background:var(--bg);color:var(--text);margin:0;padding:0;font-size:14px;line-height:1.6;}
+    /* Header */
+    .ph{background:var(--surface);border-bottom:1px solid var(--border);
+        padding:16px 32px;display:flex;align-items:center;gap:14px;}
+    .ph a{font-size:12px;color:var(--blue);text-decoration:none;white-space:nowrap;}
+    .ph a:hover{text-decoration:underline;}
+    .ph h1{font-size:17px;font-weight:500;margin:0 0 2px;}
+    .ph p{font-size:12px;color:var(--muted);margin:0;}
+    /* Layout */
+    .pb{max-width:1100px;margin:0 auto;padding:24px 32px 64px;}
+    /* Metric cards */
+    .mg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:22px;}
+    .mc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px;}
+    .mc-l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;}
+    .mc-v{font-size:24px;font-weight:500;}
+    .mc-s{font-size:11px;color:var(--muted);margin-top:3px;}
+    /* Tabs */
+    .tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:22px;flex-wrap:wrap;}
+    .tab{padding:8px 16px;font-size:13px;border:none;background:none;cursor:pointer;color:var(--muted);
+         border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;}
+    .tab.on{color:var(--text);border-bottom-color:var(--blue);font-weight:500;}
+    .tab:hover:not(.on){color:var(--text);background:var(--surface2);}
+    .panel{display:none;}.panel.on{display:block;}
+    /* Cards */
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:16px;}
+    .card-hd{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px;}
+    .ct{font-size:13px;font-weight:500;color:var(--text);}
+    .cs{font-size:11px;color:var(--muted);margin-bottom:10px;}
+    .g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+    .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px;}
+    /* Legend */
+    .leg{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;font-size:11px;color:var(--muted);}
+    .ld{width:9px;height:9px;border-radius:2px;display:inline-block;vertical-align:middle;margin-right:3px;}
+    /* Download */
+    .dl{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;
+        border:0.5px solid var(--border);border-radius:6px;font-size:11px;
+        cursor:pointer;background:var(--surface2);color:var(--muted);flex-shrink:0;}
+    .dl:hover{background:var(--surface);color:var(--text);}
+    /* Insight list */
+    .il{list-style:none;margin:0;padding:0;}
+    .il li{padding:11px 14px;border-left:3px solid var(--border2);margin-bottom:8px;
+           font-size:13px;color:var(--text);line-height:1.65;border-radius:0 6px 6px 0;background:var(--surface);}
+    .il li.hi{border-left-color:var(--blue);}
+    .il li.wa{border-left-color:var(--amber);}
+    .il li.ok{border-left-color:var(--green);}
+    .il li.er{border-left-color:var(--red);}
+    .il li b{font-weight:500;}
+    .itag{display:inline-block;padding:1px 7px;border-radius:4px;font-size:11px;font-weight:500;margin-right:5px;}
+    /* Principle section divider */
+    .psec{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;
+          letter-spacing:.06em;margin:16px 0 8px;padding-left:2px;}
+    select{font-size:12px;padding:4px 8px;border:1px solid var(--border);border-radius:6px;
+           background:var(--surface);color:var(--text);}
+    /* Sub-principle bar rows */
+    .bar-row{display:grid;grid-template-columns:130px 1fr 42px;align-items:center;gap:8px;margin-bottom:6px;}
+    .bar-lbl{font-size:11px;color:var(--muted);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .bar-track{background:var(--surface2);border-radius:4px;height:10px;overflow:hidden;}
+    .bar-fill{height:100%;border-radius:4px;transition:width .3s;}
+    .bar-val{font-size:11px;font-weight:500;color:var(--text);}
+    /* Principle badge */
+    .pbadge{display:inline-block;padding:1px 7px;border-radius:4px;font-size:11px;font-weight:600;margin-right:4px;}
+    .pb-F{background:#E6F1FB;color:#0C447C;}
+    .pb-A{background:#EAF3DE;color:#27500A;}
+    .pb-I{background:#FAEEDA;color:#633806;}
+    .pb-R{background:#FAECE7;color:#4A1B0C;}
+    .pb-N{background:#F1EFE8;color:#444441;}
+    /* Null badge */
+    .null-r{font-size:11px;color:var(--muted);font-style:italic;}
   </style>
 </head>
 <body>
 
 <div class="ph">
   <a href="./index.html">← Back</a>
-  <div class="ph-text">
+  <div>
     <h1>FAIR Tool Agreement — Research Dashboard</h1>
-    <p>Correlation, agreement &amp; score distribution analysis · 1,246 overlapping datasets · F-UJI × FAIR-Checker × KGHeartBeat</p>
+    <p>Correlation, agreement, score distribution &amp; sub-principle analysis · 1,246 overlapping datasets · F-UJI × FAIR-Checker × KGHeartBeat</p>
   </div>
 </div>
 
 <div class="pb">
 
+<!-- Metric strip -->
 <div class="mg">
   <div class="mc"><div class="mc-l">Datasets analysed</div><div class="mc-v">1,246</div><div class="mc-s">overlap across all 3 tools</div></div>
-  <div class="mc"><div class="mc-l">Strongest r</div><div class="mc-v" style="color:#639922;">+0.90</div><div class="mc-s">F-UJI × FAIR-Checker, Findable</div></div>
-  <div class="mc"><div class="mc-l">Weakest r</div><div class="mc-v" style="color:#E24B4A;">−0.69</div><div class="mc-s">F-UJI × FAIR-Checker, I2 criterion</div></div>
+  <div class="mc"><div class="mc-l">Strongest r</div><div class="mc-v" style="color:#639922;">+0.90</div><div class="mc-s">F-UJI × FAIR-Checker · Findable</div></div>
+  <div class="mc"><div class="mc-l">Weakest r</div><div class="mc-v" style="color:#E24B4A;">−0.69</div><div class="mc-s">F-UJI × FAIR-Checker · I2 criterion</div></div>
   <div class="mc"><div class="mc-l">Criteria mapped</div><div class="mc-v">14</div><div class="mc-s">9 direct · 4 partial · 1 F-UJI only</div></div>
 </div>
 
+<!-- Tabs -->
 <div class="tabs">
   <button class="tab on" onclick="sw('overview')">Overview</button>
-  <button class="tab"    onclick="sw('corr')">Correlation</button>
-  <button class="tab"    onclick="sw('dist')">Score distributions</button>
+  <button class="tab"    onclick="sw('subF')">F-UJI sub-principles</button>
+  <button class="tab"    onclick="sw('subFC')">FAIR-Checker sub-principles</button>
+  <button class="tab"    onclick="sw('subKGHB')">KGHeartBeat sub-principles</button>
+  <button class="tab"    onclick="sw('subcorr')">Sub-principle correlation</button>
+  <button class="tab"    onclick="sw('corr')">Dimension correlation</button>
+  <button class="tab"    onclick="sw('dist')">Distributions</button>
   <button class="tab"    onclick="sw('agree')">Agreement</button>
   <button class="tab"    onclick="sw('insights')">Key findings</button>
 </div>
 
-<!-- OVERVIEW -->
+<!-- ══════════════ OVERVIEW ══════════════ -->
 <div id="p-overview" class="panel on">
   <div class="g2">
     <div class="card">
-      <div class="card-hd"><div><div class="card-title">Mean normalised score per FAIR dimension</div><div class="card-sub">0–100% per tool maximum · n = 1,246 datasets</div></div><button class="dl" onclick="dlC('c-means','mean_scores')">↓ PNG</button></div>
+      <div class="card-hd"><div><div class="ct">Mean normalised score per FAIR dimension</div><div class="cs">0–100% per tool maximum · n = 1,246</div></div><button class="dl" onclick="dlC('c-means','mean_scores')">↓ PNG</button></div>
       <div class="leg"><span><span class="ld" style="background:#3266ad;"></span>F-UJI</span><span><span class="ld" style="background:#639922;"></span>FAIR-Checker</span><span><span class="ld" style="background:#EF9F27;"></span>KGHeartBeat</span></div>
-      <div style="position:relative;height:220px;"><canvas id="c-means" role="img" aria-label="Grouped bar of mean scores per dimension"></canvas></div>
+      <div style="position:relative;height:220px;"><canvas id="c-means"></canvas></div>
     </div>
     <div class="card">
-      <div class="card-hd"><div><div class="card-title">Overall FAIR score — band distribution per tool</div><div class="card-sub">% of datasets in each score quartile</div></div><button class="dl" onclick="dlC('c-bands','bands_fair')">↓ PNG</button></div>
+      <div class="card-hd"><div><div class="ct">Overall FAIR score band distribution</div><div class="cs">% of datasets per quartile per tool</div></div><button class="dl" onclick="dlC('c-bands','bands_fair')">↓ PNG</button></div>
       <div class="leg"><span><span class="ld" style="background:#E24B4A;"></span>0–25%</span><span><span class="ld" style="background:#EF9F27;"></span>25–50%</span><span><span class="ld" style="background:#3266ad;"></span>50–75%</span><span><span class="ld" style="background:#639922;"></span>75–100%</span></div>
-      <div style="position:relative;height:220px;"><canvas id="c-bands" role="img" aria-label="Stacked bar of FAIR score bands per tool"></canvas></div>
+      <div style="position:relative;height:220px;"><canvas id="c-bands"></canvas></div>
     </div>
   </div>
   <div class="card">
-    <div class="card-hd"><div><div class="card-title">Pearson r per FAIR dimension — all three tool pairs</div><div class="card-sub">Negative r means tools rank datasets in opposite order for that dimension</div></div><button class="dl" onclick="dlC('c-dimr','dimension_r')">↓ PNG</button></div>
+    <div class="card-hd"><div><div class="ct">Pearson r per FAIR dimension — all three tool pairs</div><div class="cs">Negative r = tools rank datasets in opposite order for that dimension</div></div><button class="dl" onclick="dlC('c-dimr','dim_pearson_r')">↓ PNG</button></div>
     <div class="leg"><span><span class="ld" style="background:#3266ad;"></span>F-UJI × FAIR-Checker</span><span><span class="ld" style="background:#639922;"></span>F-UJI × KGHeartBeat</span><span><span class="ld" style="background:#EF9F27;"></span>FAIR-Checker × KGHeartBeat</span></div>
-    <div style="position:relative;height:230px;"><canvas id="c-dimr" role="img" aria-label="Grouped bar Pearson r per dimension"></canvas></div>
+    <div style="position:relative;height:230px;"><canvas id="c-dimr"></canvas></div>
   </div>
   <div class="g3">
-    <div class="card">
-      <div class="card-hd"><div><div class="card-title">F-UJI — FAIR profile</div></div><button class="dl" onclick="dlC('c-r-fuji','radar_fuji')">↓ PNG</button></div>
-      <div style="position:relative;height:210px;"><canvas id="c-r-fuji" role="img" aria-label="Radar F-UJI"></canvas></div>
-    </div>
-    <div class="card">
-      <div class="card-hd"><div><div class="card-title">FAIR-Checker — FAIR profile</div></div><button class="dl" onclick="dlC('c-r-fc','radar_fc')">↓ PNG</button></div>
-      <div style="position:relative;height:210px;"><canvas id="c-r-fc" role="img" aria-label="Radar FAIR-Checker"></canvas></div>
-    </div>
-    <div class="card">
-      <div class="card-hd"><div><div class="card-title">KGHeartBeat — FAIR profile</div></div><button class="dl" onclick="dlC('c-r-kghb','radar_kghb')">↓ PNG</button></div>
-      <div style="position:relative;height:210px;"><canvas id="c-r-kghb" role="img" aria-label="Radar KGHeartBeat"></canvas></div>
-    </div>
+    <div class="card"><div class="card-hd"><div><div class="ct">F-UJI — FAIR profile</div></div><button class="dl" onclick="dlC('c-r-fuji','radar_fuji')">↓ PNG</button></div><div style="position:relative;height:210px;"><canvas id="c-r-fuji"></canvas></div></div>
+    <div class="card"><div class="card-hd"><div><div class="ct">FAIR-Checker — FAIR profile</div></div><button class="dl" onclick="dlC('c-r-fc','radar_fc')">↓ PNG</button></div><div style="position:relative;height:210px;"><canvas id="c-r-fc"></canvas></div></div>
+    <div class="card"><div class="card-hd"><div><div class="ct">KGHeartBeat — FAIR profile</div></div><button class="dl" onclick="dlC('c-r-kghb','radar_kghb')">↓ PNG</button></div><div style="position:relative;height:210px;"><canvas id="c-r-kghb"></canvas></div></div>
   </div>
 </div>
 
-<!-- CORRELATION -->
+<!-- ══════════════ F-UJI SUB-PRINCIPLES ══════════════ -->
+<div id="p-subF" class="panel">
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd"><div><div class="ct">F-UJI — mean score per sub-principle</div><div class="cs">All 12 FsF metrics · normalised 0–100% · n = 1,246</div></div><button class="dl" onclick="dlC('c-fuji-sub-bar','fuji_subprinciple_bar')">↓ PNG</button></div>
+      <div style="position:relative;height:340px;"><canvas id="c-fuji-sub-bar"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-hd"><div><div class="ct">F-UJI — sub-principle scores by FAIR principle</div><div class="cs">Colour-coded horizontal bar chart grouped by F / A / I / R</div></div><button class="dl" onclick="dlC('c-fuji-sub-h','fuji_subprinciple_grouped')">↓ PNG</button></div>
+      <div style="position:relative;height:340px;"><canvas id="c-fuji-sub-h"></canvas></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ct" style="margin-bottom:10px;">F-UJI sub-principle breakdown — inline bars</div>
+    <div id="fuji-inline-bars"></div>
+  </div>
+</div>
+
+<!-- ══════════════ FAIR-CHECKER SUB-PRINCIPLES ══════════════ -->
+<div id="p-subFC" class="panel">
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd"><div><div class="ct">FAIR-Checker — mean score per criterion</div><div class="cs">12 criteria · normalised 0–100% · n = 1,246</div></div><button class="dl" onclick="dlC('c-fc-sub-bar','fc_subprinciple_bar')">↓ PNG</button></div>
+      <div style="position:relative;height:340px;"><canvas id="c-fc-sub-bar"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-hd"><div><div class="ct">FAIR-Checker — criteria grouped by principle</div><div class="cs">Radar / spider view by principle</div></div><button class="dl" onclick="dlC('c-fc-sub-h','fc_subprinciple_grouped')">↓ PNG</button></div>
+      <div style="position:relative;height:340px;"><canvas id="c-fc-sub-h"></canvas></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ct" style="margin-bottom:10px;">FAIR-Checker criterion breakdown — inline bars</div>
+    <div id="fc-inline-bars"></div>
+  </div>
+</div>
+
+<!-- ══════════════ KGHB SUB-PRINCIPLES ══════════════ -->
+<div id="p-subKGHB" class="panel">
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd"><div><div class="ct">KGHeartBeat — mean score per indicator</div><div class="cs">18 indicators · normalised 0–100% · n = 1,246</div></div><button class="dl" onclick="dlC('c-kghb-sub-bar','kghb_subprinciple_bar')">↓ PNG</button></div>
+      <div style="position:relative;height:380px;"><canvas id="c-kghb-sub-bar"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-hd"><div><div class="ct">KGHeartBeat — indicators grouped by principle</div><div class="cs">Colour-coded by F / A / I / R</div></div><button class="dl" onclick="dlC('c-kghb-sub-h','kghb_subprinciple_grouped')">↓ PNG</button></div>
+      <div style="position:relative;height:380px;"><canvas id="c-kghb-sub-h"></canvas></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ct" style="margin-bottom:10px;">KGHeartBeat indicator breakdown — inline bars</div>
+    <div id="kghb-inline-bars"></div>
+  </div>
+</div>
+
+<!-- ══════════════ SUB-PRINCIPLE CORRELATION ══════════════ -->
+<div id="p-subcorr" class="panel">
+  <div class="card">
+    <div class="card-hd"><div><div class="ct">Pearson r at sub-principle level — all three tool pairs</div><div class="cs">10 mapped criterion pairs from your exact mapping · null = criterion not present in that tool</div></div><button class="dl" onclick="dlC('c-sub-r-main','subprinc_pearson_r')">↓ PNG</button></div>
+    <div class="leg"><span><span class="ld" style="background:#3266ad;"></span>F-UJI × FAIR-Checker</span><span><span class="ld" style="background:#639922;"></span>F-UJI × KGHeartBeat</span><span><span class="ld" style="background:#EF9F27;"></span>FAIR-Checker × KGHeartBeat</span></div>
+    <div style="position:relative;height:300px;"><canvas id="c-sub-r-main"></canvas></div>
+  </div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd"><div><div class="ct">F-UJI × FAIR-Checker — sub-principle r</div><div class="cs">Only criteria present in both tools</div></div><button class="dl" onclick="dlC('c-sub-fujifc','subr_fuji_fc')">↓ PNG</button></div>
+      <div style="position:relative;height:240px;"><canvas id="c-sub-fujifc"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-hd"><div><div class="ct">FAIR-Checker × KGHeartBeat — sub-principle r</div><div class="cs">Most complete pair (both share 10 mapped criteria)</div></div><button class="dl" onclick="dlC('c-sub-fckghb','subr_fc_kghb')">↓ PNG</button></div>
+      <div style="position:relative;height:240px;"><canvas id="c-sub-fckghb"></canvas></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-hd"><div><div class="ct">Sub-principle r vs dimension r — how much detail is lost by aggregation?</div><div class="cs">Compares criterion-level r (dots) against dimension-level r (dashed line) for each tool pair</div></div><button class="dl" onclick="dlC('c-sub-vs-dim','subr_vs_dimr')">↓ PNG</button></div>
+    <div style="position:relative;height:260px;"><canvas id="c-sub-vs-dim"></canvas></div>
+  </div>
+  <!-- Full sub-principle r table -->
+  <div class="card">
+    <div class="ct" style="margin-bottom:10px;">Complete sub-principle Pearson r table</div>
+    <div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;font-size:12px;" id="sub-r-table"></table></div>
+  </div>
+</div>
+
+<!-- ══════════════ DIMENSION CORRELATION ══════════════ -->
 <div id="p-corr" class="panel">
   <div class="g2">
     <div class="card">
-      <div class="card-hd"><div><div class="card-title">Pearson r heatmap — dimension level</div><div class="card-sub">Bar colour: blue = strong positive · amber = weak · red = negative</div></div><button class="dl" onclick="dlC('c-heat','heatmap_dim')">↓ PNG</button></div>
-      <div style="position:relative;height:260px;"><canvas id="c-heat" role="img" aria-label="Heatmap Pearson r dimension level"></canvas></div>
+      <div class="card-hd"><div><div class="ct">Pearson r heatmap — dimension level</div><div class="cs">Blue = strong positive · amber = weak · red = negative</div></div><button class="dl" onclick="dlC('c-heat','heatmap_dim')">↓ PNG</button></div>
+      <div style="position:relative;height:260px;"><canvas id="c-heat"></canvas></div>
     </div>
     <div class="card">
-      <div class="card-hd"><div><div class="card-title">Pearson r — criterion level (8 mapped criteria)</div><div class="card-sub">Criterion names from your exact tool mapping</div></div><button class="dl" onclick="dlC('c-crit-r','criterion_r')">↓ PNG</button></div>
-      <div class="leg"><span><span class="ld" style="background:#3266ad;"></span>F-UJI × FC</span><span><span class="ld" style="background:#639922;"></span>F-UJI × KGHB</span><span><span class="ld" style="background:#EF9F27;"></span>FC × KGHB</span></div>
-      <div style="position:relative;height:260px;"><canvas id="c-crit-r" role="img" aria-label="Criterion level Pearson r"></canvas></div>
+      <div class="card-hd"><div><div class="ct">Correlation divergence per dimension</div><div class="cs">|r(FUJI×FC) − r(FUJI×KGHB)| — red = tools measure very differently</div></div><button class="dl" onclick="dlC('c-div','divergence')">↓ PNG</button></div>
+      <div style="position:relative;height:260px;"><canvas id="c-div"></canvas></div>
     </div>
-  </div>
-  <div class="card">
-    <div class="card-hd"><div><div class="card-title">Correlation divergence between tool pairs per dimension</div><div class="card-sub">|r(FUJI×FC) − r(FUJI×KGHB)| — large gap signals fundamentally different measurement approaches</div></div><button class="dl" onclick="dlC('c-div','divergence')">↓ PNG</button></div>
-    <div style="position:relative;height:190px;"><canvas id="c-div" role="img" aria-label="Bar chart of correlation divergence"></canvas></div>
   </div>
 </div>
 
-<!-- DISTRIBUTIONS -->
+<!-- ══════════════ DISTRIBUTIONS ══════════════ -->
 <div id="p-dist" class="panel">
   <div style="display:flex;gap:8px;align-items:center;margin-bottom:14px;">
     <label style="font-size:12px;color:var(--muted);">Dimension:</label>
     <select id="dist-dim" onchange="renderDist()">
       <option value="FAIR">Overall FAIR</option>
-      <option value="F">Findable (F)</option>
-      <option value="A">Accessible (A)</option>
-      <option value="I">Interoperable (I)</option>
-      <option value="R">Reusable (R)</option>
+      <option value="F">Findable</option>
+      <option value="A">Accessible</option>
+      <option value="I">Interoperable</option>
+      <option value="R">Reusable</option>
     </select>
   </div>
   <div class="card">
-    <div class="card-hd"><div><div class="card-title" id="dist-title">Score frequency — Overall FAIR</div><div class="card-sub">Datasets per 5% bin. Reveals whether tools spread scores across the range or cluster at specific values.</div></div><button class="dl" onclick="dlC('c-dist','distribution')">↓ PNG</button></div>
+    <div class="card-hd"><div><div class="ct" id="dist-title">Score frequency — Overall FAIR</div><div class="cs">Datasets per 5% bin — reveals score clustering per tool</div></div><button class="dl" onclick="dlC('c-dist','distribution')">↓ PNG</button></div>
     <div class="leg"><span><span class="ld" style="background:#3266ad;"></span>F-UJI</span><span><span class="ld" style="background:#639922;"></span>FAIR-Checker</span><span><span class="ld" style="background:#EF9F27;"></span>KGHeartBeat</span></div>
-    <div style="position:relative;height:280px;"><canvas id="c-dist" role="img" aria-label="Frequency distribution histogram"></canvas></div>
+    <div style="position:relative;height:280px;"><canvas id="c-dist"></canvas></div>
   </div>
   <div class="g2">
     <div class="card">
-      <div class="card-hd"><div><div class="card-title">F-UJI — score band breakdown per dimension</div><div class="card-sub">% of datasets in each quartile per dimension</div></div><button class="dl" onclick="dlC('c-bfuji','bands_fuji')">↓ PNG</button></div>
-      <div style="position:relative;height:210px;"><canvas id="c-bfuji" role="img" aria-label="Score bands F-UJI"></canvas></div>
+      <div class="card-hd"><div><div class="ct">F-UJI score bands per dimension</div></div><button class="dl" onclick="dlC('c-bfuji','bands_fuji')">↓ PNG</button></div>
+      <div style="position:relative;height:210px;"><canvas id="c-bfuji"></canvas></div>
     </div>
     <div class="card">
-      <div class="card-hd"><div><div class="card-title">FAIR-Checker &amp; KGHeartBeat — score bands</div><div class="card-sub">Side by side comparison of score spread</div></div><button class="dl" onclick="dlC('c-bother','bands_other')">↓ PNG</button></div>
-      <div style="position:relative;height:210px;"><canvas id="c-bother" role="img" aria-label="Score bands FC and KGHB"></canvas></div>
+      <div class="card-hd"><div><div class="ct">FAIR-Checker &amp; KGHeartBeat score bands</div></div><button class="dl" onclick="dlC('c-bother','bands_other')">↓ PNG</button></div>
+      <div style="position:relative;height:210px;"><canvas id="c-bother"></canvas></div>
     </div>
   </div>
 </div>
 
-<!-- AGREEMENT -->
+<!-- ══════════════ AGREEMENT ══════════════ -->
 <div id="p-agree" class="panel">
   <div class="card">
-    <div class="card-hd"><div><div class="card-title">Agreement rate at ±15% threshold per dimension</div><div class="card-sub">% of datasets where two tools score within 15% of each other. Note: high agreement + low r = both tools score uniformly (no variance), not genuine alignment.</div></div><button class="dl" onclick="dlC('c-agree','agreement_15')">↓ PNG</button></div>
+    <div class="card-hd"><div><div class="ct">Agreement rate at ±15% threshold per dimension</div><div class="cs">% of datasets where two tools differ by ≤15%. High agreement + low r = measurement uniformity, not genuine alignment.</div></div><button class="dl" onclick="dlC('c-agree','agreement_15')">↓ PNG</button></div>
     <div class="leg"><span><span class="ld" style="background:#3266ad;"></span>F-UJI × FC</span><span><span class="ld" style="background:#639922;"></span>F-UJI × KGHB</span><span><span class="ld" style="background:#EF9F27;"></span>FC × KGHB</span></div>
-    <div style="position:relative;height:240px;"><canvas id="c-agree" role="img" aria-label="Agreement rates per dimension"></canvas></div>
+    <div style="position:relative;height:240px;"><canvas id="c-agree"></canvas></div>
   </div>
   <div class="g2">
     <div class="card">
-      <div class="card-hd"><div><div class="card-title">Pearson r vs agreement rate — per dimension</div><div class="card-sub">Hover for dimension labels. Points in top-left quadrant = high agreement but tools disagree on ranking (problematic).</div></div><button class="dl" onclick="dlC('c-rva','r_vs_agree')">↓ PNG</button></div>
-      <div style="position:relative;height:230px;"><canvas id="c-rva" role="img" aria-label="Scatter r vs agreement"></canvas></div>
+      <div class="card-hd"><div><div class="ct">Pearson r vs agreement — per dimension</div><div class="cs">Top-left quadrant = high agreement but opposite rankings (problematic)</div></div><button class="dl" onclick="dlC('c-rva','r_vs_agree')">↓ PNG</button></div>
+      <div style="position:relative;height:230px;"><canvas id="c-rva"></canvas></div>
     </div>
     <div class="card">
-      <div class="card-hd"><div><div class="card-title">Criterion-level agreement (±15%) — all 3 pairs</div><div class="card-sub">Which specific criteria do tools agree on?</div></div><button class="dl" onclick="dlC('c-caagree','criterion_agree')">↓ PNG</button></div>
-      <div style="position:relative;height:230px;"><canvas id="c-caagree" role="img" aria-label="Criterion agreement"></canvas></div>
+      <div class="card-hd"><div><div class="ct">Criterion-level agreement (±15%) — all 3 pairs</div></div><button class="dl" onclick="dlC('c-caagree','crit_agree')">↓ PNG</button></div>
+      <div style="position:relative;height:230px;"><canvas id="c-caagree"></canvas></div>
     </div>
   </div>
 </div>
 
-<!-- KEY FINDINGS -->
+<!-- ══════════════ KEY FINDINGS ══════════════ -->
 <div id="p-insights" class="panel">
   <ul class="il" id="ins"></ul>
 </div>
 
-</div>
+</div><!-- /pb -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
-const C1='#3266ad',C2='#639922',C3='#EF9F27';
-const charts={};
-function dc(id){if(charts[id]){charts[id].destroy();delete charts[id];}}
-function dlC(id,name){const a=document.createElement('a');a.href=document.getElementById(id).toDataURL('image/png');a.download=name+'.png';a.click();}
-function sw(t){
-  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
-  document.querySelectorAll('.panel').forEach(x=>x.classList.remove('on'));
-  document.querySelector(`[onclick="sw('${t}')"]`).classList.add('on');
-  document.getElementById('p-'+t).classList.add('on');
-  if(t==='dist') renderDist();
-}
+// ═══════════════════════════════════════════════════════════════════════════════
+// DATA
+// ═══════════════════════════════════════════════════════════════════════════════
+const C1='#3266ad', C2='#639922', C3='#EF9F27';
+const PC={'F':'#3266ad','A':'#639922','I':'#EF9F27','R':'#E24B4A'};
+const PCL={'F':'#E6F1FB','A':'#EAF3DE','I':'#FAEEDA','R':'#FAECE7'};
+const PCT={'F':'#0C447C','A':'#27500A','I':'#633806','R':'#4A1B0C'};
 
 const MEANS={F:{fuji:38.1,fc:19.2,kghb:31.5},A:{fuji:48.8,fc:49.9,kghb:2.2},I:{fuji:50.9,fc:10.6,kghb:32.3},R:{fuji:33.2,fc:5.1,kghb:34.6},FAIR:{fuji:58.9,fc:20.0,kghb:24.5}};
 const DIM_R={F:{fc:0.900,fk:0.274,ck:0.344},A:{fc:0.268,fk:-0.233,ck:-0.059},I:{fc:-0.402,fk:-0.222,ck:0.065},R:{fc:0.571,fk:0.080,ck:0.408},FAIR:{fc:0.358,fk:-0.312,ck:0.331}};
@@ -219,30 +321,148 @@ const DIST={
   I:{bins:[0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95],fuji:[157,0,0,0,0,0,277,0,0,0,0,0,0,810,0,0,0,0,0,2],fc:[949,0,0,0,4,0,0,0,241,0,0,0,38,0,0,0,12,0,0,2],kghb:[0,0,0,0,0,0,1214,0,0,0,0,0,4,4,0,0,0,0,1,14]},
   R:{bins:[0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95],fuji:[100,0,0,0,0,888,0,0,0,0,12,0,0,0,0,243,0,0,0,3],fc:[953,0,0,239,0,0,38,0,0,0,6,0,0,1,0,0,8,0,0,1],kghb:[0,0,0,0,0,935,0,0,0,0,146,0,0,0,0,140,0,0,0,16]}
 };
-const CRIT_R=[{l:'F1A',fc:0,fk:0,ck:0.376},{l:'F1B',fc:-0.004,fk:-0.004,ck:0.116},{l:'F2',fc:0,fk:0,ck:0},{l:'A1.1',fc:0.359,fk:-0.292,ck:-0.223},{l:'I1',fc:0.12,fk:0,ck:0},{l:'I2',fc:-0.689,fk:-0.168,ck:0.042},{l:'I3',fc:-0.004,fk:-0.004,ck:0.171},{l:'R1.1',fc:-0.056,fk:-0.463,ck:0.111}];
-const CRIT_A=[{l:'F1A',fc:32,fk:14,ck:76},{l:'F1B',fc:99,fk:99,ck:99},{l:'F2',fc:76,fk:0,ck:24},{l:'A1.1',fc:1,fk:6,ck:3},{l:'I1',fc:34,fk:87,ck:24},{l:'I2',fc:12,fk:33,ck:76},{l:'I3',fc:99,fk:98,ck:98},{l:'R1.1',fc:15,fk:14,ck:85}];
+
+// ── Sub-principle data (real computed values) ─────────────────────────────────
+const FUJI_SUBS=[
+  {lbl:'F1 unique ID',  mean:100.0, p:'F'},
+  {lbl:'F1 persist ID', mean:0.2,   p:'F'},
+  {lbl:'F2 metadata',   mean:0.0,   p:'F'},
+  {lbl:'F3 data ref',   mean:0.1,   p:'F'},
+  {lbl:'F4 searchable', mean:26.0,  p:'F'},
+  {lbl:'A1 retrievable',mean:46.0,  p:'A'},
+  {lbl:'A1.1 protocol', mean:50.0,  p:'A'},
+  {lbl:'A1.2 auth',     mean:50.0,  p:'A'},
+  {lbl:'I1 formal lang',mean:87.1,  p:'I'},
+  {lbl:'I2 vocab',      mean:65.5,  p:'I'},
+  {lbl:'I3 references', mean:0.2,   p:'I'},
+  {lbl:'R1 license',    mean:84.8,  p:'R'},
+];
+const FC_SUBS=[
+  {lbl:'F1A', mean:31.5, p:'F'},
+  {lbl:'F1B', mean:0.8,  p:'F'},
+  {lbl:'F2A', mean:23.8, p:'F'},
+  {lbl:'F2B', mean:13.4, p:'F'},
+  {lbl:'A1.1',mean:98.9, p:'A'},
+  {lbl:'A1.2',mean:0.9,  p:'A'},
+  {lbl:'I1',  mean:23.8, p:'I'},
+  {lbl:'I2',  mean:13.4, p:'I'},
+  {lbl:'I3',  mean:1.1,  p:'I'},
+  {lbl:'R1.1',mean:0.9,  p:'R'},
+  {lbl:'R1.2',mean:1.1,  p:'R'},
+  {lbl:'R1.3',mean:13.4, p:'R'},
+];
+const KGHB_SUBS=[
+  {lbl:'F1-M',   mean:14.1,  p:'F'},
+  {lbl:'F1-D',   mean:0.6,   p:'F'},
+  {lbl:'F2a-M',  mean:100.0, p:'F'},
+  {lbl:'F2b-M',  mean:28.4,  p:'F'},
+  {lbl:'F3-M',   mean:14.1,  p:'F'},
+  {lbl:'F4-M',   mean:1.9,   p:'F'},
+  {lbl:'A1-D',   mean:2.4,   p:'A'},
+  {lbl:'A1-M',   mean:2.6,   p:'A'},
+  {lbl:'A1.2',   mean:2.2,   p:'A'},
+  {lbl:'A2-M',   mean:1.8,   p:'A'},
+  {lbl:'I1-D',   mean:1.4,   p:'I'},
+  {lbl:'I1-M',   mean:100.0, p:'I'},
+  {lbl:'I2',     mean:1.5,   p:'I'},
+  {lbl:'I3-D',   mean:1.7,   p:'I'},
+  {lbl:'R1.1',   mean:15.4,  p:'R'},
+  {lbl:'R1.2',   mean:21.5,  p:'R'},
+  {lbl:'R1.3-D', mean:1.4,   p:'R'},
+  {lbl:'R1.3-M', mean:100.0, p:'R'},
+];
+
+const CROSS_R=[
+  {lbl:'F1A',   p:'F', fujiFC:0.000,  fujiKGHB:0.000,  fcKGHB:0.376},
+  {lbl:'F1B',   p:'F', fujiFC:-0.004, fujiKGHB:-0.004, fcKGHB:0.116},
+  {lbl:'F2A/B', p:'F', fujiFC:0.000,  fujiKGHB:0.000,  fcKGHB:0.000},
+  {lbl:'A1.1',  p:'A', fujiFC:0.359,  fujiKGHB:-0.292, fcKGHB:-0.223},
+  {lbl:'I1',    p:'I', fujiFC:0.120,  fujiKGHB:0.000,  fcKGHB:0.000},
+  {lbl:'I2',    p:'I', fujiFC:-0.689, fujiKGHB:-0.168, fcKGHB:0.042},
+  {lbl:'I3',    p:'I', fujiFC:-0.004, fujiKGHB:-0.004, fcKGHB:0.171},
+  {lbl:'R1.1',  p:'R', fujiFC:-0.056, fujiKGHB:-0.463, fcKGHB:0.111},
+  {lbl:'R1.2',  p:'R', fujiFC:null,   fujiKGHB:null,   fcKGHB:0.139},
+  {lbl:'R1.3',  p:'R', fujiFC:null,   fujiKGHB:null,   fcKGHB:0.000},
+];
+
+const CRIT_A=[
+  {lbl:'F1A',  fc:32, fk:14, ck:76},
+  {lbl:'F1B',  fc:99, fk:99, ck:99},
+  {lbl:'F2A/B',fc:76, fk:0,  ck:24},
+  {lbl:'A1.1', fc:1,  fk:6,  ck:3},
+  {lbl:'I1',   fc:34, fk:87, ck:24},
+  {lbl:'I2',   fc:12, fk:33, ck:76},
+  {lbl:'I3',   fc:99, fk:98, ck:98},
+  {lbl:'R1.1', fc:15, fk:14, ck:85},
+];
+
 const D5=['F','A','I','R','FAIR'];
 const D4=['F','A','I','R'];
 
+// ═══════════════════════════════════════════════════════════════════════════════
+// HELPERS
+// ═══════════════════════════════════════════════════════════════════════════════
+const charts={};
+function dc(id){if(charts[id]){charts[id].destroy();delete charts[id];}}
+function dlC(id,name){const a=document.createElement('a');a.href=document.getElementById(id).toDataURL('image/png');a.download=name+'.png';a.click();}
+function sw(t){
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.panel').forEach(x=>x.classList.remove('on'));
+  document.querySelector(`[onclick="sw('${t}')"]`).classList.add('on');
+  document.getElementById('p-'+t).classList.add('on');
+  if(t==='dist') renderDist();
+}
 const bOpts=(yMin,yMax,yLbl,pct)=>({responsive:true,maintainAspectRatio:false,
   plugins:{legend:{labels:{font:{size:11}}}},
-  scales:{y:{min:yMin,max:yMax,ticks:{callback:v=>pct?v+'%':v.toFixed(yMin<0?1:0),font:{size:10}},title:{display:true,text:yLbl,font:{size:11}}},x:{ticks:{font:{size:11},autoSkip:false}}}});
+  scales:{y:{min:yMin,max:yMax,ticks:{callback:v=>pct?v+'%':v.toFixed(yMin<0?1:0),font:{size:10}},
+    title:{display:!!yLbl,text:yLbl,font:{size:11}}},x:{ticks:{font:{size:11},autoSkip:false}}}});
+const hOpts=(xMax,xLbl)=>({responsive:true,maintainAspectRatio:false,indexAxis:'y',
+  plugins:{legend:{display:false}},
+  scales:{x:{min:0,max:xMax,ticks:{callback:v=>v+'%',font:{size:10}},title:{display:!!xLbl,text:xLbl||'',font:{size:11}}},
+          y:{ticks:{font:{size:10}}}}});
 
-// ── Overview ──────────────────────────────────────────────────────────────────
+function rBadge(v){
+  if(v===null||v===undefined) return '<span style="color:var(--muted);font-size:11px;font-style:italic;">n/a</span>';
+  const cls = v>=0.5?'#EAF3DE':v>=0?'#FAEEDA':v>=-0.3?'#FAEEDA':'#FAECE7';
+  const tc  = v>=0.5?'#27500A':v>=0?'#633806':v>=-0.3?'#633806':'#4A1B0C';
+  return `<span style="background:${cls};color:${tc};display:inline-block;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:500;">${v.toFixed(3)}</span>`;
+}
+
+function buildInlineBars(containerId, subs, color){
+  const groups = {};
+  subs.forEach(s=>{if(!groups[s.p])groups[s.p]=[];groups[s.p].push(s);});
+  let html='';
+  for(const p of Object.keys(groups)){
+    html+=`<div class="psec"><span class="pbadge pb-${p}">${p}</span>${{F:'Findable',A:'Accessible',I:'Interoperable',R:'Reusable'}[p]}</div>`;
+    groups[p].forEach(s=>{
+      const w = Math.max(0.3, s.mean);
+      html+=`<div class="bar-row">
+        <div class="bar-lbl" title="${s.lbl}">${s.lbl}</div>
+        <div class="bar-track"><div class="bar-fill" style="width:${w}%;background:${color};opacity:0.85;"></div></div>
+        <div class="bar-val">${s.mean}%</div>
+      </div>`;
+    });
+  }
+  document.getElementById(containerId).innerHTML = html;
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// OVERVIEW CHARTS
+// ═══════════════════════════════════════════════════════════════════════════════
 dc('c-means');
 charts['c-means']=new Chart(document.getElementById('c-means'),{type:'bar',
   data:{labels:['F','A','I','R','Overall'],datasets:[
-    {label:'F-UJI',data:D5.map(d=>MEANS[d].fuji),backgroundColor:C1,borderRadius:3},
-    {label:'FAIR-Checker',data:D5.map(d=>MEANS[d].fc),backgroundColor:C2,borderRadius:3},
-    {label:'KGHeartBeat',data:D5.map(d=>MEANS[d].kghb),backgroundColor:C3,borderRadius:3}]},
+    {label:'F-UJI',        data:D5.map(d=>MEANS[d].fuji), backgroundColor:C1,borderRadius:3},
+    {label:'FAIR-Checker', data:D5.map(d=>MEANS[d].fc),   backgroundColor:C2,borderRadius:3},
+    {label:'KGHeartBeat',  data:D5.map(d=>MEANS[d].kghb), backgroundColor:C3,borderRadius:3}]},
   options:bOpts(0,100,'Mean score (%)',true)});
 
 dc('c-bands');
 charts['c-bands']=new Chart(document.getElementById('c-bands'),{type:'bar',
   data:{labels:['F-UJI','FAIR-Checker','KGHeartBeat'],
-    datasets:[{label:'0–25%',data:[BANDS.FAIR.fuji[0],BANDS.FAIR.fc[0],BANDS.FAIR.kghb[0]],backgroundColor:'#E24B4A',borderRadius:2},
-              {label:'25–50%',data:[BANDS.FAIR.fuji[1],BANDS.FAIR.fc[1],BANDS.FAIR.kghb[1]],backgroundColor:C3,borderRadius:2},
-              {label:'50–75%',data:[BANDS.FAIR.fuji[2],BANDS.FAIR.fc[2],BANDS.FAIR.kghb[2]],backgroundColor:C1,borderRadius:2},
+    datasets:[{label:'0–25%',  data:[BANDS.FAIR.fuji[0],BANDS.FAIR.fc[0],BANDS.FAIR.kghb[0]],backgroundColor:'#E24B4A',borderRadius:2},
+              {label:'25–50%', data:[BANDS.FAIR.fuji[1],BANDS.FAIR.fc[1],BANDS.FAIR.kghb[1]],backgroundColor:C3,borderRadius:2},
+              {label:'50–75%', data:[BANDS.FAIR.fuji[2],BANDS.FAIR.fc[2],BANDS.FAIR.kghb[2]],backgroundColor:C1,borderRadius:2},
               {label:'75–100%',data:[BANDS.FAIR.fuji[3],BANDS.FAIR.fc[3],BANDS.FAIR.kghb[3]],backgroundColor:C2,borderRadius:2}]},
   options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{font:{size:11}}}},
     scales:{x:{stacked:true,ticks:{font:{size:11}}},y:{stacked:true,max:100,ticks:{callback:v=>v+'%',font:{size:10}}}}}});
@@ -250,39 +470,178 @@ charts['c-bands']=new Chart(document.getElementById('c-bands'),{type:'bar',
 dc('c-dimr');
 charts['c-dimr']=new Chart(document.getElementById('c-dimr'),{type:'bar',
   data:{labels:['F','A','I','R','Overall'],datasets:[
-    {label:'F-UJI × FAIR-Checker',data:D5.map(d=>DIM_R[d].fc),backgroundColor:C1,borderRadius:3},
-    {label:'F-UJI × KGHeartBeat',data:D5.map(d=>DIM_R[d].fk),backgroundColor:C2,borderRadius:3},
-    {label:'FC × KGHeartBeat',data:D5.map(d=>DIM_R[d].ck),backgroundColor:C3,borderRadius:3}]},
+    {label:'F-UJI × FC',   data:D5.map(d=>DIM_R[d].fc), backgroundColor:C1,borderRadius:3},
+    {label:'F-UJI × KGHB', data:D5.map(d=>DIM_R[d].fk), backgroundColor:C2,borderRadius:3},
+    {label:'FC × KGHB',    data:D5.map(d=>DIM_R[d].ck), backgroundColor:C3,borderRadius:3}]},
   options:bOpts(-1,1,'Pearson r',false)});
 
-// Radars
-const radarBase=(label,col,vals)=>({type:'radar',
+const radarCfg=(label,col,vals)=>({type:'radar',
   data:{labels:['Findable','Accessible','Interoperable','Reusable'],
     datasets:[{label,data:vals,backgroundColor:col+'33',borderColor:col,borderWidth:2,pointBackgroundColor:col,pointRadius:4}]},
   options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
     scales:{r:{min:0,max:100,ticks:{display:false},pointLabels:{font:{size:11}},
       grid:{color:'rgba(128,128,128,0.2)'},angleLines:{color:'rgba(128,128,128,0.2)'}}}}});
-dc('c-r-fuji'); charts['c-r-fuji']=new Chart(document.getElementById('c-r-fuji'),radarBase('F-UJI',C1,D4.map(d=>MEANS[d].fuji)));
-dc('c-r-fc');   charts['c-r-fc']=new Chart(document.getElementById('c-r-fc'),radarBase('FAIR-Checker',C2,D4.map(d=>MEANS[d].fc)));
-dc('c-r-kghb'); charts['c-r-kghb']=new Chart(document.getElementById('c-r-kghb'),radarBase('KGHeartBeat',C3,D4.map(d=>MEANS[d].kghb)));
+dc('c-r-fuji'); charts['c-r-fuji']=new Chart(document.getElementById('c-r-fuji'),radarCfg('F-UJI',C1,D4.map(d=>MEANS[d].fuji)));
+dc('c-r-fc');   charts['c-r-fc']=new Chart(document.getElementById('c-r-fc'),radarCfg('FAIR-Checker',C2,D4.map(d=>MEANS[d].fc)));
+dc('c-r-kghb'); charts['c-r-kghb']=new Chart(document.getElementById('c-r-kghb'),radarCfg('KGHeartBeat',C3,D4.map(d=>MEANS[d].kghb)));
 
-// ── Correlation ───────────────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════════════════════
+// F-UJI SUB-PRINCIPLE CHARTS
+// ═══════════════════════════════════════════════════════════════════════════════
+dc('c-fuji-sub-bar');
+charts['c-fuji-sub-bar']=new Chart(document.getElementById('c-fuji-sub-bar'),{type:'bar',
+  data:{labels:FUJI_SUBS.map(s=>s.lbl),
+    datasets:[{label:'Mean score (%)',data:FUJI_SUBS.map(s=>s.mean),
+      backgroundColor:FUJI_SUBS.map(s=>PC[s.p]+'cc'),borderColor:FUJI_SUBS.map(s=>PC[s.p]),
+      borderWidth:1,borderRadius:3}]},
+  options:{...bOpts(0,100,'Mean score (%)',true),plugins:{legend:{display:false}}}});
+
+dc('c-fuji-sub-h');
+charts['c-fuji-sub-h']=new Chart(document.getElementById('c-fuji-sub-h'),{type:'bar',
+  data:{labels:FUJI_SUBS.map(s=>s.lbl),
+    datasets:[{label:'Mean score (%)',data:FUJI_SUBS.map(s=>s.mean),
+      backgroundColor:FUJI_SUBS.map(s=>PC[s.p]+'cc'),borderColor:FUJI_SUBS.map(s=>PC[s.p]),
+      borderWidth:1,borderRadius:3}]},
+  options:{...hOpts(100,'Mean score (%)'),plugins:{legend:{display:false}}}});
+
+buildInlineBars('fuji-inline-bars', FUJI_SUBS, C1);
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// FAIR-CHECKER SUB-PRINCIPLE CHARTS
+// ═══════════════════════════════════════════════════════════════════════════════
+dc('c-fc-sub-bar');
+charts['c-fc-sub-bar']=new Chart(document.getElementById('c-fc-sub-bar'),{type:'bar',
+  data:{labels:FC_SUBS.map(s=>s.lbl),
+    datasets:[{label:'Mean score (%)',data:FC_SUBS.map(s=>s.mean),
+      backgroundColor:FC_SUBS.map(s=>PC[s.p]+'cc'),borderColor:FC_SUBS.map(s=>PC[s.p]),
+      borderWidth:1,borderRadius:3}]},
+  options:{...bOpts(0,100,'Mean score (%)',true),plugins:{legend:{display:false}}}});
+
+dc('c-fc-sub-h');
+charts['c-fc-sub-h']=new Chart(document.getElementById('c-fc-sub-h'),{type:'bar',
+  data:{labels:FC_SUBS.map(s=>s.lbl),
+    datasets:[{label:'Mean score (%)',data:FC_SUBS.map(s=>s.mean),
+      backgroundColor:FC_SUBS.map(s=>PC[s.p]+'cc'),borderColor:FC_SUBS.map(s=>PC[s.p]),
+      borderWidth:1,borderRadius:3}]},
+  options:{...hOpts(100,'Mean score (%)'),plugins:{legend:{display:false}}}});
+
+buildInlineBars('fc-inline-bars', FC_SUBS, C2);
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// KGHB SUB-PRINCIPLE CHARTS
+// ═══════════════════════════════════════════════════════════════════════════════
+dc('c-kghb-sub-bar');
+charts['c-kghb-sub-bar']=new Chart(document.getElementById('c-kghb-sub-bar'),{type:'bar',
+  data:{labels:KGHB_SUBS.map(s=>s.lbl),
+    datasets:[{label:'Mean score (%)',data:KGHB_SUBS.map(s=>s.mean),
+      backgroundColor:KGHB_SUBS.map(s=>PC[s.p]+'cc'),borderColor:KGHB_SUBS.map(s=>PC[s.p]),
+      borderWidth:1,borderRadius:3}]},
+  options:{...bOpts(0,100,'Mean score (%)',true),plugins:{legend:{display:false}}}});
+
+dc('c-kghb-sub-h');
+charts['c-kghb-sub-h']=new Chart(document.getElementById('c-kghb-sub-h'),{type:'bar',
+  data:{labels:KGHB_SUBS.map(s=>s.lbl),
+    datasets:[{label:'Mean score (%)',data:KGHB_SUBS.map(s=>s.mean),
+      backgroundColor:KGHB_SUBS.map(s=>PC[s.p]+'cc'),borderColor:KGHB_SUBS.map(s=>PC[s.p]),
+      borderWidth:1,borderRadius:3}]},
+  options:{...hOpts(100,'Mean score (%)'),plugins:{legend:{display:false}}}});
+
+buildInlineBars('kghb-inline-bars', KGHB_SUBS, C3);
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// SUB-PRINCIPLE CORRELATION CHARTS
+// ═══════════════════════════════════════════════════════════════════════════════
+// Main grouped bar (nulls → 0 with reduced opacity handled in color)
+dc('c-sub-r-main');
+charts['c-sub-r-main']=new Chart(document.getElementById('c-sub-r-main'),{type:'bar',
+  data:{labels:CROSS_R.map(c=>c.lbl),datasets:[
+    {label:'F-UJI × FC',   data:CROSS_R.map(c=>c.fujiFC??0),   backgroundColor:CROSS_R.map(c=>c.fujiFC===null?'#3266ad33':'#3266adcc'),borderRadius:3},
+    {label:'F-UJI × KGHB', data:CROSS_R.map(c=>c.fujiKGHB??0), backgroundColor:CROSS_R.map(c=>c.fujiKGHB===null?'#63992233':'#639922cc'),borderRadius:3},
+    {label:'FC × KGHB',    data:CROSS_R.map(c=>c.fcKGHB??0),   backgroundColor:CROSS_R.map(c=>c.fcKGHB===null?'#EF9F2733':'#EF9F27cc'),borderRadius:3}]},
+  options:{...bOpts(-1,1,'Pearson r',false),
+    plugins:{legend:{labels:{font:{size:11}}},
+      tooltip:{callbacks:{label:ctx=>{const v=CROSS_R[ctx.dataIndex][['fujiFC','fujiKGHB','fcKGHB'][ctx.datasetIndex]]; return v===null?'n/a (criterion not in both tools)': `r = ${v.toFixed(3)}`;}}}}
+  }});
+
+// F-UJI × FC only (criteria that exist in both)
+const available_fc = CROSS_R.filter(c=>c.fujiFC!==null);
+dc('c-sub-fujifc');
+charts['c-sub-fujifc']=new Chart(document.getElementById('c-sub-fujifc'),{type:'bar',
+  data:{labels:available_fc.map(c=>c.lbl),
+    datasets:[{label:'Pearson r',data:available_fc.map(c=>c.fujiFC),
+      backgroundColor:available_fc.map(c=>c.fujiFC>=0?C1+'cc':'#E24B4Acc'),borderRadius:3}]},
+  options:{...bOpts(-1,1,'Pearson r',false),plugins:{legend:{display:false}}}});
+
+// FC × KGHB (most complete)
+dc('c-sub-fckghb');
+charts['c-sub-fckghb']=new Chart(document.getElementById('c-sub-fckghb'),{type:'bar',
+  data:{labels:CROSS_R.map(c=>c.lbl),
+    datasets:[{label:'Pearson r',data:CROSS_R.map(c=>c.fcKGHB??0),
+      backgroundColor:CROSS_R.map(c=>c.fcKGHB===null?'#88888833':(c.fcKGHB>=0?C3+'cc':'#E24B4Acc')),borderRadius:3}]},
+  options:{...bOpts(-1,1,'Pearson r',false),plugins:{legend:{display:false}}}});
+
+// Sub r vs dim r scatter
+dc('c-sub-vs-dim');
+const subVsDimPts={fc:[],fk:[],ck:[]};
+CROSS_R.forEach(cr=>{
+  const dr = DIM_R[cr.p];
+  if(cr.fujiFC!==null)   subVsDimPts.fc.push({x:cr.fujiFC, y:dr.fc, lbl:cr.lbl+' ('+cr.p+')'});
+  if(cr.fujiKGHB!==null) subVsDimPts.fk.push({x:cr.fujiKGHB,y:dr.fk,lbl:cr.lbl+' ('+cr.p+')'});
+  if(cr.fcKGHB!==null)   subVsDimPts.ck.push({x:cr.fcKGHB,  y:dr.ck,lbl:cr.lbl+' ('+cr.p+')'});
+});
+charts['c-sub-vs-dim']=new Chart(document.getElementById('c-sub-vs-dim'),{type:'scatter',
+  data:{datasets:[
+    {label:'F-UJI × FC',   data:subVsDimPts.fc, backgroundColor:C1+'cc',pointRadius:7},
+    {label:'F-UJI × KGHB', data:subVsDimPts.fk, backgroundColor:C2+'cc',pointRadius:7},
+    {label:'FC × KGHB',    data:subVsDimPts.ck, backgroundColor:C3+'cc',pointRadius:7}]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{labels:{font:{size:11}}},
+      tooltip:{callbacks:{label:ctx=>`${ctx.dataset.label} — ${ctx.raw.lbl}: sub-r=${ctx.raw.x.toFixed(3)}, dim-r=${ctx.raw.y.toFixed(3)}`}}},
+    scales:{
+      x:{min:-1,max:1,title:{display:true,text:'Sub-principle Pearson r',font:{size:11}},ticks:{font:{size:10},callback:v=>v.toFixed(1)}},
+      y:{min:-1,max:1,title:{display:true,text:'Dimension Pearson r',font:{size:11}},ticks:{font:{size:10},callback:v=>v.toFixed(1)}}
+    }}});
+
+// Full table
+const tblHead=`<thead><tr style="background:var(--surface2);">
+  <th style="padding:7px 10px;font-size:11px;font-weight:600;color:var(--muted);text-align:left;border-bottom:1px solid var(--border);">Criterion</th>
+  <th style="padding:7px 10px;font-size:11px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">Principle</th>
+  <th style="padding:7px 10px;font-size:11px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">F-UJI × FC</th>
+  <th style="padding:7px 10px;font-size:11px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">F-UJI × KGHB</th>
+  <th style="padding:7px 10px;font-size:11px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">FC × KGHB</th>
+  <th style="padding:7px 10px;font-size:11px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">Interpretation</th>
+</tr></thead>`;
+function interp(fc,fk,ck){
+  const vals=[fc,fk,ck].filter(v=>v!==null);
+  if(!vals.length) return '—';
+  const best=Math.max(...vals), worst=Math.min(...vals);
+  if(best>=0.5)   return '✅ Strong alignment on ≥1 pair';
+  if(best>=0.2)   return '🟡 Partial alignment';
+  if(worst<=-0.3) return '❌ Divergent — opposite rankings';
+  return '⚪ Weak / no correlation';
+}
+const tblRows=CROSS_R.map(cr=>`<tr>
+  <td style="padding:7px 10px;font-size:12px;font-weight:500;border-bottom:1px solid var(--border2);">${cr.lbl}</td>
+  <td style="padding:7px 10px;border-bottom:1px solid var(--border2);"><span class="pbadge pb-${cr.p}">${cr.p}</span></td>
+  <td style="padding:7px 10px;border-bottom:1px solid var(--border2);">${rBadge(cr.fujiFC)}</td>
+  <td style="padding:7px 10px;border-bottom:1px solid var(--border2);">${rBadge(cr.fujiKGHB)}</td>
+  <td style="padding:7px 10px;border-bottom:1px solid var(--border2);">${rBadge(cr.fcKGHB)}</td>
+  <td style="padding:7px 10px;font-size:11px;color:var(--muted);border-bottom:1px solid var(--border2);">${interp(cr.fujiFC,cr.fujiKGHB,cr.fcKGHB)}</td>
+</tr>`).join('');
+document.getElementById('sub-r-table').innerHTML = tblHead+'<tbody>'+tblRows+'</tbody>';
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// DIMENSION CORRELATION CHARTS
+// ═══════════════════════════════════════════════════════════════════════════════
 const heatCol=v=>v>0.5?'#3266ad':v>0?'#3266adaa':v>-0.3?'#EF9F27aa':'#E24B4A';
 dc('c-heat');
 charts['c-heat']=new Chart(document.getElementById('c-heat'),{type:'bar',
   data:{labels:['F','A','I','R','Overall'],datasets:[
-    {label:'F-UJI × FC',data:D5.map(d=>DIM_R[d].fc),backgroundColor:D5.map(d=>heatCol(DIM_R[d].fc)),borderRadius:4},
-    {label:'F-UJI × KGHB',data:D5.map(d=>DIM_R[d].fk),backgroundColor:D5.map(d=>heatCol(DIM_R[d].fk)),borderRadius:4},
-    {label:'FC × KGHB',data:D5.map(d=>DIM_R[d].ck),backgroundColor:D5.map(d=>heatCol(DIM_R[d].ck)),borderRadius:4}]},
-  options:{...bOpts(-1,1,'Pearson r',false),plugins:{legend:{labels:{font:{size:11}}},tooltip:{callbacks:{label:ctx=>`r = ${ctx.raw.toFixed(3)}`}}}}});
-
-dc('c-crit-r');
-charts['c-crit-r']=new Chart(document.getElementById('c-crit-r'),{type:'bar',
-  data:{labels:CRIT_R.map(c=>c.l),datasets:[
-    {label:'F-UJI × FC',data:CRIT_R.map(c=>c.fc),backgroundColor:C1,borderRadius:3},
-    {label:'F-UJI × KGHB',data:CRIT_R.map(c=>c.fk),backgroundColor:C2,borderRadius:3},
-    {label:'FC × KGHB',data:CRIT_R.map(c=>c.ck),backgroundColor:C3,borderRadius:3}]},
-  options:bOpts(-1,1,'Pearson r',false)});
+    {label:'F-UJI × FC',   data:D5.map(d=>DIM_R[d].fc), backgroundColor:D5.map(d=>heatCol(DIM_R[d].fc)),borderRadius:4},
+    {label:'F-UJI × KGHB', data:D5.map(d=>DIM_R[d].fk), backgroundColor:D5.map(d=>heatCol(DIM_R[d].fk)),borderRadius:4},
+    {label:'FC × KGHB',    data:D5.map(d=>DIM_R[d].ck), backgroundColor:D5.map(d=>heatCol(DIM_R[d].ck)),borderRadius:4}]},
+  options:{...bOpts(-1,1,'Pearson r',false),
+    plugins:{legend:{labels:{font:{size:11}}},tooltip:{callbacks:{label:ctx=>`r = ${ctx.raw.toFixed(3)}`}}}}});
 
 dc('c-div');
 charts['c-div']=new Chart(document.getElementById('c-div'),{type:'bar',
@@ -293,7 +652,9 @@ charts['c-div']=new Chart(document.getElementById('c-div'),{type:'bar',
       borderRadius:4}]},
   options:{...bOpts(0,1.2,'|Δr|',false),plugins:{legend:{display:false}}}});
 
-// ── Distributions ─────────────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════════════════════
+// DISTRIBUTIONS
+// ═══════════════════════════════════════════════════════════════════════════════
 function renderDist(){
   const d=document.getElementById('dist-dim').value;
   document.getElementById('dist-title').textContent='Score frequency — '+{FAIR:'Overall FAIR',F:'Findable (F)',A:'Accessible (A)',I:'Interoperable (I)',R:'Reusable (R)'}[d];
@@ -301,51 +662,47 @@ function renderDist(){
   dc('c-dist');
   charts['c-dist']=new Chart(document.getElementById('c-dist'),{type:'bar',
     data:{labels:dd.bins.map(b=>`${b}–${b+5}`),datasets:[
-      {label:'F-UJI',data:dd.fuji,backgroundColor:C1+'cc',borderRadius:2,barPercentage:0.9},
-      {label:'FAIR-Checker',data:dd.fc,backgroundColor:C2+'cc',borderRadius:2,barPercentage:0.9},
-      {label:'KGHeartBeat',data:dd.kghb,backgroundColor:C3+'cc',borderRadius:2,barPercentage:0.9}]},
+      {label:'F-UJI',        data:dd.fuji, backgroundColor:C1+'cc',borderRadius:2,barPercentage:0.9},
+      {label:'FAIR-Checker', data:dd.fc,   backgroundColor:C2+'cc',borderRadius:2,barPercentage:0.9},
+      {label:'KGHeartBeat',  data:dd.kghb, backgroundColor:C3+'cc',borderRadius:2,barPercentage:0.9}]},
     options:{responsive:true,maintainAspectRatio:false,
       plugins:{legend:{labels:{font:{size:11}}}},
       scales:{x:{ticks:{font:{size:9},maxRotation:45,autoSkip:false}},
               y:{beginAtZero:true,title:{display:true,text:'Number of datasets',font:{size:11}},ticks:{font:{size:10}}}}}});
 }
 renderDist();
-
-const bandLbls=['0–25%','25–50%','50–75%','75–100%'];
-const bandCols=['#E24B4A',C3,C1,C2];
+const bandLbls=['0–25%','25–50%','50–75%','75–100%'],bandCols=['#E24B4A',C3,C1,C2];
 dc('c-bfuji');
 charts['c-bfuji']=new Chart(document.getElementById('c-bfuji'),{type:'bar',
-  data:{labels:['F','A','I','R','FAIR'],
-    datasets:bandLbls.map((l,i)=>({label:l,data:D5.map(d=>BANDS[d].fuji[i]),backgroundColor:bandCols[i],borderRadius:2}))},
+  data:{labels:['F','A','I','R','FAIR'],datasets:bandLbls.map((l,i)=>({label:l,data:D5.map(d=>BANDS[d].fuji[i]),backgroundColor:bandCols[i],borderRadius:2}))},
   options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{font:{size:11}}}},
     scales:{x:{stacked:true,ticks:{font:{size:11}}},y:{stacked:true,max:100,ticks:{callback:v=>v+'%',font:{size:10}}}}}});
-
 dc('c-bother');
 charts['c-bother']=new Chart(document.getElementById('c-bother'),{type:'bar',
   data:{labels:['FC-F','FC-A','FC-I','FC-R','FC-O','KGH-F','KGH-A','KGH-I','KGH-R','KGH-O'],
-    datasets:bandLbls.map((l,i)=>({label:l,
-      data:[...D5.map(d=>BANDS[d].fc[i]),...D5.map(d=>BANDS[d].kghb[i])],
-      backgroundColor:bandCols[i],borderRadius:2}))},
+    datasets:bandLbls.map((l,i)=>({label:l,data:[...D5.map(d=>BANDS[d].fc[i]),...D5.map(d=>BANDS[d].kghb[i])],backgroundColor:bandCols[i],borderRadius:2}))},
   options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{font:{size:10}}}},
     scales:{x:{stacked:true,ticks:{font:{size:9},maxRotation:45}},y:{stacked:true,max:100,ticks:{callback:v=>v+'%',font:{size:10}}}}}});
 
-// ── Agreement ─────────────────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════════════════════
+// AGREEMENT
+// ═══════════════════════════════════════════════════════════════════════════════
 dc('c-agree');
 charts['c-agree']=new Chart(document.getElementById('c-agree'),{type:'bar',
   data:{labels:['F','A','I','R','Overall'],datasets:[
-    {label:'F-UJI × FC',data:D5.map(d=>AGREE[d].fc),backgroundColor:C1,borderRadius:3},
-    {label:'F-UJI × KGHB',data:D5.map(d=>AGREE[d].fk),backgroundColor:C2,borderRadius:3},
-    {label:'FC × KGHB',data:D5.map(d=>AGREE[d].ck),backgroundColor:C3,borderRadius:3}]},
+    {label:'F-UJI × FC',   data:D5.map(d=>AGREE[d].fc), backgroundColor:C1,borderRadius:3},
+    {label:'F-UJI × KGHB', data:D5.map(d=>AGREE[d].fk), backgroundColor:C2,borderRadius:3},
+    {label:'FC × KGHB',    data:D5.map(d=>AGREE[d].ck), backgroundColor:C3,borderRadius:3}]},
   options:bOpts(0,100,'Agreement %',true)});
 
 dc('c-rva');
-const rvaData={fc:[],fk:[],ck:[]};
-D5.forEach(d=>{rvaData.fc.push({x:DIM_R[d].fc,y:AGREE[d].fc,lbl:d});rvaData.fk.push({x:DIM_R[d].fk,y:AGREE[d].fk,lbl:d});rvaData.ck.push({x:DIM_R[d].ck,y:AGREE[d].ck,lbl:d});});
+const rvaD={fc:[],fk:[],ck:[]};
+D5.forEach(d=>{rvaD.fc.push({x:DIM_R[d].fc,y:AGREE[d].fc,lbl:d});rvaD.fk.push({x:DIM_R[d].fk,y:AGREE[d].fk,lbl:d});rvaD.ck.push({x:DIM_R[d].ck,y:AGREE[d].ck,lbl:d});});
 charts['c-rva']=new Chart(document.getElementById('c-rva'),{type:'scatter',
   data:{datasets:[
-    {label:'F-UJI × FC',data:rvaData.fc,backgroundColor:C1+'cc',pointRadius:7},
-    {label:'F-UJI × KGHB',data:rvaData.fk,backgroundColor:C2+'cc',pointRadius:7},
-    {label:'FC × KGHB',data:rvaData.ck,backgroundColor:C3+'cc',pointRadius:7}]},
+    {label:'F-UJI × FC',   data:rvaD.fc, backgroundColor:C1+'cc',pointRadius:7},
+    {label:'F-UJI × KGHB', data:rvaD.fk, backgroundColor:C2+'cc',pointRadius:7},
+    {label:'FC × KGHB',    data:rvaD.ck, backgroundColor:C3+'cc',pointRadius:7}]},
   options:{responsive:true,maintainAspectRatio:false,
     plugins:{legend:{labels:{font:{size:11}}},tooltip:{callbacks:{label:ctx=>`${ctx.dataset.label} – ${ctx.raw.lbl}: r=${ctx.raw.x.toFixed(2)}, agree=${ctx.raw.y}%`}}},
     scales:{x:{min:-1,max:1,title:{display:true,text:'Pearson r',font:{size:11}},ticks:{font:{size:10},callback:v=>v.toFixed(1)}},
@@ -353,25 +710,30 @@ charts['c-rva']=new Chart(document.getElementById('c-rva'),{type:'scatter',
 
 dc('c-caagree');
 charts['c-caagree']=new Chart(document.getElementById('c-caagree'),{type:'bar',
-  data:{labels:CRIT_A.map(c=>c.l),datasets:[
-    {label:'F-UJI × FC',data:CRIT_A.map(c=>c.fc),backgroundColor:C1+'aa',borderColor:C1,borderWidth:1,borderRadius:3},
-    {label:'F-UJI × KGHB',data:CRIT_A.map(c=>c.fk),backgroundColor:C2+'aa',borderColor:C2,borderWidth:1,borderRadius:3},
-    {label:'FC × KGHB',data:CRIT_A.map(c=>c.ck),backgroundColor:C3+'aa',borderColor:C3,borderWidth:1,borderRadius:3}]},
+  data:{labels:CRIT_A.map(c=>c.lbl),datasets:[
+    {label:'F-UJI × FC',   data:CRIT_A.map(c=>c.fc), backgroundColor:C1+'aa',borderColor:C1,borderWidth:1,borderRadius:3},
+    {label:'F-UJI × KGHB', data:CRIT_A.map(c=>c.fk), backgroundColor:C2+'aa',borderColor:C2,borderWidth:1,borderRadius:3},
+    {label:'FC × KGHB',    data:CRIT_A.map(c=>c.ck), backgroundColor:C3+'aa',borderColor:C3,borderWidth:1,borderRadius:3}]},
   options:bOpts(0,100,'Agreement %',true)});
 
-// ── Key findings ──────────────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════════════════════
+// KEY FINDINGS
+// ═══════════════════════════════════════════════════════════════════════════════
 const FIN=[
-  ['hi','F','<b>Findable (F) is the only dimension with strong cross-tool linear correlation</b> — F-UJI × FAIR-Checker r = 0.90. F1 identifier checks share the tightest operationalisation across all three tools, making F the most reliable dimension for cross-tool comparisons in your study.'],
-  ['wa','I','<b>Interoperable (I) is the most divergent dimension</b>. F-UJI × FAIR-Checker r = −0.40, F-UJI × KGHeartBeat r = −0.22. The dominant cause is I2 (vocabulary use), where F-UJI and FAIR-Checker produce inversely ordered rankings (r = −0.689) due to incompatible vocabulary detection methods.'],
-  ['wa','A','<b>Accessible (A) reveals a fundamental scale mismatch with KGHeartBeat</b>. KGHeartBeat assigns 97% of datasets to the 0–25% band (mean = 2.2%), vs 48–50% for the other two tools. F-UJI × KGHeartBeat r = −0.23. Comparing A scores across tools is statistically invalid without normalisation.'],
-  ['ok','R','<b>Reusable (R) shows the most consistent cross-pair alignment</b>. F-UJI × FC r = 0.57 and FC × KGH r = 0.41 — both moderate-positive. R criteria (licensing, provenance, standards) are more consistently operationalised across tools than I or A.'],
-  ['hi','FAIR','<b>Composite FAIR scores mask dimension divergence</b>. FC × KGH agree at 74% on the overall FAIR score, yet agree at only 1–20% on individual dimensions. Averaging scores across dimensions cancels out opposing errors — composite FAIR scores should not be treated as cross-tool comparable.'],
-  ['er','I2','<b>I2 (vocabulary use) is the single most divergent criterion</b> (F-UJI × FC r = −0.689). FAIR-Checker detects registered namespace URIs; F-UJI checks vocabulary compliance via a different pipeline. Tools not only measure differently — they actively disagree on which datasets are better.'],
-  ['ok','F1B','<b>F1B (persistent identifiers) achieves 99% agreement across all pairs, but Pearson r ≈ 0</b>. The vast majority of datasets lack a PID, so all tools score them identically near zero — agreement through uniformity, not measurement convergence. This distinction is critical for interpreting agreement statistics.'],
-  ['ok','REC','<b>Research recommendation:</b> (1) Use Findable scores as the most cross-tool reliable dimension. (2) Report I, A, and R scores with explicit tool-specific caveats. (3) Always decompose composite FAIR scores before cross-tool comparison. (4) Distinguish high-agreement/low-r patterns (measurement uniformity) from genuine tool alignment.'],
+  ['hi','F','<b>Findable is the only dimension with strong cross-tool linear correlation</b> (F-UJI × FAIR-Checker r = 0.90). F1 identifier checks are the tightest-operationalised criterion across all three tools — the safest dimension for cross-tool comparison.'],
+  ['ok','F-UJI','<b>F-UJI sub-principle scores reveal extreme internal variance</b>: F1 unique ID scores 100% while F1 persist ID scores only 0.2%, and F2/F3 metadata score ~0%. This shows F-UJI's FsF framework places most Findability weight on one binary check (IRI presence).'],
+  ['ok','FC','<b>FAIR-Checker sub-principles cluster near 0% for most R and I criteria</b> (R1.1 = 0.9%, R1.2 = 1.1%, I3 = 1.1%). A1.1 is a major outlier at 98.9%. This bimodal distribution means FAIR-Checker scores reflect mostly A1.1 for Accessible datasets.'],
+  ['ok','KGHB','<b>KGHeartBeat shows three outlier sub-principles at 100%</b>: F2a-M, I1-M, and R1.3-M — all checking whether metadata is described with VoID/DCAT predicates or similar structured formats. All other indicators cluster near 0–15%.'],
+  ['wa','I','<b>Interoperable is the most divergent dimension at sub-principle level</b>. I2 r(F-UJI×FC) = −0.689 — tools produce opposite rankings. I1, I3 yield r ≈ 0 across most pairs, indicating no measurable linear relationship.'],
+  ['er','A1.1','<b>A1.1 reveals a fundamental tool incompatibility</b>: FAIR-Checker scores 98.9% mean while KGHeartBeat scores ~2.5% mean for the same criterion. Pearson r = −0.223 (FC×KGHB). They are measuring accessibility via completely different mechanisms.'],
+  ['wa','R1.1','<b>R1.1 (licensing) shows a strongly negative F-UJI × KGHeartBeat correlation</b> (r = −0.463). F-UJI and KGHB disagree on which datasets have readable license information — likely due to different detection approaches (URI vs text parsing).'],
+  ['hi','FAIR','<b>Composite FAIR scores mask sub-principle divergence</b>. FC × KGHB agree at 74% on overall FAIR yet the sub-principle correlation analysis reveals only 2 of 10 mapped criteria have r > 0.1. Aggregate scores are not a reliable cross-tool comparability measure.'],
+  ['ok','REC','<b>Research recommendations:</b> (1) Always compare at sub-principle level — dimension-level r can mask opposing sub-criterion trends. (2) Flag A1.1, I2, and R1.1 as measurement-incompatible across tools. (3) Use F1A, F1B, and R1.3 as the most reliable cross-tool criteria. (4) Report KGHB accessibility scores separately — they are not comparable to F-UJI or FAIR-Checker on the same scale.'],
 ];
-const tagStyle={F:'background:#E6F1FB;color:#0C447C',A:'background:#EAF3DE;color:#27500A',I:'background:#FAEEDA;color:#633806',R:'background:#FAECE7;color:#4A1B0C',FAIR:'background:#F1EFE8;color:#444441',I2:'background:#FAEEDA;color:#633806',F1B:'background:#E6F1FB;color:#0C447C',REC:'background:#E1F5EE;color:#085041'};
-document.getElementById('ins').innerHTML=FIN.map(([cls,tag,txt])=>`<li class="${cls}"><span class="itag" style="${tagStyle[tag]}">${tag}</span>${txt}</li>`).join('');
+const tagStyle={F:'background:#E6F1FB;color:#0C447C','F-UJI':'background:#E6F1FB;color:#0C447C',FC:'background:#EAF3DE;color:#27500A',KGHB:'background:#FAEEDA;color:#633806',I:'background:#FAEEDA;color:#633806',A1.1:'background:#FAEEDA;color:#633806',R1.1:'background:#FAECE7;color:#4A1B0C',FAIR:'background:#F1EFE8;color:#444441',REC:'background:#E1F5EE;color:#085041'};
+document.getElementById('ins').innerHTML=FIN.map(([cls,tag,txt])=>`
+  <li class="${cls}"><span class="itag" style="${tagStyle[tag]||'background:#F1EFE8;color:#444441'}">${tag}</span>${txt}</li>`).join('');
+
 </script>
 </body>
 </html>
