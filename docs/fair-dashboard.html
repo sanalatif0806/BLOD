@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAIR Tool Agreement — Research Dashboard</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root {
+      --bg:#f9f9f7; --surface:#ffffff; --surface2:#f1efe8;
+      --border:rgba(0,0,0,0.10); --border2:rgba(0,0,0,0.06);
+      --text:#1a1a18; --muted:#73726c;
+      --blue:#3266ad; --green:#639922; --amber:#EF9F27; --red:#E24B4A;
+      --font-mono:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;
+      --radius:10px;
+    }
+    @media(prefers-color-scheme:dark){
+      :root{ --bg:#1a1a18; --surface:#222220; --surface2:#2c2c2a;
+             --border:rgba(255,255,255,0.10); --border2:rgba(255,255,255,0.06);
+             --text:#e8e6df; --muted:#aaa8a0; }
+    }
+    body{ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+          background:var(--bg);color:var(--text);margin:0;padding:0;font-size:14px;line-height:1.6; }
+    .ph{ background:var(--surface);border-bottom:1px solid var(--border);padding:16px 32px;display:flex;align-items:center;gap:14px; }
+    .ph a{ font-size:12px;color:var(--blue);text-decoration:none;white-space:nowrap; }
+    .ph a:hover{ text-decoration:underline; }
+    .ph-text h1{ font-size:17px;font-weight:500;margin:0 0 2px; }
+    .ph-text p{ font-size:12px;color:var(--muted);margin:0; }
+    .pb{ max-width:1100px;margin:0 auto;padding:28px 32px 64px; }
+    .tabs{ display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:24px;flex-wrap:wrap; }
+    .tab{ padding:8px 18px;font-size:13px;border:none;background:none;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap; }
+    .tab.on{ color:var(--text);border-bottom-color:var(--blue);font-weight:500; }
+    .tab:hover:not(.on){ color:var(--text);background:var(--surface2); }
+    .panel{ display:none; }.panel.on{ display:block; }
+    .mg{ display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:24px; }
+    .mc{ background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px; }
+    .mc-l{ font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px; }
+    .mc-v{ font-size:24px;font-weight:500; }
+    .mc-s{ font-size:11px;color:var(--muted);margin-top:3px; }
+    .card{ background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:16px; }
+    .card-hd{ display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px; }
+    .card-title{ font-size:13px;font-weight:500;color:var(--text); }
+    .card-sub{ font-size:11px;color:var(--muted);margin-bottom:10px; }
+    .g2{ display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px; }
+    .g3{ display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px; }
+    .leg{ display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;font-size:11px;color:var(--muted); }
+    .ld{ width:9px;height:9px;border-radius:2px;display:inline-block;vertical-align:middle;margin-right:3px; }
+    .dl{ display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border:0.5px solid var(--border);border-radius:6px;font-size:11px;cursor:pointer;background:var(--surface2);color:var(--muted);flex-shrink:0; }
+    .dl:hover{ background:var(--surface);color:var(--text); }
+    .il{ list-style:none;margin:0;padding:0; }
+    .il li{ padding:11px 14px;border-left:3px solid var(--border2);margin-bottom:8px;font-size:13px;color:var(--text);line-height:1.65;border-radius:0 6px 6px 0;background:var(--surface); }
+    .il li.hi{ border-left-color:var(--blue); }
+    .il li.wa{ border-left-color:var(--amber); }
+    .il li.ok{ border-left-color:var(--green); }
+    .il li.er{ border-left-color:var(--red); }
+    .il li b{ font-weight:500; }
+    .itag{ display:inline-block;padding:1px 7px;border-radius:4px;font-size:11px;font-weight:500;margin-right:5px; }
+    select{ font-size:12px;padding:4px 8px;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text); }
+  </style>
+</head>
+<body>
+
+<div class="ph">
+  <a href="./index.html">← Back</a>
+  <div class="ph-text">
+    <h1>FAIR Tool Agreement — Research Dashboard</h1>
+    <p>Correlation, agreement &amp; score distribution analysis · 1,246 overlapping datasets · F-UJI × FAIR-Checker × KGHeartBeat</p>
+  </div>
+</div>
+
+<div class="pb">
+
+<div class="mg">
+  <div class="mc"><div class="mc-l">Datasets analysed</div><div class="mc-v">1,246</div><div class="mc-s">overlap across all 3 tools</div></div>
+  <div class="mc"><div class="mc-l">Strongest r</div><div class="mc-v" style="color:#639922;">+0.90</div><div class="mc-s">F-UJI × FAIR-Checker, Findable</div></div>
+  <div class="mc"><div class="mc-l">Weakest r</div><div class="mc-v" style="color:#E24B4A;">−0.69</div><div class="mc-s">F-UJI × FAIR-Checker, I2 criterion</div></div>
+  <div class="mc"><div class="mc-l">Criteria mapped</div><div class="mc-v">14</div><div class="mc-s">9 direct · 4 partial · 1 F-UJI only</div></div>
+</div>
+
+<div class="tabs">
+  <button class="tab on" onclick="sw('overview')">Overview</button>
+  <button class="tab"    onclick="sw('corr')">Correlation</button>
+  <button class="tab"    onclick="sw('dist')">Score distributions</button>
+  <button class="tab"    onclick="sw('agree')">Agreement</button>
+  <button class="tab"    onclick="sw('insights')">Key findings</button>
+</div>
+
+<!-- OVERVIEW -->
+<div id="p-overview" class="panel on">
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd"><div><div class="card-title">Mean normalised score per FAIR dimension</div><div class="card-sub">0–100% per tool maximum · n = 1,246 datasets</div></div><button class="dl" onclick="dlC('c-means','mean_scores')">↓ PNG</button></div>
+      <div class="leg"><span><span class="ld" style="background:#3266ad;"></span>F-UJI</span><span><span class="ld" style="background:#639922;"></span>FAIR-Checker</span><span><span class="ld" style="background:#EF9F27;"></span>KGHeartBeat</span></div>
+      <div style="position:relative;height:220px;"><canvas id="c-means" role="img" aria-label="Grouped bar of mean scores per dimension"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-hd"><div><div class="card-title">Overall FAIR score — band distribution per tool</div><div class="card-sub">% of datasets in each score quartile</div></div><button class="dl" onclick="dlC('c-bands','bands_fair')">↓ PNG</button></div>
+      <div class="leg"><span><span class="ld" style="background:#E24B4A;"></span>0–25%</span><span><span class="ld" style="background:#EF9F27;"></span>25–50%</span><span><span class="ld" style="background:#3266ad;"></span>50–75%</span><span><span class="ld" style="background:#639922;"></span>75–100%</span></div>
+      <div style="position:relative;height:220px;"><canvas id="c-bands" role="img" aria-label="Stacked bar of FAIR score bands per tool"></canvas></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-hd"><div><div class="card-title">Pearson r per FAIR dimension — all three tool pairs</div><div class="card-sub">Negative r means tools rank datasets in opposite order for that dimension</div></div><button class="dl" onclick="dlC('c-dimr','dimension_r')">↓ PNG</button></div>
+    <div class="leg"><span><span class="ld" style="background:#3266ad;"></span>F-UJI × FAIR-Checker</span><span><span class="ld" style="background:#639922;"></span>F-UJI × KGHeartBeat</span><span><span class="ld" style="background:#EF9F27;"></span>FAIR-Checker × KGHeartBeat</span></div>
+    <div style="position:relative;height:230px;"><canvas id="c-dimr" role="img" aria-label="Grouped bar Pearson r per dimension"></canvas></div>
+  </div>
+  <div class="g3">
+    <div class="card">
+      <div class="card-hd"><div><div class="card-title">F-UJI — FAIR profile</div></div><button class="dl" onclick="dlC('c-r-fuji','radar_fuji')">↓ PNG</button></div>
+      <div style="position:relative;height:210px;"><canvas id="c-r-fuji" role="img" aria-label="Radar F-UJI"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-hd"><div><div class="card-title">FAIR-Checker — FAIR profile</div></div><button class="dl" onclick="dlC('c-r-fc','radar_fc')">↓ PNG</button></div>
+      <div style="position:relative;height:210px;"><canvas id="c-r-fc" role="img" aria-label="Radar FAIR-Checker"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-hd"><div><div class="card-title">KGHeartBeat — FAIR profile</div></div><button class="dl" onclick="dlC('c-r-kghb','radar_kghb')">↓ PNG</button></div>
+      <div style="position:relative;height:210px;"><canvas id="c-r-kghb" role="img" aria-label="Radar KGHeartBeat"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<!-- CORRELATION -->
+<div id="p-corr" class="panel">
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd"><div><div class="card-title">Pearson r heatmap — dimension level</div><div class="card-sub">Bar colour: blue = strong positive · amber = weak · red = negative</div></div><button class="dl" onclick="dlC('c-heat','heatmap_dim')">↓ PNG</button></div>
+      <div style="position:relative;height:260px;"><canvas id="c-heat" role="img" aria-label="Heatmap Pearson r dimension level"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-hd"><div><div class="card-title">Pearson r — criterion level (8 mapped criteria)</div><div class="card-sub">Criterion names from your exact tool mapping</div></div><button class="dl" onclick="dlC('c-crit-r','criterion_r')">↓ PNG</button></div>
+      <div class="leg"><span><span class="ld" style="background:#3266ad;"></span>F-UJI × FC</span><span><span class="ld" style="background:#639922;"></span>F-UJI × KGHB</span><span><span class="ld" style="background:#EF9F27;"></span>FC × KGHB</span></div>
+      <div style="position:relative;height:260px;"><canvas id="c-crit-r" role="img" aria-label="Criterion level Pearson r"></canvas></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-hd"><div><div class="card-title">Correlation divergence between tool pairs per dimension</div><div class="card-sub">|r(FUJI×FC) − r(FUJI×KGHB)| — large gap signals fundamentally different measurement approaches</div></div><button class="dl" onclick="dlC('c-div','divergence')">↓ PNG</button></div>
+    <div style="position:relative;height:190px;"><canvas id="c-div" role="img" aria-label="Bar chart of correlation divergence"></canvas></div>
+  </div>
+</div>
+
+<!-- DISTRIBUTIONS -->
+<div id="p-dist" class="panel">
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:14px;">
+    <label style="font-size:12px;color:var(--muted);">Dimension:</label>
+    <select id="dist-dim" onchange="renderDist()">
+      <option value="FAIR">Overall FAIR</option>
+      <option value="F">Findable (F)</option>
+      <option value="A">Accessible (A)</option>
+      <option value="I">Interoperable (I)</option>
+      <option value="R">Reusable (R)</option>
+    </select>
+  </div>
+  <div class="card">
+    <div class="card-hd"><div><div class="card-title" id="dist-title">Score frequency — Overall FAIR</div><div class="card-sub">Datasets per 5% bin. Reveals whether tools spread scores across the range or cluster at specific values.</div></div><button class="dl" onclick="dlC('c-dist','distribution')">↓ PNG</button></div>
+    <div class="leg"><span><span class="ld" style="background:#3266ad;"></span>F-UJI</span><span><span class="ld" style="background:#639922;"></span>FAIR-Checker</span><span><span class="ld" style="background:#EF9F27;"></span>KGHeartBeat</span></div>
+    <div style="position:relative;height:280px;"><canvas id="c-dist" role="img" aria-label="Frequency distribution histogram"></canvas></div>
+  </div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd"><div><div class="card-title">F-UJI — score band breakdown per dimension</div><div class="card-sub">% of datasets in each quartile per dimension</div></div><button class="dl" onclick="dlC('c-bfuji','bands_fuji')">↓ PNG</button></div>
+      <div style="position:relative;height:210px;"><canvas id="c-bfuji" role="img" aria-label="Score bands F-UJI"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-hd"><div><div class="card-title">FAIR-Checker &amp; KGHeartBeat — score bands</div><div class="card-sub">Side by side comparison of score spread</div></div><button class="dl" onclick="dlC('c-bother','bands_other')">↓ PNG</button></div>
+      <div style="position:relative;height:210px;"><canvas id="c-bother" role="img" aria-label="Score bands FC and KGHB"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<!-- AGREEMENT -->
+<div id="p-agree" class="panel">
+  <div class="card">
+    <div class="card-hd"><div><div class="card-title">Agreement rate at ±15% threshold per dimension</div><div class="card-sub">% of datasets where two tools score within 15% of each other. Note: high agreement + low r = both tools score uniformly (no variance), not genuine alignment.</div></div><button class="dl" onclick="dlC('c-agree','agreement_15')">↓ PNG</button></div>
+    <div class="leg"><span><span class="ld" style="background:#3266ad;"></span>F-UJI × FC</span><span><span class="ld" style="background:#639922;"></span>F-UJI × KGHB</span><span><span class="ld" style="background:#EF9F27;"></span>FC × KGHB</span></div>
+    <div style="position:relative;height:240px;"><canvas id="c-agree" role="img" aria-label="Agreement rates per dimension"></canvas></div>
+  </div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd"><div><div class="card-title">Pearson r vs agreement rate — per dimension</div><div class="card-sub">Hover for dimension labels. Points in top-left quadrant = high agreement but tools disagree on ranking (problematic).</div></div><button class="dl" onclick="dlC('c-rva','r_vs_agree')">↓ PNG</button></div>
+      <div style="position:relative;height:230px;"><canvas id="c-rva" role="img" aria-label="Scatter r vs agreement"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-hd"><div><div class="card-title">Criterion-level agreement (±15%) — all 3 pairs</div><div class="card-sub">Which specific criteria do tools agree on?</div></div><button class="dl" onclick="dlC('c-caagree','criterion_agree')">↓ PNG</button></div>
+      <div style="position:relative;height:230px;"><canvas id="c-caagree" role="img" aria-label="Criterion agreement"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<!-- KEY FINDINGS -->
+<div id="p-insights" class="panel">
+  <ul class="il" id="ins"></ul>
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const C1='#3266ad',C2='#639922',C3='#EF9F27';
+const charts={};
+function dc(id){if(charts[id]){charts[id].destroy();delete charts[id];}}
+function dlC(id,name){const a=document.createElement('a');a.href=document.getElementById(id).toDataURL('image/png');a.download=name+'.png';a.click();}
+function sw(t){
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.panel').forEach(x=>x.classList.remove('on'));
+  document.querySelector(`[onclick="sw('${t}')"]`).classList.add('on');
+  document.getElementById('p-'+t).classList.add('on');
+  if(t==='dist') renderDist();
+}
+
+const MEANS={F:{fuji:38.1,fc:19.2,kghb:31.5},A:{fuji:48.8,fc:49.9,kghb:2.2},I:{fuji:50.9,fc:10.6,kghb:32.3},R:{fuji:33.2,fc:5.1,kghb:34.6},FAIR:{fuji:58.9,fc:20.0,kghb:24.5}};
+const DIM_R={F:{fc:0.900,fk:0.274,ck:0.344},A:{fc:0.268,fk:-0.233,ck:-0.059},I:{fc:-0.402,fk:-0.222,ck:0.065},R:{fc:0.571,fk:0.080,ck:0.408},FAIR:{fc:0.358,fk:-0.312,ck:0.331}};
+const AGREE={F:{fc:27.0,fk:74.1,ck:9.9},A:{fc:91.0,fk:0.2,ck:1.1},I:{fc:30.7,fk:22.3,ck:19.6},R:{fc:10.2,fk:67.6,ck:11.2},FAIR:{fc:11.2,fk:5.9,ck:74.1}};
+const BANDS={F:{fuji:[0,73.9,0.1,26],fc:[68.1,8.3,19.7,3.9],kghb:[75.2,10.7,12.4,1.8]},A:{fuji:[0,8,91.9,0.1],fc:[1.1,0,98,0.9],kghb:[97.4,0,0.2,2.3]},I:{fuji:[12.6,22.2,65,0.2],fc:[76.5,19.3,3,1.1],kghb:[0,98.1,0.6,1.2]},R:{fuji:[8,71.3,1,19.7],fc:[95.7,3,0.6,0.7],kghb:[0,75.6,11.8,12.6]},FAIR:{fuji:[8,4.3,87.1,0.6],fc:[76.2,19.4,3.6,0.8],kghb:[75.2,22.6,0.6,1.6]}};
+const DIST={
+  FAIR:{bins:[0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95],fuji:[0,0,0,0,100,0,12,0,0,41,7,0,834,6,238,0,0,2,2,4],fc:[11,0,837,101,0,5,2,0,235,0,0,41,1,0,3,0,0,6,3,1],kghb:[0,0,0,930,0,67,61,77,70,4,1,4,3,0,0,2,1,1,2,14]},
+  F:{bins:[0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95],fuji:[0,0,0,0,0,920,0,1,0,0,1,0,0,0,0,322,0,0,0,2],fc:[848,0,0,0,0,0,104,0,0,0,5,0,0,241,0,0,40,0,0,8],kghb:[0,0,0,0,930,124,8,0,0,0,0,0,0,83,70,0,0,0,2,20]},
+  A:{bins:[0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95],fuji:[0,0,0,0,0,0,100,0,0,0,1141,0,0,4,0,0,0,0,0,1],fc:[14,0,0,0,0,0,0,0,0,0,1221,0,0,0,0,0,0,0,0,11],kghb:[1205,0,0,0,0,0,0,0,0,0,2,0,1,0,0,12,0,0,0,17]},
+  I:{bins:[0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95],fuji:[157,0,0,0,0,0,277,0,0,0,0,0,0,810,0,0,0,0,0,2],fc:[949,0,0,0,4,0,0,0,241,0,0,0,38,0,0,0,12,0,0,2],kghb:[0,0,0,0,0,0,1214,0,0,0,0,0,4,4,0,0,0,0,1,14]},
+  R:{bins:[0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95],fuji:[100,0,0,0,0,888,0,0,0,0,12,0,0,0,0,243,0,0,0,3],fc:[953,0,0,239,0,0,38,0,0,0,6,0,0,1,0,0,8,0,0,1],kghb:[0,0,0,0,0,935,0,0,0,0,146,0,0,0,0,140,0,0,0,16]}
+};
+const CRIT_R=[{l:'F1A',fc:0,fk:0,ck:0.376},{l:'F1B',fc:-0.004,fk:-0.004,ck:0.116},{l:'F2',fc:0,fk:0,ck:0},{l:'A1.1',fc:0.359,fk:-0.292,ck:-0.223},{l:'I1',fc:0.12,fk:0,ck:0},{l:'I2',fc:-0.689,fk:-0.168,ck:0.042},{l:'I3',fc:-0.004,fk:-0.004,ck:0.171},{l:'R1.1',fc:-0.056,fk:-0.463,ck:0.111}];
+const CRIT_A=[{l:'F1A',fc:32,fk:14,ck:76},{l:'F1B',fc:99,fk:99,ck:99},{l:'F2',fc:76,fk:0,ck:24},{l:'A1.1',fc:1,fk:6,ck:3},{l:'I1',fc:34,fk:87,ck:24},{l:'I2',fc:12,fk:33,ck:76},{l:'I3',fc:99,fk:98,ck:98},{l:'R1.1',fc:15,fk:14,ck:85}];
+const D5=['F','A','I','R','FAIR'];
+const D4=['F','A','I','R'];
+
+const bOpts=(yMin,yMax,yLbl,pct)=>({responsive:true,maintainAspectRatio:false,
+  plugins:{legend:{labels:{font:{size:11}}}},
+  scales:{y:{min:yMin,max:yMax,ticks:{callback:v=>pct?v+'%':v.toFixed(yMin<0?1:0),font:{size:10}},title:{display:true,text:yLbl,font:{size:11}}},x:{ticks:{font:{size:11},autoSkip:false}}}});
+
+// ── Overview ──────────────────────────────────────────────────────────────────
+dc('c-means');
+charts['c-means']=new Chart(document.getElementById('c-means'),{type:'bar',
+  data:{labels:['F','A','I','R','Overall'],datasets:[
+    {label:'F-UJI',data:D5.map(d=>MEANS[d].fuji),backgroundColor:C1,borderRadius:3},
+    {label:'FAIR-Checker',data:D5.map(d=>MEANS[d].fc),backgroundColor:C2,borderRadius:3},
+    {label:'KGHeartBeat',data:D5.map(d=>MEANS[d].kghb),backgroundColor:C3,borderRadius:3}]},
+  options:bOpts(0,100,'Mean score (%)',true)});
+
+dc('c-bands');
+charts['c-bands']=new Chart(document.getElementById('c-bands'),{type:'bar',
+  data:{labels:['F-UJI','FAIR-Checker','KGHeartBeat'],
+    datasets:[{label:'0–25%',data:[BANDS.FAIR.fuji[0],BANDS.FAIR.fc[0],BANDS.FAIR.kghb[0]],backgroundColor:'#E24B4A',borderRadius:2},
+              {label:'25–50%',data:[BANDS.FAIR.fuji[1],BANDS.FAIR.fc[1],BANDS.FAIR.kghb[1]],backgroundColor:C3,borderRadius:2},
+              {label:'50–75%',data:[BANDS.FAIR.fuji[2],BANDS.FAIR.fc[2],BANDS.FAIR.kghb[2]],backgroundColor:C1,borderRadius:2},
+              {label:'75–100%',data:[BANDS.FAIR.fuji[3],BANDS.FAIR.fc[3],BANDS.FAIR.kghb[3]],backgroundColor:C2,borderRadius:2}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{font:{size:11}}}},
+    scales:{x:{stacked:true,ticks:{font:{size:11}}},y:{stacked:true,max:100,ticks:{callback:v=>v+'%',font:{size:10}}}}}});
+
+dc('c-dimr');
+charts['c-dimr']=new Chart(document.getElementById('c-dimr'),{type:'bar',
+  data:{labels:['F','A','I','R','Overall'],datasets:[
+    {label:'F-UJI × FAIR-Checker',data:D5.map(d=>DIM_R[d].fc),backgroundColor:C1,borderRadius:3},
+    {label:'F-UJI × KGHeartBeat',data:D5.map(d=>DIM_R[d].fk),backgroundColor:C2,borderRadius:3},
+    {label:'FC × KGHeartBeat',data:D5.map(d=>DIM_R[d].ck),backgroundColor:C3,borderRadius:3}]},
+  options:bOpts(-1,1,'Pearson r',false)});
+
+// Radars
+const radarBase=(label,col,vals)=>({type:'radar',
+  data:{labels:['Findable','Accessible','Interoperable','Reusable'],
+    datasets:[{label,data:vals,backgroundColor:col+'33',borderColor:col,borderWidth:2,pointBackgroundColor:col,pointRadius:4}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{r:{min:0,max:100,ticks:{display:false},pointLabels:{font:{size:11}},
+      grid:{color:'rgba(128,128,128,0.2)'},angleLines:{color:'rgba(128,128,128,0.2)'}}}}});
+dc('c-r-fuji'); charts['c-r-fuji']=new Chart(document.getElementById('c-r-fuji'),radarBase('F-UJI',C1,D4.map(d=>MEANS[d].fuji)));
+dc('c-r-fc');   charts['c-r-fc']=new Chart(document.getElementById('c-r-fc'),radarBase('FAIR-Checker',C2,D4.map(d=>MEANS[d].fc)));
+dc('c-r-kghb'); charts['c-r-kghb']=new Chart(document.getElementById('c-r-kghb'),radarBase('KGHeartBeat',C3,D4.map(d=>MEANS[d].kghb)));
+
+// ── Correlation ───────────────────────────────────────────────────────────────
+const heatCol=v=>v>0.5?'#3266ad':v>0?'#3266adaa':v>-0.3?'#EF9F27aa':'#E24B4A';
+dc('c-heat');
+charts['c-heat']=new Chart(document.getElementById('c-heat'),{type:'bar',
+  data:{labels:['F','A','I','R','Overall'],datasets:[
+    {label:'F-UJI × FC',data:D5.map(d=>DIM_R[d].fc),backgroundColor:D5.map(d=>heatCol(DIM_R[d].fc)),borderRadius:4},
+    {label:'F-UJI × KGHB',data:D5.map(d=>DIM_R[d].fk),backgroundColor:D5.map(d=>heatCol(DIM_R[d].fk)),borderRadius:4},
+    {label:'FC × KGHB',data:D5.map(d=>DIM_R[d].ck),backgroundColor:D5.map(d=>heatCol(DIM_R[d].ck)),borderRadius:4}]},
+  options:{...bOpts(-1,1,'Pearson r',false),plugins:{legend:{labels:{font:{size:11}}},tooltip:{callbacks:{label:ctx=>`r = ${ctx.raw.toFixed(3)}`}}}}});
+
+dc('c-crit-r');
+charts['c-crit-r']=new Chart(document.getElementById('c-crit-r'),{type:'bar',
+  data:{labels:CRIT_R.map(c=>c.l),datasets:[
+    {label:'F-UJI × FC',data:CRIT_R.map(c=>c.fc),backgroundColor:C1,borderRadius:3},
+    {label:'F-UJI × KGHB',data:CRIT_R.map(c=>c.fk),backgroundColor:C2,borderRadius:3},
+    {label:'FC × KGHB',data:CRIT_R.map(c=>c.ck),backgroundColor:C3,borderRadius:3}]},
+  options:bOpts(-1,1,'Pearson r',false)});
+
+dc('c-div');
+charts['c-div']=new Chart(document.getElementById('c-div'),{type:'bar',
+  data:{labels:['F','A','I','R','Overall'],
+    datasets:[{label:'|r(FUJI×FC) − r(FUJI×KGHB)|',
+      data:D5.map(d=>+Math.abs(DIM_R[d].fc-DIM_R[d].fk).toFixed(3)),
+      backgroundColor:D5.map(d=>{const v=Math.abs(DIM_R[d].fc-DIM_R[d].fk);return v>0.5?'#E24B4A':v>0.25?'#EF9F27':'#639922';}),
+      borderRadius:4}]},
+  options:{...bOpts(0,1.2,'|Δr|',false),plugins:{legend:{display:false}}}});
+
+// ── Distributions ─────────────────────────────────────────────────────────────
+function renderDist(){
+  const d=document.getElementById('dist-dim').value;
+  document.getElementById('dist-title').textContent='Score frequency — '+{FAIR:'Overall FAIR',F:'Findable (F)',A:'Accessible (A)',I:'Interoperable (I)',R:'Reusable (R)'}[d];
+  const dd=DIST[d];
+  dc('c-dist');
+  charts['c-dist']=new Chart(document.getElementById('c-dist'),{type:'bar',
+    data:{labels:dd.bins.map(b=>`${b}–${b+5}`),datasets:[
+      {label:'F-UJI',data:dd.fuji,backgroundColor:C1+'cc',borderRadius:2,barPercentage:0.9},
+      {label:'FAIR-Checker',data:dd.fc,backgroundColor:C2+'cc',borderRadius:2,barPercentage:0.9},
+      {label:'KGHeartBeat',data:dd.kghb,backgroundColor:C3+'cc',borderRadius:2,barPercentage:0.9}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{labels:{font:{size:11}}}},
+      scales:{x:{ticks:{font:{size:9},maxRotation:45,autoSkip:false}},
+              y:{beginAtZero:true,title:{display:true,text:'Number of datasets',font:{size:11}},ticks:{font:{size:10}}}}}});
+}
+renderDist();
+
+const bandLbls=['0–25%','25–50%','50–75%','75–100%'];
+const bandCols=['#E24B4A',C3,C1,C2];
+dc('c-bfuji');
+charts['c-bfuji']=new Chart(document.getElementById('c-bfuji'),{type:'bar',
+  data:{labels:['F','A','I','R','FAIR'],
+    datasets:bandLbls.map((l,i)=>({label:l,data:D5.map(d=>BANDS[d].fuji[i]),backgroundColor:bandCols[i],borderRadius:2}))},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{font:{size:11}}}},
+    scales:{x:{stacked:true,ticks:{font:{size:11}}},y:{stacked:true,max:100,ticks:{callback:v=>v+'%',font:{size:10}}}}}});
+
+dc('c-bother');
+charts['c-bother']=new Chart(document.getElementById('c-bother'),{type:'bar',
+  data:{labels:['FC-F','FC-A','FC-I','FC-R','FC-O','KGH-F','KGH-A','KGH-I','KGH-R','KGH-O'],
+    datasets:bandLbls.map((l,i)=>({label:l,
+      data:[...D5.map(d=>BANDS[d].fc[i]),...D5.map(d=>BANDS[d].kghb[i])],
+      backgroundColor:bandCols[i],borderRadius:2}))},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{font:{size:10}}}},
+    scales:{x:{stacked:true,ticks:{font:{size:9},maxRotation:45}},y:{stacked:true,max:100,ticks:{callback:v=>v+'%',font:{size:10}}}}}});
+
+// ── Agreement ─────────────────────────────────────────────────────────────────
+dc('c-agree');
+charts['c-agree']=new Chart(document.getElementById('c-agree'),{type:'bar',
+  data:{labels:['F','A','I','R','Overall'],datasets:[
+    {label:'F-UJI × FC',data:D5.map(d=>AGREE[d].fc),backgroundColor:C1,borderRadius:3},
+    {label:'F-UJI × KGHB',data:D5.map(d=>AGREE[d].fk),backgroundColor:C2,borderRadius:3},
+    {label:'FC × KGHB',data:D5.map(d=>AGREE[d].ck),backgroundColor:C3,borderRadius:3}]},
+  options:bOpts(0,100,'Agreement %',true)});
+
+dc('c-rva');
+const rvaData={fc:[],fk:[],ck:[]};
+D5.forEach(d=>{rvaData.fc.push({x:DIM_R[d].fc,y:AGREE[d].fc,lbl:d});rvaData.fk.push({x:DIM_R[d].fk,y:AGREE[d].fk,lbl:d});rvaData.ck.push({x:DIM_R[d].ck,y:AGREE[d].ck,lbl:d});});
+charts['c-rva']=new Chart(document.getElementById('c-rva'),{type:'scatter',
+  data:{datasets:[
+    {label:'F-UJI × FC',data:rvaData.fc,backgroundColor:C1+'cc',pointRadius:7},
+    {label:'F-UJI × KGHB',data:rvaData.fk,backgroundColor:C2+'cc',pointRadius:7},
+    {label:'FC × KGHB',data:rvaData.ck,backgroundColor:C3+'cc',pointRadius:7}]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{labels:{font:{size:11}}},tooltip:{callbacks:{label:ctx=>`${ctx.dataset.label} – ${ctx.raw.lbl}: r=${ctx.raw.x.toFixed(2)}, agree=${ctx.raw.y}%`}}},
+    scales:{x:{min:-1,max:1,title:{display:true,text:'Pearson r',font:{size:11}},ticks:{font:{size:10},callback:v=>v.toFixed(1)}},
+            y:{min:0,max:100,title:{display:true,text:'Agreement %',font:{size:11}},ticks:{font:{size:10},callback:v=>v+'%'}}}}});
+
+dc('c-caagree');
+charts['c-caagree']=new Chart(document.getElementById('c-caagree'),{type:'bar',
+  data:{labels:CRIT_A.map(c=>c.l),datasets:[
+    {label:'F-UJI × FC',data:CRIT_A.map(c=>c.fc),backgroundColor:C1+'aa',borderColor:C1,borderWidth:1,borderRadius:3},
+    {label:'F-UJI × KGHB',data:CRIT_A.map(c=>c.fk),backgroundColor:C2+'aa',borderColor:C2,borderWidth:1,borderRadius:3},
+    {label:'FC × KGHB',data:CRIT_A.map(c=>c.ck),backgroundColor:C3+'aa',borderColor:C3,borderWidth:1,borderRadius:3}]},
+  options:bOpts(0,100,'Agreement %',true)});
+
+// ── Key findings ──────────────────────────────────────────────────────────────
+const FIN=[
+  ['hi','F','<b>Findable (F) is the only dimension with strong cross-tool linear correlation</b> — F-UJI × FAIR-Checker r = 0.90. F1 identifier checks share the tightest operationalisation across all three tools, making F the most reliable dimension for cross-tool comparisons in your study.'],
+  ['wa','I','<b>Interoperable (I) is the most divergent dimension</b>. F-UJI × FAIR-Checker r = −0.40, F-UJI × KGHeartBeat r = −0.22. The dominant cause is I2 (vocabulary use), where F-UJI and FAIR-Checker produce inversely ordered rankings (r = −0.689) due to incompatible vocabulary detection methods.'],
+  ['wa','A','<b>Accessible (A) reveals a fundamental scale mismatch with KGHeartBeat</b>. KGHeartBeat assigns 97% of datasets to the 0–25% band (mean = 2.2%), vs 48–50% for the other two tools. F-UJI × KGHeartBeat r = −0.23. Comparing A scores across tools is statistically invalid without normalisation.'],
+  ['ok','R','<b>Reusable (R) shows the most consistent cross-pair alignment</b>. F-UJI × FC r = 0.57 and FC × KGH r = 0.41 — both moderate-positive. R criteria (licensing, provenance, standards) are more consistently operationalised across tools than I or A.'],
+  ['hi','FAIR','<b>Composite FAIR scores mask dimension divergence</b>. FC × KGH agree at 74% on the overall FAIR score, yet agree at only 1–20% on individual dimensions. Averaging scores across dimensions cancels out opposing errors — composite FAIR scores should not be treated as cross-tool comparable.'],
+  ['er','I2','<b>I2 (vocabulary use) is the single most divergent criterion</b> (F-UJI × FC r = −0.689). FAIR-Checker detects registered namespace URIs; F-UJI checks vocabulary compliance via a different pipeline. Tools not only measure differently — they actively disagree on which datasets are better.'],
+  ['ok','F1B','<b>F1B (persistent identifiers) achieves 99% agreement across all pairs, but Pearson r ≈ 0</b>. The vast majority of datasets lack a PID, so all tools score them identically near zero — agreement through uniformity, not measurement convergence. This distinction is critical for interpreting agreement statistics.'],
+  ['ok','REC','<b>Research recommendation:</b> (1) Use Findable scores as the most cross-tool reliable dimension. (2) Report I, A, and R scores with explicit tool-specific caveats. (3) Always decompose composite FAIR scores before cross-tool comparison. (4) Distinguish high-agreement/low-r patterns (measurement uniformity) from genuine tool alignment.'],
+];
+const tagStyle={F:'background:#E6F1FB;color:#0C447C',A:'background:#EAF3DE;color:#27500A',I:'background:#FAEEDA;color:#633806',R:'background:#FAECE7;color:#4A1B0C',FAIR:'background:#F1EFE8;color:#444441',I2:'background:#FAEEDA;color:#633806',F1B:'background:#E6F1FB;color:#0C447C',REC:'background:#E1F5EE;color:#085041'};
+document.getElementById('ins').innerHTML=FIN.map(([cls,tag,txt])=>`<li class="${cls}"><span class="itag" style="${tagStyle[tag]}">${tag}</span>${txt}</li>`).join('');
+</script>
+</body>
+</html>
