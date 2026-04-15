@@ -1,3 +1,4 @@
+import NavBar from '../components/navbar';
 import React, {useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { base_url, kghb_url } from '../api';
@@ -121,16 +122,22 @@ function FairnessInfo(){
     );
     const fetchLlmExplanation = async () => {
         setLoadingExplanation(true);
+        setShowExplanation(false);
         try {
             const response = await axios.post(`${base_url}/llm/llm_explain_fair`,{
                 fair_data: fairness_data
             });
-            setLlmExplanation(response.data || "No explanation returned.");
+            if (response.data?.error) {
+                setLlmExplanation({ llm_response: `⚠️ ${response.data.error}`, model_used: null });
+            } else {
+                setLlmExplanation(response.data);
+            }
             setShowExplanation(true);
         } catch (error) {
-            console.error("Error fetching LLM explanation:", error);
-            setLlmExplanation("Failed to fetch explanation.");
+            const msg = error.response?.data?.error || error.message || 'Failed to fetch explanation.';
+            setLlmExplanation({ llm_response: `⚠️ Error: ${msg}`, model_used: null });
             setShowExplanation(true);
+            console.error("Error fetching LLM explanation:", error);
         } finally {
             setLoadingExplanation(false);
         }
@@ -138,16 +145,22 @@ function FairnessInfo(){
 
     const fetchLlmExplanationOT = async () => {
         setLoadingExplanationOT(true);
+        setShowExplanationOT(false);
         try {
             const response = await axios.post(`${base_url}/llm/llm_explain_fairness_score_ot`,{
                 fair_data: fairness_ot
             });
-            setLlmExplanationOT(response.data || "No explanation returned.");
+            if (response.data?.error) {
+                setLlmExplanationOT({ llm_response: `⚠️ ${response.data.error}`, model_used: null });
+            } else {
+                setLlmExplanationOT(response.data);
+            }
             setShowExplanationOT(true);
         } catch (error) {
-            console.error("Error fetching LLM explanation:", error);
-            setLlmExplanationOT("Failed to fetch explanation.");
+            const msg = error.response?.data?.error || error.message || 'Failed to fetch explanation.';
+            setLlmExplanationOT({ llm_response: `⚠️ Error: ${msg}`, model_used: null });
             setShowExplanationOT(true);
+            console.error("Error fetching LLM explanation OT:", error);
         } finally {
             setLoadingExplanationOT(false);
         }
@@ -156,32 +169,17 @@ function FairnessInfo(){
     return (
         <>
         <div className="container-fluid mt-3 px-4">
-            <div className="d-flex justify-content-start gap-2 mb-4">
-                <Link to="/" className="fw-bold fs-4 text-decoration-none" style={{color: '#8da89f'}}>BLOD</Link>
-                <Link to="/" className="d-flex align-items-center">
-                <img
-                    src="/favicon.png"
-                    alt="Cloud Logo"
-                    style={{ height: "40px", width: "40px", marginRight: "7px" }}
-                />
+            <NavBar />
+            <div className="d-flex justify-content-end mb-2">
+                <Link
+                    to={`/add-dataset?dataset_id=${dataset_id}`}
+                    className="btn btn-warning btn-sm shadow d-flex align-items-center justify-content-center"
+                    style={{ fontWeight: '500', letterSpacing: '0.5px' }}
+                    title="Click to request a change to this dataset's metadata"
+                >
+                    ✏️ Request Metadata Modification
                 </Link>
-                <Link to="/search" className="btn btn-outline-success">Search</Link>
-                <Link to="/add-dataset" className="btn btn-outline-success">Add a Dataset</Link>
-                <Link to="/dashboard" className="btn btn-outline-success">Dashboard</Link>
-                <Link to="/about" className="btn btn-outline-success">About</Link>
-            <Link
-                to={`/add-dataset?dataset_id=${dataset_id}`}
-                className="btn btn-warning btn-sm shadow d-flex align-items-center justify-content-center"
-                style={{
-                marginLeft: 'auto',
-                fontWeight: '500',
-                letterSpacing: '0.5px',
-                }}
-                title="Click to request a change to this dataset's metadata"
-            >
-                ✏️ Request Metadata Modification
-            </Link>
-          </div>
+            </div>
         </div>
             <div className="container mt-3">
                 <div className="text-center mb-4">

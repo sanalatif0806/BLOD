@@ -1,21 +1,17 @@
 #!/bin/bash
 set -e
 
-echo ">>> Creating healthcloud database and seeding data..."
+echo ">>> Seeding BLOD collection into healthcloud database..."
 
-# Create the user and import JSON
-mongo <<EOF
-use healthcloud
-db.createUser({
-  user: "admin",
-  pwd: "password",
-  roles: [ { role: "root", db: "admin" } ]
-})
-EOF
-
-# Import the JSON directly into the DB
 mongoimport \
+  --host localhost \
+  --username admin \
+  --password password \
+  --authenticationDatabase admin \
   --db healthcloud \
   --collection BLOD \
   --file /docker-entrypoint-initdb.d/BLOD.json \
-  --jsonArray
+  --jsonArray \
+  --drop
+
+echo ">>> Done seeding BLOD data."

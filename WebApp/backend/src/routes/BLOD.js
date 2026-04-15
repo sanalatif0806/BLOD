@@ -255,3 +255,51 @@ router.get('/search', async (req, res) => {
 
 
 module.exports = router;
+// ── GET /BLOD/datasets — browse all datasets with optional category filter ──
+router.get('/datasets', async (req, res) => {
+    try {
+        const page     = parseInt(req.query.page)  || 1;
+        const limit    = parseInt(req.query.limit) || 20;
+        const skip     = (page - 1) * limit;
+        const category = req.query.category || '';
+        const q        = req.query.q        || '';
+
+        const collection = await getCollection();
+        let query = {};
+
+        const HEALTH_CATEGORIES = [
+            'Clinical & Patient Data','Omics & Molecular Data','Medical Imaging & Signals',
+            'Public Health & Surveillance','Biobank & Research Data','Behavioral & Social Data',
+            'Terminologies & Metadata'
+        ];
+
+        if (category && HEALTH_CATEGORIES.includes(category)) {
+            query.keywords = { $elemMatch: { $regex: `^${category.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}$`, $options: 'i' } };
+        }
+        if (q) {
+            const textFilter = { $regex: q, $options: 'i' };
+            const qClauses = [{ title: textFilter }, { identifier: textFilter }];
+            query = Object.keys(query).length
+                ? { $and: [query, { $or: qClauses }] }
+                : { $or: qClauses };
+        }
+
+        const projection = { identifier: 1, title: 1, keywords: 1, description: 1, website: 1, triples: 1, _id: 0 };
+        const [results, total] = await Promise.all([
+            collection.find(query, { projection }).sort({ title: 1 }).skip(skip).limit(limit).toArray(),
+            collection.countDocuments(query)
+        ]);
+
+        // Count per category for sidebar
+        const categoryCounts = {};
+        await Promise.all(HEALTH_CATEGORIES.map(async cat => {
+            const catQuery = { keywords: { $elemMatch: { $regex: `^${cat.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}$`, $options: 'i' } } };
+            categoryCounts[cat] = await collection.countDocuments(catQuery);
+        }));
+
+        res.json({ results, total, page, totalPages: Math.ceil(total / limit), categoryCounts });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: err.message });
+    }
+});

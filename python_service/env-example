@@ -1,2 +1,2 @@
-CHeCLOUD_URL = ""
-KGHeartBeat_URL = ""
+BACKEND_URL=http://backend:5005
+KGHeartBeat_URL=https://kgheartbeat.di.unisa.it/kghb_analysis_data/

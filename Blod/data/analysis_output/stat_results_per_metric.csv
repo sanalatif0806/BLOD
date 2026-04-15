@@ -1,0 +1,12 @@
+FAIR_col,KG_col,n,shapiro_fc_p,shapiro_kg_p,paired_t_stat,paired_t_p,wilcoxon_p,pearson_r,pearson_p,spearman_r,spearman_p
+F1A_score,F1-M Unique and persistent ID,1206,0.0,1.0,,,5.103970488925738e-63,,,,
+F1B_score,F1-M Unique and persistent ID,1206,0.0,1.0,,,1.2599614413784493e-30,,,,
+F2A_score,F2a-M - Metadata availability via standard primary sources,1206,,,,,,,,,
+F2B_score,F2a-M - Metadata availability via standard primary sources,1206,,,,,,,,,
+A1.2_score,A1.2 Authentication & HTTPS support,1206,0.0,1.0,,,0.007279810964479646,,,,
+I1_score,I1-M Metadata are described with VoID/DCAT predicates,1206,,,,,,,,,
+I2_score,I2 Use of FAIR vocabularies,1206,0.0,1.0,,,2.7509710045716072e-58,,,,
+I3_score,I3-D Degree of connection,1206,0.0,1.0,,,0.010814598603427095,,,,
+R1.1_score,R1.1_score,1206,0.0,0.0,,,,0.9999999999999969,0.0,1.0,0.0
+R1.2_score,R1.2_score,1206,0.0,0.0,,,,0.999999999999995,0.0,0.9999999999999998,0.0
+R1.3_score,R1.3-M Metadata are described with VoID/DCAT predicates,1206,,,,,,,,,

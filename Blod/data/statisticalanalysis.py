@@ -8,7 +8,7 @@ import warnings
 
 
 # Paths (adjust if needed)
-fc_path = "D:/PycharmProjects/BLOD/Blod/fairness_results FAIR Checker.csv"
+fc_path = "D:/PycharmProjects/BLOD/Blod/FAIRness Results/fairness_results FAIR Checker.csv"
 kg_path = "D:/PycharmProjects/BLOD/WebApp/backend/data/fairness-data.csv"
 output_dir = "analysis_output"
 os.makedirs(output_dir, exist_ok=True)

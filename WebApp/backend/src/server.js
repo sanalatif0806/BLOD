@@ -1,9 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 const { connectToMongoDB } = require('./db');
-const che_cloud_data = require('./routes/BLOD');
-const monitoring_requests = require('./routes/monitoring_requests');
-const llm = require('./routes/llm');
+const blodRoutes = require('./routes/BLOD');
+const monitoringRoutes = require('./routes/monitoring_requests');
+const llmRoutes = require('./routes/llm');
+const sparqlRoutes = require('./routes/sparql');
 
 require('dotenv').config();
 
@@ -12,21 +13,28 @@ const port = process.env.PORT || 5005;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
+// Attach DB to every request
 app.use(async (req, res, next) => {
     try {
         req.db = await connectToMongoDB();
         next();
     } catch (error) {
-        console.error(error);
-        res.status(500).send('Error during the connection to the DB');
+        console.error('DB middleware error:', error);
+        res.status(500).json({ error: 'Error connecting to database' });
     }
 });
 
-app.use('/BLOD',che_cloud_data);
-app.use('/monitoring_requests', monitoring_requests);
-app.use('/llm', llm);
+// Routes
+app.use('/BLOD', blodRoutes);
+app.use('/monitoring_requests', monitoringRoutes);
+app.use('/llm', llmRoutes);
+app.use('/sparql', sparqlRoutes);
 
-app.listen(port,() => {
-    console.log(`Server is running on port: ${port}`);
-})
+// Health check
+app.get('/health', (req, res) => res.json({ status: 'ok', timestamp: new Date().toISOString() }));
+
+app.listen(port, () => {
+    console.log('BLOD Backend running on port: ' + port);
+});

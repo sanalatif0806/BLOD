@@ -1,35 +1,167 @@
-<div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="WebApp/frontend/blod/public/favicon.png" alt="Logo" width="80" height="80">
-  </a>
+# BLOD Cloud — Biomedical Linked Open Datasets
 
-<h3 align="center">BLOD</h3>
+A web platform for exploring, searching, and assessing FAIR quality of biomedical linked open datasets.
 
-  <p align="center">
-    BLOD is an open-source project aimed at creating the Cloud for visualizing Biomedical Linked Open Data. For each resource indexed within the cloud it is possible to view its FAIRness and the main information contained in the resource metadata such as: description, license, SPARQL endpoint and Data Dump.
-    The project comprises two main components: the first (BLODCLOUDGEN) is responsible for generating the Cloud by processing resources from the Linked Open Data (LOD) Cloud, supplemented with manually curated entries; the second component, the WebApp, provides a web-based interface for visualizing the resulting Cloud.
-    <br />
-    <a href="https://blodcloud.di.unisa.it"><strong>Explore the BLOD Cloud »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/sanalatif0806/BLOD">See the additional material for the Article</a>
-    <!-- &middot;
-    <a href="https://github.com/github_username/repo_name/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-    &middot;
-    <a href="https://github.com/github_username/repo_name/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a> !-->
-  </p>
-</div>
+## Architecture
 
-## Repository structure
-The [blod/src](Blod/src/) folder contains:
-- The Python code used to generate the BLOD CLOUD based on the annotations provided by the two researchers, as well as the code for the experiment using the keywords extracted from the SLR and that for the LLMs.
-- The [evaluate_fairness.py](./CHe_cloud_generator/src/evaluate_fairness.py) script, which enables the computation of dataset fairness based on the results from KGHeartBeat.
+```
+BLOD/
+├── WebApp/
+│   ├── docker-compose.yml        ← orchestrates all services
+│   ├── backend/                  ← Node.js / Express API (port 5005)
+│   │   ├── Dockerfile
+│   │   ├── .env                  ← copy and fill in secrets
+│   │   ├── BLOD.json             ← MongoDB seed data
+│   │   ├── init-mongo.sh         ← runs on first Mongo startup
+│   │   └── src/
+│   │       ├── server.js
+│   │       ├── db.js
+│   │       ├── models/BLOD.js
+│   │       └── routes/
+│   │           ├── BLOD.js           ← /BLOD/* catalogue endpoints
+│   │           ├── sparql.js         ← /sparql SPARQL endpoint (MongoDB)
+│   │           ├── llm.js            ← /llm AI classification
+│   │           ├── monitoring_requests.js ← /monitoring_requests
+│   │           └── temp.js
+│   └── frontend/blod/            ← React app (port 3000)
+│       ├── Dockerfile
+│       ├── .env
+│       └── src/
+│           ├── pages/
+│           │   ├── cloud.js          ← knowledge graph visualisation
+│           │   ├── search.js         ← full-text search
+│           │   ├── sparql.js         ← SPARQL query explorer ← NEW
+│           │   ├── dashboard.js      ← FAIR stats dashboard
+│           │   ├── fairness_info.js  ← per-dataset FAIR detail
+│           │   ├── add_dataset.js    ← submit new dataset
+│           │   └── about.js
+│           └── components/
+└── python_service/               ← Flask quality service (port 5001)
+    ├── Dockerfile
+    ├── .env
+    ├── app.py                    ← Flask routes + SPARQL blueprint
+    ├── sparql_query.py           ← SPARQL engine over quality DataFrame ← NEW
+    ├── generate_weather_station_data.py
+    ├── punctual_quality_evaluation.py
+    └── recover_last_analysis.py
+```
 
-The [blod/data](Blod/data/) folder contains:
-- The [keyword_from_SLR](Blod/data/keywords_from_SLR/) folder, which includes the keywords extracted from the papers identified using an SLR approach. These keywords were used to automatically categorize the datasets in the LOD cloud.
-- The [WebApp](./WebApp/) folder, which contains the code required to serve the BLOD CLOUD.
+## Quick Start
 
-### Built With
-* ![image](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
-* ![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-* ![image](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+### 1. Configure environment
+
+```bash
+# Backend secrets
+cp WebApp/backend/.env WebApp/backend/.env.local
+# Fill in: GIT_TOKEN, GEMINI_API_KEY / OPENAI_API_KEY, REPO_URL
+
+# Python service (already set for Docker networking)
+# python_service/.env is pre-configured
+```
+
+### 2. Run with Docker Compose
+
+```bash
+cd WebApp
+docker compose up --build
+```
+
+Services:
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:5005
+- Python Quality Service: http://localhost:5001
+- MongoDB: localhost:27017
+
+### 3. Development (without Docker)
+
+**Backend:**
+```bash
+cd WebApp/backend/src
+npm install
+cp ../.env .env
+node server.js
+```
+
+**Frontend:**
+```bash
+cd WebApp/frontend/blod
+npm install
+npm start
+```
+
+**Python service:**
+```bash
+cd python_service
+pip install -r requirements.txt
+cp env-example .env
+flask run --port 5001
+```
+
+## SPARQL Endpoints
+
+### Catalogue SPARQL (Node.js — queries MongoDB)
+```
+GET  http://localhost:5005/sparql?query=SELECT ...
+POST http://localhost:5005/sparql  body: { "query": "SELECT ..." }
+GET  http://localhost:5005/sparql/info
+```
+
+**Example:**
+```sparql
+SELECT ?title ?identifier WHERE {
+  ?s dct:title ?title .
+  ?s dct:identifier ?identifier .
+  FILTER(REGEX(?title, "drug", "i"))
+}
+LIMIT 20
+```
+
+### Quality SPARQL (Python — queries FAIR assessment DataFrame)
+```
+GET  http://localhost:5001/sparql/query?query=SELECT ...
+POST http://localhost:5001/sparql/query  body: { "query": "SELECT ..." }
+GET  http://localhost:5001/sparql/info
+GET  http://localhost:5001/sparql/columns
+```
+
+**Example:**
+```sparql
+SELECT ?kg_id ?kg_name ?fair_score WHERE {
+  ?s blod:kg_id ?kg_id .
+  ?s blod:kg_name ?kg_name .
+  ?s blod:fair_score ?fair_score .
+  FILTER(?fair_score > 3)
+}
+ORDER BY DESC(?fair_score)
+LIMIT 20
+```
+
+Both return **W3C SPARQL JSON Results Format**.
+
+## API Reference
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | /BLOD/all_ch_links | Knowledge graph nodes & links |
+| GET | /BLOD/get_all | All datasets (full JSON) |
+| GET | /BLOD/search?q=term | Full-text search |
+| GET | /BLOD/dataset_metadata/:id | Single dataset metadata |
+| GET | /BLOD/fairness_data/:id | FAIR scores from KGHeartBeat |
+| GET | /sparql?query=... | SPARQL over catalogue (MongoDB) |
+| GET | /sparql/info | SPARQL endpoint documentation |
+| POST | /llm/llm_topic | LLM health category classification |
+| POST | /llm/llm_explain_fair | LLM FAIR score explanation |
+| POST | /monitoring_requests/submit | Submit new dataset PR |
+| GET | /health | Backend health check |
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | /sparql_endpoint | SPARQL endpoint availability stats |
+| GET | /rdf_dump | RDF dump availability stats |
+| GET | /fair_stats | FAIR score box-plot statistics |
+| GET | /datasets_stats | Dataset category counts |
+| GET | /all_single_fair_score | Per-dataset FAIR scores |
+| GET | /sparql/query?query=... | SPARQL over quality DataFrame |
+| GET | /sparql/info | SPARQL predicate reference |
+| GET | /sparql/columns | Available DataFrame columns |
+| GET | /health | Python service health check |

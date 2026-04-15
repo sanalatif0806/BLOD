@@ -47,15 +47,15 @@
     .ld{width:9px;height:9px;border-radius:2px;display:inline-block;vertical-align:middle;margin-right:3px;}
     .dl{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border:0.5px solid var(--border);border-radius:6px;font-size:11px;cursor:pointer;background:var(--surface2);color:var(--muted);flex-shrink:0;}
     .dl:hover{background:var(--surface);color:var(--text);}
-    /* Dark radar card */
-    .radar-dark{background:#0d0d0d;border-radius:10px;padding:14px;display:flex;flex-direction:column;align-items:center;}
-    .radar-dark .rd-title{font-size:12px;font-weight:500;color:#ccc;margin-bottom:8px;text-align:center;letter-spacing:.02em;}
-    .radar-dark .rd-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;margin-bottom:6px;}
+    /* Radar card — white background */
+    .radar-card{background:#ffffff;border:1px solid var(--border);border-radius:10px;padding:14px;display:flex;flex-direction:column;align-items:center;}
+    .radar-card .rd-title{font-size:12px;font-weight:500;color:var(--muted);margin-bottom:8px;text-align:center;}
+    .radar-card .rd-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;margin-bottom:6px;}
     /* Principle badge colours */
-    .pb-F{background:#1a3a6e;color:#93c5fd;}
-    .pb-A{background:#1a3a1a;color:#86efac;}
-    .pb-I{background:#3d2a00;color:#fbbf24;}
-    .pb-R{background:#3d0f0f;color:#fca5a5;}
+    .pb-F{background:#E6F1FB;color:#0C447C;}
+    .pb-A{background:#EAF3DE;color:#27500A;}
+    .pb-I{background:#FAEEDA;color:#633806;}
+    .pb-R{background:#FAECE7;color:#4A1B0C;}
     /* Insight list */
     .il{list-style:none;margin:0;padding:0;}
     .il li{padding:11px 14px;border-left:3px solid var(--border2);margin-bottom:8px;font-size:13px;color:var(--text);line-height:1.65;border-radius:0 6px 6px 0;background:var(--surface);}
@@ -351,7 +351,7 @@ const D4=['F','A','I','R'];
 // ═══════════════════════════════════════════════════════════════
 const charts={};
 function dc(id){if(charts[id]){charts[id].destroy();delete charts[id];}}
-function dlC(id,name){const a=document.createElement('a');a.href=document.getElementById(id).toDataURL('image/png');a.download=name+'.png';a.click();}
+function dlC(id,name){const src=document.getElementById(id);const tmp=document.createElement('canvas');tmp.width=src.width;tmp.height=src.height;const c=tmp.getContext('2d');c.fillStyle='#ffffff';c.fillRect(0,0,tmp.width,tmp.height);c.drawImage(src,0,0);const a=document.createElement('a');a.href=tmp.toDataURL('image/png');a.download=name+'.png';a.click();}
 function sw(t){
   document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
   document.querySelectorAll('.panel').forEach(x=>x.classList.remove('on'));
@@ -392,78 +392,75 @@ function buildInline(id, subs, col){
 }
 
 // ═══════════════════════════════════════════════════════════════
-// DARK RADAR BUILDER — styled like uploaded image
+// RADAR BUILDER — white background, colorful fills
 // ═══════════════════════════════════════════════════════════════
 const PBADGE_COLORS={
-  F:{bg:'#1a3a6e',tc:'#93c5fd',fill:'rgba(50,102,173,0.35)',border:'#3266ad'},
-  A:{bg:'#1a3a1a',tc:'#86efac',fill:'rgba(99,153,34,0.35)', border:'#639922'},
-  I:{bg:'#3d2a00',tc:'#fbbf24',fill:'rgba(239,159,39,0.35)',border:'#EF9F27'},
-  R:{bg:'#3d0f0f',tc:'#fca5a5',fill:'rgba(226,75,74,0.35)', border:'#E24B4A'},
+  F:{badgeBg:'#E6F1FB',badgeTc:'#0C447C', fill:'rgba(50,102,173,0.18)',  border:'#3266ad', point:'#3266ad'},
+  A:{badgeBg:'#EAF3DE',badgeTc:'#27500A', fill:'rgba(99,153,34,0.18)',   border:'#639922', point:'#639922'},
+  I:{badgeBg:'#FAEEDA',badgeTc:'#633806', fill:'rgba(239,159,39,0.18)',  border:'#EF9F27', point:'#EF9F27'},
+  R:{badgeBg:'#FAECE7',badgeTc:'#4A1B0C', fill:'rgba(226,75,74,0.18)',   border:'#E24B4A', point:'#E24B4A'},
 };
 
 function buildRadarCard(containerId, tool, principle, subs, toolColor){
   const pbc = PBADGE_COLORS[principle];
   const labels = subs.map(s=>s.lbl);
   const data   = subs.map(s=>s.mean);
-  const canvasId = `radar-${tool}-${principle}`;
+  const safeId = 'radar-' + tool.replace(/[^a-zA-Z0-9]/g,'-') + '-' + principle;
 
   const div = document.createElement('div');
-  div.className = 'radar-dark';
-  div.innerHTML = `
-    <span class="rd-badge" style="background:${pbc.bg};color:${pbc.tc};">${principle} — ${{F:'Findable',A:'Accessible',I:'Interoperable',R:'Reusable'}[principle]}</span>
-    <div class="rd-title">${tool}</div>
-    <div style="position:relative;width:100%;height:200px;">
-      <canvas id="${canvasId}"></canvas>
-    </div>
-    <button class="dl" style="margin-top:8px;" onclick="dlC('${canvasId}','radar_${tool}_${principle}')">↓ PNG</button>
-  `;
+  div.className = 'radar-card';
+  const pname = {F:'Findable',A:'Accessible',I:'Interoperable',R:'Reusable'}[principle];
+  div.innerHTML =
+    '<span class="rd-badge" style="background:'+pbc.badgeBg+';color:'+pbc.badgeTc+';">'+principle+' — '+pname+'</span>' +
+    '<div class="rd-title">'+tool+'</div>' +
+    '<div style="position:relative;width:100%;height:210px;"><canvas id="'+safeId+'"></canvas></div>' +
+    '<button class="dl" style="margin-top:8px;" onclick="dlC(\''+safeId+'\',\'radar_'+tool.replace(/[^a-zA-Z0-9]/g,'_')+'_'+principle+'\')">↓ PNG</button>';
   document.getElementById(containerId).appendChild(div);
 
-  // Use requestAnimationFrame to ensure DOM is ready
-  requestAnimationFrame(()=>{
-    const ctx = document.getElementById(canvasId);
-    if(!ctx) return;
-    dc(canvasId);
-    charts[canvasId] = new Chart(ctx, {
+  requestAnimationFrame(function(){
+    var canvas = document.getElementById(safeId);
+    if(!canvas) return;
+    dc(safeId);
+    charts[safeId] = new Chart(canvas, {
       type: 'radar',
       data: {
-        labels,
+        labels: labels,
         datasets:[{
-          label: `${tool} ${principle}`,
-          data,
+          label: tool + ' — ' + principle,
+          data: data,
           backgroundColor: pbc.fill,
           borderColor: pbc.border,
-          borderWidth: 2,
-          pointBackgroundColor: pbc.border,
-          pointBorderColor: '#0d0d0d',
-          pointBorderWidth: 1,
+          borderWidth: 2.5,
+          pointBackgroundColor: pbc.point,
+          pointBorderColor: '#ffffff',
+          pointBorderWidth: 2,
           pointRadius: 5,
           pointHoverRadius: 7,
         }]
       },
       options:{
-        responsive:true, maintainAspectRatio:false,
+        responsive: true,
+        maintainAspectRatio: false,
         plugins:{
           legend:{display:false},
-          tooltip:{callbacks:{label:ctx=>`${ctx.label}: ${ctx.raw}%`}}
+          tooltip:{
+            backgroundColor:'rgba(255,255,255,0.97)',
+            titleColor:'#1a1a18',
+            bodyColor:'#1a1a18',
+            borderColor: pbc.border,
+            borderWidth: 1,
+            callbacks:{label:function(c){return c.label+': '+c.raw+'%';}}
+          }
         },
         scales:{
           r:{
-            min:0, max:100,
-            backgroundColor:'#0d0d0d',
-            ticks:{
-              display:true,
-              stepSize:25,
-              color:'#555',
-              backdropColor:'transparent',
-              font:{size:9}
-            },
-            pointLabels:{
-              color:'#cccccc',
-              font:{size:labels.length>4?9:10}
-            },
-            grid:{color:'rgba(255,255,255,0.10)'},
-            angleLines:{color:'rgba(255,255,255,0.10)'}
+            min: 0,
+            max: 100,
+            backgroundColor: 'rgba(255,255,255,0)',
+            ticks:{display:true, stepSize:25, color:'#bbb', backdropColor:'transparent', font:{size:9}},
+            pointLabels:{color:'#333', font:{size: labels.length>4 ? 9 : 10, weight:'500'}},
+            grid:{color:'rgba(0,0,0,0.08)'},
+            angleLines:{color:'rgba(0,0,0,0.12)'}
           }
         }
       }

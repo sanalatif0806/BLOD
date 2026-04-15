@@ -1,17 +1,6 @@
-const { getLLMClient } = require('../llm/client');
-const {ChatPromptTemplate} = require("@langchain/core/prompts");
+const { callLLM: callClaude } = require('../llm/client');  // ← only this line changes
 const router = require('express').Router();
 const prompts = require('../../data/llms_prompts.json');
-
-const PROMPT = `I give you the title description and id about a dataset, I have to categorize it as Health or Not.  \
-            For datasets that are Health, you also need to further specify whether it is Clinical & Patient Data,
-    Omics & Molecular Data, Medical Imaging & Signals, Public Health & Surveillance, Biobank & Research Data, Behavioral & Social Data, Terminologies & Metadata and finally those that define thesaurus and data models, classify them as Generic.  \
-            You will be provided with a dataset description, title and the id, and you will output a json object. Here is an example of how you should respond: \
-            {{ \
-                "category": "Health", \
-                "sub_category": "Public Health & Surveillance" \
-            }} \
-            If the dataset is not part of the Health category, leave the value of the keys empty. If the dataset is of type Health, but you cannot define the sub category, do not enter the value in the key “sub_category”.`
 
 const keyMapping = {
   f1M: 'F1-M Unique and persistent ID',
@@ -37,151 +26,89 @@ const keyMapping = {
   i3D: 'I3-D Degree of connection',
   i_score: 'I score',
   fair_score: 'FAIR score',
-  analysis_date: 'analysis_date'
+  analysis_date: 'analysis_date',
 };
 
+// ── POST /llm/llm_topic ──────────────────────────────────────────────────────
 router.post('/llm_topic', async (req, res) => {
   try {
-    const userInput = req.body;
+    const { identifier, title, description } = req.body || {};
+    if (!title) return res.status(400).json({ error: 'Missing dataset title' });
 
-    if (!userInput) return res.status(400).json({ error: "Missing input" });
-    const dataset_id = userInput.identifier
-    const dataset_title = userInput.title
-    const dataset_description = userInput.description.en
-    const llm = getLLMClient();
+    const system = 'You are a biomedical data classifier. Always respond with valid JSON only — no markdown, no explanation, just the JSON object.';
+    const user = `Classify this dataset as Health or Not Health.
+For Health datasets also specify the sub-category:
+  Clinical & Patient Data | Omics & Molecular Data | Medical Imaging & Signals |
+  Public Health & Surveillance | Biobank & Research Data | Behavioral & Social Data |
+  Terminologies & Metadata | Generic
 
-    const prompt = ChatPromptTemplate.fromMessages([
-      ["system", "You are a helpful assistant."],
-      ["human", PROMPT],
-      ["human", `Dataset ID: {id}, Title: {title}, Description: {description}`]
-    ]);
+Dataset ID: ${identifier || 'N/A'}
+Title: ${title}
+Description: ${description?.en || 'N/A'}
 
-    const chain = prompt.pipe(llm);
+Respond with ONLY this JSON (no other text):
+{ "category": "Health", "sub_category": "Public Health & Surveillance" }
+If not Health leave values empty. If Health but sub-category unclear, omit sub_category.`;
 
-    const response = await chain.invoke({
-        id: dataset_id,
-        title: dataset_title,
-        description: dataset_description
-    });
-    console.log("LLM response:", response);
-
-    if (!response || !response.content) {
-      return res.status(500).json({ error: "LLM response is empty or malformed" });
-    }
-
-    // Assuming response.content is a stringified JSON object
-    try {
-        const cleaned_response = response.content
-        .replace(/^```json\s*/i, '')
-        .replace(/^```\s*/i, '')
-        .replace(/```$/, '')
-        .trim();
-        const parsedResponse = JSON.parse(cleaned_response);
-        
-        if (!parsedResponse) {
-            return res.status(400).json({ error: "LLM did not return a valid JSON" });
-        }
-        res.json({
-            'llm_response': parsedResponse,
-            'model_used': process.env.LLM_MODEL
-
-        });
-    } catch (parseError) {
-        console.error("Error parsing LLM response:", parseError);
-        return res.status(500).json({ error: "Failed to parse LLM response" });
-    }
+    const { text, model } = await callClaude(system, user);
+    const cleaned = text.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/```$/, '').trim();
+    const parsed = JSON.parse(cleaned);
+    res.json({ llm_response: parsed, model_used: model });
   } catch (err) {
-    console.error("LLM error:", err);
-    res.status(500).json({ error: "LLM processing failed" });
+    console.error('llm_topic error:', err.message);
+    res.status(500).json({ error: err.message || 'LLM processing failed' });
   }
 });
 
+// ── POST /llm/llm_explain_fair ───────────────────────────────────────────────
 router.post('/llm_explain_fair', async (req, res) => {
   try {
-    const fair_data = req.body;
-    if (!fair_data) return res.status(400).json({ error: "Missing input" });
+    const body = req.body || {};
+    const fair_data = body.fair_data ?? body;
 
-    const llm = getLLMClient();
-    const fair_explanation = prompts.explain_FAIR;
-
-    const prompt = ChatPromptTemplate.fromMessages([
-      ["system", "You are a helpful assistant."],
-      ["human", fair_explanation],
-      ["human", "FAIR values obtained: {fair_data}"]
-    ])
-    const chain = prompt.pipe(llm);
-
-    const response = await chain.invoke({
-        fair_data: fair_data.fair_data
-    });
-
-    if (!response || !response.content) {
-      return res.status(500).json({ error: "LLM response is empty or malformed" });
-    } else {
-      res.json({
-        'llm_response': response.content,
-        'model_used': process.env.LLM_MODEL
-      });
+    if (!fair_data || typeof fair_data !== 'object' || Object.keys(fair_data).length === 0) {
+      return res.status(400).json({ error: 'fair_data is empty or missing' });
     }
+
+    const system = 'You are an expert in Knowledge Graph quality and FAIR principles for healthcare data.';
+    const user = `${prompts.explain_FAIR}\n\nFAIR values obtained:\n${JSON.stringify(fair_data, null, 2)}`;
+
+    const { text, model } = await callClaude(system, user);
+    res.json({ llm_response: text, model_used: model });
   } catch (err) {
-    console.error("LLM error:", err);
-    res.status(500).json({ error: "LLM processing failed" });
+    console.error('llm_explain_fair error:', err.message);
+    res.status(500).json({ error: err.message || 'LLM processing failed' });
   }
 });
 
+// ── POST /llm/llm_explain_fairness_score_ot ──────────────────────────────────
 router.post('/llm_explain_fairness_score_ot', async (req, res) => {
   try {
-    const fair_data = req.body;
-    if (!fair_data) return res.status(400).json({ error: "Missing input" });
+    const body = req.body || {};
+    let fair_data = body.fair_data ?? body;
+
+    if (!fair_data) return res.status(400).json({ error: 'fair_data is missing' });
 
     const keysToKeep = ['FAIR score', 'F score', 'A score', 'I score', 'R score'];
-
-    fair_data.fair_data.forEach(entry => {
-      const remappedFAIRness = {};
-      for (const key in entry.FAIRness) {
-        const newKey = keyMapping[key] || key;
-        if (keysToKeep.includes(newKey)) {
-          remappedFAIRness[newKey] = entry.FAIRness[key];
+    if (Array.isArray(fair_data)) {
+      fair_data = fair_data.map(entry => {
+        const remapped = {};
+        for (const [key, val] of Object.entries(entry.FAIRness || {})) {
+          const label = keyMapping[key] || key;
+          if (keysToKeep.includes(label)) remapped[label] = val;
         }
-      }
-      entry.FAIRness = remappedFAIRness;
-    });
-
-    fair_data.fair_data.forEach(entry => {
-      const remappedFAIRness = {};
-      for (const key in entry.FAIRness) {
-        const newKey = keyMapping[key] || key;
-        remappedFAIRness[newKey] = entry.FAIRness[key];
-      }
-      entry.FAIRness = remappedFAIRness;
-    });
-
-    const llm = getLLMClient();
-    const fair_explanation = prompts.explain_FAIRness_score_ot;
-
-
-    const prompt = ChatPromptTemplate.fromMessages([
-      ["system", "You are a helpful assistant."],
-      ["human", fair_explanation],
-      ["human", "FAIR score over time values obtained: {fair_data}"]
-    ])
-    const chain = prompt.pipe(llm);
-
-    const response = await chain.invoke({
-        fair_data: fair_data.fair_data
-    });
-
-    if (!response || !response.content) {
-      return res.status(500).json({ error: "LLM response is empty or malformed" });
-    } else {
-      res.json({
-        'llm_response': response.content,
-        'model_used': process.env.LLM_MODEL
+        return { date: entry.date || entry.analysis_date, scores: remapped };
       });
     }
+
+    const system = 'You are an expert in Knowledge Graph quality and FAIR principles for healthcare data.';
+    const user = `${prompts.explain_FAIRness_score_ot}\n\nFAIR score over time:\n${JSON.stringify(fair_data, null, 2)}`;
+
+    const { text, model } = await callClaude(system, user);
+    res.json({ llm_response: text, model_used: model });
   } catch (err) {
-    console.error("LLM error:", err);
-    res.status(500).json({ error: "LLM processing failed" });
+    console.error('llm_explain_ot error:', err.message);
+    res.status(500).json({ error: err.message || 'LLM processing failed' });
   }
 });
 

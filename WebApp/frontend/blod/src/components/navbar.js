@@ -35,6 +35,7 @@ function NavBar() {
               <Nav.Link as={Link} to="/add-dataset">Add a Dataset</Nav.Link>
               <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
               <Nav.Link as={Link} to="/about">About</Nav.Link>
+              <Nav.Link as={Link} to="/sparql">SPARQL</Nav.Link>
             </Nav>
                             <button
                     onClick={() => window.open('https://github.com/sanalatif0806/BLOD', '_blank')}
