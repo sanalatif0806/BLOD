@@ -254,6 +254,67 @@ router.get('/search', async (req, res) => {
 });
 
 
+// ── POST /BLOD/sync-fairness ──────────────────────────────────────────────────
+// Reads FAIR scores from the bundled CSV and writes them into MongoDB.
+// No external API calls needed. Returns immediately; sync runs in background.
+// Usage: curl -X POST http://localhost:5005/BLOD/sync-fairness
+router.post('/sync-fairness', async (req, res) => {
+  res.json({ message: 'Fairness sync started. Check server logs for progress.' });
+
+  (async () => {
+    try {
+      const csvPath = path.join(__dirname, '..', 'data', 'fairness-data.csv');
+      const colMap = {
+        'FAIR score': 'fair_score',
+        'F score':    'fair_score_f',
+        'A score':    'fair_score_a',
+        'I score':    'fair_score_i',
+        'R score':    'fair_score_r',
+      };
+
+      // Parse CSV into a map: { identifier -> { fair_score, fair_score_f, ... } }
+      const scoreMap = await new Promise((resolve, reject) => {
+        const rows = {};
+        const csvParser = require('csv-parser');
+        require('fs').createReadStream(csvPath)
+          .pipe(csvParser())
+          .on('data', row => {
+            const id = (row['KG id'] || '').trim();
+            if (!id) return;
+            const scores = {};
+            for (const [col, field] of Object.entries(colMap)) {
+              const raw = (row[col] || '').replace(',', '.');
+              const n = parseFloat(raw);
+              if (!isNaN(n)) scores[field] = n;
+            }
+            if (Object.keys(scores).length) rows[id] = scores;
+          })
+          .on('end', () => resolve(rows))
+          .on('error', reject);
+      });
+
+      console.log(`[sync-fairness] Loaded ${Object.keys(scoreMap).length} scores from CSV`);
+      const collection = await getCollection();
+      const datasets = await collection.find({}, { projection: { identifier: 1 } }).toArray();
+
+      let updated = 0, notFound = 0;
+      for (const { identifier } of datasets) {
+        const scores = scoreMap[identifier];
+        if (!scores) { notFound++; continue; }
+        await collection.updateOne(
+          { identifier },
+          { $set: { ...scores, fair_score_synced_at: new Date() } }
+        );
+        updated++;
+      }
+      console.log(`[sync-fairness] Done. Updated: ${updated}, No CSV match: ${notFound}`);
+    } catch (err) {
+      console.error('[sync-fairness] Fatal error:', err.message);
+    }
+  })();
+});
+
+
 module.exports = router;
 // ── GET /BLOD/datasets — browse all datasets with optional category filter ──
 router.get('/datasets', async (req, res) => {

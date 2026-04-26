@@ -31,6 +31,93 @@
 
 const router = require('express').Router();
 const { getCollection } = require('../models/BLOD');
+const fs = require('fs');
+const path = require('path');
+const csv = require('csv-parser');
+const axios = require('axios');
+
+const KGHEARTBEAT_API = 'https://kgheartbeat.di.unisa.it/kgheartbeat-api/fairness';
+
+// FAIR score fields — not stored in MongoDB, fetched from KGHeartBeat API with CSV fallback
+const FAIR_FIELDS = new Set(['fair_score', 'fair_score_f', 'fair_score_a', 'fair_score_i', 'fair_score_r']);
+
+// ── CSV fallback: loaded once at startup ──────────────────────────────────────
+// In-memory map: lowercase identifier → { fair_score, fair_score_f, ... }
+let fairScoreMap = new Map();
+
+function loadFairScoresFromCSV() {
+  const csvPath = path.join(__dirname, '..', '..', 'data', 'fairness-data.csv');
+  if (!fs.existsSync(csvPath)) {
+    console.warn('[FAIR] fairness-data.csv not found at', csvPath);
+    return;
+  }
+  let count = 0;
+  fs.createReadStream(csvPath)
+    .pipe(csv())
+    .on('data', row => {
+      const id = (row['KG id'] || '').trim().toLowerCase();
+      if (!id) return;
+      const fair = parseFloat(row['FAIR score']);
+      const f    = parseFloat(row['F score']);
+      const a    = parseFloat(row['A score']);
+      const i    = parseFloat(row['I score']);
+      const r    = parseFloat(row['R score']);
+      fairScoreMap.set(id, {
+        fair_score:   isNaN(fair) ? null : fair,
+        fair_score_f: isNaN(f)    ? null : f,
+        fair_score_a: isNaN(a)    ? null : a,
+        fair_score_i: isNaN(i)    ? null : i,
+        fair_score_r: isNaN(r)    ? null : r,
+      });
+      count++;
+    })
+    .on('end', () => console.log(`[FAIR] Loaded ${count} FAIR scores from CSV fallback`))
+    .on('error', err => console.error('[FAIR] CSV load error:', err.message));
+}
+
+loadFairScoresFromCSV();
+
+// ── API + fallback cache ──────────────────────────────────────────────────────
+const fairApiCache = new Map();
+const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
+
+async function fetchFairScores(identifier) {
+  // 1. Check in-process API cache
+  const cached = fairApiCache.get(identifier);
+  if (cached && Date.now() - cached._ts < CACHE_TTL_MS) {
+    return cached;
+  }
+
+  // 2. Try KGHeartBeat API (live, most up-to-date)
+  try {
+    const { data } = await axios.get(
+      `${KGHEARTBEAT_API}/${encodeURIComponent(identifier)}`,
+      { timeout: 5000 }
+    );
+    // API returns: fair_score, f_score, a_score, i_score, r_score
+    const scores = {
+      fair_score:   data.fair_score ?? null,
+      fair_score_f: data.f_score    ?? null,
+      fair_score_a: data.a_score    ?? null,
+      fair_score_i: data.i_score    ?? null,
+      fair_score_r: data.r_score    ?? null,
+      _ts: Date.now(),
+      _source: 'api',
+    };
+    fairApiCache.set(identifier, scores);
+    return scores;
+  } catch (err) {
+    console.warn(`[FAIR] API unavailable for "${identifier}" (${err.message}), falling back to CSV`);
+  }
+
+  // 3. Fallback to local CSV
+  const csvScores = fairScoreMap.get(identifier.toLowerCase());
+  if (csvScores) {
+    return { ...csvScores, _ts: Date.now(), _source: 'csv' };
+  }
+
+  return null;
+}
 
 // ── Prefix → field mapping ────────────────────────────────────────────────────
 const PREDICATE_MAP = {
@@ -48,6 +135,12 @@ const PREDICATE_MAP = {
   'schema:url':          'website',
   'schema:domain':       'domain',
   'owl:sameAs':          'wikidataurl',
+  // FAIR score predicates (populated by sync_fairness_scores.js)
+  'blod:fairScore':      'fair_score',
+  'blod:fScore':         'fair_score_f',
+  'blod:aScore':         'fair_score_a',
+  'blod:iScore':         'fair_score_i',
+  'blod:rScore':         'fair_score_r',
 };
 
 const HEALTH_CATEGORIES = [
@@ -70,8 +163,20 @@ function getNestedValue(doc, path) {
 
 function makeCell(value) {
   if (value === undefined || value === null) return undefined;
+  // Coerce string numbers (e.g. scores stored as "0.72") to actual numbers
+  if (typeof value === 'string' && value !== '' && !isNaN(Number(value))
+      && !value.startsWith('http')) {
+    value = Number(value);
+  }
   if (typeof value === 'number') {
-    return { type: 'literal', datatype: 'http://www.w3.org/2001/XMLSchema#integer', value: String(value) };
+    const isInt = Number.isInteger(value);
+    return {
+      type: 'literal',
+      datatype: isInt
+        ? 'http://www.w3.org/2001/XMLSchema#integer'
+        : 'http://www.w3.org/2001/XMLSchema#decimal',
+      value: String(value)
+    };
   }
   if (Array.isArray(value)) return { type: 'literal', value: value.join(', ') };
   const str = String(value);
@@ -127,7 +232,7 @@ function parseSPARQL(query) {
       filters.push({ type: 'eq', variable: eqMatch[1], value: eqMatch[2] });
       continue;
     }
-    const cmpMatch = expr.match(/[?$](\w+)\s*([<>]=?)\s*(\d+)/);
+    const cmpMatch = expr.match(/[?$](\w+)\s*([<>]=?)\s*(\d+(?:\.\d+)?)/);
     if (cmpMatch) {
       filters.push({ type: 'cmp', variable: cmpMatch[1], op: cmpMatch[2], value: Number(cmpMatch[3]) });
     }
@@ -157,7 +262,8 @@ async function executeSPARQL(parsed) {
     if (p.variable) varToField[p.variable] = field;
 
     if (p.literal !== null) {
-      // Special handling: keywords is an array field — use $elemMatch
+      // Skip FAIR fields — they don't live in MongoDB
+      if (FAIR_FIELDS.has(field)) continue;
       if (field === 'keywords') {
         mongoQuery['keywords'] = { $elemMatch: { $regex: `^${p.literal.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`, $options: 'i' } };
       } else {
@@ -166,20 +272,24 @@ async function executeSPARQL(parsed) {
     }
   }
 
-  // Apply FILTER clauses
+  // Apply FILTER clauses (FAIR fields skipped — filtered client-side after API fetch)
   for (const f of filters_loop(parsed.filters, varToField)) {
     Object.assign(mongoQuery, f);
   }
 
+  // Determine if any requested variable needs FAIR scores
+  const needsFairScores = parsed.selectStar
+    || parsed.variables.some(v => FAIR_FIELDS.has(varToField[v]));
+
   // SELECT * — expose all fields
   let fieldsNeeded;
   if (parsed.selectStar) {
-    fieldsNeeded = [...new Set(Object.values(PREDICATE_MAP))];
+    fieldsNeeded = [...new Set(Object.values(PREDICATE_MAP))].filter(f => !FAIR_FIELDS.has(f));
     parsed.variables = Object.keys(varToField).length
       ? Object.keys(varToField)
       : Object.keys(PREDICATE_MAP).map(k => k.replace(':', '_'));
   } else {
-    fieldsNeeded = parsed.variables.map(v => varToField[v]).filter(Boolean);
+    fieldsNeeded = parsed.variables.map(v => varToField[v]).filter(f => f && !FAIR_FIELDS.has(f));
   }
 
   const projection = { _id: 0, identifier: 1 };
@@ -188,7 +298,10 @@ async function executeSPARQL(parsed) {
   let sortOpt = {};
   if (parsed.orderBy) {
     const sortField = varToField[parsed.orderBy.variable] || parsed.orderBy.variable;
-    sortOpt[sortField] = parsed.orderBy.dir === 'DESC' ? -1 : 1;
+    // Only apply MongoDB sort for non-FAIR fields
+    if (!FAIR_FIELDS.has(sortField)) {
+      sortOpt[sortField] = parsed.orderBy.dir === 'DESC' ? -1 : 1;
+    }
   }
 
   const cursor = collection.find(mongoQuery, { projection });
@@ -205,12 +318,28 @@ async function executeSPARQL(parsed) {
     });
   }
 
+  // Fetch FAIR scores: try KGHeartBeat API first, fall back to local CSV
+  let fairScoresByIdentifier = {};
+  if (needsFairScores && docs.length > 0) {
+    const results = await Promise.all(docs.map(doc => fetchFairScores(doc.identifier)));
+    docs.forEach((doc, i) => {
+      if (results[i]) fairScoresByIdentifier[doc.identifier] = results[i];
+    });
+  }
+
   const bindings = docs.map(doc => {
     const row = {};
+    const fairData = fairScoresByIdentifier[doc.identifier] || {};
+
     for (const v of resultVars) {
       const field = varToField[v];
       if (!field) continue;
-      const val = getNestedValue(doc, field);
+
+      // FAIR fields: API first, CSV fallback, else MongoDB
+      const val = FAIR_FIELDS.has(field)
+        ? (fairData[field] ?? null)
+        : getNestedValue(doc, field);
+
       const cell = makeCell(val);
       if (cell) row[v] = cell;
     }
@@ -244,6 +373,11 @@ function filters_loop(filters, varToField) {
       }
     } else if (f.type === 'cmp') {
       const opMap = { '>': '$gt', '<': '$lt', '>=': '$gte', '<=': '$lte' };
+      // For numeric comparisons MongoDB needs the stored value to be a number.
+      // If it was stored as a string, cast with $toDouble via an aggregation —
+      // but since sync_fairness_scores.js stores them as JS numbers, a plain
+      // comparison works. We also add a $type guard so docs missing the field
+      // are excluded rather than throwing.
       clause[field] = { [opMap[f.op]]: f.value };
     }
     clauses.push(clause);
@@ -317,8 +451,43 @@ router.get('/info', (req, res) => {
         label: 'Datasets with CC license, A–Z',
         query: 'SELECT ?title ?license WHERE { ?s dct:title ?title . ?s dct:license ?license . FILTER(REGEX(?license, "cc", "i")) } ORDER BY ASC(?title) LIMIT 25',
       },
+      {
+        label: 'Top 25 datasets by FAIR score (descending)',
+        note: 'FAIR score scale: 0–4. Run sync_fairness_scores.js first.',
+        query: 'SELECT ?title ?identifier ?fairScore WHERE { ?s dct:title ?title . ?s dct:identifier ?identifier . ?s blod:fairScore ?fairScore } ORDER BY DESC(?fairScore) LIMIT 25',
+      },
+      {
+        label: 'Datasets with FAIR score above 2.0',
+        query: 'SELECT ?title ?identifier ?fairScore WHERE { ?s dct:title ?title . ?s dct:identifier ?identifier . ?s blod:fairScore ?fairScore . FILTER(?fairScore > 2.0) } ORDER BY DESC(?fairScore) LIMIT 50',
+      },
+      {
+        label: 'Datasets with FAIR score above 3.0 (highly FAIR)',
+        query: 'SELECT ?title ?identifier ?fairScore WHERE { ?s dct:title ?title . ?s dct:identifier ?identifier . ?s blod:fairScore ?fairScore . FILTER(?fairScore > 3.0) } ORDER BY DESC(?fairScore) LIMIT 25',
+      },
+      {
+        label: 'Clinical datasets with high FAIR score',
+        query: 'SELECT ?title ?identifier ?fairScore WHERE { ?s dct:title ?title . ?s dct:identifier ?identifier . ?s blod:fairScore ?fairScore . ?s dcat:category "Clinical & Patient Data" . FILTER(?fairScore > 2.0) } ORDER BY DESC(?fairScore) LIMIT 25',
+      },
+      {
+        label: 'All FAIR sub-scores, best first',
+        query: 'SELECT ?title ?identifier ?fairScore ?fScore ?aScore ?iScore ?rScore WHERE { ?s dct:title ?title . ?s dct:identifier ?identifier . ?s blod:fairScore ?fairScore . ?s blod:fScore ?fScore . ?s blod:aScore ?aScore . ?s blod:iScore ?iScore . ?s blod:rScore ?rScore } ORDER BY DESC(?fairScore) LIMIT 25',
+      },
     ],
   });
 });
 
 module.exports = router;
+
+// ── Debug: test FAIR score fetch for a single identifier ─────────────────────
+// Usage: GET /sparql/debug-fair?id=bio2rdf-chembl
+router.get('/debug-fair', async (req, res) => {
+  const id = req.query.id;
+  if (!id) return res.status(400).json({ error: 'Pass ?id=<identifier>' });
+  const scores = await fetchFairScores(id);
+  res.json({
+    identifier: id,
+    scores,
+    source: scores?._source || 'not found',
+    csvLoaded: fairScoreMap.size,
+  });
+});

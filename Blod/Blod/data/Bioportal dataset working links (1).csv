@@ -1,0 +1,363 @@
+title,id,url
+Cognitive Paradigm Ontology,bioportal-cogpo,https://bioportal.bioontology.org/ontologies/COGPO
+Cancer Research and Management ACGT Master Ontology,bioportal-acgt,https://bioportal.bioontology.org/ontologies/ACGT
+Adverse Event Reporting ontology,bioportal-aero,https://bioportal.bioontology.org/ontologies/AERO
+BioAssay Ontology,bioportal-bao,https://bioportal.bioontology.org/ontologies/BAO
+Bone Dysplasia Ontology,bioportal-bdo,https://bioportal.bioontology.org/ontologies/BDO
+Basic Formal Ontology,bioportal-bfo,https://bioportal.bioontology.org/ontologies/BFO
+BIRNLex,bioportal-birnlex,https://bioportal.bioontology.org/ontologies/BIRNLEX
+Cancer Chemoprevention Ontology,bioportal-canco,https://bioportal.bioontology.org/ontologies/CANCO
+CAO,bioportal-cao,https://bioportal.bioontology.org/ontologies/CAO
+Chemical Information Ontology,bioportal-cheminf,https://bioportal.bioontology.org/ontologies/CHEMINF
+Cell Line ontology,bioportal-clo,https://bioportal.bioontology.org/ontologies/CL
+"CRISP Thesaurus, 2006",bioportal-csp,https://bioportal.bioontology.org/ontologies/CRISP
+Ontology for Drug Discovery Investigations,bioportal-ddi,https://bioportal.bioontology.org/ontologies/DDI
+Electrocardiography Ontology,bioportal-ecg,https://bioportal.bioontology.org/ontologies/ECG
+Experimental Factor Ontology,bioportal-efo,https://bioportal.bioontology.org/ontologies/EFO
+Cardiac Electrophysiology Ontology,bioportal-ep,https://bioportal.bioontology.org/ontologies/EP
+eagle-i research resource ontology,bioportal-ero,https://bioportal.bioontology.org/ontologies/ERO
+Influenza Ontology,bioportal-flu,https://bioportal.bioontology.org/ontologies/FLU
+General Formal Ontology:Biology,bioportal-gfo,https://bioportal.bioontology.org/ontologies/GFO
+Health Level Seven,bioportal-hl7,https://bioportal.bioontology.org/ontologies/HL7
+Host Pathogen Interactions Ontology,bioportal-hpio,https://bioportal.bioontology.org/ontologies/HPIO
+Information Artifact Ontology,bioportal-iao,https://bioportal.bioontology.org/ontologies/IAO
+Infectious Disease Ontology,bioportal-ido,https://bioportal.bioontology.org/ontologies/IDO
+Brucellosis Ontology,bioportal-idobru,https://bioportal.bioontology.org/ontologies/IDOBRU
+Malaria Ontology,bioportal-idomal,https://bioportal.bioontology.org/ontologies/IDOMAL
+Interaction Network Ontology,bioportal-ino,https://bioportal.bioontology.org/ontologies/INO
+Logical Observation Identifier Names and Codes,bioportal-lnc,https://bioportal.bioontology.org/ontologies/INC
+MESH Thesaurus (OWL version),bioportal-mesh-owl,
+Mental Functioning Ontology,bioportal-mf,https://bioportal.bioontology.org/ontologies/MF
+Emotion Ontology,bioportal-mfoem,https://bioportal.bioontology.org/ontologies/MFOEM
+Mosquito insecticide resistance,bioportal-miro,https://bioportal.bioontology.org/ontologies/MIRO
+Medical Subject Headings,bioportal-msh,https://bioportal.bioontology.org/ontologies/MESH
+NCI Thesaurus,bioportal-ncit,not found
+Neural ElectroMagnetic Ontologies,bioportal-nemo_x1,not found
+Neomark Oral Cancer Ontology,bioportal-neomark,https://bioportal.bioontology.org/ontologies/NEOMARK3  https://bioportal.bioontology.org/ontologies/NEOMARK4
+NIFSTD,bioportal-nif,https://bioportal.bioontology.org/ontologies/NIFSTD
+NIF Cell,bioportal-nif_cell,https://bioportal.bioontology.org/ontologies/NIFCELL
+NIF Dysfunction,bioportal-nif_dysfunction,https://bioportal.bioontology.org/ontologies/NIFDYS
+NMR-instrument specific component of metabolomics investigations,bioportal-nmr,https://old.datahub.io/zh_TW/dataset/bioportal-nmr
+NanoParticle Ontology,bioportal-npo,https://bioportal.bioontology.org/ontologies/NPO
+Ontology of Adverse Events (OAE),bioportal-oae,https://bioportal.bioontology.org/ontologies/OAE
+Ontology for Biomedical Investigations,bioportal-obi,https://bioportal.bioontology.org/ontologies/OBI
+Ontology of Clinical Research (OCRe),bioportal-ocre,not found
+Ontology for disease genetic investigation,bioportal-odgi,https://bioportal.bioontology.org/ontologies/OGDI
+Ontology for Genetic Interval,bioportal-ogi,https://bioportal.bioontology.org/ontologies/OGI
+Ontology for General Medical Science,bioportal-ogms,https://bioportal.bioontology.org/ontologies/OGMS
+Ontology of Medically Related Social Entities,bioportal-omrse,
+Ontology of Data Mining,bioportal-ontodm,
+Ontology of General Purpose Datatypes,bioportal-ontodt,https://bioportal.bioontology.org/ontologies/ONTODT
+Ontology for Parasite LifeCycle,bioportal-opl,https://bioportal.bioontology.org/ontologies/OPL
+Phenotypic quality,bioportal-pato,https://bioportal.bioontology.org/ontologies/PATO
+"Read Codes, Clinical Terms Version 3 (CTV3)",bioportal-rcd,https://bioportal.bioontology.org/ontologies/RCD
+RadLex,bioportal-rid,https://bioportal.bioontology.org/ontologies/RADLEX
+RNA ontology,bioportal-rnao,https://bioportal.bioontology.org/ontologies/RNAO
+Subcellular Anatomy Ontology (SAO),bioportal-sao,https://bioportal.bioontology.org/ontologies/SAO
+Sleep Domain Ontology,bioportal-sdo,https://bioportal.bioontology.org/ontologies/SDO
+SemanticScience Integrated Ontology,bioportal-sio,https://bioportal.bioontology.org/ontologies/SIO
+SNOMED Clinical Terms,bioportal-snomedct,
+Suggested Ontology for Pharmacogenomics,bioportal-sopharm,https://bioportal.bioontology.org/ontologies/SOPHARM
+Software Ontology,bioportal-swo,Software Ontology
+Time Event Ontology,bioportal-teo,https://bioportal.bioontology.org/ontologies/TEO
+Translational Medicine Ontology,bioportal-tmo,Translational Medicine Ontology
+Vaccine Ontology,bioportal-vo,https://bioportal.bioontology.org/ontologies/VO
+Sequence types and features,bioportal-so_x1,https://bioportal.bioontology.org/ontologies/SO
+Amino Acid,bioportal-amino-acid,https://bioportal.bioontology.org/ontologies/AMINO-ACID
+Gene Regulation Ontology,bioportal-bootstrep,https://bioportal.bioontology.org/ontologies/GRO
+Cell Cycle Ontology,bioportal-cco,https://bioportal.bioontology.org/ontologies/CCO
+Comparative Data Analysis Ontology,bioportal-cdao,https://bioportal.bioontology.org/ontologies/CDAO
+Chemical entities of biological interest,bioportal-chebi,https://bioportal.bioontology.org/ontologies/CHEBI
+Gene Ontology Extension,bioportal-go_x1,https://bioportal.bioontology.org/ontologies/GO-EXT
+Gene Ontology,bioportal-go_x2,https://bioportal.bioontology.org/ontologies/GO
+Gene Regulation Ontology,bioportal-gro_x2,https://bioportal.bioontology.org/ontologies/GRO
+IMGT-ONTOLOGY,bioportal-imgt,https://bioportal.bioontology.org/ontologies/IMGT-ONTOLOGY
+Multiple alignment,bioportal-mao,
+Cell line ontology,bioportal-mccl_x1,https://bioportal.bioontology.org/ontologies/CLO
+MeGO,bioportal-mego,https://bioportal.bioontology.org/ontologies/MEGO
+Protein-protein interaction,bioportal-mi,
+MGED Ontology,bioportal-mo,https://bioportal.bioontology.org/ontologies/MO
+Protein modification,bioportal-mod,https://bioportal.bioontology.org/ontologies/PSIMOD
+National Drug Data File,bioportal-nddf,https://bioportal.bioontology.org/ontologies/NDDF
+National Drug File,bioportal-ndfrt,https://bioportal.bioontology.org/ontologies/NDFRT
+Parasite Experiment Ontology,bioportal-peo,https://bioportal.bioontology.org/ontologies/PEO
+PHARE,bioportal-phare,https://bioportal.bioontology.org/ontologies/PHARE
+RxNORM,bioportal-rxnorm,https://bioportal.bioontology.org/ontologies/RXNORM
+Systems Biology,bioportal-sbo,https://bioportal.bioontology.org/ontologies/SBO
+SNP-Ontology,bioportal-snpo,https://bioportal.bioontology.org/ontologies/SNPO
+VANDF,bioportal-vandf,https://bioportal.bioontology.org/ontologies/VANDF
+African Traditional Medicine,bioportal-atmo,
+Human disease ontology,bioportal-doid,https://bioportal.bioontology.org/ontologies/DOID
+"Human developmental anatomy, timed version",bioportal-ehda,https://bioportal.bioontology.org/ontologies/EHDA
+MIxS Controlled Vocabularies,bioportal-mcv,https://bioportal.bioontology.org/ontologies/MIXSCV
+Natural Products Ontology,bioportal-natpro,https://bioportal.bioontology.org/ontologies/NATPRO
+PMA 2010,bioportal-pma,
+Rat Strain Ontology,bioportal-rs,https://bioportal.bioontology.org/ontologies/RS
+TCGA Roadmap,tcga-roadmap,
+DBpedia,dbpedia,
+LinkedCT,linkedct,
+BioPAX,bioportal-bp,https://bioportal.bioontology.org/ontologies/BP
+Systems Chemical Biology/Chemogenomics,bioportal-chem2bio2owl,https://bioportal.bioontology.org/ontologies/CHEMBIO
+DIKB-Evidence-Ontology,bioportal-dikb-evidence,DIKB-Evidence-Ontology
+Event (INOH pathway ontology),bioportal-iev,https://old.datahub.io/dataset/bioportal-iev
+Molecule role (INOH Protein name/family name ontology),bioportal-imr,http://linkeddatacatalog.dws.informatik.uni-mannheim.de/id/dataset/bioportal-imr
+SysMO-JERM,bioportal-jerm,https://old.datahub.io/dataset/bioportal-jerm
+MedDRA,bioportal-mdr,https://bioportal.bioontology.org/ontologies/MEDDRA
+Mass spectrometry,bioportal-ms,https://bioportal.bioontology.org/ontologies/MS
+Physician Data Query,bioportal-pdq,https://bioportal.bioontology.org/ontologies/PDQ
+PRotein Ontology (PRO),bioportal-pr,https://bioportal.bioontology.org/ontologies/PR
+Physico-chemical process,bioportal-rex,https://bioportal.bioontology.org/ontologies/REX
+Coronavirus dataset,micro-coronavirus,
+NCBI organismal classification,bioportal-ncbitaxon,https://bioportal.bioontology.org/ontologies/NCBITAXON
+Animal natural history and life history,bioportal-adw,https://bioportal.bioontology.org/ontologies/ADW
+BioTop,bioportal-bt,https://bioportal.bioontology.org/ontologies/BT
+Current Procedural Terminology,bioportal-cpt,https://bioportal.bioontology.org/ontologies/CPT
+Biological imaging methods,bioportal-fbbi,https://bioportal.bioontology.org/ontologies/FBbi
+International Classification for Nursing Practice,bioportal-icnp,https://bioportal.bioontology.org/ontologies/ICNP
+Lipid Ontology,bioportal-lipro,https://bioportal.bioontology.org/ontologies/LIPRO
+MedlinePlus Health Topics,bioportal-medlineplus,https://bioportal.bioontology.org/ontologies/MEDLINEPLUS
+Neural-Immune Gene Ontology,bioportal-nigo,https://bioportal.bioontology.org/ontologies/NIGO
+OBOE SBC,bioportal-oboe-sbc,https://bioportal.bioontology.org/ontologies/OBOE-SBC
+Pediatric Terminology,bioportal-pedterm,https://bioportal.bioontology.org/ontologies/PEDTERM
+Proteomics data and process provenance,bioportal-propreo,https://bioportal.bioontology.org/ontologies/PROPREO
+Sample processing and separation techniques,bioportal-sep,https://bioportal.bioontology.org/ontologies/SEP
+Units Ontology,bioportal-unitsontology,https://bioportal.bioontology.org/ontologies/UNITSONT
+Online Mendelian Inheritance in Man,bioportal-omim,https://bioportal.bioontology.org/ontologies/OMIM
+Amphibian gross anatomy,bioportal-aao,
+AI/RHEUM,bioportal-air,https://bioportal.bioontology.org/ontologies/AI-RHEUM
+Bleeding History Phenotype,bioportal-bho,https://bioportal.bioontology.org/ontologies/BHO
+BRENDA tissue / enzyme source,bioportal-bto,https://bioportal.bioontology.org/ontologies/BTO
+COSTART,bioportal-cst,https://bioportal.bioontology.org/ontologies/COSTART
+Common Terminology Criteria for Adverse Events,bioportal-ctcae,https://bioportal.bioontology.org/ontologies/CTCAE
+Cerebrotendinous xanthomatosis,bioportal-ctx,https://bioportal.bioontology.org/ontologies/CTX
+Dendritic cell,bioportal-dc_cl,
+"Human developmental anatomy, abstract version",bioportal-ehdaa,https://bioportal.bioontology.org/ontologies/EHDAA
+"Human developmental anatomy, abstract version, v2",bioportal-ehdaa2,https://bioportal.bioontology.org/ontologies/EHDAA2
+eVOC (Expressed Sequence Annotation for Humans),bioportal-ev,https://old.datahub.io/bg/dataset/bioportal-ev
+Drosophila gross anatomy,bioportal-fbbt,https://bioportal.bioontology.org/ontologies/FB-BT
+Family Health History Ontology,bioportal-fhho,https://bioportal.bioontology.org/ontologies/FHHO
+Hymenoptera Anatomy Ontology,bioportal-hao,https://bioportal.bioontology.org/ontologies/HAO
+HEALTH_INDICATORS,bioportal-hlth_indics,https://old.datahub.io/nl/dataset/f6e3c9e6-e3f1-4b8c-b218-bd5f0c700488
+Human Phenotype Ontology,bioportal-hp_x1,https://bioportal.bioontology.org/ontologies/HP
+ICD10,bioportal-icd10,https://bioportal.bioontology.org/ontologies/ICD10
+ICD10CM,bioportal-icd10cm,https://bioportal.bioontology.org/ontologies/ICD10CM
+International Classification of Diseases,bioportal-icd9cm,https://bioportal.bioontology.org/ontologies/ICD9CM
+International Classification of Primary Care,bioportal-icpc,https://bioportal.bioontology.org/ontologies/ICPC2P
+ICPC-2 PLUS,bioportal-icpc2p,https://bioportal.bioontology.org/ontologies/ICPC2P
+Mouse adult gross anatomy,bioportal-ma,https://bioportal.bioontology.org/ontologies/MA
+Minimal anatomical terminology,bioportal-mat,https://bioportal.bioontology.org/ontologies/MAT
+Breast tissue cell lines,bioportal-mcbcc,https://bioportal.bioontology.org/ontologies/MCBCC
+Cell line ontology,bioportal-mccl,https://bioportal.bioontology.org/ontologies/CLO
+Medaka fish anatomy and development,bioportal-mfo,https://bioportal.bioontology.org/ontologies/MFO
+Mammalian phenotype,bioportal-mp,https://bioportal.bioontology.org/ontologies/MP
+Mouse pathology,bioportal-mpath,https://bioportal.bioontology.org/ontologies/MPATH
+Ontology of Glucose Metabolism Disorder,bioportal-ogmd,https://bioportal.bioontology.org/ontologies/OGMD
+Ontology for MicroRNA Target Prediction,bioportal-omit,
+Orphanet Ontology of Rare Diseases,bioportal-ontoorpha,https://bioportal.bioontology.org/ontologies/ORDO
+PKO_Re,bioportal-pko,https://old.datahub.io/it/dataset/bioportal-pko
+Student Health Record,bioportal-shr,https://bioportal.bioontology.org/ontologies/SHR
+Syndromic Surveillance Ontology,bioportal-sso,https://bioportal.bioontology.org/ontologies/SSO
+Teleost Anatomy Ontology,bioportal-tao,https://bioportal.bioontology.org/ontologies/TAO
+Traditional Medicine Signs and Symptoms Value Set,bioportal-tm-signs-and-sympts,https://bioportal.bioontology.org/ontologies/TM-SIGNS-AND-SYMPTS
+Uber anatomy ontology,bioportal-uberon,https://bioportal.bioontology.org/ontologies/UBERON
+vertebrate Homologous Organ Groups,bioportal-vhog,https://bioportal.bioontology.org/ontologies/VHOG
+C. elegans gross anatomy,bioportal-wbbt,https://bioportal.bioontology.org/ontologies/WB-BT
+WHO Adverse Reaction Terminology,bioportal-who,https://bioportal.bioontology.org/ontologies/WHO-ART
+Xenopus anatomy and development,bioportal-xao,https://bioportal.bioontology.org/ontologies/XAO
+Zebrafish anatomy and development,bioportal-zfa,https://bioportal.bioontology.org/ontologies/ZFA
+ABA Adult Mouse Brain,bioportal-aba,https://bioportal.bioontology.org/ontologies/ABA-AMB
+Anatomical Entity Ontology,bioportal-aeo,https://bioportal.bioontology.org/ontologies/AEO
+Ascomycete phenotype ontology,bioportal-apo,https://bioportal.bioontology.org/ontologies/APO
+Basic Vertebrate Anatomy ,bioportal-basic-vertebrate-gross-anatomy,https://old.datahub.io/sl/dataset/bioportal-basic-vertebrate-gross-anatomy
+Breast Cancer Grading Ontology,bioportal-bcgo,https://bioportal.bioontology.org/ontologies/BCGO
+Bilateria anatomy,bioportal-bila,https://old.datahub.io/it/dataset/bioportal-bila
+Biomedical Resource Ontology,bioportal-bro_x1,https://bioportal.bioontology.org/ontologies/BRO
+Cell type,bioportal-cl,https://bioportal.bioontology.org/ontologies/CL
+Clinical Measurement Ontology,bioportal-cmo,https://bioportal.bioontology.org/ontologies/CMO
+Cognitive Atlas,bioportal-cogat,https://bioportal.bioontology.org/ontologies/COGAT
+Environment Ontology,bioportal-envo,https://bioportal.bioontology.org/ontologies/ENVO
+Plant environmental conditions,bioportal-eo,https://old.datahub.io/it/dataset/bioportal-eo
+Epilepsy,bioportal-epileponto,https://bioportal.bioontology.org/ontologies/EPILONT
+ExO,bioportal-exo,https://bioportal.bioontology.org/ontologies/EXO
+FlyBase Controlled Vocabulary,bioportal-fbcv,https://bioportal.bioontology.org/ontologies/FB-CV
+Fly taxonomy,bioportal-fbsp,https://bioportal.bioontology.org/ontologies/FB-SP
+FDA Medical Devices (2010),bioportal-fda-meddevice,https://old.datahub.io/dataset/bioportal-fda-meddevice
+Cereal plant gross anatomy,bioportal-gro_x1,https://bioportal.bioontology.org/ontologies/GRO-CPGA
+HCPCS,bioportal-hcpcs,https://bioportal.bioontology.org/ontologies/HCPCS
+HUGO,bioportal-hugo,https://bioportal.bioontology.org/ontologies/HGNC
+ICD-10-PCS,bioportal-icd10pcs,https://bioportal.bioontology.org/ontologies/ICD10PCS
+"International Classification of Functioning, Disability and Health (ICF)",bioportal-icf_x1,https://bioportal.bioontology.org/ontologies/ICF
+ICPS Network,bioportal-icps,https://bioportal.bioontology.org/ontologies/ICPS
+IxnO,bioportal-ixno,https://bioportal.bioontology.org/ontologies/IXNO
+Master Drug Data Base,bioportal-mddb,https://bioportal.bioontology.org/ontologies/MDDB
+Measurement Method Ontology,bioportal-mmo,https://bioportal.bioontology.org/ontologies/MMO
+Metathesaurus CPT Hierarchical Terms,bioportal-mthch,https://old.datahub.io/dataset/bioportal-mthch
+Neomark Oral Cancer-Centred Ontology,bioportal-neomarkontology,https://bioportal.bioontology.org/ontologies/NEOMARK3
+Physical Medicine and Rehabilitation,bioportal-pmr,https://bioportal.bioontology.org/ontologies/PMR
+Plant Anatomy,bioportal-po,https://bioportal.bioontology.org/ontologies/PAE
+Plant Ontology,bioportal-po_x2,https://bioportal.bioontology.org/ontologies/PO
+Pathway ontology,bioportal-pw,https://bioportal.bioontology.org/ontologies/PW
+Reproductive trait and phenotype ontology,bioportal-repo,https://bioportal.bioontology.org/ontologies/REPO
+Role Ontology,bioportal-roleo,https://bioportal.bioontology.org/ontologies/ROLEO
+Situation-Based Access Control,bioportal-sitbac,https://bioportal.bioontology.org/ontologies/SITBAC
+SoyOntology,bioportal-soy,https://bioportal.bioontology.org/ontologies/SOY
+Spider Ontology,bioportal-spd,https://bioportal.bioontology.org/ontologies/SPD
+Solanaceae Phenotype Ontology,bioportal-spto,https://bioportal.bioontology.org/ontologies/SPTO
+Mosquito gross anatomy,bioportal-tgma,https://bioportal.bioontology.org/ontologies/TGMA
+Plant Trait Ontology,bioportal-to,https://bioportal.bioontology.org/ontologies/PTO
+TOK_Ontology,bioportal-tok,https://bioportal.bioontology.org/ontologies/TOK
+Teleost taxonomy,bioportal-tto,https://bioportal.bioontology.org/ontologies/TTO
+Vertebrate Anatomy Ontology,bioportal-vao,https://bioportal.bioontology.org/ontologies/VSAO
+VIVO,bioportal-vivo,https://bioportal.bioontology.org/ontologies/VIVO
+Vertebrate Trait Ontology,bioportal-vt,https://bioportal.bioontology.org/ontologies/VT
+Experimental Conditions Ontology,bioportal-xco,https://bioportal.bioontology.org/ontologies/XCO
+Yeast phenotypes,bioportal-ypo,https://old.datahub.io/dataset/bioportal-ypo
+MaHCO - An MHC Ontology,bioportal-mhc,https://bioportal.bioontology.org/ontologies/MHC
+Tick gross anatomy,bioportal-tads,https://bioportal.bioontology.org/ontologies/TADS
+Computational Neuroscience Ontology,bioportal-cno,https://bioportal.bioontology.org/ontologies/CNO
+General Formal Ontology,bioportal-gfo,https://bioportal.bioontology.org/ontologies/GFO
+Loggerhead nesting,bioportal-lhn,https://bioportal.bioontology.org/ontologies/LHN
+Units of measurement,bioportal-uo,https://bioportal.bioontology.org/ontologies/UO
+Fission Yeast Phenotype Ontology,bioportal-fypo,https://bioportal.bioontology.org/ontologies/FYPO
+chemdb estimated properties dataset,chemdb-estimatedProperties,http://chemdc.casdc.cn/
+Bio2RDF::Irefindex,bio2rdf-irefindex,http://irefindex.bio2rdf.org/
+Bio2RDF::Ncbigene,bio2rdf-ncbigene,http://ncbigene.bio2rdf.org/
+Bio2RDF::Pubmed,bio2rdf-pubmed,http://pubmed.bio2rdf.org/
+Bio2RDF::Sgd,bio2rdf-sgd,http://sgd.bio2rdf.org/
+Bio2RDF::Taxonomy,bio2rdf-taxonomy,http://taxonomy.bio2rdf.org/
+Bio2RDF::Clinicaltrials,bio2rdf-clinicaltrials,http://clinicaltrials.bio2rdf.org/
+Medicinal products marketed in Czech Republic,cz-sidc-drugs,http://linked.opendata.cz/resource/dataset/sukl/drugs
+ATC groups,cz-eh-1-atc,https://bioportal.bioontology.org/ontologies/ATC
+Spatial Ontology,bioportal-bspo,https://bioportal.bioontology.org/ontologies/BSPO
+Non Randomized Controlled Trials Ontology,bioportal-nonrctontology,https://bioportal.bioontology.org/ontologies/NONRCTO
+OBOE,bioportal-oboe,https://bioportal.bioontology.org/ontologies/OBOE
+Plant Growth and Development Stage,bioportal-po_x1,https://bioportal.bioontology.org/ontologies/PSDS
+Randomized Controlled Trials (RCT) Ontology,bioportal-rctontology,https://bioportal.bioontology.org/ontologies/RCTONT
+UniProt,uniprot,http://www.uniprot.org/
+Fungal gross anatomy,bioportal-fao,https://bioportal.bioontology.org/ontologies/FAO
+BioSamples RDF,biosamples-rdf,
+Gene Expression Atlas RDF,gene-expression-atlas-rdf,
+Dictyostelium discoideum anatomy,bioportal-ddanat,https://bioportal.bioontology.org/ontologies/DDANAT
+Diagnostic Ontology,bioportal-diagnosticont,https://bioportal.bioontology.org/ontologies/DIAGONT
+Foundational Model of Anatomy,bioportal-fma,https://bioportal.bioontology.org/ontologies/FMA
+HITO,hito0000018da2a543a7,https://hitontology.eu/
+SNIK,snik,https://www.snik.eu
+PGxLOD,PGxLOD,https://pgxlod.loria.fr/
+Bio2RDF::Pharmgkb,bio2rdf-pharmgkb,http://pharmgkb.bio2rdf.org/
+Bio2RDF::Mesh,bio2rdf-mesh,http://mesh.bio2rdf.org/
+eagle-i @ Hunter College,eagle-i-hunter-cuny,http://hunter-cuny.eagle-i.net
+ISSA Agritrop Dataset,issa-agritrop,https://github.com/issa-project/issa-pipeline
+AGROVOC,agrovoc,http://www.fao.org/agrovoc/
+Bio2RDF::Drugbank,bio2rdf-drugbank,http://drugbank.bio2rdf.org/
+Bio2RDF::Hgnc,bio2rdf-hgnc,http://hgnc.bio2rdf.org/
+Bio2RDF::Ndc,bio2rdf-ndc,http://ndc.bio2rdf.org/
+GeoSpecies Ontology,bioportal-geospecies,https://bioportal.bioontology.org/ontologies/GEOSPECIES
+Wheat trait,bioportal-co_wheat,https://bioportal.bioontology.org/ontologies/CO-WHEAT
+Smoking Behavior Risk Ontology,bioportal-sbro,http://bioportal.bioontology.org/ontologies/1249
+Terminology for the Description of Dynamics,bioportal-teddy,https://bioportal.bioontology.org/ontologies/TEDDY
+C. elegans phenotype,bioportal-wbphenotype,https://bioportal.bioontology.org/ontologies/WB-PHENOTYPE
+Orthology and Diseases Information - OGO,ogolod,http://miuras.inf.um.es/~ogo/ogolod.html
+Bio2RDF::Omim,bio2rdf-omim,http://omim.bio2rdf.org/
+ChEMBL RDF,chembl-rdf,None
+UniProtKB,uniprotkb,https://www.uniprot.org/uniprot/
+Linked Open Data of Ecology,linked-open-data-of-ecology,http://ecowlim.tfri.gov.tw/lode
+GeoSpecies Knowledge Base,geospecies,http://lod.geospecies.org/
+bio2rdf-omim-resources,bio2rdf-omim-resources,None
+DailyMed,fu-berlin-dailymed,http://www4.wiwiss.fu-berlin.de/dailymed/
+Diseasome,fu-berlin-diseasome,http://www4.wiwiss.fu-berlin.de/diseasome/
+DrugBank,fu-berlin-drugbank,http://www4.wiwiss.fu-berlin.de/drugbank/
+TCMGeneDIT Dataset,tcmgenedit_dataset,http://code.google.com/p/junsbriefcase/wiki/TGDdataset
+Amphibian taxonomy,bioportal-ato,https://bioportal.bioontology.org/ontologies/ATO
+Taxonomic rank vocabulary,bioportal-taxrank,https://bioportal.bioontology.org/ontologies/TAXRANK
+Bio2RDF::Sider,bio2rdf-sider,http://sider.bio2rdf.org/
+eagle-i @ Dartmouth College,eagle-i-dartmouth,http://dartmouth.eagle-i.net
+Bio2RDF::Chembl,bio2rdf-chembl,http://chembl.bio2rdf.org/
+Naturopathy knowledge Graph (Ontology and Dataset) - RDF distribution of the naturopathy dataset.,http:sensormeasurement.appspot.comdatasetnaturopathy-dataset,
+eagle-i@ University of Puerto Rico - Medical Sciences Campus,eagle-i-upr,http://upr.eagle-i.net
+eagle-i @ Montana State University,eagle-i-montana,http://montana.eagle-i.net
+eagle-i @ University of Hawai’i at M?noa,eagle-i-hawaii,http://hawaii.eagle-i.net
+neXtProt,nextprot,https://www.nextprot.org/
+UniProt,UniProt,https://www.uniprot.org/
+Bio2RDF::Orphanet,bio2rdf-orphanet,http://orphanet.bio2rdf.org/
+eagle-i @ Jackson State University,eagle-i-jsu,http://jsu.eagle-i.net
+Bio2RDF::Biomodels,bio2rdf-biomodels,http://biomodels.bio2rdf.org/
+Bio2RDF::Interpro,bio2rdf-interpro,http://interpro.bio2rdf.org/
+Drosophila development,bioportal-fbdv,https://bioportal.bioontology.org/ontologies/FB-DV
+C. elegans development,bioportal-wbls,https://bioportal.bioontology.org/ontologies/WB-LS
+Taiwan Fauna Database Research: Taiwan Digital Fish Species Database (AS-TFD-Fish-Species),ASCDC-AS-TFD-Fish-Species,https://data.ascdc.tw/en/data.php
+eagle-i @ Tuskegee University,eagle-i-tuskegee,http://tuskegee.eagle-i.net
+eagle-i @ Florida Agricultural and Mechanical University,eagle-i-famu,http://famu.eagle-i.net
+European Nature Information System,eunis,http://eunis.eea.europa.eu
+Bio2RDF::Dbsnp,bio2rdf-dbsnp,http://dbsnp.bio2rdf.org/
+Bio2RDF::Mgi,bio2rdf-mgi,http://mgi.bio2rdf.org/
+Covid-on-the-Web Dataset,Covid-on-the-Web,https://github.com/Wimmics/CovidOnTheWeb
+Chem2Bio2RDF,chem2bio2rdf,http://chem2bio2rdf.org
+bio2rdf-taxon,bio2rdf-taxon,None
+University of Plymouth Reading Lists,university-plymouth-reading-lists,http://lists.lib.plymouth.ac.uk/
+SIDER: Side Effect Resource,fu-berlin-sider,http://www4.wiwiss.fu-berlin.de/sider/
+chemdb phase transition dataset,chemdb-phaseTransition,http://chemdc.casdc.cn/
+Transcription profiling of rat bladder after inoculation with bladder cancer cells,arrayexpress_e-mtab-104,
+thesaurus,bioportal-thesaurus,http://bioportal.bioontology.org/ontologies/3034
+Catalogue of Life in China 2003 Edition,CoLChina_sp20000000019348ff2263,http://semweb.csdb.cn/ioz
+Taxons,sandre,http://sandre.eaufrance.fr/
+Linked Life Data,linked-life-data,http://linkedlifedata.com/
+eagle-i @ Clark Atlanta University,eagle-i-cau,http://cau.eagle-i.net/
+DisGeNET,disgenet,https://maayanlab.cloud/Harmonizome/dataset/DisGeNET+Gene-Disease+Associations
+eagle-i @ Charles R. Drew University,eagle-i-cdrewu,http://cdrewu.eagle-i.net
+Naturopathy Knowledge Graph (Ontology and Dataset) - RDF distribution of the naturopathy dataset.,Naturopathy,http://sensormeasurement.appspot.com/dataset/naturopathy-dataset
+eagle-i @ The City College of New York,eagle-i-ccny-cuny,http://ccny-cuny.eagle-i.net
+eagle-i @ Oregon Health and Science University,eagle-i-ohsu,http://ohsu.eagle-i.net
+Comprehensive Knowledge Archive Network,ckan,http://www.ckan.net/
+TaxonConcept Knowledge Base,taxonconcept,http://lod.taxonconcept.org/
+Entrez Gene,entrez_gene,http://www.ncbi.nlm.nih.gov/gene
+Bio2RDF::Lsr,bio2rdf-lsr,http://lsr.bio2rdf.org/
+eagle-i @ Vanderbilt University,eagle-i-vanderbilt,http://eagle-i.ea.vanderbilt.edu
+EPA-SRS,epa-srs,https://opendata.epa.gov
+digitized plant specimen,plant-specimen,http://semweb.csdb.cn/plant
+STITCH: Chemical-Protein Interactions,fu-berlin-stitch,http://www4.wiwiss.fu-berlin.de/stitch/
+BioModels RDF,biomodels-rdf,None
+Bio2RDF::Genage,bio2rdf-genage,http://genage.bio2rdf.org/
+eagle-i @ Morehouse School of Medicine,eagle-i-msm,http://msm.eagle-i.net
+Bio2RDF::Affymetrix,bio2rdf-affymetrix0000018ec34a360f,http://affymetrix.bio2rdf.org/
+Bio2RDF::Wormbase,bio2rdf-wormbase,http://wormbase.bio2rdf.org/
+Traditional Korean Medicine Ontology,traditional-korean-medicine,http://tkm.kiom.re.kr
+TAXREF-LD: Knowledge Graph of the French taxonomic registery,taxref-ld,https://github.com/frmichel/taxref-ld/
+EPA-CDR,epa-cdr,https://opendata.epa.gov
+ENTICE Educational Episodes Knowledge Graph,entice-graph,https://data.entice.eu/
+eagle-i @ University of Texas at San Antonio,eagle-i-utsa,http://utsa.eagle-i.net
+eagle-i @ Howard University,eagle-i-howard,http://howard.eagle-i.net
+MediCare,fu-berlin-medicare,http://www4.wiwiss.fu-berlin.de/medicare/
+eagle-i @ University of Texas at El Paso,eagle-i-utep,http://utep.eagle-i.net
+eagle-i @ Ponce School of Medicine,eagle-i-psm,http://psm.eagle-i.net/
+Meriterm Heart Failure Multilingual Terminology,heartfailure,
+Bio2RDF::Sabiork,bio2rdf-sabiork,http://sabiork.bio2rdf.org/
+Bio2RDF::Gendr,bio2rdf-gendr,http://gendr.bio2rdf.org/
+CareLex,bioportal-carelex,https://bioportal.bioontology.org/ontologies/CARELEX
+SCBG Data,SCBG-Data0000018bcbdc28f5,http://semweb.csdb.cn/scbg
+Bio2RDF::Ctd,bio2rdf-ctd,http://ctd.bio2rdf.org/
+Active ingredients of medicinal products available in Czech Republic,cz-sidc-drug-ingredients,http://linked.opendata.cz/resource/dataset/sukl/drug-ingredients
+Bio2RDF::Goa,bio2rdf-goa,http://goa.bio2rdf.org/
+Bio2RDF::Iproclass,bio2rdf-iproclass,http://iproclass.bio2rdf.org/
+LODAC BDLS,lodac-bdls,http://lod.ac/wiki/LODAC_BDLS
+chemdb dataset,chemdb-basicInfo,https://github.com/victorgarric/ChemDB/tree/master/data; https://chemdb.soft32.com/
+taxonconcept-assets,taxonconcept-assets,
+eagle-i @ Harvard University,eagle-i-harvard,http://harvard.eagle-i.net
+Organic Edunet Linked Open Data,organic-edunet,http://data.organic-edunet.eu/
+NERC Vocabulary Server 2.0,nvs,http://vocab.nerc.ac.uk/
+ChEMBL-RDF (@ Uppsala University),farmbio-chembl,https://github.com/egonw/chembl.rdf
+eagle-i @ Texas Southern University,eagle-i-tsu,http://alaska.eagle-i.net/
+eagle-i @ Meharry Medical College,eagle-i-meharry,http://meharry.eagle-i.net
+Allie Abbreviation And Long Form Database in Life Science,allie-abbreviation-and-long-form-database-in-life-science,http://allie.dbcls.jp/
+eagle-i @ Xavier University of Louisiana,eagle-i-xula,http://xula.eagle-i.net
+Kidney and Urinary Pathway Knowledge Base,kupkb,None
+SPARQL Endpoint Status,sparql-endpoint-status,http://labs.mondeca.com/sparqlEndpointsStatus/endpoint/endpoint.html
+Bio2RDF::Bioportal,bio2rdf-bioportal,http://bioportal.bio2rdf.org/
+Linked TCGA,linked-tcga,None
+Bio2RDF::Homologene,bio2rdf-homologene,http://homologene.bio2rdf.org/
+eagle-i @ University of Alaska Fairbanks,eagle-i-alaska,http://alaska.eagle-i.net
+eagle-i @ Universidad Central del Caribe,eagle-i-uccaribe,http://uccaribe.eagle-i.net
+taxonconcept-occurences,taxonconcept-occurences,None
+Reactome RDF,reactome-rdf,None
+PubChem RDF,PubChem_RDF,https://pubchem.ncbi.nlm.nih.gov/
+chemdb thermochemistry dataset,Chemdb,http://chemdc.casdc.cn/
+,,http://chemdc.casdc.cn/

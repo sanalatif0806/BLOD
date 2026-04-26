@@ -346,7 +346,7 @@ export default function SparqlPage() {
                     <div className="table-responsive" style={{ maxHeight: '420px' }}>
                       <table className="table table-sm table-hover mb-0" style={{ fontSize: '0.8rem' }}>
                         <thead className="table-light sticky-top">
-                          <tr>{vars.map(v => <th key={v} style={{ whiteSpace: 'nowrap' }}>?{v}</th>)}</tr>
+                          <tr>{vars.map(v => <th key={v} style={{ whiteSpace: 'nowrap' }}>{v.replace(/([A-Z])/g, ' $1').replace(/^./, s => s.toUpperCase())}</th>)}</tr>
                         </thead>
                         <tbody>
                           {bindings.map((row, i) => (

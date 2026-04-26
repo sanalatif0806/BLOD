@@ -1,4 +1,4 @@
-import NavBar from '../components/navbar';
+import Navbar from '../components/navbar';
 import React, {useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { base_url, kghb_url } from '../api';
@@ -43,7 +43,6 @@ function FairnessInfo(){
                 //Same trasformation done by KGHeartBeat
 
                 let sanitizedId = dataset_id.replace(/[\\/*?:"<>|]/g, "");
-                sanitizedId = dataset_id.replace(/[\\/*?:"<>|]/g, "");
                 sanitizedId = sanitizedId.replace(/[!"#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~]/g, "");
                 sanitizedId = sanitizedId.replace(/\s+/g, "");
                 const response = await axios.get(`${base_url}/BLOD/fairness_data/${sanitizedId}`);
@@ -169,7 +168,7 @@ function FairnessInfo(){
     return (
         <>
         <div className="container-fluid mt-3 px-4">
-            <NavBar />
+            <Navbar />
             <div className="d-flex justify-content-end mb-2">
                 <Link
                     to={`/add-dataset?dataset_id=${dataset_id}`}
@@ -232,18 +231,18 @@ function FairnessInfo(){
                             </Col>
                         )}
 
-                        {dataset_metadata.contact_point.email || dataset_metadata.contact_point.name ? (
+                        {dataset_metadata.contact_point?.email || dataset_metadata.contact_point?.name ? (
                             <Col md={6} className="mb-3">
                                 <strong>Contact point</strong> <br />
-                                <strong>email: </strong>{dataset_metadata.contact_point.email} <br />
-                                <strong>name: </strong>{dataset_metadata.contact_point.name}
+                                <strong>email: </strong>{dataset_metadata.contact_point?.email} <br />
+                                <strong>name: </strong>{dataset_metadata.contact_point?.name}
                             </Col>
                         ) : (
                             <Col md={6} className="mb-3">
                                 <strong>Contact point not specified</strong>
                             </Col>
                         )}
-                        {dataset_metadata.sparql[0] ? (
+                        {dataset_metadata.sparql?.[0] ? (
                             <Col md={6} className="mb-3">
                                 <strong>SPARQL Endpoint: </strong>
                                 <a href={dataset_metadata.sparql[0].access_url} target="_blank" rel="noopener noreferrer">

@@ -92,9 +92,12 @@ def _resolve_predicate(pred: str, df_columns: list) -> str | None:
     if pred in ALIAS_MAP:
         col = ALIAS_MAP[pred]
         return col if col in df_columns else None
-    # 2. blod:snake_case → reconstruct column name heuristically
+    # 2. blod:snake_case or blod:camelCase → reconstruct column name
     if pred.startswith("blod:"):
-        local = pred[5:].replace("_", " ")
+        local = pred[5:]
+        # Convert camelCase to snake_case first (e.g. fairScore → fair_score)
+        local = re.sub(r'([a-z])([A-Z])', r'\1_\2', local).lower()
+        local = local.replace("_", " ")
         # case-insensitive match
         for col in df_columns:
             if col.lower() == local.lower():
