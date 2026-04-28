@@ -1,36 +1,6 @@
 services:
-  backend:
-    build: ./backend
-    container_name: BLOD-backend
-    restart: unless-stopped
-    ports:
-      - "5005:5005"
-    env_file:
-      - ./backend/.env
-    environment:
-      - MONGO_URI=mongodb://admin:password@mongodb:27017/healthcloud?authSource=admin
-      - DB_NAME=healthcloud
-      - PORT=5005
-    depends_on:
-      mongodb:
-        condition: service_healthy
-    networks:
-      - app-network
 
-  frontend:
-    build: ./frontend/blod
-    container_name: BLOD-frontend
-    restart: unless-stopped
-    ports:
-      - "3000:3000"
-    depends_on:
-      - backend
-    networks:
-      - app-network
-    environment:
-      - REACT_APP_API_URL=http://localhost:5005
-      - REACT_APP_DASHBOARD_BACKEND=http://localhost:5001
-
+  # ── MongoDB ──────────────────────────────────────────────────────────────
   mongodb:
     image: mongo:6.0
     container_name: BLOD-mongodb
@@ -54,6 +24,95 @@ services:
       retries: 5
       start_period: 20s
 
+  # ── Fuseki Triplestore ───────────────────────────────────────────────────
+  fuseki:
+    image: stain/jena-fuseki:latest
+    container_name: BLOD-fuseki
+    restart: unless-stopped
+    ports:
+      - "3030:3030"
+    environment:
+      - ADMIN_PASSWORD=blod_admin
+      - JVM_ARGS=-Xmx2g
+      - FUSEKI_DATASET_1=blod
+    volumes:
+      - fuseki_data:/fuseki
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:3030/$$/ping -u admin:blod_admin || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 8
+      start_period: 30s
+
+  # ── KG Pipeline ─────────────────────────────────────────────────────────
+  # Runs ONCE automatically on docker-compose up.
+  # Converts BLOD.json + fairness-data.csv -> RDF and loads into Fuseki.
+  # Skips if KG already loaded (set FORCE_RELOAD=true to re-run).
+  kg-pipeline:
+    build: ./kg-pipeline
+    container_name: BLOD-kg-pipeline
+    restart: "no"
+    environment:
+      - FUSEKI_URL=http://fuseki:3030
+      - FUSEKI_DATASET=blod
+      - FUSEKI_USER=admin
+      - FUSEKI_PASSWORD=blod_admin
+      - JSON_PATH=/data/BLOD.json
+      - FAIR_PATH=/data/fairness-data.csv
+      - FORCE_RELOAD=false
+    volumes:
+      - ./backend/mongo_data/BLOD.json:/data/BLOD.json:ro
+      - ./backend/data/fairness-data.csv:/data/fairness-data.csv:ro
+      - kg_output:/output
+    depends_on:
+      fuseki:
+        condition: service_healthy
+    networks:
+      - app-network
+
+  # ── Backend ──────────────────────────────────────────────────────────────
+  backend:
+    build: ./backend
+    container_name: BLOD-backend
+    restart: unless-stopped
+    ports:
+      - "5005:5005"
+    env_file:
+      - ./backend/.env
+    environment:
+      - MONGO_URI=mongodb://admin:password@mongodb:27017/healthcloud?authSource=admin
+      - DB_NAME=healthcloud
+      - PORT=5005
+      - FUSEKI_URL=http://fuseki:3030
+      - FUSEKI_DATASET=blod
+      - FUSEKI_USER=admin
+      - FUSEKI_PASS=blod_admin
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      fuseki:
+        condition: service_healthy
+    networks:
+      - app-network
+
+  # ── Frontend ─────────────────────────────────────────────────────────────
+  frontend:
+    build: ./frontend/blod
+    container_name: BLOD-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    environment:
+      - REACT_APP_API_URL=http://localhost:5005
+      - REACT_APP_DASHBOARD_BACKEND=http://localhost:5001
+
+  # ── Python Service ───────────────────────────────────────────────────────
   python-service:
     build: ../python_service/
     container_name: BLOD-python-service
@@ -74,6 +133,8 @@ services:
 volumes:
   mongo_data:
   python_service_data:
+  fuseki_data:
+  kg_output:
 
 networks:
   app-network:

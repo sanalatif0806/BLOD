@@ -1,14 +1,15 @@
 const express = require('express');
 const cors = require('cors');
 const { connectToMongoDB } = require('./db');
-const blodRoutes = require('./routes/BLOD');
+const blodRoutes       = require('./routes/BLOD');
 const monitoringRoutes = require('./routes/monitoring_requests');
-const llmRoutes = require('./routes/llm');
-const sparqlRoutes = require('./routes/sparql');
+const llmRoutes        = require('./routes/llm');
+const sparqlRoutes     = require('./routes/sparql');
+const kgRoutes         = require('./routes/kg');        // ← Fuseki KG route
 
 require('dotenv').config();
 
-const app = express();
+const app  = express();
 const port = process.env.PORT || 5005;
 
 app.use(cors());
@@ -27,10 +28,11 @@ app.use(async (req, res, next) => {
 });
 
 // Routes
-app.use('/BLOD', blodRoutes);
+app.use('/BLOD',               blodRoutes);
 app.use('/monitoring_requests', monitoringRoutes);
-app.use('/llm', llmRoutes);
-app.use('/sparql', sparqlRoutes);
+app.use('/llm',                llmRoutes);
+app.use('/sparql',             sparqlRoutes);   // MongoDB-backed SPARQL (existing)
+app.use('/kg',                 kgRoutes);        // Fuseki KG SPARQL (new)
 
 // Health check
 app.get('/health', (req, res) => res.json({ status: 'ok', timestamp: new Date().toISOString() }));
