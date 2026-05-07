@@ -7,3 +7,4 @@ title: BLOD Cloud!
 [Mapping quality dimensions to FAIR principles](./fair_mapping.md) <br>
 [FAIR Tools Mapping — FAIR-Checker, F-UJI, KGHeartBeat](./fair_tool_mapping.html) <br>
 [FAIR Tool Agreement Dashboard](./fair-dashboard.html)
+[FAIR Scores Distribution Table](./fair-scores-table.html)
