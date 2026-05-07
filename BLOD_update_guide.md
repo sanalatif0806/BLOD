@@ -1,5 +1,4 @@
 # BLOD Update Guide
-## Differences between BLOD.zip (old) and BLOD_with_sparql.zip (new)
 
 ---
 
