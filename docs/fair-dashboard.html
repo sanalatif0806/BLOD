@@ -25,6 +25,13 @@
     .ph a:hover{text-decoration:underline;}
     .ph h1{font-size:17px;font-weight:500;margin:0 0 2px;}
     .ph p{font-size:12px;color:var(--muted);margin:0;}
+    /* nav link pill */
+    .ph-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;
+             color:#ffffff;text-decoration:none;letter-spacing:.05em;
+             background:#8b3a1e;padding:5px 12px;border-radius:4px;
+             border:1px solid rgba(139,58,30,0.5);transition:background .15s;white-space:nowrap;}
+    .ph-link:hover{background:#a8482a;text-decoration:none;}
+    .ph-spacer{flex:1;}
     .pb{max-width:1100px;margin:0 auto;padding:24px 32px 64px;}
     .mg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:22px;}
     .mc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px;}
@@ -83,6 +90,17 @@
     <h1>FAIR Tool Agreement — Research Dashboard</h1>
     <p>Correlation, agreement, distributions &amp; sub-principle radar analysis · 1,246 overlapping datasets · F-UJI × FAIR-Checker × KGHeartBeat</p>
   </div>
+  <div class="ph-spacer"></div>
+  <!-- FAIR Score Distribution Table link -->
+  <a href="fair-scores-table.html" class="ph-link">
+    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="11" height="2.2" fill="currentColor" opacity=".5"/>
+      <rect x="1" y="4.4" width="11" height="2.2" fill="currentColor" opacity=".75"/>
+      <rect x="1" y="7.8" width="11" height="2.2" fill="currentColor" opacity=".4"/>
+      <rect x="1" y="11" width="11" height="1.2" fill="currentColor" opacity=".3"/>
+    </svg>
+    FAIR Score Table →
+  </a>
 </div>
 
 <div class="pb">
@@ -136,25 +154,18 @@
 
 <!-- ══ SUB-PRINCIPLE RADARS ══ -->
 <div id="p-radars" class="panel">
-
-  <!-- F-UJI radars -->
   <div class="card">
     <div class="ct" style="margin-bottom:14px;">F-UJI — sub-principle radar charts by FAIR principle</div>
     <div class="g4" id="fuji-radars"></div>
   </div>
-
-  <!-- FAIR-Checker radars -->
   <div class="card">
     <div class="ct" style="margin-bottom:14px;">FAIR-Checker — sub-principle radar charts by FAIR principle</div>
     <div class="g4" id="fc-radars"></div>
   </div>
-
-  <!-- KGHeartBeat radars -->
   <div class="card">
     <div class="ct" style="margin-bottom:14px;">KGHeartBeat — sub-principle radar charts by FAIR principle</div>
     <div class="g4" id="kghb-radars"></div>
   </div>
-
 </div>
 
 <!-- ══ F-UJI DETAIL ══ -->
@@ -392,7 +403,7 @@ function buildInline(id, subs, col){
 }
 
 // ═══════════════════════════════════════════════════════════════
-// RADAR BUILDER — white background, colorful fills
+// RADAR BUILDER
 // ═══════════════════════════════════════════════════════════════
 const PBADGE_COLORS={
   F:{badgeBg:'#E6F1FB',badgeTc:'#0C447C', fill:'rgba(50,102,173,0.18)',  border:'#3266ad', point:'#3266ad'},
@@ -469,27 +480,18 @@ function buildRadarCard(containerId, tool, principle, subs, toolColor){
 }
 
 function buildAllRadars(){
-  // F-UJI radars
   const fujiGroups={F:[],A:[],I:[],R:[]};
   FUJI_SUBS.forEach(s=>fujiGroups[s.p].push(s));
   document.getElementById('fuji-radars').innerHTML='';
-  for(const p of ['F','A','I','R']){
-    if(fujiGroups[p].length) buildRadarCard('fuji-radars','F-UJI',p,fujiGroups[p],'#3266ad');
-  }
-  // FAIR-Checker radars
+  for(const p of ['F','A','I','R']){if(fujiGroups[p].length) buildRadarCard('fuji-radars','F-UJI',p,fujiGroups[p],'#3266ad');}
   const fcGroups={F:[],A:[],I:[],R:[]};
   FC_SUBS.forEach(s=>fcGroups[s.p].push(s));
   document.getElementById('fc-radars').innerHTML='';
-  for(const p of ['F','A','I','R']){
-    if(fcGroups[p].length) buildRadarCard('fc-radars','FAIR-Checker',p,fcGroups[p],'#639922');
-  }
-  // KGHeartBeat radars
+  for(const p of ['F','A','I','R']){if(fcGroups[p].length) buildRadarCard('fc-radars','FAIR-Checker',p,fcGroups[p],'#639922');}
   const kghbGroups={F:[],A:[],I:[],R:[]};
   KGHB_SUBS.forEach(s=>kghbGroups[s.p].push(s));
   document.getElementById('kghb-radars').innerHTML='';
-  for(const p of ['F','A','I','R']){
-    if(kghbGroups[p].length) buildRadarCard('kghb-radars','KGHeartBeat',p,kghbGroups[p],'#EF9F27');
-  }
+  for(const p of ['F','A','I','R']){if(kghbGroups[p].length) buildRadarCard('kghb-radars','KGHeartBeat',p,kghbGroups[p],'#EF9F27');}
 }
 buildAllRadars();
 
@@ -597,7 +599,6 @@ charts['c-svd']=new Chart(document.getElementById('c-svd'),{type:'scatter',
     scales:{x:{min:-1,max:1,title:{display:true,text:'Sub-principle Pearson r',font:{size:11}},ticks:{font:{size:10},callback:v=>v.toFixed(1)}},
             y:{min:-1,max:1,title:{display:true,text:'Dimension Pearson r',font:{size:11}},ticks:{font:{size:10},callback:v=>v.toFixed(1)}}}}});
 
-// Full table
 const tH=`<thead><tr style="background:var(--surface2);">
   ${['Criterion','Principle','F-UJI × FC','F-UJI × KGHB','FC × KGHB','Interpretation'].map(h=>`<th style="padding:7px 10px;font-size:11px;color:var(--muted);border-bottom:1px solid var(--border);text-align:left;">${h}</th>`).join('')}
 </tr></thead>`;
