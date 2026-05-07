@@ -6,5 +6,5 @@ title: BLOD Cloud!
 [Explore the BLOD now!](http://isislab.it:12280/blod/) <br>
 [Mapping quality dimensions to FAIR principles](./fair_mapping.md) <br>
 [FAIR Tools Mapping — FAIR-Checker, F-UJI, KGHeartBeat](./fair_tool_mapping.html) <br>
-[FAIR Tool Agreement Dashboard](./fair-dashboard.html)
+[FAIR Tool Agreement Dashboard](./fair-dashboard.html)<br>
 [FAIR Scores Distribution Table](./fair-scores-table.html)
