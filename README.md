@@ -66,11 +66,7 @@ cd WebApp
 docker compose up --build
 ```
 
-Services:
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:5005
-- Python Quality Service: http://localhost:5001
-- MongoDB: localhost:27017
+
 
 ### 3. Development (without Docker)
 
@@ -99,13 +95,6 @@ flask run --port 5001
 
 ## SPARQL Endpoints
 
-### Catalogue SPARQL (Node.js — queries MongoDB)
-```
-GET  http://localhost:5005/sparql?query=SELECT ...
-POST http://localhost:5005/sparql  body: { "query": "SELECT ..." }
-GET  http://localhost:5005/sparql/info
-```
-
 **Example:**
 ```sparql
 SELECT ?title ?identifier WHERE {
@@ -114,14 +103,6 @@ SELECT ?title ?identifier WHERE {
   FILTER(REGEX(?title, "drug", "i"))
 }
 LIMIT 20
-```
-
-### Quality SPARQL (Python — queries FAIR assessment DataFrame)
-```
-GET  http://localhost:5001/sparql/query?query=SELECT ...
-POST http://localhost:5001/sparql/query  body: { "query": "SELECT ..." }
-GET  http://localhost:5001/sparql/info
-GET  http://localhost:5001/sparql/columns
 ```
 
 **Example:**
